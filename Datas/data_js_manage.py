@@ -1,6 +1,6 @@
 import json
 
-def create_child_object(name, url, external_access, memo=None, Purpose=None, file_type=None):
+def create_child_object(name, url, external_access, purpose=None, exampleVal=None, file_type=None, memo=None):
     """
     Creates a child object based on the provided attributes.
     
@@ -23,15 +23,23 @@ def create_child_object(name, url, external_access, memo=None, Purpose=None, fil
         child[name]["Memo"] = memo
     if file_type:
         child[name]["File_type"] = file_type
-    if Purpose:
-        child[name]["Purpose"] = Purpose
+    if purpose:
+        child[name]["Purpose"] = purpose
+    if exampleVal:
+        child[name]["ExampleValue"] = exampleVal
     return child
 
 # Now let's use the above function to create the structure
 
 space_weather_info = {
     "solar_flares": {
-        "GOES"
+        "GOES": { **create_child_object("GOES X-ray Flux", "https://www.swpc.noaa.gov/products/goes-x-ray-flux/", True, \
+                                    purpose="GOES background X-ray flux",file_type="graphs", exampleVal="B7, 穏やかに上昇中", \
+                                        memo="赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。"),
+                  **create_child_object("GOEX-ray Flux", "https://www.swpc.noaa.gov/products/goes-x-ray-flux/", True, \
+                                    purpose="GOES background X-ray flux",file_type="graphs", memo="赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。")
+        
+        },            
         "sunspot_data": create_child_object("Sunspot Observatory", "http://example.com/sunspot", True, memo="Sunspot data source"),
         "flare_data": create_child_object("Solar Flare Monitor", "http://example.com/flare", True),
         "solar_image": create_child_object("Solar Image Gallery", "http://example.com/solarimage", True),
@@ -59,6 +67,6 @@ space_weather_info = {
 
 # Save to a JSON file
 with open("./Datas/space_weather_info.json", "w") as f:
-    json.dump(space_weather_info, f, indent=4)
+    json.dump(space_weather_info, f, indent=4, ensure_ascii=False)
 
 "/mnt/data/space_weather_info.json"

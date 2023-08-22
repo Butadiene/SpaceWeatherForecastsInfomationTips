@@ -1,5 +1,22 @@
 {
     "solar_flares": {
+        "GOES": {
+            "GOES X-ray Flux": {
+                "URL": "https://www.swpc.noaa.gov/products/goes-x-ray-flux/",
+                "External access": true,
+                "Memo": "赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。",
+                "File_type": "graphs",
+                "Purpose": "GOES background X-ray flux",
+                "ExampleValue": "B7, 穏やかに上昇中"
+            },
+            "GOEX-ray Flux": {
+                "URL": "https://www.swpc.noaa.gov/products/goes-x-ray-flux/",
+                "External access": true,
+                "Memo": "赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。",
+                "File_type": "graphs",
+                "Purpose": "GOES background X-ray flux"
+            }
+        },
         "sunspot_data": {
             "Sunspot Observatory": {
                 "URL": "http://example.com/sunspot",
