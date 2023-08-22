@@ -8,13 +8,6 @@
                 "File_type": "graphs",
                 "Purpose": "GOES background X-ray flux",
                 "ExampleValue": "B7, 穏やかに上昇中"
-            },
-            "GOEX-ray Flux": {
-                "URL": "https://www.swpc.noaa.gov/products/goes-x-ray-flux/",
-                "External access": true,
-                "Memo": "赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。",
-                "File_type": "graphs",
-                "Purpose": "GOES background X-ray flux"
             }
         },
         "Solar radio flux": {
@@ -26,10 +19,18 @@
                 "Purpose": "F10.7"
             }
         },
-        "Sun spot area": {
+        "Sun spot": {
             "SWPC": {
                 "URL": "hogeURL",
-                "External access": false
+                "External access": false,
+                "Purpose": "Sunspot area",
+                "ExampleValue": "660, 穏やかに上昇中"
+            },
+            "SILSO": {
+                "URL": "hogeURL",
+                "External access": false,
+                "Purpose": "Relative sunspot number & Monthly Relative sunspot number",
+                "ExampleValue": "109, 一定"
             }
         }
     },

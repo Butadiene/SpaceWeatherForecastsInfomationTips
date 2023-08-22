@@ -33,27 +33,23 @@ def create_child_object(name, url, external_access, purpose=None, exampleVal=Non
 
 space_weather_info = {
     "Solar_flares": {
-        "X-ray flux": { **create_child_object("GOES X-ray Flux", "https://www.swpc.noaa.gov/products/goes-x-ray-flux/", True, \
+        "X-ray flux": create_child_object("GOES X-ray Flux", "https://www.swpc.noaa.gov/products/goes-x-ray-flux/", True, \
                     purpose="GOES background X-ray flux",file_type="graphs", exampleVal="B7, 穏やかに上昇中", \
                     memo="赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。"),
-
-                  **create_child_object("GOEX-ray Flux", "https://www.swpc.noaa.gov/products/goes-x-ray-flux/", True, \
-                    purpose="GOES background X-ray flux",file_type="graphs", exampleVal="148.7, 一定", \
-                    memo="赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。")
-        },
 
         "Solar radio flux": create_child_object("DRAO", "https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php", True,\
                             purpose="F10.7", file_type="html", \
                             memo="太陽黒点数と良い相関のある、波長10.7cm(周波数2.8GHz)の電波の強度。Daily flux valuesのHTML見れば良いけど、\
                             めちゃ見づらいので注意。値はObserved fluxを使用しているよう。極大期では月平均でおおよそ200、極小期では70程度（日単位では変動が大きく、300を超えることも。）"),
 
-        "Sun spot": { **create_child_object("SWPC", "hogeURL", False, \
-                        purpose="Sunspot area", file_type="", exampleVal="660, 穏やかに上昇中", \
+        "Sun spot": { **create_child_object("SOLAR REGION SUMMARY", "https://www.swpc.noaa.gov/products/solar-region-summary", False, \
+                        purpose="Sunspot area (SWPC) & ", file_type="", exampleVal="660, 穏やかに上昇中", \
                         memo=""),
+
                     **create_child_object("SILSO", "hogeURL", False, \
-                      purpose= "Relative sunspot number and Monthly Relative sunspot number", file_type="", exampleVal="109, 一定", \
+                      purpose= "Relative sunspot number & Monthly Relative sunspot number", file_type="", exampleVal="109, 一定", \
                       memo="")
-                    },
+        },
         
     },
     "solar_wind": {
