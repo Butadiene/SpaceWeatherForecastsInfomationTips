@@ -49,7 +49,7 @@
             "SDO Images": {
                 "URL": "https://sdo.gsfc.nasa.gov/data/",
                 "External access": true,
-                "Memo": "SDO衛星による取得画像。波長ごとに見れるので、そこから太陽表面の概観がわかる。AIA/HMI Browse Dataのところとか覗くとわかりやすいかも。                            <br> 主なもの：AIA 094 (green)-エネルギーがかなり高い。CMEとかよく見える。 <br> AIA 211 (purple)-greenよりエネルギーが低い。コロナホールが見えやすい。 <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャー。                             <br> AIA 1600 (yellow/green)-低めのエネルギー。彩層底部（光球上部）の光が見える。フレアの発生を示唆する。遷移層の光も混じるので注意。 <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。                              <br> HMI Magnetogram 可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向 <br> より詳しくは https://aia.lmsal.com/public/instrument.htm",
+                "Memo": "SDO衛星による取得画像。波長ごとに見れるので、そこから太陽表面の概観がわかる。AIA/HMI Browse Dataのところとか覗くとわかりやすいかも。                            <br> 主なもの： <br> AIA 094 (green)-エネルギーがかなり高い。CMEの発生とかよく見える。 <br> AIA 211 (purple)-greenよりエネルギーが低い。コロナホールが見えやすい。 <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャー。                             <br> AIA 1600 (yellow/green)-低めのエネルギー。彩層底部（光球上部）の光が見える。フレアの発生を示唆する。遷移層の光も混じるので注意。 <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。                              <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向 <br> より詳しくは https://aia.lmsal.com/public/instrument.htm",
                 "File_type": "images",
                 "Purpose": "Confirmation of solar surface activity, coronal holes, CMEs and others",
                 "ExampleValue": "AIA 094's image is..., AIA 1700 image is..."
@@ -61,7 +61,7 @@
                 "File_type": "images",
                 "Purpose": "Check sunspot numbers with sunspot images"
             },
-            "Stereo-360 images": {
+            "STEREO-360 images": {
                 "URL": "https://stereo-ssc.nascom.nasa.gov/beacon/beacon_secchi.shtml",
                 "External access": true,
                 "Memo": "STEREO衛星による太陽の360度画像。(実際は結構欠損してるけど)。地球から見えないところが気になる時に。ページの少し下のSDOの画像の中に混じっているSTEREO Aheadも参考に使えるかも。",
@@ -79,8 +79,20 @@
             }
         }
     },
+    "Proton flux": {
+        "Proton flux": {
+            "GOES Proton Flux": {
+                "URL": "https://www.swpc.noaa.gov/products/goes-proton-flux",
+                "External access": true,
+                "Memo": "Proton Fluxの変動を示す。Proton Fluxの変動は、Flux値をそのまま使って予報が出る事が多く、現況報告の意味合いが強い。                                                 <br> NOAAスケールとは、様々なイベントに対するNOAAが策定した指標。Proton fluxに関しては、桁数と一致(例えば、10^2を超えたらScale level S2)。詳しくは https://www.swpc.noaa.gov/noaa-scales-explanation ",
+                "File_type": "graphs",
+                "Purpose": "Present condition of solar energetic particles",
+                "ExampleValue": "10^0 前後、NOAAスケールS0"
+            }
+        }
+    },
     "solar_wind": {
-        "solar_wind_data": {
+        "CME ": {
             "Solar Wind Monitor": {
                 "URL": "http://example.com/solarwind",
                 "External access": true
