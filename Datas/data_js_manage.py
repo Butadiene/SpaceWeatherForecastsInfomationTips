@@ -42,18 +42,23 @@ space_weather_info = {
                             memo="太陽黒点数と良い相関のある、波長10.7cm(周波数2.8GHz)の電波の強度。Daily flux valuesのHTML見れば良いけど、\
                             めちゃ見づらいので注意。値はObserved fluxを使用すると良さそう。極大期では月平均でおおよそ200、極小期では70程度（日単位では変動が大きく、300を超えることも。）"),
 
-        "Sun spot": { **create_child_object("SOLAR REGION SUMMARY", "https://www.swpc.noaa.gov/products/solar-region-summary", False, \
+        "Sun spot": { **create_child_object("SOLAR REGION SUMMARY", "https://www.swpc.noaa.gov/products/solar-region-summary", True, \
                         purpose="Sunspot area (SWPC) & Charactistics of active regions", file_type="text", exampleVal="Sunspot area : 660, 穏やかに上昇中  Charactistics of active regions : 領域、位置、面積...", \
                         memo="現在の太陽黒点の一覧とその性質が載っている。黒点の総面積を出したいときはすべて足す。その黒点がいつから発生したかを知りたいときは、過去のデータを参照すると良い。\
                             なお、過去のデータはftpでテキストファイルでしか配布されていない。Dataのところにあるリンクを使うなどすると良い。例：ftp://ftp.swpc.noaa.gov/pub/forecasts/にアクセスし、SRSフォルダの中のテキストファイルを確認"),
 
-                    **create_child_object("SILSO : Daily estimated sunspot number", "https://www.sidc.be/SILSO/home", False, \
+                    **create_child_object("SILSO : Daily estimated sunspot number", "https://www.sidc.be/SILSO/home", True, \
                       purpose= "Relative sunspot number", file_type="text", exampleVal="109, 一定", \
                       memo="太陽黒点相対数。太陽光球面に出現する黒点および黒点群の総数を数値化したもの。サイトのホームの右端にあるね。"),
 
-                    **create_child_object("SILSO : Monthly relative sunspot number", "NoURL", False, \
+                    **create_child_object("SILSO : Monthly relative sunspot number", "https://www.sidc.be/products/ri/", True, \
                       purpose= "Monthly relative sunspot number", file_type="text", exampleVal="Result: Jul-23 159.1   Forecast: Aug-23 154, Sep-23 160", \
                       memo="太陽黒点相対数の月平均。予測値も見れる。月平均の値なので、一月に一回しか更新されない。")
+        },
+        "Solar image": { **create_child_object("SDO Datas", "https://sdo.gsfc.nasa.gov/data/", True, \
+                        purpose="Confirmation of solar surface activity, coronal holes, CMEs and others", file_type="images", exampleVal="AIA 094's image is..., AIA 1700 image is...",\
+                        memo = "SDO衛星による取得画像。波長ごとに見れるので、そこから太陽表面の概観がわかる。AIA/HMI Browse Dataのところとか覗くとわかりやすいかも。\
+                            <br> 主なもの：")
         },
         
     },
