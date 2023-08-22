@@ -4,7 +4,7 @@
             "GOES X-ray Flux": {
                 "URL": "https://www.swpc.noaa.gov/products/goes-x-ray-flux/",
                 "External access": true,
-                "Memo": "GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。",
+                "Memo": "GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。 <br> 赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。",
                 "File_type": "graphs",
                 "Purpose": "GOES background X-ray flux",
                 "ExampleValue": "B7, 穏やかに上昇中"
@@ -14,7 +14,7 @@
             "DRAO": {
                 "URL": "https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php",
                 "External access": true,
-                "Memo": "太陽黒点数と良い相関のある、波長10.7cm(周波数2.8GHz)の電波の強度。Daily flux valuesのHTML見れば良いけど、                            めちゃ見づらいので注意。値はObserved fluxを使用すると良さそう。極大期では月平均でおおよそ200、極小期では70程度（日単位では変動が大きく、300を超えることも。）",
+                "Memo": "太陽黒点数と良い相関のある、波長10.7cm(周波数2.8GHz)の電波の強度。Daily flux valuesのHTML見れば良いけど、                            めちゃ見づらいので注意。値はObserved fluxを使用すると良さそう。 <br> 極大期では月平均でおおよそ200、極小期では70程度（日単位では変動が大きく、300を超えることも。）",
                 "File_type": "html",
                 "Purpose": "F10.7"
             }
@@ -23,7 +23,7 @@
             "SOLAR REGION SUMMARY": {
                 "URL": "https://www.swpc.noaa.gov/products/solar-region-summary",
                 "External access": true,
-                "Memo": "現在の太陽黒点の一覧とその性質が載っている。黒点の総面積を出したいときはすべて足す。その黒点がいつから発生したかを知りたいときは、過去のデータを参照すると良い。                            なお、過去のデータはftpでテキストファイルでしか配布されていない。Dataのところにあるリンクを使うなどすると良い。例：ftp://ftp.swpc.noaa.gov/pub/forecasts/にアクセスし、SRSフォルダの中のテキストファイルを確認",
+                "Memo": "現在の太陽黒点の一覧とその性質が載っている。黒点の総面積を出したいときはすべて足す。その黒点がいつから発生したかを知りたいときは、過去のデータを参照すると良い。                            <br> なお、過去のデータはftpでテキストファイルでしか配布されていない。Dataのところにあるリンクを使うなどすると良い。例：ftp://ftp.swpc.noaa.gov/pub/forecasts/にアクセスし、SRSフォルダの中のテキストファイルを確認",
                 "File_type": "text",
                 "Purpose": "Sunspot area (SWPC) & Charactistics of active regions",
                 "ExampleValue": "Sunspot area : 660, 穏やかに上昇中  Charactistics of active regions : 領域、位置、面積..."
@@ -46,13 +46,36 @@
             }
         },
         "Solar image": {
-            "SDO Datas": {
+            "SDO Images": {
                 "URL": "https://sdo.gsfc.nasa.gov/data/",
                 "External access": true,
-                "Memo": "SDO衛星による取得画像。波長ごとに見れるので、そこから太陽表面の概観がわかる。AIA/HMI Browse Dataのところとか覗くとわかりやすいかも。                            <br> 主なもの：",
+                "Memo": "SDO衛星による取得画像。波長ごとに見れるので、そこから太陽表面の概観がわかる。AIA/HMI Browse Dataのところとか覗くとわかりやすいかも。                            <br> 主なもの：AIA 094 (green)-エネルギーがかなり高い。CMEとかよく見える。 <br> AIA 211 (purple)-greenよりエネルギーが低い。コロナホールが見えやすい。 <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャー。                             <br> AIA 1600 (yellow/green)-低めのエネルギー。彩層底部（光球上部）の光が見える。フレアの発生を示唆する。遷移層の光も混じるので注意。 <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。                              <br> HMI Magnetogram 可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向 <br> より詳しくは https://aia.lmsal.com/public/instrument.htm",
                 "File_type": "images",
                 "Purpose": "Confirmation of solar surface activity, coronal holes, CMEs and others",
                 "ExampleValue": "AIA 094's image is..., AIA 1700 image is..."
+            },
+            "SOHO Sunspots": {
+                "URL": "https://soho.nascom.nasa.gov/sunspots/",
+                "External access": true,
+                "Memo": "SOHOの白黒光球画像。黒点が番号付きで表示されるので良い。",
+                "File_type": "images",
+                "Purpose": "Check sunspot numbers with sunspot images"
+            },
+            "Stereo-360 images": {
+                "URL": "https://stereo-ssc.nascom.nasa.gov/beacon/beacon_secchi.shtml",
+                "External access": true,
+                "Memo": "STEREO衛星による太陽の360度画像。(実際は結構欠損してるけど)。地球から見えないところが気になる時に。ページの少し下のSDOの画像の中に混じっているSTEREO Aheadも参考に使えるかも。",
+                "File_type": "images",
+                "Purpose": "360-images for Sun"
+            }
+        },
+        "Flare forecast by Deep Learning": {
+            "Deep Flare Net": {
+                "URL": "https://defn.nict.go.jp/index131_eng.html",
+                "External access": true,
+                "Memo": "深層学習を使って太陽フレアの発生率を予報しているサイト。参考に。",
+                "File_type": "text",
+                "Purpose": "Forecast solar flare"
             }
         }
     },
