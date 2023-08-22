@@ -91,10 +91,12 @@ space_weather_info = {
                          <br> サイトにアクセスした後、C2かC3を選び日程を設定してGenerate。C2とC3の違いは視野のみ。"),
         "L1 Solar wind": { **create_child_object("SWPC REAL TIME SOLAR WIND","https://www.swpc.noaa.gov/products/real-time-solar-wind", True, \
                             purpose="Confirmation of solar wind coming near the earth",file_type="graphs",exampleVal="Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed, Density, IMF, Sector(Toward or away)",\
-                                memo="SWPCが出しているACEとDSCOVRのデータから求めたL1地点での太陽風の時系列グラフ。7daysにして見るのがおすすめ。"),
+                                memo="SWPCが出しているACEとDSCOVRのデータから求めたL1地点での太陽風の時系列グラフ。基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。 <br> 7daysにして見るのがおすすめ。"),
                             **create_child_object("ACE REAL TIME SOLAR WIND", "https://www.swpc.noaa.gov/products/ace-real-time-solar-wind", True, \
-                                purpose="",file_type="graphs",\
-                                memo="ACEのリアルタイムの太陽風観測結果。右側にあるリストから、色々な観測機器のグラフが選べる。")
+                                purpose="Solar wind's high energy plasma",file_type="graphs",\
+                                memo="ACEのリアルタイムの太陽風観測結果。右側にあるリストから、色々な観測機器のグラフが選べる。\
+                                    EPAM(2桁keVから1桁MeVぐらいのプラズマ観測)とSIS(2桁MeV)のデータをよく見る。\
+                                       <br> (DSCOVRのほうが新しいが、高エネルギープラズマ観測機器を積んでいないので、それに関してはACEを見る必要がある)")
 
         },
     },
