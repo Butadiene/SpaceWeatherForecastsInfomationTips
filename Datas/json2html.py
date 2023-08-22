@@ -13,7 +13,7 @@ def json_to_html(data, depth=0):
         html += f'<div style="margin-left:20px; font-size: {font_size-depth*1.5}">'
         for key, value in data.items():
             if isinstance(value, (dict, list)):
-                if depth > 1:  # Only make the topmost object collapsible
+                if depth > 0:  # Only make the topmost object collapsible
                     html += f'{spacing}<div class="collapsible"  style="color: green;" onclick="toggleVisibility(this)"><strong>{key}</strong></div>'
                     html += f'<div class="content" style="display: none;">{json_to_html(value, depth+1)}</div>'
                 else:

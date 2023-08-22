@@ -1,6 +1,6 @@
 {
     "Solar_flares": {
-        "GOES": {
+        "X-ray flux": {
             "GOES X-ray Flux": {
                 "URL": "https://www.swpc.noaa.gov/products/goes-x-ray-flux/",
                 "External access": true,
@@ -17,23 +17,19 @@
                 "Purpose": "GOES background X-ray flux"
             }
         },
-        "sunspot_data": {
-            "Sunspot Observatory": {
-                "URL": "http://example.com/sunspot",
+        "Solar radio flux": {
+            "DRAO": {
+                "URL": "https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php",
                 "External access": true,
-                "Memo": "Sunspot data source"
+                "Memo": "太陽黒点数と良い相関のある、波長10.7cm(周波数2.8GHz)の電波の強度。Daily flux valuesのHTML見れば良いけど、                            めちゃ見づらいので注意。値はObserved fluxを使用しているよう。極大期では月平均でおおよそ200、極小期では70程度（日単位では変動が大きく、300を超えることも。）",
+                "File_type": "html",
+                "Purpose": "F10.7"
             }
         },
-        "flare_data": {
-            "Solar Flare Monitor": {
-                "URL": "http://example.com/flare",
-                "External access": true
-            }
-        },
-        "solar_image": {
-            "Solar Image Gallery": {
-                "URL": "http://example.com/solarimage",
-                "External access": true
+        "Sun spot area": {
+            "SWPC": {
+                "URL": "hogeURL",
+                "External access": false
             }
         }
     },
