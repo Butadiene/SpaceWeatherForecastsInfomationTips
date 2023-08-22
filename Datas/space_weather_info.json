@@ -1,0 +1,78 @@
+{
+    "solar_flares": {
+        "sunspot_data": {
+            "Sunspot Observatory": {
+                "URL": "http://example.com/sunspot",
+                "External access": true,
+                "Memo": "Sunspot data source"
+            }
+        },
+        "flare_data": {
+            "Solar Flare Monitor": {
+                "URL": "http://example.com/flare",
+                "External access": true
+            }
+        },
+        "solar_image": {
+            "Solar Image Gallery": {
+                "URL": "http://example.com/solarimage",
+                "External access": true
+            }
+        }
+    },
+    "solar_wind": {
+        "solar_wind_data": {
+            "Solar Wind Monitor": {
+                "URL": "http://example.com/solarwind",
+                "External access": true
+            }
+        },
+        "simulation": {
+            "Solar Wind Simulation": {
+                "URL": "http://example.com/solarwindsimulation",
+                "External access": true,
+                "Memo": "Simulation tool for solar wind"
+            }
+        },
+        "image": {
+            "Solar Wind Image Gallery": {
+                "URL": "http://example.com/solarwindimage",
+                "External access": true
+            }
+        },
+        "CME": {
+            "CME Tracker": {
+                "URL": "http://example.com/cme",
+                "External access": true
+            }
+        }
+    },
+    "geomagnetic_disturbances": {
+        "geomagnetic_data": {
+            "Geomagnetic Data Center": {
+                "URL": "http://example.com/geomagneticdata",
+                "External access": true
+            }
+        },
+        "AE/Dst_index": {
+            "AE/Dst Index Tracker": {
+                "URL": "http://example.com/aedst",
+                "External access": true
+            }
+        },
+        "simulation": {
+            "Geomagnetic Disturbance Simulation": {
+                "URL": "http://example.com/geomagneticsimulation",
+                "External access": true
+            }
+        },
+        "aurora": {
+            "Aurora Watch": {
+                "URL": "http://example.com/aurora",
+                "External access": true,
+                "Memo": "Aurora observation platform"
+            }
+        }
+    },
+    "ionosphere": {}
+}
