@@ -9,7 +9,10 @@ def create_child_object(name, url, external_access, purpose=None, exampleVal=Non
     - url (str): URL of the linked site.
     - external_access (bool): External access status.
     - memo (str, optional): Additional memo for the linked site. Default is None.
-    
+    - file_type (str, optional): text OR images OR graphs OR html. File type for the linked site's data. Default is None.
+    - purpose (str, optional): How to use the linked site data. Default is None.
+    - exampleVal (str, optional): How can the data be expressed in a way that makes it easier to communicate to others? Default is None.
+ 
     Returns:
     - dict: A dictionary representing the child object.
     """
@@ -42,6 +45,7 @@ space_weather_info = {
                                          <br> また、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから過去のデータをダウンロードできる。\
                                          <br> 例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のテキストファイルを確認。"),
     },
+
     "Solar flares": {
         "X-ray flux": create_child_object("GOES X-ray Flux", "https://www.swpc.noaa.gov/products/goes-x-ray-flux/", True, \
                     purpose="GOES background X-ray flux",file_type="graphs", exampleVal="B7, 穏やかに上昇中", \
@@ -69,11 +73,12 @@ space_weather_info = {
                       purpose= "Monthly relative sunspot number", file_type="text", exampleVal="Result: Jul-23 159.1   Forecast: Aug-23 154, Sep-23 160", \
                       memo="太陽黒点相対数の月平均。予測値も見れる。月平均の値なので、一月に一回しか更新されない。")
         },
+
         "Solar image": { **create_child_object("SDO Images", "https://sdo.gsfc.nasa.gov/data/", True, \
                         purpose="Confirmation of solar surface activity, coronal holes, CMEs and others", file_type="images", exampleVal="AIA 094's image is..., AIA 1700 image is...",\
                         memo = "SDO衛星による取得画像。波長ごとに見れるため、太陽表面の概観がエネルギーごとにわかる。 <br> 現在の太陽表面だけにとどまらず、一周期前を見るのも大事(特に極小期付近)。一周期前と現在が同じような表面だったら、一周期前二発生した事象を予報に使える。\
                              <br> AIA/HMI Browse Dataから画像や動画を探すとわかりやすいかもしれない。\
-                            <br> 主なもの： <br> AIA 094 (green)-エネルギーがかなり高い。CMEの発生などがよく見える。 <br> AIA 211 (purple)-greenよりはエネルギーが低い。コロナホールが見えやすい。 <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャーらしい。\
+                             <br> 主なもの： <br> AIA 094 (green)-エネルギーがかなり高い。CMEの発生などがよく見える。 <br> AIA 211 (purple)-greenよりはエネルギーが低い。コロナホールが見えやすい。 <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャーらしい。\
                              <br> AIA 1600 (yellow/green)-エネルギーが低め。彩層底部(光球上部)の光が見える。これはフレアの発生を示唆する。また、AIA1600には遷移層の光も混じっているので注意。 <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。 \
                              <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向。 <br> 波長ごとの画像のより詳しい説明は https://aia.lmsal.com/public/instrument.htm"),
 
@@ -86,8 +91,8 @@ space_weather_info = {
         "Flare forecast by Deep Learning": create_child_object("Deep Flare Net", "https://defn.nict.go.jp/index131_eng.html", True, \
                                             purpose= "Forecast solar flare", file_type="text", \
                                             memo="深層学習を使って太陽フレアの発生率を予報しているサイト。フレアの「予報」の際は参考になる。")
-        
     },
+    
     "Proton flux": {
         "Proton flux": create_child_object("GOES Proton Flux", "https://www.swpc.noaa.gov/products/goes-proton-flux", True, \
                         purpose= "Present condition of solar energetic particles", file_type='graphs',exampleVal="10^0 particles/cm2/sec/sr前後、NOAAスケール S0",\
@@ -95,28 +100,41 @@ space_weather_info = {
                          <br> NOAAスケールとは、様々なイベントに対するNOAAが策定した指標。Proton fluxに関しては、桁数と一致(例えば、10^2を超えたらScale level S2)。<br> 詳しくはhttps://www.swpc.noaa.gov/noaa-scales-explanation のSolar Radiation Stormsを参照"),
 
     },
+
     "Solar wind": {
         "CME in space": create_child_object("SOHO LASCO C2 & C3", "https://soho.nascom.nasa.gov/data/Theater/", True, \
                         purpose="Confirmation of CME flying", file_type="images",\
                         memo="SOHOのコロナグラフを用いた観測機器LASCOによる動画。これにより、CMEがどのように宇宙空間に広がっていったかがわかる。 <br> SDOでは太陽表面の事象しか見れないので、これを見るのは重要。\
                          <br> サイトにアクセスした後、C2かC3を選び日程を設定してGenerate。C2とC3の違いは視野のみ。"),
-        "L1 Solar wind": { **create_child_object("SWPC REAL TIME SOLAR WIND","https://www.swpc.noaa.gov/products/real-time-solar-wind", True, \
-                            purpose="Confirmation of solar wind coming near the earth",file_type="graphs",exampleVal="Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed, Density, IMF, Sector(Toward or away)",\
-                                memo="SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。 <br> 7daysにして見るのがおすすめ。"),
-                            **create_child_object("ACE REAL TIME SOLAR WIND", "https://www.swpc.noaa.gov/products/ace-real-time-solar-wind", True, \
-                                purpose="Solar wind's high energy plasma",file_type="graphs",\
-                                memo="ACEのリアルタイムの太陽風観測結果。右側にあるリストから、色々な観測機器のグラフが選べる。\
-                                     <br> EPAM(2桁keVから1桁MeVぐらいのプラズマ観測機器)とSIS(2桁MeVのプラズマの観測機器)のデータが特に大事。\
-                                       <br> (DSCOVRのほうがACEより新しいが、DSCOVRは高エネルギープラズマの観測機器が上手く行っていない。そのため、高エネルギープラズマに関してはACEのデータを見る必要がある。)")
 
+        "L1 Solar wind": { **create_child_object("SWPC REAL TIME SOLAR WIND","https://www.swpc.noaa.gov/products/real-time-solar-wind", True, \
+                            purpose="Confirmation of solar wind coming near the earth",file_type="graphs",exampleVal="Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed(620→520), Density(1前後), IMF(5nT前後、時折-6), Sector(概ねToward)",\
+                            memo="SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。 \
+                             <br> 7daysにして見るのがおすすめ。また、一太陽周期前(27日前)のデータを見るのも良い"),
+
+                            **create_child_object("ACE REAL TIME SOLAR WIND", "https://www.swpc.noaa.gov/products/ace-real-time-solar-wind", True, \
+                            purpose="Solar wind's high energy plasma",file_type="graphs",\
+                            memo="ACEのリアルタイムの太陽風観測結果。右側にあるリストから、色々な観測機器のグラフが選べる。\
+                             <br> EPAM(2桁keVから1桁MeVぐらいのプラズマ観測機器)とSIS(2桁MeVのプラズマの観測機器)のデータが特に大事。\
+                             <br> (DSCOVRのほうがACEより新しいが、DSCOVRは高エネルギープラズマの観測機器が上手く行っていない。そのため、高エネルギープラズマに関してはACEのデータを見る必要がある。)")
         },
+
     },
-    "geomagnetic_disturbances": {
-        "geomagnetic_data": create_child_object("Geomagnetic Data Center", "http://example.com/geomagneticdata", True),
-        "AE/Dst_index": create_child_object("AE/Dst Index Tracker", "http://example.com/aedst", True),
-        "simulation": create_child_object("Geomagnetic Disturbance Simulation", "http://example.com/geomagneticsimulation", True),
-        "aurora": create_child_object("Aurora Watch", "http://example.com/aurora", True, memo="Aurora observation platform"),
-        # Add other objects for geomagnetic disturbances here using create_child_object()
+
+    "Geomagnetic disturbances": {
+        "Kp index": create_child_object("SWPC PLANETARY K-INDEX", "https://www.swpc.noaa.gov/products/planetary-k-index", True,\
+                                        purpose="Magnitude of geomagnetic disturbances across the globe",file_type="graphs",exampleVal="最大Kp指数:2.67(一日のうち最も大きいKp)  日合計値:13.66(3時間ごとに区切って出されるKpを、その日のもの全て(8つ)足す)",\
+                                        memo="地球全体での地磁気擾乱の大きさを示す、Kp指数が見れる。(Kp index = Planetary K-index)"),
+        "K index": create_child_object("KAKIOKA K-INDEX", "https://origin-swc.nict.go.jp/trend/geomag.html",True,\
+                                       purpose="Magnitude of geomagnetic disturbance at Kakioka",file_type="graphs",exampleVal="最大K指数:3(一日のうち最も大きいKp)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)",\
+                                        memo="ローカルでの地磁気擾乱の大きさを示すK指数のうち、柿岡のものが見れる。日本での地磁気擾乱を考える際に重要。H componentは水平分力、D componentは偏角を表す。 <br> 日合計値や各componentの詳細は https://www.kakioka-jma.go.jp/knowledge/glossary.html "),
+        "Dst index": create_child_object("DST-INDEX", "https://wdc.kugi.kyoto-u.ac.jp/dstdir/index-j.html",True,\
+                                       purpose="DST-index",file_type="graphs",\
+                                        memo="DST指数。予報ではそんなに使わないのかも?"),
+        "AE index": create_child_object("AE-INDEX", "https://wdc.kugi.kyoto-u.ac.jp/aedir/index-j.html",True,\
+                                       purpose="AE-index",file_type="graphs",exampleVal="None",\
+                                        memo="AE指数。予報ではそんなに使わないのかも?"),
+
     },
     "ionosphere": {
         # Add similar structure for ionosphere here using create_child_object()

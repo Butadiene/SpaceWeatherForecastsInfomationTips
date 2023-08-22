@@ -67,7 +67,7 @@
             "SDO Images": {
                 "URL": "https://sdo.gsfc.nasa.gov/data/",
                 "External access": true,
-                "Memo": "SDO衛星による取得画像。波長ごとに見れるため、太陽表面の概観がエネルギーごとにわかる。 <br> 現在の太陽表面だけにとどまらず、一周期前を見るのも大事(特に極小期付近)。一周期前と現在が同じような表面だったら、一周期前二発生した事象を予報に使える。                             <br> AIA/HMI Browse Dataから画像や動画を探すとわかりやすいかもしれない。                            <br> 主なもの： <br> AIA 094 (green)-エネルギーがかなり高い。CMEの発生などがよく見える。 <br> AIA 211 (purple)-greenよりはエネルギーが低い。コロナホールが見えやすい。 <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャーらしい。                             <br> AIA 1600 (yellow/green)-エネルギーが低め。彩層底部(光球上部)の光が見える。これはフレアの発生を示唆する。また、AIA1600には遷移層の光も混じっているので注意。 <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。                              <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向。 <br> 波長ごとの画像のより詳しい説明は https://aia.lmsal.com/public/instrument.htm",
+                "Memo": "SDO衛星による取得画像。波長ごとに見れるため、太陽表面の概観がエネルギーごとにわかる。 <br> 現在の太陽表面だけにとどまらず、一周期前を見るのも大事(特に極小期付近)。一周期前と現在が同じような表面だったら、一周期前二発生した事象を予報に使える。                             <br> AIA/HMI Browse Dataから画像や動画を探すとわかりやすいかもしれない。                             <br> 主なもの： <br> AIA 094 (green)-エネルギーがかなり高い。CMEの発生などがよく見える。 <br> AIA 211 (purple)-greenよりはエネルギーが低い。コロナホールが見えやすい。 <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャーらしい。                             <br> AIA 1600 (yellow/green)-エネルギーが低め。彩層底部(光球上部)の光が見える。これはフレアの発生を示唆する。また、AIA1600には遷移層の光も混じっているので注意。 <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。                              <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向。 <br> 波長ごとの画像のより詳しい説明は https://aia.lmsal.com/public/instrument.htm",
                 "File_type": "images",
                 "Purpose": "Confirmation of solar surface activity, coronal holes, CMEs and others",
                 "ExampleValue": "AIA 094's image is..., AIA 1700 image is..."
@@ -116,44 +116,58 @@
             "SWPC REAL TIME SOLAR WIND": {
                 "URL": "https://www.swpc.noaa.gov/products/real-time-solar-wind",
                 "External access": true,
-                "Memo": "SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。 <br> 7daysにして見るのがおすすめ。",
+                "Memo": "SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。                              <br> 7daysにして見るのがおすすめ。また、一太陽周期前(27日前)のデータを見るのも良い",
                 "File_type": "graphs",
                 "Purpose": "Confirmation of solar wind coming near the earth",
-                "ExampleValue": "Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed, Density, IMF, Sector(Toward or away)"
+                "ExampleValue": "Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed(620→520), Density(1前後), IMF(5nT前後、時折-6), Sector(概ねToward)"
             },
             "ACE REAL TIME SOLAR WIND": {
                 "URL": "https://www.swpc.noaa.gov/products/ace-real-time-solar-wind",
                 "External access": true,
-                "Memo": "ACEのリアルタイムの太陽風観測結果。右側にあるリストから、色々な観測機器のグラフが選べる。                                     <br> EPAM(2桁keVから1桁MeVぐらいのプラズマ観測機器)とSIS(2桁MeVのプラズマの観測機器)のデータが特に大事。                                       <br> (DSCOVRのほうがACEより新しいが、DSCOVRは高エネルギープラズマの観測機器が上手く行っていない。そのため、高エネルギープラズマに関してはACEのデータを見る必要がある。)",
+                "Memo": "ACEのリアルタイムの太陽風観測結果。右側にあるリストから、色々な観測機器のグラフが選べる。                             <br> EPAM(2桁keVから1桁MeVぐらいのプラズマ観測機器)とSIS(2桁MeVのプラズマの観測機器)のデータが特に大事。                             <br> (DSCOVRのほうがACEより新しいが、DSCOVRは高エネルギープラズマの観測機器が上手く行っていない。そのため、高エネルギープラズマに関してはACEのデータを見る必要がある。)",
                 "File_type": "graphs",
                 "Purpose": "Solar wind's high energy plasma"
             }
         }
     },
-    "geomagnetic_disturbances": {
-        "geomagnetic_data": {
-            "Geomagnetic Data Center": {
-                "URL": "http://example.com/geomagneticdata",
-                "External access": true
-            }
-        },
-        "AE/Dst_index": {
-            "AE/Dst Index Tracker": {
-                "URL": "http://example.com/aedst",
-                "External access": true
-            }
-        },
-        "simulation": {
-            "Geomagnetic Disturbance Simulation": {
-                "URL": "http://example.com/geomagneticsimulation",
-                "External access": true
-            }
-        },
-        "aurora": {
-            "Aurora Watch": {
-                "URL": "http://example.com/aurora",
+    "Geomagnetic disturbances": {
+        "Kp index": {
+            "SWPC PLANETARY K-INDEX": {
+                "URL": "https://www.swpc.noaa.gov/products/planetary-k-index",
                 "External access": true,
-                "Memo": "Aurora observation platform"
+                "Memo": "地球全体での地磁気擾乱の大きさを示す、Kp指数が見れる。(Kp index = Planetary K-index)",
+                "File_type": "graphs",
+                "Purpose": "Magnitude of geomagnetic disturbances across the globe",
+                "ExampleValue": "最大Kp指数:2.67(一日のうち最も大きいKp)  日合計値:13.66(3時間ごとに区切って出されるKpを、その日のもの全て(8つ)足す)"
+            }
+        },
+        "K index": {
+            "KAKIOKA K-INDEX": {
+                "URL": "https://origin-swc.nict.go.jp/trend/geomag.html",
+                "External access": true,
+                "Memo": "ローカルでの地磁気擾乱の大きさを示すK指数のうち、柿岡のものが見れる。日本での地磁気擾乱を考える際に重要。H componentは水平分力、D componentは偏角を表す。 <br> 日合計値や各componentの詳細は https://www.kakioka-jma.go.jp/knowledge/glossary.html ",
+                "File_type": "graphs",
+                "Purpose": "Magnitude of geomagnetic disturbance at Kakioka",
+                "ExampleValue": "最大K指数:3(一日のうち最も大きいKp)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)"
+            }
+        },
+        "Dst index": {
+            "DST-INDEX": {
+                "URL": "https://wdc.kugi.kyoto-u.ac.jp/dstdir/index-j.html",
+                "External access": true,
+                "Memo": "DST指数。予報ではそんなに使わないのかも?",
+                "File_type": "graphs",
+                "Purpose": "DST-index"
+            }
+        },
+        "AE index": {
+            "AE-INDEX": {
+                "URL": "https://wdc.kugi.kyoto-u.ac.jp/aedir/index-j.html",
+                "External access": true,
+                "Memo": "AE指数。予報ではそんなに使わないのかも?",
+                "File_type": "graphs",
+                "Purpose": "AE-index",
+                "ExampleValue": "None"
             }
         }
     },
