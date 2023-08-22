@@ -5,16 +5,16 @@ def json_to_html(data, depth=0):
     spacing = '  ' * depth
 
     # Determine font size based on depth
-    font_size = "normal"
+    font_size = 20
 
     # If the data is a dictionary, convert each key-value pair to HTML
     if isinstance(data, dict):
 
-        html += f'<div style="margin-left:20px; font-size: {font_size}">'
+        html += f'<div style="margin-left:20px; font-size: {font_size-depth*1.5}">'
         for key, value in data.items():
             if isinstance(value, (dict, list)):
                 if depth > 1:  # Only make the topmost object collapsible
-                    html += f'{spacing}<div class="collapsible" onclick="toggleVisibility(this)"><strong>{key}</strong></div>'
+                    html += f'{spacing}<div class="collapsible"  style="color: green;" onclick="toggleVisibility(this)"><strong>{key}</strong></div>'
                     html += f'<div class="content" style="display: none;">{json_to_html(value, depth+1)}</div>'
                 else:
                     html += f'{spacing}<strong>{key}:</strong> {json_to_html(value, depth+1)}'

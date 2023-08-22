@@ -1,5 +1,5 @@
 {
-    "solar_flares": {
+    "Solar_flares": {
         "GOES": {
             "GOES X-ray Flux": {
                 "URL": "https://www.swpc.noaa.gov/products/goes-x-ray-flux/",
