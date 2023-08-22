@@ -1,5 +1,5 @@
 {
-    "Solar_flares": {
+    "Solar flares": {
         "X-ray flux": {
             "GOES X-ray Flux": {
                 "URL": "https://www.swpc.noaa.gov/products/goes-x-ray-flux/",
@@ -14,7 +14,7 @@
             "DRAO": {
                 "URL": "https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php",
                 "External access": true,
-                "Memo": "太陽黒点数と良い相関のある、波長10.7cm(周波数2.8GHz)の電波の強度。Daily flux valuesのHTML見れば良いけど、                            めちゃ見づらいので注意。値はObserved fluxを使用すると良さそう。 <br> 極大期では月平均でおおよそ200、極小期では70程度（日単位では変動が大きく、300を超えることも。）",
+                "Memo": "太陽黒点数と良い相関のある、波長10.7cm(周波数2.8GHz)の電波の強度。Daily flux valuesのHTML見れば良いけど、                            めちゃ見づらいので注意。値はObserved fluxを使用すると良さそう。 <br> 極大期では月平均でおおよそ200、極小期では70程度(日単位では変動が大きく、300を超えることも。)",
                 "File_type": "html",
                 "Purpose": "F10.7"
             }
@@ -26,7 +26,14 @@
                 "Memo": "現在の太陽黒点の一覧とその性質が載っている。黒点の総面積を出したいときはすべて足す。その黒点がいつから発生したかを知りたいときは、過去のデータを参照すると良い。                            <br> なお、過去のデータはftpでテキストファイルでしか配布されていない。Dataのところにあるリンクを使うなどすると良い。例：ftp://ftp.swpc.noaa.gov/pub/forecasts/にアクセスし、SRSフォルダの中のテキストファイルを確認",
                 "File_type": "text",
                 "Purpose": "Sunspot area (SWPC) & Charactistics of active regions",
-                "ExampleValue": "Sunspot area : 660, 穏やかに上昇中  Charactistics of active regions : 領域、位置、面積..."
+                "ExampleValue": "Sunspot area : 660, 穏やかに上昇中 <br> Charactistics of active regions : 領域、位置、面積..."
+            },
+            "SOHO Sunspots": {
+                "URL": "https://soho.nascom.nasa.gov/sunspots/",
+                "External access": true,
+                "Memo": "SOHOの白黒光球画像。黒点が番号付きで表示されるので良い。",
+                "File_type": "images",
+                "Purpose": "Check sunspot numbers with sunspot images"
             },
             "SILSO : Daily estimated sunspot number": {
                 "URL": "https://www.sidc.be/SILSO/home",
@@ -49,24 +56,17 @@
             "SDO Images": {
                 "URL": "https://sdo.gsfc.nasa.gov/data/",
                 "External access": true,
-                "Memo": "SDO衛星による取得画像。波長ごとに見れるので、そこから太陽表面の概観がわかる。AIA/HMI Browse Dataのところとか覗くとわかりやすいかも。                            <br> 主なもの： <br> AIA 094 (green)-エネルギーがかなり高い。CMEの発生とかよく見える。 <br> AIA 211 (purple)-greenよりエネルギーが低い。コロナホールが見えやすい。 <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャー。                             <br> AIA 1600 (yellow/green)-低めのエネルギー。彩層底部（光球上部）の光が見える。フレアの発生を示唆する。遷移層の光も混じるので注意。 <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。                              <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向 <br> より詳しくは https://aia.lmsal.com/public/instrument.htm",
+                "Memo": "SDO衛星による取得画像。波長ごとに見れるので、そこから太陽表面の概観がわかる。現在の太陽表面だけにとどまらず、一周期前を見るのも大事。一周期前と現在が同じような表面だったら、一周期前二発生した事象を予報に使える。 <br> AIA/HMI Browse Dataのところとか覗くとわかりやすいかも。                            <br> 主なもの： <br> AIA 094 (green)-エネルギーがかなり高い。CMEの発生とかよく見える。 <br> AIA 211 (purple)-greenよりエネルギーが低い。コロナホールが見えやすい。 <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャー。                             <br> AIA 1600 (yellow/green)-低めのエネルギー。彩層底部（光球上部）の光が見える。フレアの発生を示唆する。遷移層の光も混じるので注意。 <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。                              <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向 <br> より詳しくは https://aia.lmsal.com/public/instrument.htm",
                 "File_type": "images",
                 "Purpose": "Confirmation of solar surface activity, coronal holes, CMEs and others",
                 "ExampleValue": "AIA 094's image is..., AIA 1700 image is..."
             },
-            "SOHO Sunspots": {
-                "URL": "https://soho.nascom.nasa.gov/sunspots/",
-                "External access": true,
-                "Memo": "SOHOの白黒光球画像。黒点が番号付きで表示されるので良い。",
-                "File_type": "images",
-                "Purpose": "Check sunspot numbers with sunspot images"
-            },
             "STEREO-360 images": {
                 "URL": "https://stereo-ssc.nascom.nasa.gov/beacon/beacon_secchi.shtml",
                 "External access": true,
-                "Memo": "STEREO衛星による太陽の360度画像。(実際は結構欠損してるけど)。地球から見えないところが気になる時に。ページの少し下のSDOの画像の中に混じっているSTEREO Aheadも参考に使えるかも。",
+                "Memo": "STEREO衛星による太陽の画像。SDOと違う場所を飛んでいるので、見えないところが気になる時に。ページの少し下のSDOの画像の中に混じっているSTEREO Aheadも参考に使えるかも。(Aheadは衛星の名前なので、特に特別な意味はない。                                                    《もともとStereoはAheadとBehindの2機構成だった。Behindは壊れた。》)",
                 "File_type": "images",
-                "Purpose": "360-images for Sun"
+                "Purpose": "Images for Sun from different point"
             }
         },
         "Flare forecast by Deep Learning": {
@@ -84,37 +84,30 @@
             "GOES Proton Flux": {
                 "URL": "https://www.swpc.noaa.gov/products/goes-proton-flux",
                 "External access": true,
-                "Memo": "Proton Fluxの変動を示す。Proton Fluxの変動は、Flux値をそのまま使って予報が出る事が多く、現況報告の意味合いが強い。                                                 <br> NOAAスケールとは、様々なイベントに対するNOAAが策定した指標。Proton fluxに関しては、桁数と一致(例えば、10^2を超えたらScale level S2)。詳しくは https://www.swpc.noaa.gov/noaa-scales-explanation ",
+                "Memo": "Proton Fluxの変動を示す。Proton Fluxの変動は、Flux値をそのまま使って予報が出る事が多く、現況報告の意味合いが強い。                         <br> NOAAスケールとは、様々なイベントに対するNOAAが策定した指標。Proton fluxに関しては、桁数と一致(例えば、10^2を超えたらScale level S2)。詳しくは https://www.swpc.noaa.gov/noaa-scales-explanation ",
                 "File_type": "graphs",
                 "Purpose": "Present condition of solar energetic particles",
                 "ExampleValue": "10^0 前後、NOAAスケールS0"
             }
         }
     },
-    "solar_wind": {
-        "CME ": {
-            "Solar Wind Monitor": {
-                "URL": "http://example.com/solarwind",
-                "External access": true
-            }
-        },
-        "simulation": {
-            "Solar Wind Simulation": {
-                "URL": "http://example.com/solarwindsimulation",
+    "Solar wind": {
+        "CME in space": {
+            "SOHO LASCO C2 & C3": {
+                "URL": "https://soho.nascom.nasa.gov/data/Theater/",
                 "External access": true,
-                "Memo": "Simulation tool for solar wind"
+                "Memo": "SOHOのコロナグラフを用いた観測機器LASCOによる動画。これにより、CMEがどのように宇宙空間に広がっていったかがわかる。 <br> SDOでは太陽表面の事象しか見れないので、これを見るのは重要。                         <br> サイトにアクセスした後、C2かC3を選び日程を設定してGenerate。C2とC3の違いは視野のみ。",
+                "File_type": "images",
+                "Purpose": "Confirmation of CME flying"
             }
         },
-        "image": {
-            "Solar Wind Image Gallery": {
-                "URL": "http://example.com/solarwindimage",
-                "External access": true
-            }
-        },
-        "CME": {
-            "CME Tracker": {
-                "URL": "http://example.com/cme",
-                "External access": true
+        "L1 Solar wind": {
+            "SWPC REAL TIME SOLAR WIND": {
+                "URL": "https://www.swpc.noaa.gov/products/real-time-solar-wind",
+                "External access": true,
+                "File_type": "graphs",
+                "Purpose": "Confirmation of solar wind coming near the earth",
+                "ExampleValue": "Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed, Density, IMF, Sector(Toward or away)"
             }
         }
     },

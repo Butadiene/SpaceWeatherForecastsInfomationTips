@@ -32,7 +32,7 @@ def create_child_object(name, url, external_access, purpose=None, exampleVal=Non
 # Now let's use the above function to create the structure
 
 space_weather_info = {
-    "Solar_flares": {
+    "Solar flares": {
         "X-ray flux": create_child_object("GOES X-ray Flux", "https://www.swpc.noaa.gov/products/goes-x-ray-flux/", True, \
                     purpose="GOES background X-ray flux",file_type="graphs", exampleVal="B7, 穏やかに上昇中", \
                     memo="GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。 <br> 赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。"),
@@ -46,6 +46,10 @@ space_weather_info = {
                         purpose="Sunspot area (SWPC) & Charactistics of active regions", file_type="text", exampleVal="Sunspot area : 660, 穏やかに上昇中 <br> Charactistics of active regions : 領域、位置、面積...", \
                         memo="現在の太陽黒点の一覧とその性質が載っている。黒点の総面積を出したいときはすべて足す。その黒点がいつから発生したかを知りたいときは、過去のデータを参照すると良い。\
                             <br> なお、過去のデータはftpでテキストファイルでしか配布されていない。Dataのところにあるリンクを使うなどすると良い。例：ftp://ftp.swpc.noaa.gov/pub/forecasts/にアクセスし、SRSフォルダの中のテキストファイルを確認"),
+                        
+                    **create_child_object("SOHO Sunspots", "https://soho.nascom.nasa.gov/sunspots/", True, \
+                        purpose= "Check sunspot numbers with sunspot images", file_type="images", 
+                        memo= "SOHOの白黒光球画像。黒点が番号付きで表示されるので良い。"),
 
                     **create_child_object("SILSO : Daily estimated sunspot number", "https://www.sidc.be/SILSO/home", True, \
                       purpose= "Relative sunspot number", file_type="text", exampleVal="109, 一定", \
@@ -57,40 +61,42 @@ space_weather_info = {
         },
         "Solar image": { **create_child_object("SDO Images", "https://sdo.gsfc.nasa.gov/data/", True, \
                         purpose="Confirmation of solar surface activity, coronal holes, CMEs and others", file_type="images", exampleVal="AIA 094's image is..., AIA 1700 image is...",\
-                        memo = "SDO衛星による取得画像。波長ごとに見れるので、そこから太陽表面の概観がわかる。AIA/HMI Browse Dataのところとか覗くとわかりやすいかも。\
+                        memo = "SDO衛星による取得画像。波長ごとに見れるので、そこから太陽表面の概観がわかる。現在の太陽表面だけにとどまらず、一周期前を見るのも大事。一周期前と現在が同じような表面だったら、一周期前二発生した事象を予報に使える。 <br> AIA/HMI Browse Dataのところとか覗くとわかりやすいかも。\
                             <br> 主なもの： <br> AIA 094 (green)-エネルギーがかなり高い。CMEの発生とかよく見える。 <br> AIA 211 (purple)-greenよりエネルギーが低い。コロナホールが見えやすい。 <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャー。\
                              <br> AIA 1600 (yellow/green)-低めのエネルギー。彩層底部（光球上部）の光が見える。フレアの発生を示唆する。遷移層の光も混じるので注意。 <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。 \
                              <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向 <br> より詳しくは https://aia.lmsal.com/public/instrument.htm"),
-                        
-                        **create_child_object("SOHO Sunspots", "https://soho.nascom.nasa.gov/sunspots/", True, \
-                        purpose= "Check sunspot numbers with sunspot images", file_type="images", 
-                        memo= "SOHOの白黒光球画像。黒点が番号付きで表示されるので良い。"),
 
                         **create_child_object("STEREO-360 images", "https://stereo-ssc.nascom.nasa.gov/beacon/beacon_secchi.shtml", True, \
-                                              "360-images for Sun", file_type= "images",\
-                                                memo="STEREO衛星による太陽の360度画像。(実際は結構欠損してるけど)。地球から見えないところが気になる時に。ページの少し下のSDOの画像の中に混じっているSTEREO Aheadも参考に使えるかも。")
+                        purpose="Images for Sun from different point", file_type= "images",\
+                        memo="STEREO衛星による太陽の画像。SDOと違う場所を飛んでいるので、見えないところが気になる時に。ページの少し下のSDOの画像の中に混じっているSTEREO Aheadも参考に使えるかも。(Aheadは衛星の名前なので、特に特別な意味はない。\
+                                                    《もともとStereoはAheadとBehindの2機構成だった。Behindは壊れた。》)")
         },
 
         "Flare forecast by Deep Learning": create_child_object("Deep Flare Net", "https://defn.nict.go.jp/index131_eng.html", True, \
                                             purpose= "Forecast solar flare", file_type="text", \
-                                                memo="深層学習を使って太陽フレアの発生率を予報しているサイト。参考に。")
+                                            memo="深層学習を使って太陽フレアの発生率を予報しているサイト。参考に。")
         
     },
     "Proton flux": {
         "Proton flux": create_child_object("GOES Proton Flux", "https://www.swpc.noaa.gov/products/goes-proton-flux", True, \
-                                           purpose= "Present condition of solar energetic particles", file_type='graphs',exampleVal="10^0 前後、NOAAスケールS0",\
-                                            memo="Proton Fluxの変動を示す。Proton Fluxの変動は、Flux値をそのまま使って予報が出る事が多く、現況報告の意味合いが強い。\
-                                                 <br> NOAAスケールとは、様々なイベントに対するNOAAが策定した指標。Proton fluxに関しては、桁数と一致(例えば、10^2を超えたらScale level S2)。詳しくは https://www.swpc.noaa.gov/noaa-scales-explanation "),
+                        purpose= "Present condition of solar energetic particles", file_type='graphs',exampleVal="10^0 前後、NOAAスケールS0",\
+                        memo="Proton Fluxの変動を示す。Proton Fluxの変動は、Flux値をそのまま使って予報が出る事が多く、現況報告の意味合いが強い。\
+                         <br> NOAAスケールとは、様々なイベントに対するNOAAが策定した指標。Proton fluxに関しては、桁数と一致(例えば、10^2を超えたらScale level S2)。詳しくは https://www.swpc.noaa.gov/noaa-scales-explanation "),
 
     },
-    "solar_wind": {
+    "Solar wind": {
         "CME in space": create_child_object("SOHO LASCO C2 & C3", "https://soho.nascom.nasa.gov/data/Theater/", True, \
-                                            purpose="Confirmation of CME flying", file_type="images",\
-                                                memo="SOHOのコロナグラフを用いた観測機器LASCOによる動画。これにより、CMEがどのように宇宙空間に広がっていったかがわかる。 <br> SDOでは、太陽表面の事象しか見れないので重要。 <br> サイトにアクセスした後、C2かC3を選び日程を設定してGenerate。C2とC3の違いは視野のみ。"),
-        "simulation": create_child_object("Solar Wind Simulation", "http://example.com/solarwindsimulation", True, memo="Simulation tool for solar wind"),
-        "image": create_child_object("Solar Wind Image Gallery", "http://example.com/solarwindimage", True),
-        "CME": create_child_object("CME Tracker", "http://example.com/cme", True),
-        # Add other objects for solar wind here using create_child_object()
+                        purpose="Confirmation of CME flying", file_type="images",\
+                        memo="SOHOのコロナグラフを用いた観測機器LASCOによる動画。これにより、CMEがどのように宇宙空間に広がっていったかがわかる。 <br> SDOでは太陽表面の事象しか見れないので、これを見るのは重要。\
+                         <br> サイトにアクセスした後、C2かC3を選び日程を設定してGenerate。C2とC3の違いは視野のみ。"),
+        "L1 Solar wind": { **create_child_object("SWPC REAL TIME SOLAR WIND","https://www.swpc.noaa.gov/products/real-time-solar-wind", True, \
+                            purpose="Confirmation of solar wind coming near the earth",file_type="graphs",exampleVal="Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed, Density, IMF, Sector(Toward or away)",\
+                                memo="SWPCが出しているACEとDSCOVRのデータから求めたL1地点での太陽風の時系列グラフ。7daysにして見るのがおすすめ。"),
+                            **create_child_object("ACE REAL TIME SOLAR WIND", "https://www.swpc.noaa.gov/products/ace-real-time-solar-wind", True, \
+                                purpose="",file_type="graphs",\
+                                memo="ACEのリアルタイムの太陽風観測結果。右側にあるリストから、色々な観測機器のグラフが選べる。")
+
+        },
     },
     "geomagnetic_disturbances": {
         "geomagnetic_data": create_child_object("Geomagnetic Data Center", "http://example.com/geomagneticdata", True),
