@@ -1,10 +1,30 @@
 {
+    "Space weather forecast for each country": {
+        "Space weather forecast for each country": {
+            "Present Space Weather Forecast from ISES": {
+                "URL": "https://swc.nict.go.jp/data/ises/isesforecast.html",
+                "External access": true,
+                "Memo": "ISES(The International Space Environment Service)のメンバー国が出している宇宙天気予報を一覧で見られる。",
+                "File_type": "text",
+                "Purpose": "Check space weather forecast for each country"
+            }
+        }
+    },
     "Solar and geophysical events": {
-        "Solar and geophysical event reports": {
+        "All event reports (SWPC)": {
             "SWPC SOLAR AND GEOPHYSICAL EVENT REPORTS": {
                 "URL": "https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports",
                 "External access": true,
                 "Memo": "太陽表面や磁気圏でのイベントのリスト。日付ごとのリストになっている。主要なイベントのリスㇳになっていて重要。                                         <br> BeginとENDがイベント発生と終了時間。X線観測の結果のイベント、光学観測結果のイベント等々をすべて別物として扱う。どの観測手法で、どのように検知されたかをTypeが示す。                                         <br> なお、異なる機器で観測されたイベントが、同じ事象によって生じたものと判断した場合、同じイベント番号を振る。                                         <br> サイトの少し下のDetailsのところにあるリンクからType一覧を確認できる。例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のREADMEを確認。                                         <br> また、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから過去のデータをダウンロードできる。                                         <br> 例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のテキストファイルを確認。",
+                "File_type": "text",
+                "Purpose": "Check events list"
+            }
+        },
+        "Last flare event reports (LMSAL)": {
+            "LMSAL last event reports": {
+                "URL": "https://www.lmsal.com/solarsoft/last_events/",
+                "External access": true,
+                "Memo": "フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20だけだが、NOAAのものと違ってリストになっていたり、図もついていたりと見やすい。",
                 "File_type": "text",
                 "Purpose": "Check events list"
             }
@@ -171,5 +191,21 @@
             }
         }
     },
-    "ionosphere": {}
+    "ionosphere": {},
+    "Link collection site": {
+        "NICT space weather forecast": {
+            "NICT Space Weather Forecast Links": {
+                "URL": "https://origin-swc.nict.go.jp/link/",
+                "External access": true,
+                "Memo": "NICTの宇宙天気予報のサイトのリンク集。これが一番まとまってる感ある。"
+            }
+        },
+        "SOHO space weathers": {
+            "SOHO Space Weather": {
+                "URL": "https://soho.nascom.nasa.gov/spaceweather/",
+                "External access": true,
+                "Memo": "SOHOのサイトにあるリンク集。オーロラ予報とかシミュレーション予報とか載ってるの嬉しさがある。"
+            }
+        }
+    }
 }

@@ -35,8 +35,14 @@ def create_child_object(name, url, external_access, purpose=None, exampleVal=Non
 # Now let's use the above function to create the structure
 
 space_weather_info = {
+    "Space weather forecast for each country": {
+        "Space weather forecast for each country": create_child_object("Present Space Weather Forecast from ISES", "https://swc.nict.go.jp/data/ises/isesforecast.html", True,\
+                                                                purpose="Check space weather forecast for each country",file_type="text",\
+                                                                memo="ISES(The International Space Environment Service)のメンバー国が出している宇宙天気予報を一覧で見られる。")
+    },
+
     "Solar and geophysical events": {
-        "Solar and geophysical event reports": create_child_object("SWPC SOLAR AND GEOPHYSICAL EVENT REPORTS","https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports",True,\
+        "All event reports (SWPC)": create_child_object("SWPC SOLAR AND GEOPHYSICAL EVENT REPORTS","https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports",True,\
                                 purpose="Check events list",file_type="text",\
                                     memo="太陽表面や磁気圏でのイベントのリスト。日付ごとのリストになっている。主要なイベントのリスㇳになっていて重要。\
                                          <br> BeginとENDがイベント発生と終了時間。X線観測の結果のイベント、光学観測結果のイベント等々をすべて別物として扱う。どの観測手法で、どのように検知されたかをTypeが示す。\
@@ -44,6 +50,10 @@ space_weather_info = {
                                          <br> サイトの少し下のDetailsのところにあるリンクからType一覧を確認できる。例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のREADMEを確認。\
                                          <br> また、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから過去のデータをダウンロードできる。\
                                          <br> 例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のテキストファイルを確認。"),
+
+        "Last flare event reports (LMSAL)": create_child_object("LMSAL last event reports","https://www.lmsal.com/solarsoft/last_events/",True,\
+                                purpose="Check events list",file_type="text",\
+                                    memo="フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20だけだが、NOAAのものと違ってリストになっていたり、図もついていたりと見やすい。"),
     },
 
     "Solar flares": {
@@ -138,8 +148,14 @@ space_weather_info = {
     },
     "ionosphere": {
         # Add similar structure for ionosphere here using create_child_object()
+    },
+    "Link collection site": {
+        "NICT space weather forecast": create_child_object("NICT Space Weather Forecast Links","https://origin-swc.nict.go.jp/link/",True,\
+                                                           memo="NICTの宇宙天気予報のサイトのリンク集。これが一番まとまってる感ある。"),
+        "SOHO space weathers": create_child_object("SOHO Space Weather", "https://soho.nascom.nasa.gov/spaceweather/",True,\
+                                                   memo="SOHOのサイトにあるリンク集。オーロラ予報とかシミュレーション予報とか載ってるの嬉しさがある。")
+
     }
-    # Add other top-level objects here using create_child_object()
 }
 
 # Save to a JSON file
