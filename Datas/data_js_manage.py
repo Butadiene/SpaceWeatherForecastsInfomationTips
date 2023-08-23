@@ -86,6 +86,7 @@ space_weather_info = {
                             <br> Z- Modified Zurich classification of the group. 修正チューリッヒクラス。3つのアルファベットの組み合わせで表される。Reference_URL参照\
                             <br> Lo- Carrington longitude of the group.\
                             <br> LL- Longitudinal extent of the group in heliographic degrees.\
+                            <br> NN- Total number of visible sunspots in the group.\
                             <br> なお、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから過去のデータをダウンロードできる。 <br> 例：ftp://ftp.swpc.noaa.gov/pub/forecasts/ にアクセスし、SRSフォルダの中のテキストファイルを確認",\
                                 refURL="https://www.spaceweatherlive.com/en/help/the-classification-of-sunspots-after-malde.html"),
                         
