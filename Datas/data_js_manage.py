@@ -116,7 +116,8 @@ space_weather_info = {
 
                         **create_child_object("SDO Images Dashboard", "https://sdo.gsfc.nasa.gov/data/dashboard/", True, \
                         purpose="Confirmation of solar surface activity, coronal holes, CMEs and others", file_type="images", \
-                        memo = "SDO衛星による取得画像のダッシュボード版。見たい波長の画像を好きに並べられるので便利。 <br> 左上の歯車から好きな波長の画像を追加できる。"),
+                        memo = "SDO衛星による取得画像のダッシュボード版。見たい波長の画像を好きに並べられるので便利。 <br> 左上の歯車から好きな波長の画像を追加できる。 <br> Reference_URLに宇宙天気予報で使用頻度が高いものを並べたDashboardのリンクを添付。",\
+                            refURL="https://sdo.gsfc.nasa.gov/data/dashboard/?d=0094;0211;0304;HMIB;1600;0193;HMIIC"),
 
                         **create_child_object("STEREO images", "https://stereo-ssc.nascom.nasa.gov/beacon/beacon_secchi.shtml", True, \
                         purpose="Images for Sun from different point", file_type= "images",\

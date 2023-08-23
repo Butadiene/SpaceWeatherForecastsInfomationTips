@@ -103,9 +103,10 @@
             "SDO Images Dashboard": {
                 "URL": "https://sdo.gsfc.nasa.gov/data/dashboard/",
                 "External access": true,
-                "Memo": "SDO衛星による取得画像のダッシュボード版。見たい波長の画像を好きに並べられるので便利。 <br> 左上の歯車から好きな波長の画像を追加できる。",
+                "Memo": "SDO衛星による取得画像のダッシュボード版。見たい波長の画像を好きに並べられるので便利。 <br> 左上の歯車から好きな波長の画像を追加できる。 <br> Reference_URLに宇宙天気予報で使用頻度が高いものを並べたDashboardのリンクを添付。",
                 "File_type": "images",
-                "Purpose": "Confirmation of solar surface activity, coronal holes, CMEs and others"
+                "Purpose": "Confirmation of solar surface activity, coronal holes, CMEs and others",
+                "Reference_URL": "https://sdo.gsfc.nasa.gov/data/dashboard/?d=0094;0211;0304;HMIB;1600;0193;HMIIC"
             },
             "STEREO images": {
                 "URL": "https://stereo-ssc.nascom.nasa.gov/beacon/beacon_secchi.shtml",
@@ -270,7 +271,7 @@
             "Ionogram": {
                 "URL": "https://swc.nict.go.jp/forecast/ionosphere.html",
                 "External access": true,
-                "Memo": "国内イオノゾンデ定常観測の場所を参照",
+                "Memo": "国内イオノゾンデ定常観測の場所を参照 <br> Do it later",
                 "File_type": "graphs",
                 "Purpose": "Checking Sporadic E layer"
             }
