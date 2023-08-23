@@ -145,40 +145,51 @@ space_weather_info = {
 
     "Geomagnetic disturbances": {
         "Kp index": create_child_object("SWPC PLANETARY K-INDEX", "https://www.swpc.noaa.gov/products/planetary-k-index", True,\
-                                        purpose="Magnitude of geomagnetic disturbances across the globe",file_type="graphs",exampleVal="最大Kp指数:2.67(一日のうち最も大きいKp)  日合計値:13.66(3時間ごとに区切って出されるKpを、その日のもの全て(8つ)足す)",\
-                                        memo="地球全体での地磁気擾乱の大きさを示す、Kp指数が見れる。(Kp index = Planetary K-index)"),
-        
+                    purpose="Magnitude of geomagnetic disturbances across the globe",file_type="graphs",exampleVal="最大Kp指数:2.67(一日のうち最も大きいKp)  日合計値:13.66(3時間ごとに区切って出されるKpを、その日のもの全て(8つ)足す)  NOAA Scale: G0",\
+                    memo="地球全体での地磁気擾乱の大きさを示す、Kp指数が見れる。(Kp index = Planetary K-index) \
+                        <br> また、Kp指数をもとにした磁気擾乱に関するNOAAスケールもこのページに載っている。<br>スケールの説明は https://www.swpc.noaa.gov/noaa-scales-explanation のGeomagnetic Stormsの欄に載っている。"),
+
         "K index": create_child_object("KAKIOKA K-INDEX", "https://origin-swc.nict.go.jp/trend/geomag.html",True,\
-                                       purpose="Magnitude of geomagnetic disturbance at Kakioka",file_type="graphs",exampleVal="最大K指数:3(一日のうち最も大きいKp)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)",\
-                                        memo="ローカルでの地磁気擾乱の大きさを示すK指数のうち、柿岡のものが見れる。日本での地磁気擾乱を考える際に重要。H componentは水平分力、D componentは偏角を表す。 <br> 日合計値や各componentの詳細は https://www.kakioka-jma.go.jp/knowledge/glossary.html "),
+                    purpose="Magnitude of geomagnetic disturbance at Kakioka",file_type="graphs",exampleVal="最大K指数:3(一日のうち最も大きいKp)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)  地磁気活動度: 静穏",\
+                    memo="ローカルでの地磁気擾乱の大きさを示すK指数のうち、柿岡のものが見れる。日本での地磁気擾乱を考える際に重要。H componentは水平分力、D componentは偏角を表す。 \
+                        地磁気活動度(Quiet, Active...)も載っている。\
+                        <br> 地磁気活動度、日合計値や各componentの詳細は https://www.kakioka-jma.go.jp/knowledge/glossary.html "),
 
         "Simulation": create_child_object("SUSANOO", "https://cidas.isee.nagoya-u.ac.jp/susanoo/", True, \
-                                          purpose="Refer for forecast", file_type="graphs",\
-                                            memo="太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。 <br> こっちのほうが見やすいかもしれない。 https://origin-swc.nict.go.jp/forecast/magnetosphere.html "),
+                    purpose="Refer for forecast", file_type="graphs",\
+                    memo="太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。 <br> こっちのほうが見やすいかもしれない。 https://origin-swc.nict.go.jp/forecast/magnetosphere.html "),
 
         "Dst index": create_child_object("DST-INDEX", "https://wdc.kugi.kyoto-u.ac.jp/dstdir/index-j.html",True,\
-                                       purpose="DST-index",file_type="graphs",\
-                                        memo="DST指数。予報ではそんなに使わないのかも?"),
-        
+                    purpose="DST-index",file_type="graphs",\
+                    memo="DST指数。予報ではそんなに使わないのかも?"),
+
         "AE index": create_child_object("AE-INDEX", "https://wdc.kugi.kyoto-u.ac.jp/aedir/index-j.html",True,\
-                                       purpose="AE-index",file_type="graphs",exampleVal="None",\
-                                        memo="AE指数。予報ではそんなに使わないのかも?"),
+                    purpose="AE-index",file_type="graphs",exampleVal="None",\
+                    memo="AE指数。予報ではそんなに使わないのかも?"),
 
     },
 
     "Radiation belts": {
-        "Electron flux": create_child_object("GOES Electron Flux","https://www.swpc.noaa.gov/products/goes-electron-flux",True,\
-                        purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
-                        memo="GOESが取得した2MeV以上の電子フラックスの時間変化。7daysで見るのが良さそう。\
-                            <br> 現在の「GOESがいる経度」の放射線帯の電子フラックスがわかる。グラフのNとMはNoonとMidnightの略で、衛星が昼側、夜側にいることを指す。\
-                            <br> なお、GOES-16は西経75.2度、GOES-18は西経136.9度の静止衛星。 <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。"),
-       
         "Electron 24-h fluences": create_child_object("GOES Electron Fluences","https://origin-swc.nict.go.jp/trend/electron.html",True,\
                         purpose="Checking the electron 24-h fluences in the radiation belt", file_type="graphs",\
-                        memo="GOESが取得した2MeV以上の電子フラックスを24時間で積分した値。GOESデータを元にNICTが積分した結果を出している。<br> 静止軌道衛星の観測データ24時間の総和なので、放射線帯全体の状況を表していると言える。\
+                        memo="GOESが取得した2MeV以上の電子fluxを24時間で積分した値。GOESデータを元にNICTが積分した結果を出している。<br> 静止軌道衛星の観測データ24時間の総和なので、放射線帯全体の状況を表していると言える。\
                             <br> 放射線帯予報で重視すべきなのは、fluxよりもfluencesである。\
                             <br> 放射線帯全体の状況を表せること、GOESがいる場所の細かい値がわかっても、日本上空の静止軌道の状態はわからないことなどが理由。"),
- 
+
+        "Electron fluences forecast": create_child_object("電子フルエンス予報","https://radi.nict.go.jp/",True, \
+                                        purpose="Reference for forecast electron fluences", file_type="text", \
+                                        memo="放射線帯における24時間 Electron fluencesの、今後24時間、明日、明後日の予報。シミュレーションや統計モデルなど、複数のをもとに行われている。\
+                                                <br> 予報の参考になる。静穏等々の基準についてはこちら https://radi.nict.go.jp/about/#level "),
+        
+        "Electron flux": create_child_object("GOES Electron Flux","https://www.swpc.noaa.gov/products/goes-electron-flux",True,\
+                purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
+                memo="GOESが取得した2MeV以上の電子fluxの時間変化。7daysで見るのが良さそう。\
+                    <br> 現在の「GOESがいる経度」の放射線帯の電子fluxがわかる。グラフのNとMはNoonとMidnightの略で、衛星が昼側、夜側にいることを指す。\
+                    <br> なお、GOES-16は西経75.2度、GOES-18は西経136.9度の静止衛星。 <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。"),
+        
+        "Electron flux forecast": create_child_object("静止軌道危険度予測","https://radi.nict.go.jp/satellite/",True,\
+                purpose="Reference for forecast electron flux", file_type="graphs",\
+                memo="シミュレーションや統計モデルによる電子fluxの時間変化の予測。 <br> ひまわり8号の軌道における電子fluxの大きさと、GOES衛星の位置における大きさを示している。")
     },
 
     "ionosphere": {

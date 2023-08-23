@@ -24,7 +24,7 @@
             "LMSAL last event reports": {
                 "URL": "https://www.lmsal.com/solarsoft/last_events/",
                 "External access": true,
-                "Memo": "フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20だけだが、NOAAのものと違ってリストになっていたり、図もついていたりと見やすい。",
+                "Memo": "フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20イベントだけだが、NOAAのものと違ってリストで示されていたり、図もついていたりと見やすい。",
                 "File_type": "text",
                 "Purpose": "Check events list"
             }
@@ -169,20 +169,20 @@
             "SWPC PLANETARY K-INDEX": {
                 "URL": "https://www.swpc.noaa.gov/products/planetary-k-index",
                 "External access": true,
-                "Memo": "地球全体での地磁気擾乱の大きさを示す、Kp指数が見れる。(Kp index = Planetary K-index)",
+                "Memo": "地球全体での地磁気擾乱の大きさを示す、Kp指数が見れる。(Kp index = Planetary K-index)                         <br> また、Kp指数をもとにした磁気擾乱に関するNOAAスケールもこのページに載っている。<br>スケールの説明は https://www.swpc.noaa.gov/noaa-scales-explanation のGeomagnetic Stormsの欄に載っている。",
                 "File_type": "graphs",
                 "Purpose": "Magnitude of geomagnetic disturbances across the globe",
-                "ExampleValue": "最大Kp指数:2.67(一日のうち最も大きいKp)  日合計値:13.66(3時間ごとに区切って出されるKpを、その日のもの全て(8つ)足す)"
+                "ExampleValue": "最大Kp指数:2.67(一日のうち最も大きいKp)  日合計値:13.66(3時間ごとに区切って出されるKpを、その日のもの全て(8つ)足す)  NOAA Scale: G0"
             }
         },
         "K index": {
             "KAKIOKA K-INDEX": {
                 "URL": "https://origin-swc.nict.go.jp/trend/geomag.html",
                 "External access": true,
-                "Memo": "ローカルでの地磁気擾乱の大きさを示すK指数のうち、柿岡のものが見れる。日本での地磁気擾乱を考える際に重要。H componentは水平分力、D componentは偏角を表す。 <br> 日合計値や各componentの詳細は https://www.kakioka-jma.go.jp/knowledge/glossary.html ",
+                "Memo": "ローカルでの地磁気擾乱の大きさを示すK指数のうち、柿岡のものが見れる。日本での地磁気擾乱を考える際に重要。H componentは水平分力、D componentは偏角を表す。                         地磁気活動度(Quiet, Active...)も載っている。                        <br> 地磁気活動度、日合計値や各componentの詳細は https://www.kakioka-jma.go.jp/knowledge/glossary.html ",
                 "File_type": "graphs",
                 "Purpose": "Magnitude of geomagnetic disturbance at Kakioka",
-                "ExampleValue": "最大K指数:3(一日のうち最も大きいKp)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)"
+                "ExampleValue": "最大K指数:3(一日のうち最も大きいKp)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)  地磁気活動度: 静穏"
             }
         },
         "Simulation": {
@@ -214,7 +214,44 @@
             }
         }
     },
-    "Radiation belts": {},
+    "Radiation belts": {
+        "Electron 24-h fluences": {
+            "GOES Electron Fluences": {
+                "URL": "https://origin-swc.nict.go.jp/trend/electron.html",
+                "External access": true,
+                "Memo": "GOESが取得した2MeV以上の電子fluxを24時間で積分した値。GOESデータを元にNICTが積分した結果を出している。<br> 静止軌道衛星の観測データ24時間の総和なので、放射線帯全体の状況を表していると言える。                            <br> 放射線帯予報で重視すべきなのは、fluxよりもfluencesである。                            <br> 放射線帯全体の状況を表せること、GOESがいる場所の細かい値がわかっても、日本上空の静止軌道の状態はわからないことなどが理由。",
+                "File_type": "graphs",
+                "Purpose": "Checking the electron 24-h fluences in the radiation belt"
+            }
+        },
+        "Electron fluences forecast": {
+            "電子フルエンス予報": {
+                "URL": "https://radi.nict.go.jp/",
+                "External access": true,
+                "Memo": "放射線帯における24時間 Electron fluencesの、今後24時間、明日、明後日の予報。シミュレーションや統計モデルなど、複数のをもとに行われている。                                                <br> 予報の参考になる。静穏等々の基準についてはこちら https://radi.nict.go.jp/about/#level ",
+                "File_type": "text",
+                "Purpose": "Reference for forecast electron fluences"
+            }
+        },
+        "Electron flux": {
+            "GOES Electron Flux": {
+                "URL": "https://www.swpc.noaa.gov/products/goes-electron-flux",
+                "External access": true,
+                "Memo": "GOESが取得した2MeV以上の電子fluxの時間変化。7daysで見るのが良さそう。                    <br> 現在の「GOESがいる経度」の放射線帯の電子fluxがわかる。グラフのNとMはNoonとMidnightの略で、衛星が昼側、夜側にいることを指す。                    <br> なお、GOES-16は西経75.2度、GOES-18は西経136.9度の静止衛星。 <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。",
+                "File_type": "graphs",
+                "Purpose": "Checking the electron flux in the radiation belt"
+            }
+        },
+        "Electron flux forecast": {
+            "静止軌道危険度予測": {
+                "URL": "https://radi.nict.go.jp/satellite/",
+                "External access": true,
+                "Memo": "シミュレーションや統計モデルによる電子fluxの時間変化の予測。 <br> ひまわり8号の軌道における電子fluxの大きさと、GOES衛星の位置における大きさを示している。",
+                "File_type": "graphs",
+                "Purpose": "Reference for forecast electron flux"
+            }
+        }
+    },
     "ionosphere": {},
     "Link collection site": {
         "NICT space weather forecast Trend": {
