@@ -66,7 +66,16 @@ space_weather_info = {
                             memo="太陽黒点数と良い相関のある、波長10.7cm(周波数2.8GHz)の電波の強度。 <br> Daily flux valuesのHTML見れば良いけど、\
                             めちゃ見づらいので注意。値はObserved fluxを使用すると良さそう。 <br> 極大期では月平均でおおよそ200、極小期では70程度(日単位では変動が大きく、300を超えることも。)"),
 
-        "Sun spot": { **create_child_object("SOLAR REGION SUMMARY", "https://www.swpc.noaa.gov/products/solar-region-summary", True, \
+        "Sun spot": {**create_child_object("SILSO : Daily estimated sunspot number", "https://www.sidc.be/SILSO/home", True, \
+                      purpose= "Relative sunspot number", file_type="text", exampleVal="109, 一定", \
+                      memo="太陽黒点相対数。太陽光球面に出現する黒点および黒点群の総数を数値化したもの。サイトのホームの右端にある。"),
+
+                    **create_child_object("SILSO : Monthly relative sunspot number", "https://www.sidc.be/products/ri/", True, \
+                      purpose= "Monthly relative sunspot number", file_type="text", exampleVal="Result: Jul-23 159.1   Forecast: Aug-23 154, Sep-23 160", \
+                      memo="太陽黒点相対数の月平均。予測値も見れる。月平均の値なので、一月に一回しか更新されない。"),
+            
+            
+                    **create_child_object("SOLAR REGION SUMMARY", "https://www.swpc.noaa.gov/products/solar-region-summary", True, \
                         purpose="Sunspot area (SWPC) & Charactistics of active regions", file_type="text", exampleVal="Sunspot area:660, 穏やかに上昇中 & Charactistics of active regions:領域、位置、面積...", \
                         memo="現在の太陽黒点の一覧とその性質が載っている。SRSと略され、重要なデータの一つ。 <br> 現在の黒点の総面積を出したいときは、SRSに載っている黒点の面積をすべて足す。その黒点がいつから発生したかを知りたいときは、過去のデータを参照すると良い。\
                             <br> なお、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから過去のデータをダウンロードできる。 <br> 例：ftp://ftp.swpc.noaa.gov/pub/forecasts/ にアクセスし、SRSフォルダの中のテキストファイルを確認"),
@@ -75,13 +84,10 @@ space_weather_info = {
                         purpose= "Check sunspot numbers with sunspot images", file_type="images", 
                         memo= "SOHOの白黒光球画像。黒点が番号付きで表示される。"),
 
-                    **create_child_object("SILSO : Daily estimated sunspot number", "https://www.sidc.be/SILSO/home", True, \
-                      purpose= "Relative sunspot number", file_type="text", exampleVal="109, 一定", \
-                      memo="太陽黒点相対数。太陽光球面に出現する黒点および黒点群の総数を数値化したもの。サイトのホームの右端にある。"),
+                     **create_child_object("SHARP Vector Magnetograms", "https://defn.nict.go.jp/sharp/index_sharp_jp.html",True,\
+                        purpose="Check degree of magnetic field distortion (shear)", file_type="images",\
+                        memo="各黒点の磁場の歪み具合を画像でわかりやすく示してくれる。 <br> この構造が複雑であれば（具体的には極性が複雑でかつコンパクトにまとまった黒点）、より大きいフレアを警戒する必要がある。 <br> なお、英語版は https://defn.nict.go.jp/sharp/index_sharp.html ")
 
-                    **create_child_object("SILSO : Monthly relative sunspot number", "https://www.sidc.be/products/ri/", True, \
-                      purpose= "Monthly relative sunspot number", file_type="text", exampleVal="Result: Jul-23 159.1   Forecast: Aug-23 154, Sep-23 160", \
-                      memo="太陽黒点相対数の月平均。予測値も見れる。月平均の値なので、一月に一回しか更新されない。")
         },
 
         "Solar image": { **create_child_object("SDO Images", "https://sdo.gsfc.nasa.gov/data/", True, \
@@ -92,10 +98,15 @@ space_weather_info = {
                              <br> AIA 1600 (yellow/green)-エネルギーが低め。彩層底部(光球上部)の光が見える。これはフレアの発生を示唆する。また、AIA1600には遷移層の光も混じっているので注意。 <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。 \
                              <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向。 <br> 波長ごとの画像のより詳しい説明は https://aia.lmsal.com/public/instrument.htm"),
 
-                        **create_child_object("STEREO-360 images", "https://stereo-ssc.nascom.nasa.gov/beacon/beacon_secchi.shtml", True, \
+                        **create_child_object("SDO Images Dashboard", "https://sdo.gsfc.nasa.gov/data/dashboard/", True, \
+                        purpose="Confirmation of solar surface activity, coronal holes, CMEs and others", file_type="images", \
+                        memo = "SDO衛星による取得画像のダッシュボード版。見たい波長の画像を好きに並べられるので便利。 <br> 左上の歯車から好きな波長の画像を追加できる。"),
+
+                        **create_child_object("STEREO images", "https://stereo-ssc.nascom.nasa.gov/beacon/beacon_secchi.shtml", True, \
                         purpose="Images for Sun from different point", file_type= "images",\
                         memo="STEREO衛星による太陽の画像。SDOと違う場所を飛んでいるので、見えないところが気になる時に。 <br> ページの少し下のSDOの画像の中に混じっているSTEREO Aheadと書いてある画像も参考に使えるかも。(Aheadは衛星の名前なので、特に特別な意味はない。\
                                                     《もともとStereoはAheadとBehindの2機構成だった。Behindは壊れた。》)")
+
         },
 
         "Flare forecast by Deep Learning": create_child_object("Deep Flare Net", "https://defn.nict.go.jp/index131_eng.html", True, \
@@ -146,15 +157,20 @@ space_weather_info = {
                                         memo="AE指数。予報ではそんなに使わないのかも?"),
 
     },
+
+    "Radiation belts": {
+        
+    },
+
     "ionosphere": {
         # Add similar structure for ionosphere here using create_child_object()
     },
+
     "Link collection site": {
         "NICT space weather forecast": create_child_object("NICT Space Weather Forecast Links","https://origin-swc.nict.go.jp/link/",True,\
                                                            memo="NICTの宇宙天気予報のサイトのリンク集。これが一番まとまってる感ある。"),
         "SOHO space weathers": create_child_object("SOHO Space Weather", "https://soho.nascom.nasa.gov/spaceweather/",True,\
                                                    memo="SOHOのサイトにあるリンク集。オーロラ予報とかシミュレーション予報とか載ってるの嬉しさがある。")
-
     }
 }
 

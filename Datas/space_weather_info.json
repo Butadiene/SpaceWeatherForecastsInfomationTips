@@ -51,21 +51,6 @@
             }
         },
         "Sun spot": {
-            "SOLAR REGION SUMMARY": {
-                "URL": "https://www.swpc.noaa.gov/products/solar-region-summary",
-                "External access": true,
-                "Memo": "現在の太陽黒点の一覧とその性質が載っている。SRSと略され、重要なデータの一つ。 <br> 現在の黒点の総面積を出したいときは、SRSに載っている黒点の面積をすべて足す。その黒点がいつから発生したかを知りたいときは、過去のデータを参照すると良い。                            <br> なお、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから過去のデータをダウンロードできる。 <br> 例：ftp://ftp.swpc.noaa.gov/pub/forecasts/ にアクセスし、SRSフォルダの中のテキストファイルを確認",
-                "File_type": "text",
-                "Purpose": "Sunspot area (SWPC) & Charactistics of active regions",
-                "ExampleValue": "Sunspot area:660, 穏やかに上昇中 & Charactistics of active regions:領域、位置、面積..."
-            },
-            "SOHO Sunspots": {
-                "URL": "https://soho.nascom.nasa.gov/sunspots/",
-                "External access": true,
-                "Memo": "SOHOの白黒光球画像。黒点が番号付きで表示される。",
-                "File_type": "images",
-                "Purpose": "Check sunspot numbers with sunspot images"
-            },
             "SILSO : Daily estimated sunspot number": {
                 "URL": "https://www.sidc.be/SILSO/home",
                 "External access": true,
@@ -81,6 +66,28 @@
                 "File_type": "text",
                 "Purpose": "Monthly relative sunspot number",
                 "ExampleValue": "Result: Jul-23 159.1   Forecast: Aug-23 154, Sep-23 160"
+            },
+            "SOLAR REGION SUMMARY": {
+                "URL": "https://www.swpc.noaa.gov/products/solar-region-summary",
+                "External access": true,
+                "Memo": "現在の太陽黒点の一覧とその性質が載っている。SRSと略され、重要なデータの一つ。 <br> 現在の黒点の総面積を出したいときは、SRSに載っている黒点の面積をすべて足す。その黒点がいつから発生したかを知りたいときは、過去のデータを参照すると良い。                            <br> なお、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから過去のデータをダウンロードできる。 <br> 例：ftp://ftp.swpc.noaa.gov/pub/forecasts/ にアクセスし、SRSフォルダの中のテキストファイルを確認",
+                "File_type": "text",
+                "Purpose": "Sunspot area (SWPC) & Charactistics of active regions",
+                "ExampleValue": "Sunspot area:660, 穏やかに上昇中 & Charactistics of active regions:領域、位置、面積..."
+            },
+            "SOHO Sunspots": {
+                "URL": "https://soho.nascom.nasa.gov/sunspots/",
+                "External access": true,
+                "Memo": "SOHOの白黒光球画像。黒点が番号付きで表示される。",
+                "File_type": "images",
+                "Purpose": "Check sunspot numbers with sunspot images"
+            },
+            "SHARP Vector Magnetograms": {
+                "URL": "https://defn.nict.go.jp/sharp/index_sharp_jp.html",
+                "External access": true,
+                "Memo": "各黒点の磁場の歪み具合を画像でわかりやすく示してくれる。 <br> この構造が複雑であれば（具体的には極性が複雑でかつコンパクトにまとまった黒点）、より大きいフレアを警戒する必要がある。 <br> なお、英語版は https://defn.nict.go.jp/sharp/index_sharp.html ",
+                "File_type": "images",
+                "Purpose": "Check degree of magnetic field distortion (shear)"
             }
         },
         "Solar image": {
@@ -92,7 +99,14 @@
                 "Purpose": "Confirmation of solar surface activity, coronal holes, CMEs and others",
                 "ExampleValue": "AIA 094's image is..., AIA 1700 image is..."
             },
-            "STEREO-360 images": {
+            "SDO Images Dashboard": {
+                "URL": "https://sdo.gsfc.nasa.gov/data/dashboard/",
+                "External access": true,
+                "Memo": "SDO衛星による取得画像のダッシュボード版。見たい波長の画像を好きに並べられるので便利。 <br> 左上の歯車から好きな波長の画像を追加できる。",
+                "File_type": "images",
+                "Purpose": "Confirmation of solar surface activity, coronal holes, CMEs and others"
+            },
+            "STEREO images": {
                 "URL": "https://stereo-ssc.nascom.nasa.gov/beacon/beacon_secchi.shtml",
                 "External access": true,
                 "Memo": "STEREO衛星による太陽の画像。SDOと違う場所を飛んでいるので、見えないところが気になる時に。 <br> ページの少し下のSDOの画像の中に混じっているSTEREO Aheadと書いてある画像も参考に使えるかも。(Aheadは衛星の名前なので、特に特別な意味はない。                                                    《もともとStereoはAheadとBehindの2機構成だった。Behindは壊れた。》)",
@@ -192,6 +206,7 @@
         }
     },
     "ionosphere": {},
+    "Radiation belts": {},
     "Link collection site": {
         "NICT space weather forecast": {
             "NICT Space Weather Forecast Links": {
