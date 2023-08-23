@@ -86,7 +86,7 @@
             "SHARP Vector Magnetograms": {
                 "URL": "https://defn.nict.go.jp/sharp/index_sharp_jp.html",
                 "External access": true,
-                "Memo": "各黒点の磁場の歪み具合を画像でわかりやすく示してくれる。 <br> この構造が複雑であれば（具体的には極性が複雑でかつコンパクトにまとまった黒点）、より大きいフレアを警戒する必要がある。 <br> なお、英語版は https://defn.nict.go.jp/sharp/index_sharp.html                              <br> また、シアの値などを定量的に示したのが SHARP Data Viewer。Reference_URLを参照。                                mean shear angle (measured using Btotal)(シア角), total unsigned flux(合計のフラックス。活動領域全体のエネルギーみたいな)を見ると良い。                             <br> たまに、total unsigned current helicityも見ると良いらしい。",
+                "Memo": "各黒点の磁場の歪み具合を画像でわかりやすく示してくれる。 <br> この構造が複雑であれば（具体的には極性が複雑でかつコンパクトにまとまった黒点）、より大きいフレアを警戒する必要がある。 <br> なお、英語版は https://defn.nict.go.jp/sharp/index_sharp.html                              <br> また、シアの値などを定量的に示したのが SHARP Data Viewer。Reference_URLを参照。                                mean shear angle (measured using Btotal)(シア角。値が大きいと、自由エネルギーの大きさが大きい。), total unsigned flux(合計のフラックス。活動領域の大きさに近い。)を見ると良い。                             <br> たまに、total unsigned current helicityも見ると良いらしい。",
                 "File_type": "images",
                 "Purpose": "Check degree of magnetic field distortion (shear)",
                 "Reference_URL": "http://jsoc.stanford.edu/data/hmi/sharp/dataviewer/"
@@ -186,11 +186,11 @@
             "KAKIOKA K-INDEX": {
                 "URL": "https://origin-swc.nict.go.jp/trend/geomag.html",
                 "External access": true,
-                "Memo": "ローカルでの地磁気擾乱の大きさを示すK指数のうち、柿岡のものが見れる。日本での地磁気擾乱を考える際に重要。H componentは水平分力、D componentは偏角を表す。                         地磁気活動度(Quiet, Active...)も載っている。                        <br> 地磁気活動度、日合計値や各componentの詳細はReference_URL参照",
+                "Memo": "ローカルでの地磁気擾乱の大きさを示すK指数のうち、柿岡のものが見れる。日本での地磁気擾乱を考える際に重要。H componentは水平分力、D componentは偏角を表す。                         地磁気活動度(Quiet, Active...)も載っている。地磁気活動度の基準はReference_URL参照。                        <br> 日合計値や各componentの詳細は https://www.kakioka-jma.go.jp/knowledge/glossary.html 参照",
                 "File_type": "graphs",
                 "Purpose": "Magnitude of geomagnetic disturbance at Kakioka",
                 "ExampleValue": "最大K指数:3(一日のうち最も大きいKp)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)  地磁気活動度: 静穏",
-                "Reference_URL": "https://www.kakioka-jma.go.jp/knowledge/glossary.html"
+                "Reference_URL": "https://origin-swc.nict.go.jp/knowledge/criteria_icon.html"
             }
         },
         "Simulation": {
