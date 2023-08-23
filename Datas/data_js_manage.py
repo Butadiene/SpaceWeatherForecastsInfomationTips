@@ -137,7 +137,11 @@ space_weather_info = {
 
         "Flare forecast by Deep Learning": create_child_object("Deep Flare Net", "https://defn.nict.go.jp/index131_eng.html", True, \
                                             purpose= "Forecast solar flare", file_type="text", \
-                                            memo="深層学習を使って太陽フレアの発生率を予報しているサイト。フレアの「予報」の際は参考になる。")
+                                            memo="深層学習を使って太陽フレアの発生率を予報しているサイト。フレアの「予報」の際の参考になる。\
+                                             <br> DeFN - 平均的な発生頻度を50%とする。すなわち、50%を超えていたら、発生確率が「平均的な発生頻度より高い」とみなせる。つまり、50%を超えていても、「普段よりは起きやすい」だけ。\
+                                             <br> DeFN-R - 実際のリアルな発生確率を予測している。すなわち、表示される確率と実際の発生頻度が等しい(20%だったら5回に1回ぐらい起きる)。確率予報には基本これ。\
+                                             <br> DeFN-Q - XとMとCとNo-Flareの和が100%になるようにして表示している。(DeFN、DeFN-RはMクラス以上が起こる確率を示している。) \
+                                             <br> DeFN-Rが確率予報として適切なので、DeFN-Rを使うべき。DeFNは空振りが多い。かわりに見逃しが少ない。"),
     },
     
     "Proton flux": {
@@ -234,11 +238,12 @@ space_weather_info = {
         "Ionospheric Storm": {
             **create_child_object("foF2 and GEONET TEC time change at Japan","https://swc.nict.go.jp/trend/ionosphere.html",True,\
                                   purpose="Checking ionospheric positive and negative storm", file_type="graphs",\
-                                    memo="Do it later"),
+                                    memo="F層付近での電子密度(foF2)、上空の全電子密度(GEONET TEC)の変化を表す。どちらのデータも正相電離圏嵐、負相電離圏嵐の確認に使える。 <br> \
+                                        foF2、GEONET TEC2つの違いはあまり注意しなくてよく、クロスチェックの意味合いが強い。"),
 
             **create_child_object("GEONET TEC map","https://aer-nc-web.nict.go.jp/GPS/QR_GEONET/",True,\
                                   purpose="Checking ionoshpheric storm",file_type="images",
-                                  memo="Do it later")
+                                  memo="日本上空の電子密度の空間分布を示したもの。日本のどの領域で電離圏嵐が発達しているかがわかる。")
         },
         
     },
