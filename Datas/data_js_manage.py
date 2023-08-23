@@ -1,6 +1,6 @@
 import json
 
-def create_child_object(name, url, external_access, purpose=None, exampleVal=None, file_type=None, memo=None, refURL = None):
+def create_child_object(name, url, external_access, purpose=None, exampleVal=None, file_type=None, memo=None, refURL = None, refURL2 = None):
     """
     Creates a child object based on the provided attributes.
     
@@ -13,6 +13,7 @@ def create_child_object(name, url, external_access, purpose=None, exampleVal=Non
     - purpose (str, optional): How to use the linked site data. Default is None.
     - exampleVal (str, optional): How can the data be expressed in a way that makes it easier to communicate to others? Default is None.
     - refURL (str, optional): Reference URL for the linked site.
+    - refURL2 (str, optional): Reference URL for the linked site.
     
     Returns:
     - dict: A dictionary representing the child object.
@@ -33,6 +34,8 @@ def create_child_object(name, url, external_access, purpose=None, exampleVal=Non
         child[name]["ExampleValue"] = exampleVal
     if refURL:
         child[name]["Reference_URL"] = refURL
+    if refURL2:
+        child[name]["Reference_URL2"] = refURL2
     return child
 
 # Now let's use the above function to create the structure
@@ -53,7 +56,7 @@ space_weather_info = {
                                          <br> BeginとENDがイベント発生と終了時間。X線観測の結果のイベント、光学観測結果のイベント等々をすべて別物として扱う。どの観測手法で、どのように検知されたかをTypeが示す。\
                                          <br> なお、異なる機器で観測されたイベントが、同じ事象によって生じたものと判断した場合、同じイベント番号を振る。\
                                          <br> サイトの少し下のDetailsのところにあるリンクからType一覧を確認できる。例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のREADMEを確認。\
-                                         <br> また、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから過去のデータをダウンロードできる。\
+                                         <br> また、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから、過去のデータをダウンロードできる。\
                                          <br> 例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のテキストファイルを確認。"),
 
         "Last flare event reports (LMSAL)": create_child_object("LMSAL last event reports","https://www.lmsal.com/solarsoft/last_events/",True,\
@@ -67,10 +70,17 @@ space_weather_info = {
                     memo="GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。 <br> 赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。\
                         <br> フレアが起きていない（≒尖っていないところ）をバックグラウンドと呼んだりする。これも重要で、バックグラウンドが上昇傾向にある場合は、例えば東側から活動的な領域が見え始めていたりすることを意味する可能性がある。"),
 
-        "Radio flux": create_child_object("DRAO", "https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php", True,\
-                            purpose="F10.7", file_type="html", \
+        "Radio flux": {**create_child_object("DRAO", "https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php", True,\
+                            purpose="F10.7: 10.7cm wavelength radio wave strength", file_type="html", \
                             memo="太陽黒点数と良い相関のある、波長10.7cm(周波数2.8GHz)の電波の強度。 <br> Daily flux valuesのHTML見れば良いけど、\
                             めちゃ見づらいので注意。値はObserved fluxを使用すると良さそう。 <br> 極大期では月平均でおおよそ200、極小期では70程度(日単位では変動が大きく、300を超えることも。)"),
+
+                        **create_child_object("山川 太陽電波望遠鏡","https://origin-swc.nict.go.jp/forecast/magnetosphere.html", True, \
+                            purpose= "Solar radio burst", file_type="graphs", \
+                            memo="山川での太陽電波観測結果。リンク先サイトの右やや下の方にある「太陽電波観測」から見れる。太陽電波バーストを見るのに良い。\
+                                 <br> 太陽電波バーストは太陽活動を示すイベントとして重要だが、山川の観測データからイベントを識別するのは難しく、初心者向けではない。")
+
+        },
 
         "Sun spot": {**create_child_object("SILSO : Daily estimated sunspot number", "https://www.sidc.be/SILSO/home", True, \
                       purpose= "Relative sunspot number", file_type="text", exampleVal="109, 一定", \
@@ -88,8 +98,15 @@ space_weather_info = {
                             <br> Lo- Carrington longitude of the group.\
                             <br> LL- Longitudinal extent of the group in heliographic degrees.\
                             <br> NN- Total number of visible sunspots in the group.\
-                            <br> なお、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから過去のデータをダウンロードできる。 <br> 例：ftp://ftp.swpc.noaa.gov/pub/forecasts/ にアクセスし、SRSフォルダの中のテキストファイルを確認",\
-                                refURL="https://www.spaceweatherlive.com/en/help/the-classification-of-sunspots-after-malde.html"),
+                            <br> Mag Type- Magnetic classification of the group. マウント・ウィルソン分類による黒点の分類。α、β、βγ、γ、δなどがあり、δに行くほどフレアを起こしやすいとされる。\
+                            <br> &nbsp;&nbsp;以下に簡単に説明。詳しくはReference_URL2参照。\
+                            <br> &nbsp&nbsp;&nbsp;&nbsp;α：単極で存在するもの。\
+                            <br> &nbsp&nbsp;&nbsp;&nbsp;β：2つの極から成る単純な黒点の対。つまり、2つの黒点が近くにあり、その2つの極性が逆(NとSになっている)。\
+                            <br> &nbsp&nbsp;&nbsp;&nbsp;γ：β には分類しがたいような複雑な極構造を持った黒点。\
+                            <br> &nbsp&nbsp;&nbsp;&nbsp;δ：2つの黒点が近くにあり、その2つの極性が逆。かつ2つの黒点は半暗部を共有している。すなわち、半暗部の中に2つの暗部があり、その2つの極性が逆になっている。一番コロナが起きやすい。\
+                            <br> なお、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから、過去のデータをダウンロードできる。 <br> 例：ftp://ftp.swpc.noaa.gov/pub/forecasts/ にアクセスし、SRSフォルダの中のテキストファイルを確認",\
+                                refURL="https://www.spaceweatherlive.com/en/help/the-classification-of-sunspots-after-malde.html",\
+                                refURL2="https://solarphys.com/dynamics/ar/"),
                         
                     **create_child_object("SOHO Sunspots", "https://soho.nascom.nasa.gov/sunspots/", True, \
                         purpose= "Check sunspot numbers with sunspot images", file_type="images", 
@@ -97,11 +114,16 @@ space_weather_info = {
 
                      **create_child_object("SHARP Vector Magnetograms", "https://defn.nict.go.jp/sharp/index_sharp_jp.html",True,\
                         purpose="Check degree of magnetic field distortion (shear)", file_type="images",\
-                        memo="各黒点の磁場の歪み具合を画像でわかりやすく示してくれる。 <br> この構造が複雑であれば（具体的には極性が複雑でかつコンパクトにまとまった黒点）、より大きいフレアを警戒する必要がある。 <br> なお、英語版は https://defn.nict.go.jp/sharp/index_sharp.html \
-                             <br> また、シアの値などを定量的に示したのが SHARP Data Viewer。Reference_URLを参照。\
-                                mean shear angle (measured using Btotal)(シア角。値が大きいと、自由エネルギーの大きさが大きい。), total unsigned flux(合計のフラックス。活動領域の大きさに近い。)を見ると良い。\
-                             <br> たまに、total unsigned current helicityも見ると良いらしい。",\
-                                refURL="http://jsoc.stanford.edu/data/hmi/sharp/dataviewer/")
+                        memo="各黒点の磁場の歪み具合を画像でわかりやすく示してくれる。 <br> この構造が複雑であれば（具体的には極性が複雑でかつコンパクトにまとまった黒点）、より大きいフレアを警戒する必要がある。 \
+                            <br> 特に確認すべきはシア。緑色の線(磁気中性線)と平行かつ緑色の線を挟んで逆方向に磁場が向いている場合（シアという）、よりフレアを警戒する必要がある。 <br> (緑色の断層線に沿って赤方向にずれる横ずれ断層をイメージすると良いかも。)\
+                            なお、英語版はReference_URLに記載。", refURL="https://defn.nict.go.jp/sharp/index_sharp.html"),
+
+                     **create_child_object("SHARP Data Viewer", "http://jsoc.stanford.edu/data/hmi/sharp/dataviewer/",True,\
+                        purpose="Check degree of magnetic field distortion (shear)", file_type="images",\
+                        memo="シアやフラックスの値などを定量的に示したのが SHARP Data Viewer。以下の2つをよく使う。\
+                             <br> mean shear angle (measured using Btotal)-シア角。値が大きいと、自由エネルギーの大きさが大きい。\
+                             <br> total unsigned flux-合計のフラックス。活動領域の大きさに近い。フラックスが増えているということは、磁力線が浮上し面積が増大しているということ。\
+                             <br> 特に上2つが重要。確認すべきは値より傾向。増えている傾向があると注意。")
 
         },
 
@@ -120,6 +142,7 @@ space_weather_info = {
                                  <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。 \
                                  <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向。\
                                  <br> 波長ごとの画像のより詳しい説明はReference_URL参照 \
+                                 <br> (なお、必ずしもどの波長かに拘る必要はなくて、現象が見やすいものを使ってもよい。)\
                                  <br> なお、The Sun Nowから見れる画像にはPFSSというバージョンがある。これは、Potential field source surfaceの略で、表面の磁場構造から太陽の磁場構造を推定したもの。\
                                  <br> PFSSから何かを言うのはかなりの知識が必要なようで、予報ではあまり使われないよう。また、Potentialから計算しているので、重要なはずの自由エネルギーが無視されていることにも注意。",\
                         refURL="https://aia.lmsal.com/public/instrument.htm"),
@@ -127,7 +150,7 @@ space_weather_info = {
                         **create_child_object("SDO Images Dashboard", "https://sdo.gsfc.nasa.gov/data/dashboard/", True, \
                         purpose="Confirmation of solar surface activity, coronal holes, CMEs and others", file_type="images", \
                         memo = "SDO衛星による取得画像のダッシュボード版。見たい波長の画像を好きに並べられるので便利。 <br> 左上の歯車から好きな波長の画像を追加できる。 <br> Reference_URLに宇宙天気予報で使用頻度が高いものを並べたDashboardのリンクを添付。",\
-                            refURL="https://sdo.gsfc.nasa.gov/data/dashboard/?d=0094;0211;0304;HMIB;1600;0193;HMIIF;HMIIC"),
+                            refURL="https://sdo.gsfc.nasa.gov/data/dashboard/?d=0094;0211;0304;HMIBC;0193;1600;HMIIF;HMIB"),
 
                         **create_child_object("STEREO images", "https://stereo-ssc.nascom.nasa.gov/beacon/beacon_secchi.shtml", True, \
                         purpose="Images for Sun from different point", file_type= "images",\
@@ -155,10 +178,18 @@ space_weather_info = {
     },
 
     "Solar wind": {
-        "CME in space": create_child_object("SOHO LASCO C2 & C3", "https://soho.nascom.nasa.gov/data/Theater/", True, \
+        "CME in space": { **create_child_object("SOHO LASCO C2 & C3", "https://soho.nascom.nasa.gov/data/Theater/", True, \
                         purpose="Confirmation of CME flying", file_type="images",\
                         memo="SOHOのコロナグラフを用いた観測機器LASCOによる動画。これにより、CMEがどのように宇宙空間に広がっていったかがわかる。 <br> SDOでは太陽表面の事象しか見れないので、これを見るのは重要。\
                          <br> サイトにアクセスした後、C2かC3を選び日程を設定してGenerate。C2とC3の違いは視野のみ。"),
+
+                          **create_child_object("SOHO LASCO C2 & C3 Diff", "https://soho.nascom.nasa.gov/data/realtime/mpeg/", True, \
+                        purpose="Confirmation of CME flying", file_type="images",\
+                        memo="LASCOの動画でCMEを確認しようとした際、淡くてわかりにくいことがある。そこで、前の画像との差を表示するDiff版を使うと見やすくなる。 <br> サイトの下にあるLASCO C2 COMBOや、C3 COMBOがそれ。\
+                             <br> なお、このサイトでは2日間の動画しか確認できない。数日前などを確認したい場合は、Reference_URLを使うと良い。 <br> ただし、主にC3が上手く表示されないことがある(サイトの問題ではなく、データ欠損のこともある。)\
+                             <br> また、公式サイト(URLの方)のDailyという場所からアーカイブへ飛べる。しかし、現在の月より前のものしか見れないので注意。)")
+                         
+        },
 
         "L1 Solar wind": { **create_child_object("SWPC REAL TIME SOLAR WIND","https://www.swpc.noaa.gov/products/real-time-solar-wind", True, \
                             purpose="Confirmation of solar wind coming near the earth",file_type="graphs",exampleVal="Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed(620→520), Density(1前後), IMF(5nT前後、時折-6), Sector(概ねToward)",\
@@ -216,11 +247,21 @@ space_weather_info = {
                                                 <br> 予報の参考になる。静穏等々の基準についてはReference_URL参照",\
                                                     refURL="https://radi.nict.go.jp/about/#level"),
         
-        "Electron flux": create_child_object("GOES Electron Flux","https://www.swpc.noaa.gov/products/goes-electron-flux",True,\
-                purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
-                memo="GOESが取得した2MeV以上の電子fluxの時間変化。7daysで見るのが良さそう。\
-                    <br> 現在の「GOESがいる経度」の放射線帯の電子fluxがわかる。グラフのNとMはNoonとMidnightの略で、衛星が昼側、夜側にいることを指す。\
-                    <br> なお、GOES-16は西経75.2度、GOES-18は西経136.9度の静止衛星。 <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。"),
+        "Electron flux": { **create_child_object("GOES Electron Flux","https://www.swpc.noaa.gov/products/goes-electron-flux",True,\
+                            purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
+                            memo="GOESが取得した2MeV以上の電子fluxの時間変化。7daysで見るのが良さそう。\
+                                <br> 現在の「GOESがいる経度」の放射線帯の電子fluxがわかる。グラフのNとMはNoonとMidnightの略で、衛星が昼側、夜側にいることを指す。\
+                                <br> なお、GOES-16は西経75.2度、GOES-18は西経136.9度の静止衛星。 <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。"),
+
+                            **create_child_object("GOES Electron Flux","https://himawari-seda.nict.go.jp/dataplot",True,\
+                            purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
+                            memo="ひまわりが取得したMeV帯の電子fluxの時間変化。\
+                                <br> 現在の「ひまわりがいる経度」の放射線帯の電子fluxがわかる。横軸はUTなので注意。\
+                                <br> 上の設定を色々いじったあと、右上のPlotというボタンを押すとグラフが更新される。ひまわり8号、9号のデータが共に見れる。\
+                                <br> ひまわりの経度は、8号9号ともにおよそ140.7度(0.05度離れているらしい。)。\
+                                <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。"),
+
+        },
         
         "Electron flux forecast": create_child_object("静止軌道危険度予測","https://radi.nict.go.jp/satellite/",True,\
                 purpose="Reference for forecast electron flux", file_type="graphs",\
