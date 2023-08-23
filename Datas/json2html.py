@@ -19,9 +19,10 @@ def json_to_html(data, depth=0):
                 else:
                     html += f'{spacing}<strong>{key}:</strong> {json_to_html(value, depth+1)}'
             else:
-                if ("URL" in key and is_url(value)) or ("Reference_URL" in key and is_url(value)) or ("Reference_URL2" in key and is_url(value)):
-                    value = f'<a href="{value}" target="_blank">{value}</a>'
-                html += f'{spacing}<strong>{key}:</strong> {value}<br>'
+                if ("External_access" not in key):
+                    if ("URL" in key and is_url(value)) or ("Reference_URL" in key and is_url(value)) or ("Reference_URL2" in key and is_url(value)):
+                        value = f'<a href="{value}" target="_blank">{value}</a>'
+                    html += f'{spacing}<strong>{key}:</strong> {value}<br>'
         html += '</div>'
 
     # If the data is a list, convert each item to HTML

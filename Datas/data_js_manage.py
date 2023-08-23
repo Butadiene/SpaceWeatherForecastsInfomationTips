@@ -21,7 +21,7 @@ def create_child_object(name, url, external_access, purpose=None, exampleVal=Non
     child = {
         name: {
             "URL": url,
-            "External access": external_access
+            "External_access": external_access
         }
     }
     if memo:
@@ -99,6 +99,7 @@ space_weather_info = {
                             <br> LL- Longitudinal extent of the group in heliographic degrees.\
                             <br> NN- Total number of visible sunspots in the group.\
                             <br> Mag Type- Magnetic classification of the group. マウント・ウィルソン分類による黒点の分類。α、β、βγ、γ、δなどがあり、δに行くほどフレアを起こしやすいとされる。\
+                            <br> &nbsp;&nbsp;δ型にだけ要警戒しておけばとりあえずは良い。\
                             <br> &nbsp;&nbsp;以下に簡単に説明。詳しくはReference_URL2参照。\
                             <br> &nbsp&nbsp;&nbsp;&nbsp;α：単極で存在するもの。\
                             <br> &nbsp&nbsp;&nbsp;&nbsp;β：2つの極から成る単純な黒点の対。つまり、2つの黒点が近くにあり、その2つの極性が逆(NとSになっている)。\
@@ -129,22 +130,34 @@ space_weather_info = {
 
         "Solar image": { **create_child_object("SDO Images", "https://sdo.gsfc.nasa.gov/data/", True, \
                         purpose="Confirmation of solar surface activity, coronal holes, CMEs and others", file_type="images", exampleVal="AIA 094's image is..., AIA 1700 image is...",\
-                        memo = "SDO衛星による取得画像。波長ごとに見れるため、太陽表面の概観がエネルギーごとにわかる。 <br> 現在の太陽表面だけにとどまらず、一周期前を見るのも大事(特に極小期付近)。\
-                            一周期前と現在が同じような表面だったら、一周期前に発生した事象を予報に使える。\
-                             <br> サイトの右側の一覧の、AIA/HMI Browse Dataから画像や動画を探すとわかりやすい。\
+                        memo = "SDO衛星による取得画像。波長ごとに見れるため、太陽表面の概観がエネルギーごとにわかる。 <br> 現在の太陽表面だけにとどまらず、1周期前を見るのも大事(特に極小期付近)。\
+                            <br> 太陽の表面が1周期前と現在で近い模様をしている場合、1周期前に発生した事象を予報に活用できる(特にコロナホール)。\
+                             <br> リンク先ページの左側一覧にある、AIA/HMI Browse Dataから画像や動画を探すとわかりやすい。\
                              <br> 主なもの： \
-                                 <br> AIA 094 (green)-エネルギーがかなり高い。フレアの発生などがよく見える。\
+                                 <br> AIA 094 (green)-エネルギーがかなり高い。フレアの発生などがよく見える。また、チカチカ光ることもある(1600の説明参照)。\
                                  <br> AIA 211 (purple)-greenよりはエネルギーが低い。コロナホールが見えやすい。\
                                  <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャーらしい。\
+                                 <br>  &nbsp&nbsp;上3つに関してはCMEが見えることがある。(どの波長帯で一番よく見えるかはCMEの温度によって違う。335(blue)が一番良く見えるときもある。よく見える波長帯を探すのも大事。)\
+                                 <br>  &nbsp&nbsp;このあたりのエネルギー帯で観測できるCMEは、コロナの放出を伴う。そのため、CMEが放出されるとき表面が暗くなる。(リム側だと吹き飛んでいく様子が見えることもある。)\
+                                 <br>  &nbsp&nbsp;ただし、SDOの画像だけでCMEを判断するのは早計。必ずSOHOなどのコロナグラフ画像で、宇宙空間にプラズマが飛んでいく様子を確認すること。\
                                  <br> AIA 304 (red)-彩層がよく見える波長。フィラメントが太陽表面から飛んでいく様子が綺麗に見えるので、CMEが発生したかを確認するのに使える。(フィラメントが飛んでいたら、CMEが伴っている。) \
-                                 <br> 注意すべきは、フレアが出ていてもCMEを伴っているかはわからないということ。CMEを確認したい場合は304の確認が大事。\
-                                 <br> AIA 1600 (yellow/green)-エネルギーが低め。彩層底部(光球上部)の光が見える。これはフレアの発生を示唆する。AIA1600には遷移層の光も混じっているので注意。\
+                                 <br> &nbsp&nbsp;注意すべきは、フレアが出ていてもCMEを伴っているかはわからないということ。また、コロナの放出がなくCMEがあることもある。(コロナは飛ばず、フィラメントだけ飛んでいるということ。)\
+                                 <br> (フィラメントが飛んでいないけどコロナだけ飛んでいることもある。)\
+                                 <br> &nbsp&nbsp;CMEを確認したい場合は304の確認も大事。もちろん、SOHOの確認は必須。\
+                                 <br> AIA 1600 (yellow/green)-エネルギーが低め。彩層底部(光球上部)の光が見える。たまに、チカチカすることがある。このチカチカは AIA 094などでも見える。\
+                                 <br> &nbsp&nbsp;チカチカの理由→黒点の下から浮上してきた磁場と、もともとの黒点が保持していた磁場がリコネクションを起こしてエネルギー開放を起こしている。\
+                                 <br> 比較的小さいエネルギー解放なので、フレアと呼ばれるほどではないが、磁場の浮上がフレアのトリガーになることがある。\
+                                 <br> &nbsp&nbsp;特にもともと大きい黒点に対して磁場が浮上してくると大きいフレアが生じることがあるため、磁場の浮上の確認は重要(=チカチカの確認は重要)。\
+                                 <br> &nbsp&nbsp;なお、AIA 1600には遷移層の光も混じっているので注意。\
                                  <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。 \
-                                 <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向。\
+                                 <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向にある。\
+                                 <br> &nbsp&nbsp;特に黒点画像(HMI Intensitygram)と比較することで、黒点がδ型か否かの判断が可能。\
+                                 <br> HMI Colorized Magnetogram- Magnetogramのカラー版。モノクロは極性しか見えないが、カラー版は強度まで確認できる。\
+                                 <br> \
+                                 <br> 必ずしもどの波長かに拘る必要はなくて、現象が見やすいものを使うとよい。\
                                  <br> 波長ごとの画像のより詳しい説明はReference_URL参照 \
-                                 <br> (なお、必ずしもどの波長かに拘る必要はなくて、現象が見やすいものを使ってもよい。)\
                                  <br> なお、The Sun Nowから見れる画像にはPFSSというバージョンがある。これは、Potential field source surfaceの略で、表面の磁場構造から太陽の磁場構造を推定したもの。\
-                                 <br> PFSSから何かを言うのはかなりの知識が必要なようで、予報ではあまり使われないよう。また、Potentialから計算しているので、重要なはずの自由エネルギーが無視されていることにも注意。",\
+                                 <br> PFSSから何かを言うのはかなりの知識が必要なようで、予報ではあまり使われない模様。また、Potentialから計算しているので、重要なはずの自由エネルギーが無視されていることにも注意。",\
                         refURL="https://aia.lmsal.com/public/instrument.htm"),
 
                         **create_child_object("SDO Images Dashboard", "https://sdo.gsfc.nasa.gov/data/dashboard/", True, \
@@ -239,7 +252,7 @@ space_weather_info = {
                         purpose="Checking the electron 24-h fluences in the radiation belt", file_type="graphs",\
                         memo="GOESが取得した2MeV以上の電子fluxを、24時間で積分した値。GOESデータを元にNICTが積分した結果を出している。<br> 静止軌道衛星の観測データ24時間の総和なので、放射線帯全体の状況を表していると言える。\
                             <br> 放射線帯予報で重視すべきなのは、fluxよりもfluencesである。\
-                            <br> 放射線帯全体の状況を表せること、GOESがいる場所の細かい値がわかっても、日本上空の静止軌道の状態はわからないことなどが理由。"),
+                            <br> 放射線帯全体の状況を表せることが主な理由。(Localな経度の情報を把握し発信することに重点を置いていない。)"),
 
         "Electron fluences forecast": create_child_object("電子フルエンス予報","https://radi.nict.go.jp/",True, \
                                         purpose="Reference for forecast electron fluences", file_type="text", \
@@ -259,7 +272,7 @@ space_weather_info = {
                                 <br> 現在の「ひまわりがいる経度」の放射線帯の電子fluxがわかる。横軸はUTなので注意。\
                                 <br> 上の設定を色々いじったあと、右上のPlotというボタンを押すとグラフが更新される。ひまわり8号、9号のデータが共に見れる。\
                                 <br> ひまわりの経度は、8号9号ともにおよそ140.7度(0.05度離れているらしい。)。\
-                                <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。"),
+                                <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。")
 
         },
         
