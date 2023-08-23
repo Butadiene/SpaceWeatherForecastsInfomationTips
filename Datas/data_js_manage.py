@@ -312,7 +312,7 @@ space_weather_info = {
 
     "Link collection site": {
 
-        "NICT space weather forecast Trend": create_child_object("NICT Space Weather Forecast Trend","https://origin-swc.nict.go.jp/trend/",True,\
+        "NICT space weather forecast Trend": create_child_object("NICT Space Weather Forecast Trend Site","https://origin-swc.nict.go.jp/trend/",True,\
                                                            memo="各領域、各現象をクリックしたら関連グラフや数値と元データのリンクがすぐに出てくる。正直これで良い感ある。"),
 
         "NICT space weather forecast Link collection": create_child_object("NICT Space Weather Forecast Links","https://origin-swc.nict.go.jp/link/",True,\
