@@ -96,7 +96,11 @@ space_weather_info = {
 
                      **create_child_object("SHARP Vector Magnetograms", "https://defn.nict.go.jp/sharp/index_sharp_jp.html",True,\
                         purpose="Check degree of magnetic field distortion (shear)", file_type="images",\
-                        memo="各黒点の磁場の歪み具合を画像でわかりやすく示してくれる。 <br> この構造が複雑であれば（具体的には極性が複雑でかつコンパクトにまとまった黒点）、より大きいフレアを警戒する必要がある。 <br> なお、英語版は https://defn.nict.go.jp/sharp/index_sharp.html ")
+                        memo="各黒点の磁場の歪み具合を画像でわかりやすく示してくれる。 <br> この構造が複雑であれば（具体的には極性が複雑でかつコンパクトにまとまった黒点）、より大きいフレアを警戒する必要がある。 <br> なお、英語版は https://defn.nict.go.jp/sharp/index_sharp.html \
+                             <br> また、シアの値などを定量的に示したのが SHARP Data Viewer。Reference_URLを参照。\
+                                mean shear angle (measured using Btotal)(シア角), total unsigned flux(合計のフラックス。活動領域全体のエネルギーみたいな)を見ると良い。\
+                             <br> たまに、total unsigned current helicityも見ると良いらしい。",\
+                                refURL="http://jsoc.stanford.edu/data/hmi/sharp/dataviewer/")
 
         },
 
