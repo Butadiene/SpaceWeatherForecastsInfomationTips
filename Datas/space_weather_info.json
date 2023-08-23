@@ -35,13 +35,13 @@
             "GOES X-ray Flux": {
                 "URL": "https://www.swpc.noaa.gov/products/goes-x-ray-flux/",
                 "External access": true,
-                "Memo": "GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。 <br> 赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。",
+                "Memo": "GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。 <br> 赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。                        <br> フレアが起きていない（≒尖っていないところ）をバックグラウンドと呼んだりする。これも重要で、バックグラウンドが上昇傾向にある場合は、例えば東側から活動的な領域が見え始めていたりすることを意味する可能性がある。",
                 "File_type": "graphs",
                 "Purpose": "GOES background X-ray flux",
                 "ExampleValue": "B7, 穏やかに上昇中"
             }
         },
-        "Solar radio flux": {
+        "Radio flux": {
             "DRAO": {
                 "URL": "https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php",
                 "External access": true,
@@ -108,7 +108,7 @@
                 "Memo": "SDO衛星による取得画像のダッシュボード版。見たい波長の画像を好きに並べられるので便利。 <br> 左上の歯車から好きな波長の画像を追加できる。 <br> Reference_URLに宇宙天気予報で使用頻度が高いものを並べたDashboardのリンクを添付。",
                 "File_type": "images",
                 "Purpose": "Confirmation of solar surface activity, coronal holes, CMEs and others",
-                "Reference_URL": "https://sdo.gsfc.nasa.gov/data/dashboard/?d=0094;0211;0304;HMIB;1600;0193;HMIIC"
+                "Reference_URL": "https://sdo.gsfc.nasa.gov/data/dashboard/?d=0094;0211;0304;HMIB;1600;0193;HMIIF;HMIIC"
             },
             "STEREO images": {
                 "URL": "https://stereo-ssc.nascom.nasa.gov/beacon/beacon_secchi.shtml",
@@ -122,7 +122,7 @@
             "Deep Flare Net": {
                 "URL": "https://defn.nict.go.jp/index131_eng.html",
                 "External access": true,
-                "Memo": "深層学習を使って太陽フレアの発生率を予報しているサイト。フレアの「予報」の際の参考になる。                                             <br> DeFN - 平均的な発生頻度を50%とする。すなわち、50%を超えていたら、発生確率が「平均的な発生頻度より高い」とみなせる。つまり、50%を超えていても、「普段よりは起きやすい」だけ。                                             <br> DeFN-R - 実際のリアルな発生確率を予測している。すなわち、表示される確率と実際の発生頻度が等しい(20%だったら5回に1回ぐらい起きる)。確率予報には基本これ。                                             <br> DeFN-Q - XとMとCとNo-Flareの和が100%になるようにして表示している。(DeFN、DeFN-RはMクラス以上が起こる確率を示している。)                                              <br> DeFN-Rが確率予報として適切なので、DeFN-Rを使うべき。DeFNは空振りが多い。かわりに見逃しが少ない。",
+                "Memo": "深層学習を使って太陽フレアの発生率を予報しているサイト。フレアの「予報」の際の参考になる。                                             <br> DeFN - 平均的な発生頻度を50%とする。すなわち、50%を超えていたら、発生確率が「平均的な発生頻度より高い」とみなせる。つまり、50%を超えていても、「普段よりは起きやすい」だけ。                                             <br> DeFN-R - 実際のリアルな発生確率を予測している。すなわち、表示される確率と実際の発生頻度が等しい(20%だったら5回に1回ぐらい起きる)。確率予報には基本これ。                                             <br> DeFN-Q - XとMとCとNo-Flareの和が100%になるようにして表示している。(DeFN、DeFN-RはMクラス以上が起こる確率を示している。)                                              <br> DeFN-Rが確率予報として適切なので、DeFN-Rを使うべき。DeFNは空振りが多い。かわりに見逃しが少ない。DeFN-Qはまだα版のようなもので、リアルな発生確率を表していない。",
                 "File_type": "text",
                 "Purpose": "Forecast solar flare"
             }
@@ -197,9 +197,10 @@
             "SUSANOO": {
                 "URL": "https://cidas.isee.nagoya-u.ac.jp/susanoo/",
                 "External access": true,
-                "Memo": "太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。 <br> こっちのほうが見やすいかもしれない。 https://origin-swc.nict.go.jp/forecast/magnetosphere.html ",
+                "Memo": "太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。 <br> nictのサイトのほうが見やすいかもしれない。(Reference_URL参照)",
                 "File_type": "graphs",
-                "Purpose": "Refer for forecast"
+                "Purpose": "Refer for forecast",
+                "Reference_URL": "https://origin-swc.nict.go.jp/forecast/magnetosphere.html"
             }
         },
         "Dst index": {
