@@ -1,6 +1,6 @@
 import json
 
-def create_child_object(name, url, external_access, purpose=None, exampleVal=None, file_type=None, memo=None):
+def create_child_object(name, url, external_access, purpose=None, exampleVal=None, file_type=None, memo=None, refURL = None):
     """
     Creates a child object based on the provided attributes.
     
@@ -12,7 +12,8 @@ def create_child_object(name, url, external_access, purpose=None, exampleVal=Non
     - file_type (str, optional): text OR images OR graphs OR html. File type for the linked site's data. Default is None.
     - purpose (str, optional): How to use the linked site data. Default is None.
     - exampleVal (str, optional): How can the data be expressed in a way that makes it easier to communicate to others? Default is None.
- 
+    - refURL (str, optional): Reference URL for the linked site.
+    
     Returns:
     - dict: A dictionary representing the child object.
     """
@@ -30,6 +31,8 @@ def create_child_object(name, url, external_access, purpose=None, exampleVal=Non
         child[name]["Purpose"] = purpose
     if exampleVal:
         child[name]["ExampleValue"] = exampleVal
+    if refURL:
+        child[name]["Reference_URL"] = refURL
     return child
 
 # Now let's use the above function to create the structure
@@ -94,8 +97,9 @@ space_weather_info = {
 
         "Solar image": { **create_child_object("SDO Images", "https://sdo.gsfc.nasa.gov/data/", True, \
                         purpose="Confirmation of solar surface activity, coronal holes, CMEs and others", file_type="images", exampleVal="AIA 094's image is..., AIA 1700 image is...",\
-                        memo = "SDO衛星による取得画像。波長ごとに見れるため、太陽表面の概観がエネルギーごとにわかる。 <br> 現在の太陽表面だけにとどまらず、一周期前を見るのも大事(特に極小期付近)。一周期前と現在が同じような表面だったら、一周期前二発生した事象を予報に使える。\
-                             <br> AIA/HMI Browse Dataから画像や動画を探すとわかりやすいかもしれない。\
+                        memo = "SDO衛星による取得画像。波長ごとに見れるため、太陽表面の概観がエネルギーごとにわかる。 <br> 現在の太陽表面だけにとどまらず、一周期前を見るのも大事(特に極小期付近)。\
+                            一周期前と現在が同じような表面だったら、一周期前に発生した事象を予報に使える。\
+                             <br> サイトの右側の一覧の、AIA/HMI Browse Dataから画像や動画を探すとわかりやすい。\
                              <br> 主なもの： \
                                  <br> AIA 094 (green)-エネルギーがかなり高い。フレアの発生などがよく見える。\
                                  <br> AIA 211 (purple)-greenよりはエネルギーが低い。コロナホールが見えやすい。\
@@ -105,9 +109,10 @@ space_weather_info = {
                                  <br> AIA 1600 (yellow/green)-エネルギーが低め。彩層底部(光球上部)の光が見える。これはフレアの発生を示唆する。AIA1600には遷移層の光も混じっているので注意。\
                                  <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。 \
                                  <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向。\
-                                 <br> 波長ごとの画像のより詳しい説明は https://aia.lmsal.com/public/instrument.htm \
+                                 <br> 波長ごとの画像のより詳しい説明はReference_URL参照 \
                                  <br> なお、The Sun Nowから見れる画像にはPFSSというバージョンがある。これは、Potential field source surfaceの略で、表面の磁場構造から太陽の磁場構造を推定したもの。\
-                                 <br> PFSSから何かを言うのはかなりの知識が必要なようで、予報ではあまり使われないよう。また、Potentialから計算しているので、重要なはずの自由エネルギーが無視されていることにも注意"),
+                                 <br> PFSSから何かを言うのはかなりの知識が必要なようで、予報ではあまり使われないよう。また、Potentialから計算しているので、重要なはずの自由エネルギーが無視されていることにも注意。",\
+                        refURL="https://aia.lmsal.com/public/instrument.htm"),
 
                         **create_child_object("SDO Images Dashboard", "https://sdo.gsfc.nasa.gov/data/dashboard/", True, \
                         purpose="Confirmation of solar surface activity, coronal holes, CMEs and others", file_type="images", \
@@ -129,7 +134,8 @@ space_weather_info = {
         "Proton flux": create_child_object("GOES Proton Flux", "https://www.swpc.noaa.gov/products/goes-proton-flux", True, \
                         purpose= "Present condition of solar energetic particles", file_type='graphs',exampleVal="10^0 particles/cm2/sec/sr前後、NOAAスケール S0",\
                         memo="Proton Fluxの変動を示す。Proton Fluxの変動は、Flux値をそのまま使って予報が出る事が多く、現況報告の意味合いが強い。\
-                         <br> NOAAスケールとは、様々なイベントに対するNOAAが策定した指標。Proton fluxに関しては、桁数と一致(例えば、10^2を超えたらScale level S2)。<br> 詳しくはhttps://www.swpc.noaa.gov/noaa-scales-explanation のSolar Radiation Stormsを参照"),
+                         <br> NOAAスケールとは、様々なイベントに対するNOAAが策定した指標。Proton fluxに関しては、桁数と一致(例えば、10^2を超えたらScale level S2)。<br> 詳しくはReference_URLのSolar Radiation Stormsタブを参照",\
+                        refURL="https://www.swpc.noaa.gov/noaa-scales-explanation "),
 
     },
 
@@ -142,7 +148,8 @@ space_weather_info = {
         "L1 Solar wind": { **create_child_object("SWPC REAL TIME SOLAR WIND","https://www.swpc.noaa.gov/products/real-time-solar-wind", True, \
                             purpose="Confirmation of solar wind coming near the earth",file_type="graphs",exampleVal="Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed(620→520), Density(1前後), IMF(5nT前後、時折-6), Sector(概ねToward)",\
                             memo="SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。 \
-                             <br> 7daysにして見るのがおすすめ。 <br> また、一太陽周期前(27日前)のデータを見るのも良い。速度と磁場に関してはここに27日前との比較プロットがある。https://origin-swc.nict.go.jp/forecast/magnetosphere.html "),
+                             <br> 7daysにして見るのがおすすめ。 <br> また、一太陽周期前(27日前)のデータを見るのも良い。速度と磁場に関してはReference_URLの「27日太陽自転周期比較プロット」に27日前との比較プロットがある。",\
+                            refURL="https://origin-swc.nict.go.jp/forecast/magnetosphere.html"),
 
                             **create_child_object("ACE REAL TIME SOLAR WIND", "https://www.swpc.noaa.gov/products/ace-real-time-solar-wind", True, \
                             purpose="Solar wind's high energy plasma",file_type="graphs",\
@@ -157,13 +164,14 @@ space_weather_info = {
         "Kp index": create_child_object("SWPC PLANETARY K-INDEX", "https://www.swpc.noaa.gov/products/planetary-k-index", True,\
                     purpose="Magnitude of geomagnetic disturbances across the globe",file_type="graphs",exampleVal="最大Kp指数:2.67(一日のうち最も大きいKp)  日合計値:13.66(3時間ごとに区切って出されるKpを、その日のもの全て(8つ)足す)  NOAA Scale: G0",\
                     memo="地球全体での地磁気擾乱の大きさを示す、Kp指数が見れる。(Kp index = Planetary K-index) \
-                        <br> また、Kp指数をもとにした磁気擾乱に関するNOAAスケールもこのページに載っている。<br>スケールの説明は https://www.swpc.noaa.gov/noaa-scales-explanation のGeomagnetic Stormsの欄に載っている。"),
+                        <br> また、Kp指数をもとにした磁気擾乱に関するNOAAスケールもこのページに載っている。<br>スケールの説明はReference_URLのGeomagnetic Stormsタブに載っている。",\
+                        refURL="https://www.swpc.noaa.gov/noaa-scales-explanation"),
 
         "K index": create_child_object("KAKIOKA K-INDEX", "https://origin-swc.nict.go.jp/trend/geomag.html",True,\
                     purpose="Magnitude of geomagnetic disturbance at Kakioka",file_type="graphs",exampleVal="最大K指数:3(一日のうち最も大きいKp)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)  地磁気活動度: 静穏",\
                     memo="ローカルでの地磁気擾乱の大きさを示すK指数のうち、柿岡のものが見れる。日本での地磁気擾乱を考える際に重要。H componentは水平分力、D componentは偏角を表す。 \
                         地磁気活動度(Quiet, Active...)も載っている。\
-                        <br> 地磁気活動度、日合計値や各componentの詳細は https://www.kakioka-jma.go.jp/knowledge/glossary.html "),
+                        <br> 地磁気活動度、日合計値や各componentの詳細はReference_URL参照", refURL="https://www.kakioka-jma.go.jp/knowledge/glossary.html"),
 
         "Simulation": create_child_object("SUSANOO", "https://cidas.isee.nagoya-u.ac.jp/susanoo/", True, \
                     purpose="Refer for forecast", file_type="graphs",\
@@ -189,7 +197,8 @@ space_weather_info = {
         "Electron fluences forecast": create_child_object("電子フルエンス予報","https://radi.nict.go.jp/",True, \
                                         purpose="Reference for forecast electron fluences", file_type="text", \
                                         memo="放射線帯における24時間 Electron fluencesの、今後24時間、明日、明後日の予報。シミュレーションや統計モデルなど、複数のをもとに行われている。\
-                                                <br> 予報の参考になる。静穏等々の基準についてはこちら https://radi.nict.go.jp/about/#level "),
+                                                <br> 予報の参考になる。静穏等々の基準についてはReference_URL参照",\
+                                                    refURL="https://radi.nict.go.jp/about/#level"),
         
         "Electron flux": create_child_object("GOES Electron Flux","https://www.swpc.noaa.gov/products/goes-electron-flux",True,\
                 purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
@@ -199,7 +208,7 @@ space_weather_info = {
         
         "Electron flux forecast": create_child_object("静止軌道危険度予測","https://radi.nict.go.jp/satellite/",True,\
                 purpose="Reference for forecast electron flux", file_type="graphs",\
-                memo="シミュレーションや統計モデルによる電子fluxの時間変化の予測。 <br> ひまわり8号、GOES衛星それぞれの軌道における電子fluxの大きさの予報地が示されている。")
+                memo="シミュレーションや統計モデルによる電子fluxの時間変化の予測。 <br> ひまわり8号、GOES衛星それぞれの軌道における電子fluxの大きさの予報値が示されている。")
     },
 
     "ionosphere": {

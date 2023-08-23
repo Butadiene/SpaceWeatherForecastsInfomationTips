@@ -19,7 +19,7 @@ def json_to_html(data, depth=0):
                 else:
                     html += f'{spacing}<strong>{key}:</strong> {json_to_html(value, depth+1)}'
             else:
-                if "URL" in key and is_url(value):
+                if ("URL" in key and is_url(value)) or ("Reference_URL" in key and is_url(value)):
                     value = f'<a href="{value}" target="_blank">{value}</a>'
                 html += f'{spacing}<strong>{key}:</strong> {value}<br>'
         html += '</div>'
