@@ -86,7 +86,7 @@ def intro_space_weather(filename):
     "<h2>Information List</h2>"+\
     list_data+\
     f"""
-    <h2> Forecast process template </h2>
+    <h2> Forecast Process Template </h2>
     <p style="color: red;">Warning: 宇宙天気予報は様々なデータを俯瞰的に見て、多くの状況に応じて判断しなければならない。ここに載せるのは1テンプレートにすぎない。</p>
 
     <ol>
@@ -124,6 +124,8 @@ def intro_space_weather(filename):
                         </li>                        
                     </ol>
                 </li>
+                    太陽活動の動画を確認
+                    <p></p>
             </ol>
         </li>
         <!-- ... -->
