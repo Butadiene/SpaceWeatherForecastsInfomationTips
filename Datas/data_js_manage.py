@@ -46,6 +46,7 @@ space_weather_info = {
         "All event reports (SWPC)": create_child_object("SWPC SOLAR AND GEOPHYSICAL EVENT REPORTS","https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports",True,\
                                 purpose="Check events list",file_type="text",\
                                     memo="太陽表面や磁気圏でのイベントのリスト。日付ごとのリストになっている。主要なイベントのリスㇳになっていて重要。\
+                                         <br> SWPC(Space Weather Prediction Center)から出されたリスト。\
                                          <br> BeginとENDがイベント発生と終了時間。X線観測の結果のイベント、光学観測結果のイベント等々をすべて別物として扱う。どの観測手法で、どのように検知されたかをTypeが示す。\
                                          <br> なお、異なる機器で観測されたイベントが、同じ事象によって生じたものと判断した場合、同じイベント番号を振る。\
                                          <br> サイトの少し下のDetailsのところにあるリンクからType一覧を確認できる。例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のREADMEを確認。\
@@ -95,9 +96,18 @@ space_weather_info = {
                         purpose="Confirmation of solar surface activity, coronal holes, CMEs and others", file_type="images", exampleVal="AIA 094's image is..., AIA 1700 image is...",\
                         memo = "SDO衛星による取得画像。波長ごとに見れるため、太陽表面の概観がエネルギーごとにわかる。 <br> 現在の太陽表面だけにとどまらず、一周期前を見るのも大事(特に極小期付近)。一周期前と現在が同じような表面だったら、一周期前二発生した事象を予報に使える。\
                              <br> AIA/HMI Browse Dataから画像や動画を探すとわかりやすいかもしれない。\
-                             <br> 主なもの： <br> AIA 094 (green)-エネルギーがかなり高い。CMEの発生などがよく見える。 <br> AIA 211 (purple)-greenよりはエネルギーが低い。コロナホールが見えやすい。 <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャーらしい。\
-                             <br> AIA 1600 (yellow/green)-エネルギーが低め。彩層底部(光球上部)の光が見える。これはフレアの発生を示唆する。また、AIA1600には遷移層の光も混じっているので注意。 <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。 \
-                             <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向。 <br> 波長ごとの画像のより詳しい説明は https://aia.lmsal.com/public/instrument.htm"),
+                             <br> 主なもの： \
+                                 <br> AIA 094 (green)-エネルギーがかなり高い。フレアの発生などがよく見える。\
+                                 <br> AIA 211 (purple)-greenよりはエネルギーが低い。コロナホールが見えやすい。\
+                                 <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャーらしい。\
+                                 <br> AIA 304 (red)-彩層がよく見える波長。フィラメントが太陽表面から飛んでいく様子が綺麗に見えるので、CMEが発生したかを確認するのに使える。(フィラメントが飛んでいたら、CMEが伴っている。) \
+                                 <br> 注意すべきは、フレアが出ていてもCMEを伴っているかはわからないということ。CMEを確認したい場合は304の確認が大事。\
+                                 <br> AIA 1600 (yellow/green)-エネルギーが低め。彩層底部(光球上部)の光が見える。これはフレアの発生を示唆する。AIA1600には遷移層の光も混じっているので注意。\
+                                 <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。 \
+                                 <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向。\
+                                 <br> 波長ごとの画像のより詳しい説明は https://aia.lmsal.com/public/instrument.htm \
+                                 <br> なお、The Sun Nowから見れる画像にはPFSSというバージョンがある。これは、Potential field source surfaceの略で、表面の磁場構造から太陽の磁場構造を推定したもの。\
+                                 <br> PFSSから何かを言うのはかなりの知識が必要なようで、予報ではあまり使われないよう。また、Potentialから計算しているので、重要なはずの自由エネルギーが無視されていることにも注意"),
 
                         **create_child_object("SDO Images Dashboard", "https://sdo.gsfc.nasa.gov/data/dashboard/", True, \
                         purpose="Confirmation of solar surface activity, coronal holes, CMEs and others", file_type="images", \
@@ -172,7 +182,7 @@ space_weather_info = {
     "Radiation belts": {
         "Electron 24-h fluences": create_child_object("GOES Electron Fluences","https://origin-swc.nict.go.jp/trend/electron.html",True,\
                         purpose="Checking the electron 24-h fluences in the radiation belt", file_type="graphs",\
-                        memo="GOESが取得した2MeV以上の電子fluxを24時間で積分した値。GOESデータを元にNICTが積分した結果を出している。<br> 静止軌道衛星の観測データ24時間の総和なので、放射線帯全体の状況を表していると言える。\
+                        memo="GOESが取得した2MeV以上の電子fluxを、24時間で積分した値。GOESデータを元にNICTが積分した結果を出している。<br> 静止軌道衛星の観測データ24時間の総和なので、放射線帯全体の状況を表していると言える。\
                             <br> 放射線帯予報で重視すべきなのは、fluxよりもfluencesである。\
                             <br> 放射線帯全体の状況を表せること、GOESがいる場所の細かい値がわかっても、日本上空の静止軌道の状態はわからないことなどが理由。"),
 
@@ -189,7 +199,7 @@ space_weather_info = {
         
         "Electron flux forecast": create_child_object("静止軌道危険度予測","https://radi.nict.go.jp/satellite/",True,\
                 purpose="Reference for forecast electron flux", file_type="graphs",\
-                memo="シミュレーションや統計モデルによる電子fluxの時間変化の予測。 <br> ひまわり8号の軌道における電子fluxの大きさと、GOES衛星の位置における大きさを示している。")
+                memo="シミュレーションや統計モデルによる電子fluxの時間変化の予測。 <br> ひまわり8号、GOES衛星それぞれの軌道における電子fluxの大きさの予報地が示されている。")
     },
 
     "ionosphere": {

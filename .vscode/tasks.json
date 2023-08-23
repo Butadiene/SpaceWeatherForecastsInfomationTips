@@ -6,7 +6,7 @@
         {
             "label": "echrun",
             "type": "shell",
-            "command": "python3 ./Datas/data_js_manage.py & python3 ./Datas/json2html.py",
+            "command": "python3 ./Datas/data_js_manage.py && python3 ./Datas/json2html.py",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
