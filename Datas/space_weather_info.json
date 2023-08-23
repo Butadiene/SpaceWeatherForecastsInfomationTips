@@ -252,13 +252,46 @@
             "静止軌道危険度予測": {
                 "URL": "https://radi.nict.go.jp/satellite/",
                 "External access": true,
-                "Memo": "シミュレーションや統計モデルによる電子fluxの時間変化の予測。 <br> ひまわり8号、GOES衛星それぞれの軌道における電子fluxの大きさの予報地が示されている。",
+                "Memo": "シミュレーションや統計モデルによる電子fluxの時間変化の予測。 <br> ひまわり8号、GOES衛星それぞれの軌道における電子fluxの大きさの予報値が示されている。",
                 "File_type": "graphs",
                 "Purpose": "Reference for forecast electron flux"
             }
         }
     },
-    "ionosphere": {},
+    "ionosphere": {
+        "Sporadic E layer": {
+            "Observed foEs": {
+                "URL": "https://swc.nict.go.jp/trend/es.html",
+                "External access": true,
+                "Memo": "Do it later",
+                "File_type": "graphs",
+                "Purpose": "Checking Sporadic E layer"
+            },
+            "Ionogram": {
+                "URL": "https://swc.nict.go.jp/forecast/ionosphere.html",
+                "External access": true,
+                "Memo": "国内イオノゾンデ定常観測の場所を参照",
+                "File_type": "graphs",
+                "Purpose": "Checking Sporadic E layer"
+            }
+        },
+        "Ionospheric Storm": {
+            "foF2 and GEONET TEC time change at Japan": {
+                "URL": "https://swc.nict.go.jp/trend/ionosphere.html",
+                "External access": true,
+                "Memo": "Do it later",
+                "File_type": "graphs",
+                "Purpose": "Checking ionospheric positive and negative storm"
+            },
+            "GEONET TEC map": {
+                "URL": "https://aer-nc-web.nict.go.jp/GPS/QR_GEONET/",
+                "External access": true,
+                "Memo": "Do it later",
+                "File_type": "images",
+                "Purpose": "Checking ionoshpheric storm"
+            }
+        }
+    },
     "Link collection site": {
         "NICT space weather forecast Trend": {
             "NICT Space Weather Forecast Trend": {

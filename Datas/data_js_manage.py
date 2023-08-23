@@ -208,11 +208,29 @@ space_weather_info = {
         
         "Electron flux forecast": create_child_object("静止軌道危険度予測","https://radi.nict.go.jp/satellite/",True,\
                 purpose="Reference for forecast electron flux", file_type="graphs",\
-                memo="シミュレーションや統計モデルによる電子fluxの時間変化の予測。 <br> ひまわり8号、GOES衛星それぞれの軌道における電子fluxの大きさの予報値が示されている。")
+                memo="シミュレーションや統計モデルによる電子fluxの時間変化の予測。 <br> ひまわり8号、GOES衛星それぞれの軌道における電子fluxの大きさの予報値が示されている。"),
     },
 
     "ionosphere": {
-        # Add similar structure for ionosphere here using create_child_object()
+        "Sporadic E layer": { **create_child_object("Observed foEs","https://swc.nict.go.jp/trend/es.html",True,\
+                                                purpose="Checking Sporadic E layer", file_type="graphs",\
+                                                memo="Do it later"),
+
+                              **create_child_object("Ionogram","https://swc.nict.go.jp/forecast/ionosphere.html",True,\
+                                                purpose="Checking Sporadic E layer", file_type="graphs",\
+                                                memo="国内イオノゾンデ定常観測の場所を参照 <br> Do it later")
+        },
+
+        "Ionospheric Storm": {
+            **create_child_object("foF2 and GEONET TEC time change at Japan","https://swc.nict.go.jp/trend/ionosphere.html",True,\
+                                  purpose="Checking ionospheric positive and negative storm", file_type="graphs",\
+                                    memo="Do it later"),
+
+            **create_child_object("GEONET TEC map","https://aer-nc-web.nict.go.jp/GPS/QR_GEONET/",True,\
+                                  purpose="Checking ionoshpheric storm",file_type="images",
+                                  memo="Do it later")
+        },
+        
     },
 
     "Link collection site": {
