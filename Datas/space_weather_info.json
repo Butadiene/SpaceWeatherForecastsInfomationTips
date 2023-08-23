@@ -150,7 +150,7 @@
             "SWPC REAL TIME SOLAR WIND": {
                 "URL": "https://www.swpc.noaa.gov/products/real-time-solar-wind",
                 "External access": true,
-                "Memo": "SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。                              <br> 7daysにして見るのがおすすめ。また、一太陽周期前(27日前)のデータを見るのも良い",
+                "Memo": "SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。                              <br> 7daysにして見るのがおすすめ。 <br> また、一太陽周期前(27日前)のデータを見るのも良い。速度と磁場に関してはここに27日前との比較プロットがある。https://origin-swc.nict.go.jp/forecast/magnetosphere.html ",
                 "File_type": "graphs",
                 "Purpose": "Confirmation of solar wind coming near the earth",
                 "ExampleValue": "Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed(620→520), Density(1前後), IMF(5nT前後、時折-6), Sector(概ねToward)"
@@ -185,6 +185,15 @@
                 "ExampleValue": "最大K指数:3(一日のうち最も大きいKp)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)"
             }
         },
+        "Simulation": {
+            "SUSANOO": {
+                "URL": "https://cidas.isee.nagoya-u.ac.jp/susanoo/",
+                "External access": true,
+                "Memo": "太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。 <br> こっちのほうが見やすいかもしれない。 https://origin-swc.nict.go.jp/forecast/magnetosphere.html ",
+                "File_type": "graphs",
+                "Purpose": "Refer for forecast"
+            }
+        },
         "Dst index": {
             "DST-INDEX": {
                 "URL": "https://wdc.kugi.kyoto-u.ac.jp/dstdir/index-j.html",
@@ -205,14 +214,21 @@
             }
         }
     },
-    "ionosphere": {},
     "Radiation belts": {},
+    "ionosphere": {},
     "Link collection site": {
-        "NICT space weather forecast": {
+        "NICT space weather forecast Trend": {
+            "NICT Space Weather Forecast Trend": {
+                "URL": "https://origin-swc.nict.go.jp/trend/",
+                "External access": true,
+                "Memo": "各領域、各現象をクリックしたら関連グラフや数値と元データのリンクがすぐに出てくる。正直これで良い感ある。"
+            }
+        },
+        "NICT space weather forecast Link collection": {
             "NICT Space Weather Forecast Links": {
                 "URL": "https://origin-swc.nict.go.jp/link/",
                 "External access": true,
-                "Memo": "NICTの宇宙天気予報のサイトのリンク集。これが一番まとまってる感ある。"
+                "Memo": "NICTの宇宙天気予報のサイトのリンク集。色々なサイトとか載ってる。"
             }
         },
         "SOHO space weathers": {

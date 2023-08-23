@@ -35,6 +35,7 @@ def create_child_object(name, url, external_access, purpose=None, exampleVal=Non
 # Now let's use the above function to create the structure
 
 space_weather_info = {
+
     "Space weather forecast for each country": {
         "Space weather forecast for each country": create_child_object("Present Space Weather Forecast from ISES", "https://swc.nict.go.jp/data/ises/isesforecast.html", True,\
                                                                 purpose="Check space weather forecast for each country",file_type="text",\
@@ -53,7 +54,7 @@ space_weather_info = {
 
         "Last flare event reports (LMSAL)": create_child_object("LMSAL last event reports","https://www.lmsal.com/solarsoft/last_events/",True,\
                                 purpose="Check events list",file_type="text",\
-                                    memo="フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20だけだが、NOAAのものと違ってリストになっていたり、図もついていたりと見やすい。"),
+                                    memo="フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20イベントだけだが、NOAAのものと違ってリストで示されていたり、図もついていたりと見やすい。"),
     },
 
     "Solar flares": {
@@ -131,7 +132,7 @@ space_weather_info = {
         "L1 Solar wind": { **create_child_object("SWPC REAL TIME SOLAR WIND","https://www.swpc.noaa.gov/products/real-time-solar-wind", True, \
                             purpose="Confirmation of solar wind coming near the earth",file_type="graphs",exampleVal="Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed(620→520), Density(1前後), IMF(5nT前後、時折-6), Sector(概ねToward)",\
                             memo="SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。 \
-                             <br> 7daysにして見るのがおすすめ。また、一太陽周期前(27日前)のデータを見るのも良い"),
+                             <br> 7daysにして見るのがおすすめ。 <br> また、一太陽周期前(27日前)のデータを見るのも良い。速度と磁場に関してはここに27日前との比較プロットがある。https://origin-swc.nict.go.jp/forecast/magnetosphere.html "),
 
                             **create_child_object("ACE REAL TIME SOLAR WIND", "https://www.swpc.noaa.gov/products/ace-real-time-solar-wind", True, \
                             purpose="Solar wind's high energy plasma",file_type="graphs",\
@@ -146,12 +147,19 @@ space_weather_info = {
         "Kp index": create_child_object("SWPC PLANETARY K-INDEX", "https://www.swpc.noaa.gov/products/planetary-k-index", True,\
                                         purpose="Magnitude of geomagnetic disturbances across the globe",file_type="graphs",exampleVal="最大Kp指数:2.67(一日のうち最も大きいKp)  日合計値:13.66(3時間ごとに区切って出されるKpを、その日のもの全て(8つ)足す)",\
                                         memo="地球全体での地磁気擾乱の大きさを示す、Kp指数が見れる。(Kp index = Planetary K-index)"),
+        
         "K index": create_child_object("KAKIOKA K-INDEX", "https://origin-swc.nict.go.jp/trend/geomag.html",True,\
                                        purpose="Magnitude of geomagnetic disturbance at Kakioka",file_type="graphs",exampleVal="最大K指数:3(一日のうち最も大きいKp)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)",\
                                         memo="ローカルでの地磁気擾乱の大きさを示すK指数のうち、柿岡のものが見れる。日本での地磁気擾乱を考える際に重要。H componentは水平分力、D componentは偏角を表す。 <br> 日合計値や各componentの詳細は https://www.kakioka-jma.go.jp/knowledge/glossary.html "),
+
+        "Simulation": create_child_object("SUSANOO", "https://cidas.isee.nagoya-u.ac.jp/susanoo/", True, \
+                                          purpose="Refer for forecast", file_type="graphs",\
+                                            memo="太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。 <br> こっちのほうが見やすいかもしれない。 https://origin-swc.nict.go.jp/forecast/magnetosphere.html "),
+
         "Dst index": create_child_object("DST-INDEX", "https://wdc.kugi.kyoto-u.ac.jp/dstdir/index-j.html",True,\
                                        purpose="DST-index",file_type="graphs",\
                                         memo="DST指数。予報ではそんなに使わないのかも?"),
+        
         "AE index": create_child_object("AE-INDEX", "https://wdc.kugi.kyoto-u.ac.jp/aedir/index-j.html",True,\
                                        purpose="AE-index",file_type="graphs",exampleVal="None",\
                                         memo="AE指数。予報ではそんなに使わないのかも?"),
@@ -159,7 +167,18 @@ space_weather_info = {
     },
 
     "Radiation belts": {
-        
+        "Electron flux": create_child_object("GOES Electron Flux","https://www.swpc.noaa.gov/products/goes-electron-flux",True,\
+                        purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
+                        memo="GOESが取得した2MeV以上の電子フラックスの時間変化。7daysで見るのが良さそう。\
+                            <br> 現在の「GOESがいる経度」の放射線帯の電子フラックスがわかる。グラフのNとMはNoonとMidnightの略で、衛星が昼側、夜側にいることを指す。\
+                            <br> なお、GOES-16は西経75.2度、GOES-18は西経136.9度の静止衛星。 <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。"),
+       
+        "Electron 24-h fluences": create_child_object("GOES Electron Fluences","https://origin-swc.nict.go.jp/trend/electron.html",True,\
+                        purpose="Checking the electron 24-h fluences in the radiation belt", file_type="graphs",\
+                        memo="GOESが取得した2MeV以上の電子フラックスを24時間で積分した値。GOESデータを元にNICTが積分した結果を出している。<br> 静止軌道衛星の観測データ24時間の総和なので、放射線帯全体の状況を表していると言える。\
+                            <br> 放射線帯予報で重視すべきなのは、fluxよりもfluencesである。\
+                            <br> 放射線帯全体の状況を表せること、GOESがいる場所の細かい値がわかっても、日本上空の静止軌道の状態はわからないことなどが理由。"),
+ 
     },
 
     "ionosphere": {
@@ -167,8 +186,13 @@ space_weather_info = {
     },
 
     "Link collection site": {
-        "NICT space weather forecast": create_child_object("NICT Space Weather Forecast Links","https://origin-swc.nict.go.jp/link/",True,\
-                                                           memo="NICTの宇宙天気予報のサイトのリンク集。これが一番まとまってる感ある。"),
+
+        "NICT space weather forecast Trend": create_child_object("NICT Space Weather Forecast Trend","https://origin-swc.nict.go.jp/trend/",True,\
+                                                           memo="各領域、各現象をクリックしたら関連グラフや数値と元データのリンクがすぐに出てくる。正直これで良い感ある。"),
+
+        "NICT space weather forecast Link collection": create_child_object("NICT Space Weather Forecast Links","https://origin-swc.nict.go.jp/link/",True,\
+                                                           memo="NICTの宇宙天気予報のサイトのリンク集。色々なサイトとか載ってる。"),
+
         "SOHO space weathers": create_child_object("SOHO Space Weather", "https://soho.nascom.nasa.gov/spaceweather/",True,\
                                                    memo="SOHOのサイトにあるリンク集。オーロラ予報とかシミュレーション予報とか載ってるの嬉しさがある。")
     }
