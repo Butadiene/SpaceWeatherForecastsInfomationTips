@@ -70,10 +70,11 @@
             "SOLAR REGION SUMMARY": {
                 "URL": "https://www.swpc.noaa.gov/products/solar-region-summary",
                 "External access": true,
-                "Memo": "現在の太陽黒点の一覧とその性質が載っている。SRSと略され、重要なデータの一つ。 <br> 現在の黒点の総面積を出したいときは、SRSに載っている黒点の面積をすべて足す。その黒点がいつから発生したかを知りたいときは、過去のデータを参照すると良い。                            <br> なお、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから過去のデータをダウンロードできる。 <br> 例：ftp://ftp.swpc.noaa.gov/pub/forecasts/ にアクセスし、SRSフォルダの中のテキストファイルを確認",
+                "Memo": "現在の太陽黒点の一覧とその性質が載っている。SRSと略され、重要なデータの一つ。 <br> 現在の黒点の総面積を出したいときは、SRSに載っている黒点の面積をすべて足す。その黒点がいつから発生したかを知りたいときは、過去のデータを参照すると良い。                            <br> Z- Modified Zurich classification of the group. 修正チューリッヒクラス。3つのアルファベットの組み合わせで表される。Reference_URL参照                            <br> Lo- Carrington longitude of the group.                            <br> LL- Longitudinal extent of the group in heliographic degrees.                            <br> なお、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから過去のデータをダウンロードできる。 <br> 例：ftp://ftp.swpc.noaa.gov/pub/forecasts/ にアクセスし、SRSフォルダの中のテキストファイルを確認",
                 "File_type": "text",
                 "Purpose": "Sunspot area (SWPC) & Charactistics of active regions",
-                "ExampleValue": "Sunspot area:660, 穏やかに上昇中 & Charactistics of active regions:領域、位置、面積..."
+                "ExampleValue": "Sunspot area:660, 穏やかに上昇中 & Charactistics of active regions:領域、位置、面積...",
+                "Reference_URL": "https://www.spaceweatherlive.com/en/help/the-classification-of-sunspots-after-malde.html"
             },
             "SOHO Sunspots": {
                 "URL": "https://soho.nascom.nasa.gov/sunspots/",

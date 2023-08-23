@@ -83,7 +83,11 @@ space_weather_info = {
                     **create_child_object("SOLAR REGION SUMMARY", "https://www.swpc.noaa.gov/products/solar-region-summary", True, \
                         purpose="Sunspot area (SWPC) & Charactistics of active regions", file_type="text", exampleVal="Sunspot area:660, 穏やかに上昇中 & Charactistics of active regions:領域、位置、面積...", \
                         memo="現在の太陽黒点の一覧とその性質が載っている。SRSと略され、重要なデータの一つ。 <br> 現在の黒点の総面積を出したいときは、SRSに載っている黒点の面積をすべて足す。その黒点がいつから発生したかを知りたいときは、過去のデータを参照すると良い。\
-                            <br> なお、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから過去のデータをダウンロードできる。 <br> 例：ftp://ftp.swpc.noaa.gov/pub/forecasts/ にアクセスし、SRSフォルダの中のテキストファイルを確認"),
+                            <br> Z- Modified Zurich classification of the group. 修正チューリッヒクラス。3つのアルファベットの組み合わせで表される。Reference_URL参照\
+                            <br> Lo- Carrington longitude of the group.\
+                            <br> LL- Longitudinal extent of the group in heliographic degrees.\
+                            <br> なお、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから過去のデータをダウンロードできる。 <br> 例：ftp://ftp.swpc.noaa.gov/pub/forecasts/ にアクセスし、SRSフォルダの中のテキストファイルを確認",\
+                                refURL="https://www.spaceweatherlive.com/en/help/the-classification-of-sunspots-after-malde.html"),
                         
                     **create_child_object("SOHO Sunspots", "https://soho.nascom.nasa.gov/sunspots/", True, \
                         purpose= "Check sunspot numbers with sunspot images", file_type="images", 
