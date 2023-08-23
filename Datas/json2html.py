@@ -10,7 +10,7 @@ def json_to_html(data, depth=0):
     # If the data is a dictionary, convert each key-value pair to HTML
     if isinstance(data, dict):
 
-        html += f'<div style="margin-left:20px; font-size: {font_size-depth*1.5}">'
+        html += f'<div style="margin-left:20px; font-size:{font_size-depth*1.5}px;">'
         for key, value in data.items():
             if isinstance(value, (dict, list)):
                 if depth > 0:  # Only make the topmost object collapsible
@@ -38,10 +38,40 @@ def is_url(s):
     """Check if a string is a URL."""
     return s.startswith(('http://', 'https://'))
 
-def convert_json_file_to_html(filename):
+def convert_json_file_to_list(filename):
     with open(filename, 'r') as f:
         data = json.load(f)
     html_data = json_to_html(data)
+    return html_data
+
+def intro_space_weather(filename):
+    with open(filename, 'r') as f:
+        data = json.load(f)
+
+    list_data = convert_json_file_to_list('./Datas/space_weather_info.json')
+
+    head_data = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Space forecast tips</title>
+    </head>
+    """
+    body_data = "<body>"+\
+    "<h1>Space Weather Forecast Tips</h1>"+\
+    "<h2>Information List</h2>"+\
+    list_data+\
+    """
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+
+    """\
+    +"</body></html>"
+
 
     script = '''
     <script>
@@ -55,10 +85,12 @@ def convert_json_file_to_html(filename):
     }
     </script>
     '''
+    html_data = head_data+body_data+script
+    return html_data
 
-    return script + html_data
+
 
 # Example usage:
-html_data = convert_json_file_to_html('./Datas/space_weather_info.json')
+html_data = intro_space_weather('./Datas/space_weather_info.json')
 with open('./Datas/space_weather_info.html', 'w') as f:
     f.write(html_data)
