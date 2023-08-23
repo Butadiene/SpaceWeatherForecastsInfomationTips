@@ -92,7 +92,7 @@ def intro_space_weather(filename):
     <ol>
         <li>
             各国の予報状況
-            <p>各国の予報状況を確認し、現在の太陽活動や地磁気活動がどの程度Activeかをぼんやり把握する。{get_site_info(data,"Space weather forecast for each country")}</p>
+            <p>各国の予報状況を確認し、現在の太陽活動や地磁気活動がどの程度Activeかをぼんやり把握する。{get_site_info(data,"Present Space Weather Forecast from ISES")}</p>
         </li>
         <li>
             太陽活動
@@ -124,8 +124,10 @@ def intro_space_weather(filename):
                         </li>                        
                     </ol>
                 </li>
+                <li>
                     太陽活動の動画を確認
                     <p></p>
+                </li>
             </ol>
         </li>
         <!-- ... -->
