@@ -288,26 +288,66 @@ space_weather_info = {
     },
 
     "ionosphere": {
-        "Sporadic E layer": { **create_child_object("Observed foEs","https://swc.nict.go.jp/trend/es.html",True,\
-                                                purpose="Checking Sporadic E layer", file_type="graphs",\
-                                                memo="Do it later"),
 
-                              **create_child_object("Ionogram","https://swc.nict.go.jp/forecast/ionosphere.html",True,\
-                                                purpose="Checking Sporadic E layer", file_type="graphs",\
-                                                memo="国内イオノゾンデ定常観測の場所を参照 <br> Do it later")
-        },
-
-        "Ionospheric Storm": {
+        "Ionosonde": {
             **create_child_object("foF2 and GEONET TEC time change at Japan","https://swc.nict.go.jp/trend/ionosphere.html",True,\
                                   purpose="Checking ionospheric positive and negative storm", file_type="graphs",\
-                                    memo="F層付近での電子密度(foF2)、上空の全電子密度(GEONET TEC)の変化を表す。どちらのデータも正相電離圏嵐、負相電離圏嵐の確認に使える。 <br> \
-                                        foF2、GEONET TEC2つの違いはあまり注意しなくてよく、クロスチェックの意味合いが強い。"),
+                                    memo="F層付近での電子密度(foF2)、上空の全電子密度(GEONET TEC)の変化を表す。 <br> どちらのデータも正相電離圏嵐、負相電離圏嵐の確認に使える。\
+                                         <br>  2時間以上Ip2以上やIn2以上に入っている場合は電離圏嵐とみなす(Ip、InはIスケール)。Iスケールが0と1は静穏。\
+                                         <br> なお電離圏嵐が発生した際は、fOF2、TECともにグラフ上に電離圏嵐が発生した旨が表示される。\
+                                         <br> Iスケールの意味合いはReference_URL参照。\
+                                         <br> foF2、GEONET TEC2つの違いはあまり注意しなくてよく、クロスチェックの意味合いが強い。",
+                                         refURL="https://swc.nict.go.jp/knowledge/i-scale.html"),
 
             **create_child_object("GEONET TEC map","https://aer-nc-web.nict.go.jp/GPS/QR_GEONET/",True,\
                                   purpose="Checking ionoshpheric storm",file_type="images",
-                                  memo="日本上空の電子密度の空間分布を示したもの。日本のどの領域で電離圏嵐が発達しているかがわかる。")
+                                  memo="日本上空の電子密度の空間分布を示したもの。ここでいう電子密度とは、上空までの全電子密度。\
+                                       <br> 日本のどの領域で電離圏嵐が発達しているかがわかる。"),
+
+            **create_child_object("Observed foEs","https://swc.nict.go.jp/trend/es.html",True,\
+                                                purpose="Checking Sporadic E layer", file_type="graphs",\
+                                                memo=" スポラティックE層の発生の時間プロットを見る際に使える。(スポラティックE層の発生だけみたいのであればイオノグラムの方が良い。)\
+                                                 <br> 8MHzを超えた時間はスポラティックE層が発生していた可能性がある。\
+                                                 <br> 詳細やアーカイブは、Reference_URLの「電離圏パラメータプロット」を参照。",\
+                                                    refURL="https://wdc.nict.go.jp/IONO/HP2009/ISDJ/index.html"),
         },
+
+        "Ionogram": { 
+
+                              **create_child_object("NICT Site Ionogram Viewer","https://swc.nict.go.jp/forecast/ionosphere.html",True,\
+                                                purpose="Checking Sporadic E layer", file_type="graphs",\
+                                                memo="ページを少しスクロールして出てくる、「国内イオノゾンデ定常観測」の場所を参照。\
+                                                     <br> ぱっと現況確認したいときはこれが見やすい。なお、色はエコー強度を意味する。\
+                                                     <br> スポラティックE層とデリンジャー現象の発生を確認したい場合は、これを使うと良い。\
+                                                     <br> スポラティックE層: 高度100km前後(E層)で8MHz以上でエコーがあれば、スポラティックE層とみなしても良い。\
+                                                     <br> &nbsp&nbsp;縦軸で100km前後のところかつ横軸が8MHz以上の場所にエコーがあるかを確認するとよい。\
+                                                     <br> デリンジャー現象: D層が電波を吸収した結果、E層(高度100km前後)より上のエコーが消えるのがデリンジャー現象。\
+                                                     <br> &nbsp&nbsp;強いデリンジャー現象の時は、イオノグラムがブラックアウト(一面真っ黒)する。一切のエコーが帰ってこない。\
+                                                     <br> &nbsp&nbsp;ある程度の規模のデリンジャー現象では、高度100kmの前後のエコーが消える。"),
+
+                              **create_child_object("Color Ionogram Viewer details","https://wdc.nict.go.jp/ionog/js_viewer/js_01.html",True,\
+                                                purpose="Checking Sporadic E layer", file_type="graphs",\
+                                                memo="イオノグラムのカラープロットの詳細版。過去のデータなども見れる。\
+                                                      <br> 操作方法はReference_URLを参照\
+                                                      <br> 詳細、Reference_URL2を参照。",\
+                                                    refURL="https://wdc.nict.go.jp/IONO/HP2009/ISDJ/exp-ionogram_viewer_color.html",\
+                                                    refURL2="https://wdc.nict.go.jp/IONO/HP2009/ISDJ/index.html")
+
+        },
+
+        "GOES Dellinger effect": create_child_object("Dellinger phenomenon", "https://swc.nict.go.jp/trend/dellinger.html", True,\
+                                purpose="Checking Dellinger effect", file_type="graphs",\
+                                memo="デリンジャー現象の世界的な現況マップ。 <br> ローカルなデリンジャー現象の把握にはイオノグラムを用いたほうが良いため、あまり使わないかもしれない。\
+                                    <br>詳細やアーカイブは、Reference_URLを参照。",\
+                                refURL="https://wdc.nict.go.jp/x-ray/index.html"),
         
+
+    },
+
+    "Texts": {
+        "NICT Space weather forecast Guide": create_child_object("宇宙天気予報ユーザーガイド","https://swc.nict.go.jp/knowledge/", True,\
+                                                                 memo="NICTの宇宙天気のユーザーガイド。指標などの参考に。")
+
     },
 
     "Link collection site": {
