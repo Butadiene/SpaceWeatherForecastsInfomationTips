@@ -219,6 +219,12 @@ def intro_space_weather(filename):
                             <p>SDO衛星の211の画像などから、太陽表面に存在するコロナホールをもう一度確認する。 <br> 太陽表面のコロナホールから来る高速太陽風は、3日程度かけて地球に到来するため、3-4日前から現在までの太陽画像を確認するのが大事。{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
                         </li>
                         <li>
+                            1太陽周期前の太陽風、コロナホールの確認
+                            <p>1太陽周期前(27日前)のSDO衛星211の画像と、太陽風のデータを確認する。\
+                             <br>1太陽風周期前に現在と同じようなコロナホールが存在するか、太陽風の値は1太陽風周期前と同じような変化を示しているかを確認。\
+                             <br> もし、似たようなコロナホールがあり、太陽風が同じような変化を示していた場合、今後太陽風の値は前周期と同じような変化をたどる可能性がある。{get_site_info(data,"SDO Images")}{get_site_info(data,"SWPC REAL TIME SOLAR WIND")}</p>
+                        </li>
+                        <li>
                             シミュレーションの確認
                             <p>数値シミュレーションにより、コロナホールからどのように地球に太陽風が飛んでくるか、の予測を確認する。参考程度ではある。{get_site_info(data,"SUSANOO")}</p>
                         </li>
@@ -260,6 +266,7 @@ def intro_space_weather(filename):
             </ol>
         </li>
         <li>
+        地磁気擾乱
         </li>
         <!-- ... -->
     </ol>
