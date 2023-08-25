@@ -301,5 +301,5 @@ def intro_space_weather(filename):
 
 # Example usage:
 html_data = intro_space_weather('./Datas/space_weather_info.json')
-with open('./Datas/space_weather_info.html', 'w') as f:
+with open('./docs/space_weather_info.html', 'w') as f:
     f.write(html_data)
