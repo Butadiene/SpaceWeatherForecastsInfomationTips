@@ -216,7 +216,8 @@ def intro_space_weather(filename):
                         </li>
                         <li>
                         太陽活動の動画の見直し
-                        <p>リストアップした各活動領域に着目しながら、太陽表面の動画を見直す。 <br> 特に、094や1600でチカチカ光る光(磁場の浮上を示唆)、活動領域付近のフレアやフィラメントの吹き飛びなどをもう一度確認。{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
+                        <p>リストアップした各活動領域に着目しながら、太陽表面の動画を見直す。 <br> 特に、AIA094やAIA1600でチカチカ光る光(磁場の浮上を示唆)、活動領域付近のフレアなどをもう一度確認。\
+                        <br> チカチカ光る光を確認する際は、それが磁場の浮上によるものかフレアによるものかに注意。フレアイベントリストと付き合わせると確認しやすい。{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}{get_site_info(data,"LMSAL last event reports")}</p>
                         </li>
                     </ol>
                 </li>
