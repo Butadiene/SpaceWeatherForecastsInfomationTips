@@ -143,8 +143,11 @@ def intro_space_weather(filename):
                             <ol>
                                 <li>
                                     黒点位置と番号の確認
-                                    <p>太陽表面に出ている黒点とそれに振られている番号を確認。\
-                                    <br> また、先程確認した太陽活動の動画とも比較する。東端(回り込んできた)に位置する黒点や活動的な領域のうち未採番のものがあった場合、それについても注意しておく。{get_site_info(data,"SOHO Sunspots")}</p>
+                                    <p>太陽表面に出ている黒点とそれに振られている番号を確認する。{get_site_info(data,"SOHO Sunspots")}</p>
+                                </li>
+                                <li>
+                                    東端から回り込んでくる活動領域の確認
+                                    <p>SDO画像の094などを見て東端から回り込んできた、あるいは回り込んできそうな位置する黒点や活動的な領域を確認する。 <br> 未採番のものがあった場合、それについて認識する。{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
                                 </li>
                                 <li>
                                     各活動領域のデータを確認
