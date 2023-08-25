@@ -115,7 +115,7 @@
                 "File_type": "images",
                 "Purpose": "Confirmation of solar surface activity, coronal holes, CMEs and others",
                 "ExampleValue": "AIA 094's image is..., AIA 1700 image is...",
-                "Reference_URL": "https://aia.lmsal.com/public/instrument.htm"
+                "Reference_URL": "https://sdo.gsfc.nasa.gov/data/channels.php"
             },
             "SDO Images Dashboard": {
                 "URL": "https://sdo.gsfc.nasa.gov/data/dashboard/",
