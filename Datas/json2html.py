@@ -158,7 +158,7 @@ def intro_space_weather(filename):
                                 <li>
                                     イベントリストを確認
                                     <p>各活動領域がどのぐらいの規模、数のフレアを起こしたかを確認する。以下のリストを使用すると良い。{get_site_info(data,"LMSAL last event reports")} \
-                                    また、イベントリストの確認の際にX線フラックスを突き合わせるても良い。{get_site_info(data,"GOES X-ray Flux")}</p>
+                                    また、イベントリストの確認の際にX線フラックスを突き合わせても良い。{get_site_info(data,"GOES X-ray Flux")}</p>
                                 </li>
                             </ol>
                         </li>
@@ -179,7 +179,7 @@ def intro_space_weather(filename):
                         </li>
                         <li>
                         太陽活動の動画の見直し
-                        <p>リストアップした各活動領域に着目しながら、太陽表面の動画を見直す。 <br> 特に、094や1600でチカチカ光る光(磁場の浮上を示唆)、活動領域付近のフレアやフィラメントの吹き飛びなどをもう一度確認{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
+                        <p>リストアップした各活動領域に着目しながら、太陽表面の動画を見直す。 <br> 特に、094や1600でチカチカ光る光(磁場の浮上を示唆)、活動領域付近のフレアやフィラメントの吹き飛びなどをもう一度確認。{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
                         </li>
                     </ol>
                 </li>
