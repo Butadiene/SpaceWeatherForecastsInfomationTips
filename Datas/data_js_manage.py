@@ -210,6 +210,7 @@ space_weather_info = {
         "L1 Solar wind": { **create_child_object("SWPC REAL TIME SOLAR WIND","https://www.swpc.noaa.gov/products/real-time-solar-wind", True, \
                             purpose="Confirmation of solar wind coming near the earth",file_type="graphs",exampleVal="Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed(620→520), Density(1前後), IMF(5nT前後、時折-6), Sector(概ねToward)",\
                             memo="SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。 \
+                             <br> 太陽風が高速であるか(具体的には500km/s以上)、磁場が強くかつ南向きを示しているか、密度上昇があるか、などが重要な確認点。\
                              <br> 7daysにして見るのがおすすめ。 <br> また、一太陽周期前(27日前)のデータを見るのも良い。速度と磁場に関してはReference_URLの「27日太陽自転周期比較プロット」に27日前との比較プロットがある。",\
                             refURL="https://origin-swc.nict.go.jp/forecast/magnetosphere.html"),
 
