@@ -66,6 +66,43 @@ def convert_json_file_to_list(filename):
 def get_site_info(data,target):
     return json_to_html({target: get_value_from_key(data,target)},depth=1)
 
+def lists_only_space_weather_info(filename):
+    with open(filename, 'r') as f:
+        data = json.load(f)
+    list_data = convert_json_file_to_list('./Datas/space_weather_info.json')
+
+    head_data = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Space Weather Forecast Infomartion Sites Lists</title>
+    </head>
+    """
+    body_data = "<body>"+\
+    "<h1>Space Weather Forecast Infomartion Sites Lists</h1>"+\
+    "<h2>Information Lists</h2>"+"ここに記載してある一切の情報について、作者は責任を負いません。"+\
+    list_data+"</body></html>"
+    
+    
+    script = '''
+    <script>
+    function toggleVisibility(element) {
+        var content = element.nextElementSibling;
+        if (content.style.display === "none") {
+            content.style.display = "block";
+        } else {
+            content.style.display = "none";
+        }
+    }
+    </script>
+    '''
+    html_data = head_data+body_data+script
+    return html_data
+
+
 def intro_space_weather(filename):
     with open(filename, 'r') as f:
         data = json.load(f)
@@ -85,7 +122,7 @@ def intro_space_weather(filename):
     "<h1>Space Weather Forecast Tips</h1>"+\
     "<h2>Information List</h2>"+\
     list_data+\
-    f"""
+    f""" ここに記載してある一切の情報について、作者は責任を負いません。
     <h2> Forecast Process Template </h2>
     <p style="color: red;">Warning: 宇宙天気予報は様々なデータを俯瞰的に見て、多くの状況に応じて判断しなければならない。ここに載せるのは1テンプレートにすぎない。</p>
 
@@ -158,7 +195,7 @@ def intro_space_weather(filename):
                                 <li>
                                     イベントリストを確認
                                     <p>各活動領域がどのぐらいの規模、数のフレアを起こしたかを確認する。以下のリストを使用すると良い。{get_site_info(data,"LMSAL last event reports")} \
-                                    また、イベントリストの確認の際にX線フラックスを突き合わせても良い。{get_site_info(data,"GOES X-ray Flux")}</p>
+                                    <br> また、イベントリストの確認の際にX線フラックスを突き合わせても良い。{get_site_info(data,"GOES X-ray Flux")}</p>
                                 </li>
                             </ol>
                         </li>
@@ -300,6 +337,10 @@ def intro_space_weather(filename):
 
 
 # Example usage:
-html_data = intro_space_weather('./Datas/space_weather_info.json')
-with open('./docs/space_weather_info.html', 'w') as f:
-    f.write(html_data)
+info_html_data = intro_space_weather('./Datas/space_weather_info.json')
+with open('./docs_list_and_forecast/space_weather_info.html', 'w') as f:
+    f.write(info_html_data)
+
+lists_only_html_data = lists_only_space_weather_info('./Datas/space_weather_info.json')
+with open('./docs_info_lists/space_weather_info_lists.html', 'w') as f:
+    f.write(lists_only_html_data)

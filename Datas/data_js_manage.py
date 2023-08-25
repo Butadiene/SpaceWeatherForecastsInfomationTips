@@ -137,21 +137,26 @@ space_weather_info = {
                              <br> リンク先ページの左側一覧にある、AIA/HMI Browse Dataから画像や動画を探すとわかりやすい。\
                              <br> 主なもの： \
                                  <br> AIA 094 (green)-エネルギーがかなり高い。フレアの発生などがよく見える。また、チカチカ光ることもある(1600の説明参照)。\
+                                 <br> &nbsp&nbsp;フレアの発生の際は、黒点領域のどのあたり(黒点の南側か、北側かなど)で発生したかまで意識できると良い。発生領域が細かくわかると、磁場構造の確認の際の助けになる。\
                                  <br> AIA 211 (purple)-greenよりはエネルギーが低い。コロナホールが見えやすい。そこそこ小さくても、黒い穴があったらコロナホールを疑ってみるのは大事。\
                                  <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャーらしい。\
-                                 <br>  &nbsp&nbsp;上3つに関してはCMEが見えることがある。(どの波長帯で一番よく見えるかはCMEの温度によって違う。335(blue)が一番良く見えるときもある。よく見える波長帯を探すのも大事。)\
-                                 <br>  &nbsp&nbsp;このあたりのエネルギー帯で観測できるCMEは、コロナの放出を伴う。そのため、CMEが放出されるとき表面が暗くなる。(リム側だと吹き飛んでいく様子が見えることもある。)\
-                                 <br>  &nbsp&nbsp;ただし、SDOの画像だけでCMEを判断するのは早計。必ずSOHOなどのコロナグラフ画像で、宇宙空間にプラズマが飛んでいく様子を確認すること。\
-                                 <br>  &nbsp&nbsp;また、CMEは地球に到来するまで数日かかる。そのため、CMEに関する判断をする際は、4日前までのSDO画像をちゃんと確認する。\
+                                 <br> &nbsp&nbsp;このあたりの波長帯の画像では、CMEが見えることがある。\
+                                 <br> &nbsp&nbsp;このあたりの波長帯で観測できるCMEは、コロナの放出を伴う。そのため、CMEが放出されるとき表面が暗くなる用に見える。(リム側だと吹き飛んでいく様子が見えることもある。)\
+                                 <br> &nbsp&nbsp;(どの波長帯で一番よく見えるかは、そのときのCMEの温度によって違う。335(blue)が一番良く見えるときもある。よく見える波長帯を探すのも大事。)\
+                                 <br> &nbsp&nbsp;ただし、SDOの画像だけでCMEを判断するのは早計。必ずSOHOなどのコロナグラフ画像で、宇宙空間にプラズマが飛んでいく様子を確認すること。\
+                                 <br> &nbsp&nbsp;また、CMEは地球に到来するまで数日かかる。そのため、CMEに関する判断をする際は、4日前までのSDO画像をちゃんと確認する。\
                                  <br> AIA 304 (red)-彩層がよく見える波長。フィラメントが太陽表面から飛んでいく様子が綺麗に見えるので、CMEが発生したかを確認するのに使える。(フィラメントが飛んでいたら、CMEが伴っている。) \
-                                 <br> &nbsp&nbsp;注意すべきは、フレアが出ていてもCMEを伴っているかはわからないということ。また、コロナの放出がなくCMEがあることもある。(コロナは飛ばず、フィラメントだけ飛んでいるということ。)\
-                                 <br> &nbsp&nbsp;(フィラメントが飛んでいないけどコロナだけ飛んでいることもある。)\
-                                 <br> &nbsp&nbsp;CMEを確認したい場合はAIA 304の確認も大事。もちろん、SOHOの確認は必須。\
-                                 <br> AIA 1600 (yellow/green)-エネルギーが低め。彩層底部(光球上部)の光が見える。たまに、チカチカすることがある。このチカチカは AIA 094などでも見える。\
-                                 <br> &nbsp&nbsp;チカチカの理由→黒点の下から浮上してきた磁場と、もともとの黒点が保持していた磁場がリコネクションを起こしてエネルギー開放を起こしている。\
+                                 <br> &nbsp&nbsp;CMEは常にコロナの放出とフィラメントの放出の両方を伴うわけではなく、片方のみのこともある。\
+                                 <br> &nbsp&nbsp;またフレアが出ていてもCMEを伴っていないこともあれば、フレアが出ていなくてもCMEが起きていることもある。\
+                                 <br> &nbsp&nbsp;そのためCMEを確認したい場合は、上で述べたエネルギーが高い波長帯によるコロナの吹き飛びの確認と、AIA 304によるフィラメントの吹き飛びの確認の両方が大事。(フレアイベントと関係なく確認するべき。)\
+                                 <br> &nbsp&nbsp;もちろん、SOHOの確認は必須。\
+                                 <br> AIA 1600 (yellow/green)-エネルギーが低め。彩層底部(光球上部)と遷移層が見える。たまに、チカチカすることがある。このチカチカは AIA 094などでも見える。\
+                                 <br> &nbsp&nbsp;チカチカはフレアによって起きるもの(遷移層の光を見ている)と、黒点の下から磁場が浮上して起きるもの(彩層底部(光球上部)の光を見ている)がある。\
+                                 <br> &nbsp&nbsp;浮上磁場について: 黒点の下から浮上してきた磁場と、もともとの黒点が保持していた磁場がリコネクションを起こしてエネルギー開放を起こしている。\
                                  <br> &nbsp&nbsp;比較的小さいエネルギー解放なので、フレアと呼ばれるほどではないが、磁場の浮上がフレアのトリガーになることがある。\
                                  <br> &nbsp&nbsp;特にもともと大きい黒点に対して磁場が浮上してくると大きいフレアが生じることがあるため、磁場の浮上の確認は重要(=チカチカの確認は重要)。\
-                                 <br> &nbsp&nbsp;なお、AIA 1600には遷移層の光も混じっているので注意。\
+                                 <br> &nbsp&nbsp:具体的には、「磁場浮上が頻繁に起きていて、それに伴い黒点の磁場構造も変化するなど活発な活動が見える。」といった検討が行える。\
+                                 <br> &nbsp&nbsp;ただしチカチカはフレアによって生じていることもあるので、チカチカの確認を行う際はフレアイベントとの突き合わせの際も同時に行う必要あり。\
                                  <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。 \
                                  <br> HMI Magnetogram-可視光による偏光観測。黒点の磁場構造が見える。この構造が複雑かつ大規模であるほど、大規模フレアが起きる傾向にある。\
                                  <br> &nbsp&nbsp;特に黒点画像(HMI Intensitygram)と比較することで、黒点がδ型か否かの判断が可能。\
@@ -198,9 +203,14 @@ space_weather_info = {
 
         "L1 Solar wind": { **create_child_object("SWPC REAL TIME SOLAR WIND","https://www.swpc.noaa.gov/products/real-time-solar-wind", True, \
                             purpose="Confirmation of solar wind coming near the earth",file_type="graphs",exampleVal="Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed(620→520), Density(1前後), IMF(5nT前後、時折-6), Sector(概ねToward)",\
-                            memo="SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。 \
+                            memo="SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。 \
                              <br> 太陽風が高速であるか(具体的には500km/s以上)、磁場が強くかつ南向きを示しているか、密度上昇があるか、などが重要な確認点。\
-                             <br> 7daysにして見るのがおすすめ。 <br> また、一太陽周期前(27日前)のデータを見るのも良い。速度と磁場に関してはReference_URLの「27日太陽自転周期比較プロット」に27日前との比較プロットがある。",\
+                             <br> 7daysにして見るのがおすすめ。 <br> また、一太陽周期前(27日前)のデータを見るのも良い。速度と磁場に関してはReference_URLの「27日太陽自転周期比較プロット」に27日前との比較プロットがある。\
+                             <br> グラフの下にあるSeriesから、グラフを切り替えられる。特に、データ元衛星の切り替えは頭に入れる必要がある。\
+                             <br> &nbsp&nbsp; Active spacecraft(デフォルト): 基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。\
+                             <br> &nbsp&nbsp; DSCOVR only: DSCOVRのデータのみ\
+                             <br> &nbsp&nbsp; Ace only: Aceのデータのみ\
+                             <br> デフォルトやDSCOVR onlyのデータが大きく乱れていたりする時、Ace onlyでも確認してみると良い。",\
                             refURL="https://origin-swc.nict.go.jp/forecast/magnetosphere.html"),
 
                             **create_child_object("ACE REAL TIME SOLAR WIND", "https://www.swpc.noaa.gov/products/ace-real-time-solar-wind", True, \
@@ -347,7 +357,7 @@ space_weather_info = {
 
     },
 
-    "Information site": {
+    "Information sites": {
         "NICT Space weather forecast Guide": create_child_object("宇宙天気予報ユーザーガイド","https://swc.nict.go.jp/knowledge/", True,\
                                                                  memo="NICTの宇宙天気のユーザーガイド。指標などの参考に。"),
 
