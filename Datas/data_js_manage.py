@@ -53,7 +53,8 @@ space_weather_info = {
                                 purpose="Check events list",file_type="text",\
                                     memo="太陽表面や磁気圏でのイベントのリスト。日付ごとのリストになっている。主要なイベントのリスㇳになっていて重要。\
                                          <br> SWPC(Space Weather Prediction Center)から出されたリスト。\
-                                         <br> BeginとEndがイベント発生と終了時間。X線観測の結果のイベント、光学観測結果のイベント等々をすべて別物として扱う。どの観測手法で、どのように検知されたかをTypeが示す。\
+                                         <br> BeginとEndがイベント発生と終了時間。Maxがピークタイム。X線観測の結果のイベント、光学観測結果のイベント等々をすべて別物として扱う。どの観測手法で、どのように検知されたかをTypeが示す。\
+                                         <br> Maxのタイムをイベント時刻として採用することが多い。\
                                          <br> なお、異なる機器で観測されたイベントが、同じ事象によって生じたものと判断した場合、同じイベント番号を振る。\
                                          <br> サイトの少し下のDetailsのところにあるリンクからType一覧を確認できる。例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のREADMEを確認。\
                                          <br> また、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから、過去のデータをダウンロードできる。\
@@ -61,7 +62,7 @@ space_weather_info = {
 
         "Last flare event reports (LMSAL)": create_child_object("LMSAL last event reports","https://www.lmsal.com/solarsoft/last_events/",True,\
                                 purpose="Check events list",file_type="text",\
-                                    memo="フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20イベントだけだが、NOAAのものと違ってリストで示されていたり、図もついていたりと見やすい。"),
+                                    memo="フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20イベントだけだが、NOAAのものと違ってリストで示されていたり、図もついていたりと見やすい。 <br> イベント時刻はピークタイムを使う事が多い。"),
     },
 
     "Solar flares": {

@@ -15,7 +15,7 @@
             "SWPC SOLAR AND GEOPHYSICAL EVENT REPORTS": {
                 "URL": "https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports",
                 "External_access": true,
-                "Memo": "太陽表面や磁気圏でのイベントのリスト。日付ごとのリストになっている。主要なイベントのリスㇳになっていて重要。                                         <br> SWPC(Space Weather Prediction Center)から出されたリスト。                                         <br> BeginとEndがイベント発生と終了時間。X線観測の結果のイベント、光学観測結果のイベント等々をすべて別物として扱う。どの観測手法で、どのように検知されたかをTypeが示す。                                         <br> なお、異なる機器で観測されたイベントが、同じ事象によって生じたものと判断した場合、同じイベント番号を振る。                                         <br> サイトの少し下のDetailsのところにあるリンクからType一覧を確認できる。例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のREADMEを確認。                                         <br> また、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから、過去のデータをダウンロードできる。                                         <br> 例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のテキストファイルを確認。",
+                "Memo": "太陽表面や磁気圏でのイベントのリスト。日付ごとのリストになっている。主要なイベントのリスㇳになっていて重要。                                         <br> SWPC(Space Weather Prediction Center)から出されたリスト。                                         <br> BeginとEndがイベント発生と終了時間。Maxがピークタイム。X線観測の結果のイベント、光学観測結果のイベント等々をすべて別物として扱う。どの観測手法で、どのように検知されたかをTypeが示す。                                         <br> Maxのタイムをイベント時刻として採用することが多い。                                         <br> なお、異なる機器で観測されたイベントが、同じ事象によって生じたものと判断した場合、同じイベント番号を振る。                                         <br> サイトの少し下のDetailsのところにあるリンクからType一覧を確認できる。例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のREADMEを確認。                                         <br> また、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから、過去のデータをダウンロードできる。                                         <br> 例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のテキストファイルを確認。",
                 "File_type": "text",
                 "Purpose": "Check events list"
             }
@@ -24,7 +24,7 @@
             "LMSAL last event reports": {
                 "URL": "https://www.lmsal.com/solarsoft/last_events/",
                 "External_access": true,
-                "Memo": "フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20イベントだけだが、NOAAのものと違ってリストで示されていたり、図もついていたりと見やすい。",
+                "Memo": "フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20イベントだけだが、NOAAのものと違ってリストで示されていたり、図もついていたりと見やすい。 <br> イベント時刻はピークタイムを使う事が多い。",
                 "File_type": "text",
                 "Purpose": "Check events list"
             }
