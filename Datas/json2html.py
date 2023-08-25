@@ -112,15 +112,15 @@ def intro_space_weather(filename):
                     <ol>
                         <li>
                             F10.7(波長10.7cmの電波)の電波強度
-                            <p>以下参考。値だけでなく増加傾向か減少傾向かも重要。{get_site_info(data,"DRAO")} </p>
+                            <p>以下参考。値だけでなく、増加傾向か減少傾向かも重要。{get_site_info(data,"DRAO")} </p>
                         </li>   
                         <li>
                             太陽光球面の見えている黒点の総面積
-                            <p>以下の黒点データリストに載っている面積を全部足すことで計算できる。値だけでなく増加傾向か減少傾向かも重要。{get_site_info(data,"SOLAR REGION SUMMARY")}</p>
+                            <p>以下の黒点データリストに載っている面積を全部足すことで計算できる。値だけでなく、増加傾向か減少傾向かも重要。{get_site_info(data,"SOLAR REGION SUMMARY")}</p>
                         </li>
                         <li>
                             太陽黒点相対数
-                            <p>以下参考。値だけでなく増加傾向か減少傾向かも重要。{get_site_info(data,"SILSO : Daily estimated sunspot number")}</p>
+                            <p>以下参考。値だけでなく、増加傾向か減少傾向かも重要。{get_site_info(data,"SILSO : Daily estimated sunspot number")}</p>
                         </li>
                         <li>
                             月間太陽黒点相対数

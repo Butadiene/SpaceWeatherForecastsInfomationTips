@@ -345,16 +345,17 @@ space_weather_info = {
 
     },
 
-    "Texts": {
+    "Information site": {
         "NICT Space weather forecast Guide": create_child_object("宇宙天気予報ユーザーガイド","https://swc.nict.go.jp/knowledge/", True,\
-                                                                 memo="NICTの宇宙天気のユーザーガイド。指標などの参考に。")
+                                                                 memo="NICTの宇宙天気のユーザーガイド。指標などの参考に。"),
+
+        "NICT space weather forecast Trend": create_child_object("NICT Space Weather Forecast Trend Site","https://origin-swc.nict.go.jp/trend/",True,\
+                                                           memo="各領域、各現象をクリックしたら関連グラフや数値と元データのリンクがすぐに出てくる。正直これで良い感ある。"),
 
     },
 
     "Link collection site": {
 
-        "NICT space weather forecast Trend": create_child_object("NICT Space Weather Forecast Trend Site","https://origin-swc.nict.go.jp/trend/",True,\
-                                                           memo="各領域、各現象をクリックしたら関連グラフや数値と元データのリンクがすぐに出てくる。正直これで良い感ある。"),
 
         "NICT space weather forecast Link collection": create_child_object("NICT Space Weather Forecast Links","https://origin-swc.nict.go.jp/link/",True,\
                                                            memo="NICTの宇宙天気予報のサイトのリンク集。色々なサイトとか載ってる。"),

@@ -339,23 +339,23 @@
             }
         }
     },
-    "Texts": {
+    "Information site": {
         "NICT Space weather forecast Guide": {
             "宇宙天気予報ユーザーガイド": {
                 "URL": "https://swc.nict.go.jp/knowledge/",
                 "External_access": true,
                 "Memo": "NICTの宇宙天気のユーザーガイド。指標などの参考に。"
             }
-        }
-    },
-    "Link collection site": {
+        },
         "NICT space weather forecast Trend": {
             "NICT Space Weather Forecast Trend Site": {
                 "URL": "https://origin-swc.nict.go.jp/trend/",
                 "External_access": true,
                 "Memo": "各領域、各現象をクリックしたら関連グラフや数値と元データのリンクがすぐに出てくる。正直これで良い感ある。"
             }
-        },
+        }
+    },
+    "Link collection site": {
         "NICT space weather forecast Link collection": {
             "NICT Space Weather Forecast Links": {
                 "URL": "https://origin-swc.nict.go.jp/link/",
