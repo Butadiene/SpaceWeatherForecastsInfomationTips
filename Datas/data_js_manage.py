@@ -195,18 +195,6 @@ space_weather_info = {
     },
 
     "Solar wind": {
-        "CME in space": { **create_child_object("SOHO LASCO C2 & C3", "https://soho.nascom.nasa.gov/data/Theater/", True, \
-                        purpose="Confirmation of CME flying", file_type="images",\
-                        memo="SOHOのコロナグラフを用いた観測機器LASCOによる動画。これにより、CMEがどのように宇宙空間に広がっていったかがわかる。 <br> SDOでは太陽表面の事象しか見れないので、これを見るのは重要。\
-                         <br> サイトにアクセスした後、C2かC3を選び日程を設定してGenerate。C2とC3の違いは視野のみ。"),
-
-                          **create_child_object("SOHO LASCO C2 & C3 Diff", "https://soho.nascom.nasa.gov/data/realtime/mpeg/", True, \
-                        purpose="Confirmation of CME flying", file_type="images",\
-                        memo="LASCOの動画でCMEを確認しようとした際、淡くてわかりにくいことがある。そこで、前の画像との差を表示するDiff版を使うと見やすくなる。 <br> サイトの下にあるLASCO C2 COMBOや、C3 COMBOがそれ。\
-                             <br> なお、このサイトでは2日間の動画しか確認できない。数日前などを確認したい場合は、Reference_URLを使うと良い。 <br> ただし、主にC3が上手く表示されないことがある(サイトの問題ではなく、データ欠損のこともある。)\
-                             <br> また、公式サイト(URLの方)のDailyという場所からアーカイブへ飛べる。しかし、現在の月より前のものしか見れないので注意。)")
-                         
-        },
 
         "L1 Solar wind": { **create_child_object("SWPC REAL TIME SOLAR WIND","https://www.swpc.noaa.gov/products/real-time-solar-wind", True, \
                             purpose="Confirmation of solar wind coming near the earth",file_type="graphs",exampleVal="Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed(620→520), Density(1前後), IMF(5nT前後、時折-6), Sector(概ねToward)",\
@@ -223,6 +211,19 @@ space_weather_info = {
                              <br> 高エネルギープラズマがCMEによって運ばれてきているとき、(コロナホールによって運ばれている時ではない。)以下のようなことが言える。\
                              <br> EPAMで観測できるプラズマ、すなわち比較的エネルギーの低いプラズマはCMEの先端にトラップされているだけなので、EPAMが上がり始めるときはCMEはもう近くまで来ている事が多い。\
                              <br> SISで観測できる、2桁MeVのやつはCMEよりだいぶ先行していることもあるが、それはかなり大きいCMEの場合のみ見えることが多い。")
+        },
+
+        "CME in space": { **create_child_object("SOHO LASCO C2 & C3", "https://soho.nascom.nasa.gov/data/Theater/", True, \
+                        purpose="Confirmation of CME flying", file_type="images",\
+                        memo="SOHOのコロナグラフを用いた観測機器LASCOによる動画。これにより、CMEがどのように宇宙空間に広がっていったかがわかる。 <br> SDOでは太陽表面の事象しか見れないので、これを見るのは重要。\
+                         <br> サイトにアクセスした後、C2かC3を選び日程を設定してGenerate。C2とC3の違いは視野のみ。"),
+
+                          **create_child_object("SOHO LASCO C2 & C3 Diff", "https://soho.nascom.nasa.gov/data/realtime/mpeg/", True, \
+                        purpose="Confirmation of CME flying", file_type="images",\
+                        memo="LASCOの動画でCMEを確認しようとした際、淡くてわかりにくいことがある。そこで、前の画像との差を表示するDiff版を使うと見やすくなる。 <br> サイトの下にあるLASCO C2 COMBOや、C3 COMBOがそれ。\
+                             <br> なお、このサイトでは2日間の動画しか確認できない。数日前などを確認したい場合は、Reference_URLを使うと良い。 <br> ただし、主にC3が上手く表示されないことがある(サイトの問題ではなく、データ欠損のこともある。)\
+                             <br> また、公式サイト(URLの方)のDailyという場所からアーカイブへ飛べる。しかし、現在の月より前のものしか見れないので注意。)")
+                         
         },
 
     },
