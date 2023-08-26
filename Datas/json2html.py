@@ -236,7 +236,7 @@ def intro_space_weather(filename):
             <ol>
                 <li>
                     デリンジャー現象の予報を考える。
-                    <p>デリンジャー現象の予報を考える。なお、デリンジャー現象は太陽フレアの活発さとほぼ同じように生じるため、太陽フレアの予報をもとに考えれば良い。\
+                    <p>デリンジャー現象の予報を考える。デリンジャー現象は太陽フレアに伴うX線等の到来によって発生する。 <br> そのため、デリンジャー現象は太陽フレアの活発さとほぼ同じように生じる。よって太陽フレアの予報をもとに考えれば良い。\
                     <br> デリンジャー現象の現状は以下から把握できるが、イオノグラムから確認するのが割とメジャー。{get_site_info(data,"NICT Site Ionogram Viewer")} {get_site_info(data,"Observed foEs")}{get_site_info(data,"Dellinger phenomenon")}</p>
                 </li>
             </ol>
@@ -259,7 +259,13 @@ def intro_space_weather(filename):
                     <ol>
                         <li>
                             コロナホールの確認
-                            <p>SDO衛星の211の画像などから、太陽表面に存在するコロナホールをもう一度確認する。 <br> 太陽表面のコロナホールから来る高速太陽風は、3日程度かけて地球に到来するため、3-4日前から現在までの太陽画像を確認するのが大事。{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
+                            <p>SDO衛星の211の画像などから、太陽表面に存在するコロナホールを確認する。 <br> 3-4日前までは確認し、コロナホールが子午線にいるときの時刻などをチェック。{get_site_info(data,"SDO Images")} </p>
+                        </li>
+                        <li>
+                            太陽風速度、EPAMの再確認し、コロナホール画像と突き合わせる。
+                            <p>もう一度太陽風、特に速度に着目し、太陽風の速度が高い時間帯を確認。\
+                            <br> その後、ACEのEPAMのデータを確認。2桁keVから1桁MeVぐらいのプラズマの変動を確認し、高速太陽風が到来しているかの検討を行う。
+                            <br> この時に、先程確認したコロナホール画像と付き合わせて高速太陽風とコロナホールの紐づけを試みると良い。{get_site_info(data,"SWPC REAL TIME SOLAR WIND")}{get_site_info(data,"ACE REAL TIME SOLAR WIND")}</p>
                         </li>
                         <li>
                             1太陽周期前の太陽風、コロナホールの確認
@@ -292,18 +298,24 @@ def intro_space_weather(filename):
                         <li>
                             LASCO画像による、宇宙空間への放出を確認
                             <p>SOHO衛星のコロナグラフによる観測機器LASCOのデータを確認し、宇宙空間へのプラズマの放出を確認する。\
-                              <br> 淡くて見づらいことも多いので、差分画像も活用すると良い。{get_site_info(data,"SOHO LASCO C2 & C3")}{get_site_info(data,"SOHO LASCO C2 & C3 Diff")}</p>
+                              <br> 淡くて見づらいことも多いので、差分画像も活用すると良い。\
+                              <br> また、フルハローCMEがあるかも確認。{get_site_info(data,"SOHO LASCO C2 & C3")}{get_site_info(data,"SOHO LASCO C2 & C3 Diff")}</p>
                         </li>
                         <li>
                             CMEの確認
                             <p>LASCO画像でのプラズマの放出、SDO画像でのCMEの候補現象の突き合わせを行う。両方で時間的に一致しているイベントはCMEと言えることが多い。\
-                            <br> 確認できた場合はどこの活動領域から放出されているか、どの方向に飛んでいるかも把握する。\
+                            <br> 確認できた場合はどこの活動領域から放出されているか、どの方向に飛んでいるかを把握する。\
                             <br> また、対応する太陽フレアイベントがあるかを確認する。{get_site_info(data,"Solar and geophysical events")}</p>
                         </li>
                         <li>
-                            太陽風観測データとCMEの対応の確認
+                            太陽風観測データとCMEの対応の確認。
                             <p>太陽風データ、プラズマの観測データと確認したCMEを突き合わせ、確認を行う。\
-                            <br>太陽風データの中にCME到達らしきイベントがあればそれがどのCMEによるものなのか。 <br> また、確認したCMEの中に到達する恐れがあるものはあるのかを考える。</p>
+                            <br> まず、CMEのうち太陽の「地球から見えている側」で発生しているものを把握する。これらは地球に飛来する可能性がある。\
+                            <br> さらに、太陽風データの中にCME到達らしきイベントがあればそれがどのCMEによるものなのかを把握する。 \</p>
+                        </li>
+                        <li>
+                            CMEの速度計算
+                            <p>地球に到来する可能性のあるCMEについては、LASCO等コロナグラフのデータを用いて、速度を計算する。</p>
                         </li>
                     </ol>
                 </li>
