@@ -76,9 +76,11 @@ space_weather_info = {
                     purpose="GOES background X-ray flux",file_type="graphs", exampleVal="B7, 穏やかに上昇中", \
                     memo="GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。 <br> グラフにマウスを当てると、値が表示される。赤やオレンジのGOES-16 long, GOES-18 longの値がフレアのクラスとして採用されている模様。\
                         <br> 尖っているところがフレアが起きているところとされ、要注目。尖っているところのピークの値がフレアのクラスになる。\
+                        <br> \
                         <br> ピーク以外にも尖り方の「形」にも注意する必要がある。X-ray fluxがフレアで急激に上昇すると、その後すみやかに減少する事が多い。 \
                         <br> しかし、減少速度が緩やか(数時間から長いものだと1日以上)なものがあり、これをLDE(Long Duration Event)と呼ぶ。\
                         <br> LDEはCMEを伴うことが多いことで知られているため、特に注意すべきフレアイベントである。\
+                        <br> \
                         <br> フレアが起きていない（≒尖っていないところ）の値をバックグラウンドと呼んだりする。\
                         <br> これも重要で、バックグラウンドが上昇傾向にある場合は、例えば東側から活動的な領域が見え始めていたりすることを意味する可能性がある。"),
 
@@ -94,6 +96,27 @@ space_weather_info = {
                                  <br> 太陽電波バーストは太陽活動を示すイベントとして重要だが、山川の観測データからイベントを識別するのは難しく、初心者向けではない。")
 
         },
+
+        "Synoptic analysis": create_child_object("SOLAR SYNOPTIC MAP","https://www.swpc.noaa.gov/products/solar-synoptic-map", True, \
+                                                  purpose="Assessing the conditions on the sun", file_type="images", 
+                                                  memo="SWPCの宇宙天気予報担当者が太陽表面についての解析を行い、それを描いたもの。\
+                                                    <br> 1日に1~2回更新されている。\
+                                                    <br> 人の手を介することで様々な判断がなされ、結果が書き込まれている。\
+                                                    <br> \
+                                                    <br> 特に、コロナホールと磁場極性を見ることができるのが便利。\
+                                                    <br> 実線で囲まれ、かつ境界線に短いたくさんの線が内向きについている場所が、予報担当者がコロナホールと判断した場所である。\
+                                                    <br> また、その内部に太陽表面での磁場極性が記載されている。よって予報担当者が\
+                                                    <br>「どこにコロナホールがあり、コロナホール内部にあたる領域にて、太陽表面では磁場極性が正か負か」\
+                                                    <br> を判断したかがわかる。\
+                                                    <br> 極性については、特に正負が重要。\
+                                                    <br> なお、正負記号の右隣に書いてあるのはコロナホール解析の信頼度(4がmaxで1が最低)である。\
+                                                    <br> \
+                                                    <br> 各活動領域については領域の番号に加え、今後24時間以内にフレアやプロトン現象が発生する確率が書いてあり、参考になる。\
+                                                    <br> 番号の下に C/M/X/Pの順番で記載されている。(Cクラスフレア、Mクラスフレア、Xクラスフレア、プロトンイベントの生じる確率)\
+                                                    <br> \
+                                                    <br>下のDetailsに見方が載っている。また、Dataのところからアーカイブにアクセスできる。\
+                                                    <br>アーカイブは昨日のものから見ることができ、非常にアクセスしやすいものとなっている。"\
+                                                    ),
 
         "Sun spot": {**create_child_object("SILSO : Daily estimated sunspot number", "https://www.sidc.be/SILSO/home", True, \
                       purpose= "Relative sunspot number", file_type="text", exampleVal="109, 一定", \
@@ -222,6 +245,9 @@ space_weather_info = {
                                                     <br> 一覧性が高く、見やすい。 \
                                                     <br> 特に、コロナホールの位置を確認するのに便利。(コロナホールの判定をするのは難しいので)\
                                                     <br> 左側のCoronal Holesから見れる。\
+                                                    <br> コロナホール確認画面では、画像にてコロナホールと推定される領域が図示されている。画像の下の表には各領域のプロパティが書いてある。\
+                                                    <br> 表で特に重要なのは、コロナホール内部の領域における、太陽表面での磁場極性である。(表におけるBに相当)\
+                                                    <br> コロナホール内部領域での太陽表面での磁場極性は、+か-かが特に重要。\
                                                     <br> また、1太陽周期前の画像がすごく見やすくなっている。(左上のRotationから選択)")
 
         },
@@ -254,6 +280,8 @@ space_weather_info = {
                             purpose="Confirmation of solar wind coming near the earth",file_type="graphs",exampleVal="Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed(620→520), Density(1前後), IMF(5nT前後、時折-6), Sector(概ねToward)",\
                             memo="SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。 \
                              <br> 太陽風が高速であるか(具体的には500km/s以上)、磁場が強くかつ南向きを示しているか、密度上昇があるか、などが重要な確認点。\
+                             <br> デフォルトでは磁場データの左側に<s>Bx</s>の様なラベルが見えると思うが、クリックするとBxのグラフも表示されるようになる。(Byも同様)\
+                             <br> Phi GSMは磁場が地球方向に向いているか、太陽方向に向いているかについての角度。地球方向に向いている場合はAway(+)、太陽方向を向いている場合はTowards(-)と呼んだりする。\
                              <br> 7daysにして見るのがおすすめ。 <br> また、一太陽周期前(27日前)のデータを見るのも良い。速度と磁場に関してはReference_URLのリンク先ページの下の方に「27日太陽自転周期比較プロット」に27日前との比較プロットがある。\
                              <br> グラフの下にあるSeriesから、グラフを切り替えられる。特に、データ元衛星の切り替えは頭に入れる必要がある。\
                              <br> &nbsp&nbsp; Active spacecraft (デフォルト): 基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。\
@@ -274,7 +302,7 @@ space_weather_info = {
                              <br> 高速太陽風ではEPAMの示す値は徐々に上がっていく傾向にある。\
                              <br> \
                              <br> しかし、実際にはCMEと高速太陽風が同時に到来するなど、一筋縄ではいかないケースも多い。\
-                             <br> そのためCMEと高速太陽風のどちらが到来しているかについての判断を行う際は、発生源(=太陽表面における現象)との突き合わせも重要である。\
+                             <br> そのためCMEと高速太陽風のどちらが到来しているかについての判断を行う際は、ソース(=太陽表面における現象)との突き合わせも重要である。\
                              <br> 発生源がはっきりしない場合、高速太陽風やCMEが到来しているかは保留にせざるを得ないことも多い。\
                              <br> \
                              <br> 2桁keVから1桁MeVぐらいのプラズマがCMEによって運ばれてきているとき、(高速太陽風によって運ばれている時ではない。)以下のようなことが言える。\
@@ -341,7 +369,7 @@ space_weather_info = {
 
                     **create_child_object("WSA-ENLIL SOLAR WIND PREDICTION", "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction", True, \
                     purpose="Refer for forecast", file_type="graphs",\
-                    memo="太陽風シミュレーションモデルWSA-EnlilによるL1地点及びSTEREO衛星での太陽風予報および、太陽系空間での太陽風予報。 <br> 速度と密度しかなく磁場予測がないが、見やすい。"),
+                    memo="太陽風シミュレーションモデルWSA-EnlilによるL1地点及びSTEREO衛星での太陽風予報および、太陽系空間での太陽風予報。 <br> SUSANOOと異なり、太陽風の磁場情報が入っていない。そのため、シミュレーション結果にも速度と密度しかなく磁場予測がないが、見やすい。"),
                     },
     },
 

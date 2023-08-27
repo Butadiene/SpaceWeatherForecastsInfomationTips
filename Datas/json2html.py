@@ -236,7 +236,9 @@ def intro_space_weather(filename):
                 </li>
                 <li>
                     フレア予報を考える。
-                    <p>これまで得た各活動領域の情報を考慮しながら、太陽フレアの予報を考える。 <br> <strong>Mクラス以上</strong>のフレアを起こす可能性がある活動領域が存在するか、を基準に考えると良い。ここで、Deep Flare Netも助けになる。{get_site_info(data,"Deep Flare Net")}</[]>
+                    <p>これまで得た各活動領域の情報を考慮しながら、太陽フレアの予報を考える。 <br> <strong>Mクラス以上</strong>のフレアを起こす可能性がある活動領域が存在するか、を基準に考えると良い。ここで、Deep Flare Netも助けになる。{get_site_info(data,"Deep Flare Net")} \
+                    <br> \
+                    <br> また、SYNOPTIC MAPの予報を参考にしてみても良いかもしれない。{get_site_info(data,"SOLAR SYNOPTIC MAP")}</p>
                 </li>
                 <li>
                     プロトン現象の予報を考える。
@@ -264,8 +266,9 @@ def intro_space_weather(filename):
                     <ol>
                         <li>
                             コロナホールの確認
-                            <p>SDO衛星のAIA 211の画像などから、太陽表面に存在するコロナホールを確認する。 <br> 3-4日前までは確認し、コロナホールが子午線にいるときの時刻などをチェック。\
-                             <br> なお、コロナホールの判断は難しいので、Solar Monitorを参照すると良い。{get_site_info(data,"SDO Images")}{get_site_info(data,"Solar Monitor")} </p>
+                            <p> SDO衛星のAIA 211の画像などから、太陽表面に存在するコロナホールを確認し、リスト化する。 <br> 3-4日前までは確認し、コロナホールが子午線にいるときの時刻などをチェック。\
+                             <br> なお、コロナホールの判断は難しいので、Solar Monitor、あるいはSOLAR SYNOPTIC MAPを参照すると良い。\
+                             <br> また、確認したコロナホール内部にあたる領域の、太陽表面での磁場極性の正負(+か-か)についても確認。{get_site_info(data,"SDO Images")}{get_site_info(data,"Solar Monitor")}{get_site_info(data,"SOLAR SYNOPTIC MAP")} </p>
                         </li>
                         
                         <li>
@@ -273,11 +276,14 @@ def intro_space_weather(filename):
                             <p> L1地点で高速太陽風が来ているかを判断する。以下を参考材料とする。\
                             <br> 太陽風の速度が高い時間帯が存在するか、存在する場合はその時刻（特に速度が上昇を開始した時刻）を確認。\
                             <br> ACEのEPAMのデータを確認。2桁keVから1桁MeVぐらいのプラズマの変動を確認し、高速太陽風が示すことが多い変動(急激ではないfluxの上昇)を行っているかを確認。\
-                            <br> 高速太陽風が到来している可能性があると判断した場合、3-4日前の太陽表面の画像(SDOのAIA 211画像など)を確認する。\
-                                <br> &nbsp&nbsp;そして、高速太陽風のもととなるコロナホール(子午線付近かつ低緯度付近に存在する可能性が高い)を探す。\
-                            <br> なお、高速太陽風とコロナホールの付き合わせの際は、Toward Away(Do it later)
+                            <br> \
+                            <br> 高速太陽風が到来している可能性があると判断した場合、先程確認したコロナホールのリストをもう一度確認する。\
+                            <br> そして、高速太陽風のソースとなるコロナホールがリストの中にあるかを探す。(高速太陽風が到来する3~4日前に子午線付近かつ低緯度付近に存在する可能性が高い)\
+                            <br> &nbsp&nbsp;なお、高速太陽風とコロナホールの付き合わせの際は、磁場極性の正負についても検討する。\
+                            <br> &nbsp&nbsp;具体的には、高速太陽風の磁場極性(Away(+)かTowards(-)か)の正負と、そのソース候補となるコロナホールの磁場極性の正負が一致しているかを確認する。\
+                            <br> &nbsp&nbsp;一致していない場合、そのコロナホールは今見えている高速太陽風のソースであるか再検討する必要がある。\
                             <br> (ソースとなるコロナホールが見当たらない時、高速太陽風の到来判断は保留したほうが良いことがある。)
-                            {get_site_info(data,"SWPC REAL TIME SOLAR WIND")}{get_site_info(data,"ACE REAL TIME SOLAR WIND")}{get_site_info(data,"SDO Images")}{get_site_info(data,"Solar Monitor")}</p>
+                            {get_site_info(data,"SWPC REAL TIME SOLAR WIND")}{get_site_info(data,"ACE REAL TIME SOLAR WIND")}{get_site_info(data,"SDO Images")}{get_site_info(data,"Solar Monitor")}{get_site_info(data,"SOLAR SYNOPTIC MAP")}</p>
                         </li>
                         <li>
                             1太陽周期前の太陽風、コロナホールの確認
