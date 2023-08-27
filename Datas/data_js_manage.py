@@ -61,6 +61,7 @@ space_weather_info = {
                                          <br> BeginとEndがイベント発生と終了時間。Maxがピークタイム。Maxのタイムをイベント時刻として採用することが多い。\
                                          <br> X線観測の結果のイベント、光学観測結果のイベント等々をすべて別物として扱う。どの観測手法で、どのように検知されたかをTypeが示す。\
                                          <br> なお、異なる機器で観測されたイベントが同じ現象によって生じたものと判断した場合、同じイベント番号を振る。\
+                                         <br> \
                                          <br> サイトの少し下のDetailsのところにあるリンクからType一覧を確認できる。 <br> 例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のREADMEを確認。\
                                          <br> また、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから、過去のデータをダウンロードできる。\
                                          <br> 例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のテキストファイルを確認。"),
@@ -73,12 +74,13 @@ space_weather_info = {
     "Solar flares": {
         "X-ray flux": create_child_object("GOES X-ray Flux", "https://www.swpc.noaa.gov/products/goes-x-ray-flux/", True, \
                     purpose="GOES background X-ray flux",file_type="graphs", exampleVal="B7, 穏やかに上昇中", \
-                    memo="GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。 <br> 赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。\
+                    memo="GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。 <br> グラフにマウスを当てると、値が表示される。赤やオレンジのGOES-16 long, GOES-18 longの値がフレアのクラスとして採用されている模様。\
                         <br> 尖っているところがフレアが起きているところとされ、要注目。尖っているところのピークの値がフレアのクラスになる。\
                         <br> ピーク以外にも尖り方の「形」にも注意する必要がある。X-ray fluxがフレアで急激に上昇すると、その後すみやかに減少する事が多い。 \
                         <br> しかし、減少速度が緩やか(数時間から長いものだと1日以上)なものがあり、これをLDE(Long Duration Event)と呼ぶ。\
                         <br> LDEはCMEを伴うことが多いことで知られているため、特に注意すべきフレアイベントである。\
-                        <br> フレアが起きていない（≒尖っていないところ）をバックグラウンドと呼んだりする。これも重要で、バックグラウンドが上昇傾向にある場合は、例えば東側から活動的な領域が見え始めていたりすることを意味する可能性がある。"),
+                        <br> フレアが起きていない（≒尖っていないところ）の値をバックグラウンドと呼んだりする。\
+                        <br> これも重要で、バックグラウンドが上昇傾向にある場合は、例えば東側から活動的な領域が見え始めていたりすることを意味する可能性がある。"),
 
         "Radio flux": {**create_child_object("Solar radio flux - archive of measurements", "https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php", True,\
                             purpose="F10.7: 10.7cm wavelength radio wave strength", file_type="html", \
@@ -104,39 +106,44 @@ space_weather_info = {
             
                     **create_child_object("SOLAR REGION SUMMARY", "https://www.swpc.noaa.gov/products/solar-region-summary", True, \
                         purpose="Sunspot area (SWPC) & Charactistics of active regions", file_type="text", exampleVal="Sunspot area:660, 穏やかに上昇中 & Charactistics of active regions:領域、位置、面積...", \
-                        memo="現在の太陽黒点の一覧とその性質が載っている。SRSと略され、重要なデータの一つ。 <br> 現在の黒点の総面積を出したいときは、SRSに載っている黒点の面積をすべて足す。その黒点がいつから発生したかを知りたいときは、過去のデータを参照すると良い。\
+                        memo="現在の太陽黒点の一覧とその性質が載っている。SRSと略され、重要なデータの一つ。 \
+                            <br> 現在の黒点の総面積を出したいときは、SRSに載っている黒点の面積をすべて足す。\
+                            <br> 各項目の簡単な説明\
                             <br> Z- Modified Zurich classification of the group. 修正チューリッヒクラス。3つのアルファベットの組み合わせで表される。Reference_URL参照\
                             <br> Lo- Carrington longitude of the group.\
                             <br> LL- Longitudinal extent of the group in heliographic degrees.\
                             <br> NN- Total number of visible sunspots in the group.\
                             <br> Mag Type- Magnetic classification of the group. マウント・ウィルソン分類による黒点の分類。α、β、βγ、γ、δなどがあり、δに行くほどフレアを起こしやすいとされる。\
-                            <br> &nbsp;&nbsp;δ型にだけ要警戒しておけばとりあえずは良い。\
-                            <br> &nbsp;&nbsp;以下に簡単に説明。詳しくはReference_URL2参照。\
+                            <br> &nbsp&nbsp;δ型にだけ要警戒しておけばとりあえずは良い。\
+                            <br> &nbsp&nbsp;以下に簡単に説明。詳しくはReference_URL2参照。\
                             <br> &nbsp&nbsp;&nbsp;&nbsp;α：単極で存在するもの。\
                             <br> &nbsp&nbsp;&nbsp;&nbsp;β：2つの極から成る単純な黒点の対。つまり、2つの黒点が近くにあり、その2つの極性が逆(NとSになっている)。\
                             <br> &nbsp&nbsp;&nbsp;&nbsp;γ：β には分類しがたいような複雑な極構造を持った黒点。\
                             <br> &nbsp&nbsp;&nbsp;&nbsp;δ：2つの黒点が近くにあり、その2つの極性が逆。かつ2つの黒点は半暗部を共有している。すなわち、半暗部の中に2つの暗部があり、その2つの極性が逆になっている。一番コロナが起きやすい。\
+                            <br> \
+                            <br> その黒点がいつから発生したかを知りたいときは、過去のデータを参照すると良い。\
                             <br> なお、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから、過去のデータをダウンロードできる。 <br> 例：ftp://ftp.swpc.noaa.gov/pub/forecasts/ にアクセスし、SRSフォルダの中のテキストファイルを確認",\
                                 refURL="https://www.spaceweatherlive.com/en/help/the-classification-of-sunspots-after-malde.html",\
                                 refURL2="https://solarphys.com/dynamics/ar/"),
                         
                     **create_child_object("SOHO Sunspots", "https://soho.nascom.nasa.gov/sunspots/", True, \
                         purpose= "Check sunspot numbers with sunspot images", file_type="images", 
-                        memo= "SOHOの白黒光球画像。黒点が番号付きで表示される。"),
+                        memo= "SOHOの白黒光球画像。黒点が番号付きで表示されるのが便利。"),
 
                      **create_child_object("SHARP Vector Magnetograms", "https://defn.nict.go.jp/sharp/index_sharp_jp.html",True,\
                         purpose="Check degree of magnetic field distortion (shear)", file_type="images",\
                         memo="各黒点の磁場の歪み具合を画像でわかりやすく示してくれる。 <br> この構造が複雑であれば（具体的には極性が複雑でかつコンパクトにまとまった黒点）、より大きいフレアを警戒する必要がある。 \
-                            <br> 特に確認すべきはシア。緑色の線(磁気中性線)と平行かつ緑色の線を挟んで逆方向に磁場が向いている場合（シアという）、よりフレアを警戒する必要がある。 <br> (緑色の断層線に沿って赤方向にずれる横ずれ断層をイメージすると良いかも。)\
-                            <br> 逆に、磁気中性線と磁場の向きが直交しているときは、シアがあまりないと言え、そこまで警戒の必要がない可能性がある。\
-                            なお、英語版はReference_URLに記載。", refURL="https://defn.nict.go.jp/sharp/index_sharp.html"),
+                            <br> 特に確認すべきはシア。赤色(水平磁場)の矢印が、緑色の線(磁気中性線)と平行かつ緑色の線を挟んで逆方向になっている場合（シアという）、よりフレアを警戒する必要がある。 <br> (緑色の断層線に沿って赤方向にずれる横ずれ断層をイメージすると良いかも。)\
+                            <br> 逆に、磁気中性線と水平磁場の向き(赤色の矢印)が直交しているときは、シアがあまりないと言えるので、そこまで警戒の必要がない可能性がある。\
+                            <br> 英語版はReference_URLに記載。", refURL="https://defn.nict.go.jp/sharp/index_sharp.html"),
 
                      **create_child_object("SHARP Data Viewer", "http://jsoc.stanford.edu/data/hmi/sharp/dataviewer/",True,\
                         purpose="Check degree of magnetic field distortion (shear)", file_type="images",\
-                        memo="シアやフラックスの値などを定量的に示したのが SHARP Data Viewer。以下の2つをよく使う。\
-                             <br> mean shear angle (measured using Btotal)-シア角。値が大きいと、自由エネルギーの大きさが大きい。\
-                             <br> total unsigned flux-合計のフラックス。活動領域の大きさに近い。フラックスが増えているということは、磁力線が浮上し面積が増大しているということ。\
-                             <br> 特に上2つが重要。確認すべきは値より傾向。増えている傾向があると注意。")
+                        memo="シアやフラックスの値などを定量的に示したのが SHARP Data Viewer。\
+                             <br> 右上のsettingsから表示項目が設定できる。以下の2つをよく使う。\
+                             <br> &nbsp&nbsp;mean shear angle (measured using Btotal)-シア角。値が大きいと、自由エネルギーの大きさが大きい。\
+                             <br> &nbsp&nbsp;total unsigned flux-合計のフラックス。活動領域の大きさに近い。フラックスが増えているということは、磁力線が浮上し面積が増大しているということ。\
+                             <br> 確認すべきは値より傾向。増えている傾向があると注意。")
 
         },
 
@@ -146,22 +153,23 @@ space_weather_info = {
                             <br> 現在の太陽表面だけにとどまらず、3-4日前までは必ず確認すべき。なぜなら、CMEは高速太陽風は太陽表面での事象から一般に3-4日遅れて地球に影響を及ぼすため。\
                             <br> また、1太陽周期前を見るのも大事(特に極小期付近)。\
                             <br> 太陽の表面が1周期前と現在で近い模様をしている場合、1周期前に発生した事象を予報に活用できる(特にコロナホールによる高速太陽風)。\
+                            <br> \
                              <br> リンク先ページの左側一覧にある、AIA/HMI Browse Dataから画像や動画を探すとわかりやすい。\
                              <br> なおBrowse Dataから見る場合、解像度は1024より512のほうがおすすめ。(1024は上手く動かないことが多い。)\
                              <br> 主なもの： \
-                                 <br> AIA 094 (green)-エネルギーがかなり高い。フレアの発生などがよく見える。また、チカチカ光ることもある(1600の説明参照)。\
+                                 <br> AIA 094 (green)-エネルギーがかなり高い。フレアの発生などがよく見える。また、チカチカ光ることもある(AIA 1600の説明参照)。\
                                  <br> &nbsp&nbsp;フレアの発生の際は、黒点領域のどのあたり(黒点の南側か、北側かなど)で発生したかまで意識できると良い。発生領域が細かくわかると、磁場構造の確認の際の助けになる。\
                                  <br> \
                                  <br> AIA 211 (purple)-greenよりはエネルギーが低い。コロナホールが見えやすい。AIA 211で黒い穴(点ではなくはっきりとわかる穴)があったらコロナホールの可能性。 \
-                                 <br> &nbsp&nbsp;大きいコロナホールはより注視する必要がある。(大きいとは、地球から見た太陽表面直径の1/4くらいを指すっぽい?)\
+                                 <br> &nbsp&nbsp;大きいコロナホールはより注視する必要がある。(大きいとは、地球から見た太陽表面直径の1/5くらいの直径を持ったホールを指すっぽい?)\
                                  <br> &nbsp&nbsp;そこそこ小さくても、はっきりわかる黒い穴があったらコロナホールを疑ってみるのは大事。\
-                                 <br> &nbsp&nbsp;コロナホールから飛び出す高速太陽風は太陽半径方向に飛んでいく傾向があるため、コロナホールがあった場合、子午線にいる時刻を認識すると良い。\
-                                 <br> &nbsp&nbsp;子午線にいる時刻から3-4日後に高速太陽風到来の可能性が高い。そのため、現在から3-4日前までの画像を確認する。\
+                                 <br> &nbsp&nbsp;コロナホールから飛び出す高速太陽風は太陽半径方向に飛んでいく傾向がある。そのためコロナホールがあった場合、コロナホールが子午線にいる日時を認識すると良い。\
+                                 <br> &nbsp&nbsp;高速太陽風の速度は500km/s以上であることが多いため、コロナホールが子午線にいる日時から3-4日後に高速太陽風到来の可能性が高い。現在から3-4日前までの画像を確認するのが大事。\
                                  <br> &nbsp&nbsp;また、より低緯度帯にいるコロナホールほど着目する必要がある。\
                                  <br> \
                                  <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャーらしい。\
                                  <br> \
-                                 <br> 094、211、171あたりの波長帯の画像では、CMEが見えることがある。\
+                                 <br> AIA 094、211、171あたりの波長帯の画像では、CMEが見えることがある。\
                                  <br> &nbsp&nbsp;このあたりの波長帯で観測できるCMEは、コロナの放出を伴う。そのため、CMEが放出されるとき表面が暗くなる様に見える。(Dimmingと呼ばれる)\
                                  <br> &nbsp&nbsp; (リム側だと吹き飛んでいく様子が見えることもある。)\
                                  <br> &nbsp&nbsp;(どの波長帯で一番よく見えるかは、そのときのCMEの温度によって違う。335(blue)が一番良く見えるときもある。よく見える波長帯を探すのも大事。)\
