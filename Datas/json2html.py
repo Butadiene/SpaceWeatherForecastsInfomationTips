@@ -494,7 +494,7 @@ def intro_space_weather(filename):
 
 # Example usage:
 info_html_data = intro_space_weather('./Datas/space_weather_info.json')
-with open('./docs_list_and_forecast/space_weather_info.html', 'w') as f:
+with open('./docs/space_weather_info.html', 'w') as f:
     f.write(info_html_data)
 
 lists_only_html_data = lists_only_space_weather_info('./Datas/space_weather_info.json')
