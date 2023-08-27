@@ -4,9 +4,10 @@
             "Present Space Weather Forecast from ISES": {
                 "URL": "https://swc.nict.go.jp/data/ises/isesforecast.html",
                 "External_access": true,
-                "Memo": "ISES(The International Space Environment Service)のメンバー国が出している宇宙天気予報を一覧で見られる。",
+                "Memo": "ISES(The International Space Environment Service)のメンバー国が出している宇宙天気予報を一覧で見られる。                                                                    <br> なお、各国の詳細なレポートはRefence_URL参照。",
                 "File_type": "text",
-                "Purpose": "Check space weather forecast for each country"
+                "Purpose": "Check space weather forecast for each country",
+                "Reference_URL": "http://www.spaceweather.org/ISES/discussion/LatestForecast.jsp#ad-image-24"
             }
         },
         "NICT Space Weather Forecast Report": {
@@ -24,7 +25,7 @@
             "SWPC SOLAR AND GEOPHYSICAL EVENT REPORTS": {
                 "URL": "https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports",
                 "External_access": true,
-                "Memo": "太陽表面や磁気圏でのイベントのリスト。日付ごとのリストになっている。主要なイベントのリスㇳになっていて重要。                                         <br> SWPC(Space Weather Prediction Center)から出されたリスト。                                         <br> BeginとEndがイベント発生と終了時間。Maxがピークタイム。X線観測の結果のイベント、光学観測結果のイベント等々をすべて別物として扱う。どの観測手法で、どのように検知されたかをTypeが示す。                                         <br> Maxのタイムをイベント時刻として採用することが多い。                                         <br> なお、異なる機器で観測されたイベントが、同じ事象によって生じたものと判断した場合、同じイベント番号を振る。                                         <br> サイトの少し下のDetailsのところにあるリンクからType一覧を確認できる。例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のREADMEを確認。                                         <br> また、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから、過去のデータをダウンロードできる。                                         <br> 例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のテキストファイルを確認。",
+                "Memo": "太陽表面や磁気圏でのイベントのリスト。日付ごとのリストになっている。主要なイベントのリスㇳになっていて重要。                                         <br> SWPC(Space Weather Prediction Center)から出されたリスト。                                         <br> BeginとEndがイベント発生と終了時間。Maxがピークタイム。Maxのタイムをイベント時刻として採用することが多い。                                         <br> X線観測の結果のイベント、光学観測結果のイベント等々をすべて別物として扱う。どの観測手法で、どのように検知されたかをTypeが示す。                                         <br> なお、異なる機器で観測されたイベントが同じ現象によって生じたものと判断した場合、同じイベント番号を振る。                                         <br> サイトの少し下のDetailsのところにあるリンクからType一覧を確認できる。 <br> 例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のREADMEを確認。                                         <br> また、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから、過去のデータをダウンロードできる。                                         <br> 例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のテキストファイルを確認。",
                 "File_type": "text",
                 "Purpose": "Check events list"
             }
@@ -44,7 +45,7 @@
             "GOES X-ray Flux": {
                 "URL": "https://www.swpc.noaa.gov/products/goes-x-ray-flux/",
                 "External_access": true,
-                "Memo": "GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。 <br> 赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。                        <br> 尖っているところがフレアが起きているところで要注目。尖っているところのピークの値がフレアのクラスになる。                        <br> ピーク以外にも尖り方の「形」にも注意する必要がある。X-ray fluxがフレアで急激に上昇すると、その後すみやかに減少する事が多い。                         <br> しかし、減少速度が緩やか(数時間から長いものだと1日以上)なものがあり、これをLDE(Long Duration Event)と呼ぶ。                        <br> LDEはCMEを伴うことが多いことで知られているため、特に注意すべきフレアイベントである。                        <br> フレアが起きていない（≒尖っていないところ）をバックグラウンドと呼んだりする。これも重要で、バックグラウンドが上昇傾向にある場合は、例えば東側から活動的な領域が見え始めていたりすることを意味する可能性がある。",
+                "Memo": "GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。 <br> 赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。                        <br> 尖っているところがフレアが起きているところとされ、要注目。尖っているところのピークの値がフレアのクラスになる。                        <br> ピーク以外にも尖り方の「形」にも注意する必要がある。X-ray fluxがフレアで急激に上昇すると、その後すみやかに減少する事が多い。                         <br> しかし、減少速度が緩やか(数時間から長いものだと1日以上)なものがあり、これをLDE(Long Duration Event)と呼ぶ。                        <br> LDEはCMEを伴うことが多いことで知られているため、特に注意すべきフレアイベントである。                        <br> フレアが起きていない（≒尖っていないところ）をバックグラウンドと呼んだりする。これも重要で、バックグラウンドが上昇傾向にある場合は、例えば東側から活動的な領域が見え始めていたりすることを意味する可能性がある。",
                 "File_type": "graphs",
                 "Purpose": "GOES background X-ray flux",
                 "ExampleValue": "B7, 穏やかに上昇中"

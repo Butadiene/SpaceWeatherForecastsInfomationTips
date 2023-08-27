@@ -45,7 +45,9 @@ space_weather_info = {
     "Space weather forecast reports": {
         "List of space weather forecast for each country": create_child_object("Present Space Weather Forecast from ISES", "https://swc.nict.go.jp/data/ises/isesforecast.html", True,\
                                                                 purpose="Check space weather forecast for each country",file_type="text",\
-                                                                memo="ISES(The International Space Environment Service)のメンバー国が出している宇宙天気予報を一覧で見られる。"),
+                                                                memo="ISES(The International Space Environment Service)のメンバー国が出している宇宙天気予報を一覧で見られる。\
+                                                                    <br> なお、各国の詳細なレポートはRefence_URL参照。", refURL="http://www.spaceweather.org/ISES/discussion/LatestForecast.jsp#ad-image-24"),
+
         "NICT Space Weather Forecast Report": create_child_object("NICT 宇宙天気予報レポーㇳ", "https://swc.nict.go.jp/report/", True,\
                                                                 purpose="Check space weather forecast reports, especially daily report",file_type="text",\
                                                                 memo="NICTが出している宇宙天気予報のレポーㇳ。特に日報はその日の現象がよくまとまっており、参照すべきである。"),
@@ -56,10 +58,10 @@ space_weather_info = {
                                 purpose="Check events list",file_type="text",\
                                     memo="太陽表面や磁気圏でのイベントのリスト。日付ごとのリストになっている。主要なイベントのリスㇳになっていて重要。\
                                          <br> SWPC(Space Weather Prediction Center)から出されたリスト。\
-                                         <br> BeginとEndがイベント発生と終了時間。Maxがピークタイム。X線観測の結果のイベント、光学観測結果のイベント等々をすべて別物として扱う。どの観測手法で、どのように検知されたかをTypeが示す。\
-                                         <br> Maxのタイムをイベント時刻として採用することが多い。\
-                                         <br> なお、異なる機器で観測されたイベントが、同じ事象によって生じたものと判断した場合、同じイベント番号を振る。\
-                                         <br> サイトの少し下のDetailsのところにあるリンクからType一覧を確認できる。例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のREADMEを確認。\
+                                         <br> BeginとEndがイベント発生と終了時間。Maxがピークタイム。Maxのタイムをイベント時刻として採用することが多い。\
+                                         <br> X線観測の結果のイベント、光学観測結果のイベント等々をすべて別物として扱う。どの観測手法で、どのように検知されたかをTypeが示す。\
+                                         <br> なお、異なる機器で観測されたイベントが同じ現象によって生じたものと判断した場合、同じイベント番号を振る。\
+                                         <br> サイトの少し下のDetailsのところにあるリンクからType一覧を確認できる。 <br> 例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のREADMEを確認。\
                                          <br> また、過去のデータはftpでテキストファイルでしか配布されていない。サイトの少し下のDataのところにあるリンクから、過去のデータをダウンロードできる。\
                                          <br> 例：ftp://ftp.swpc.noaa.gov/pub/indices/ にアクセスし、eventsフォルダの中のテキストファイルを確認。"),
 
@@ -72,7 +74,7 @@ space_weather_info = {
         "X-ray flux": create_child_object("GOES X-ray Flux", "https://www.swpc.noaa.gov/products/goes-x-ray-flux/", True, \
                     purpose="GOES background X-ray flux",file_type="graphs", exampleVal="B7, 穏やかに上昇中", \
                     memo="GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。 <br> 赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。\
-                        <br> 尖っているところがフレアが起きているところで要注目。尖っているところのピークの値がフレアのクラスになる。\
+                        <br> 尖っているところがフレアが起きているところとされ、要注目。尖っているところのピークの値がフレアのクラスになる。\
                         <br> ピーク以外にも尖り方の「形」にも注意する必要がある。X-ray fluxがフレアで急激に上昇すると、その後すみやかに減少する事が多い。 \
                         <br> しかし、減少速度が緩やか(数時間から長いものだと1日以上)なものがあり、これをLDE(Long Duration Event)と呼ぶ。\
                         <br> LDEはCMEを伴うことが多いことで知られているため、特に注意すべきフレアイベントである。\
