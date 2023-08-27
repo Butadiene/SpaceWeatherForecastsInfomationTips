@@ -35,7 +35,7 @@
             "GOES X-ray Flux": {
                 "URL": "https://www.swpc.noaa.gov/products/goes-x-ray-flux/",
                 "External_access": true,
-                "Memo": "GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。 <br> 赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。                        <br> フレアが起きていない（≒尖っていないところ）をバックグラウンドと呼んだりする。これも重要で、バックグラウンドが上昇傾向にある場合は、例えば東側から活動的な領域が見え始めていたりすることを意味する可能性がある。",
+                "Memo": "GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。 <br> 赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。                        <br> 尖っているところがフレアが起きているところで要注目。尖っているところのピークの値がフレアのクラスになる。                        <br> ピーク以外にも尖り方の「形」にも注意する必要がある。X-ray fluxがフレアで急激に上昇すると、その後すみやかに減少する事が多い。                         <br> しかし、減少速度が緩やか(数時間から長いものだと1日以上)なものがあり、これをLDE(Long Duration Event)と呼ぶ。                        <br> LDEはCMEを伴うことが多いことで知られているため、特に注意すべきフレアイベントである。                        <br> フレアが起きていない（≒尖っていないところ）をバックグラウンドと呼んだりする。これも重要で、バックグラウンドが上昇傾向にある場合は、例えば東側から活動的な領域が見え始めていたりすることを意味する可能性がある。",
                 "File_type": "graphs",
                 "Purpose": "GOES background X-ray flux",
                 "ExampleValue": "B7, 穏やかに上昇中"
@@ -177,7 +177,7 @@
             "ACE REAL TIME SOLAR WIND": {
                 "URL": "https://www.swpc.noaa.gov/products/ace-real-time-solar-wind",
                 "External_access": true,
-                "Memo": "ACEのリアルタイムの太陽風観測結果。右側にあるリストから、色々な観測機器のグラフが選べる。                             <br> EPAM(2桁keVから1桁MeVぐらいのプラズマ観測機器)とSIS(2桁MeVのプラズマの観測機器)のデータが特に大事。                             <br> (DSCOVRのほうがACEより新しいが、DSCOVRは高エネルギープラズマの観測機器が上手く行っていない。そのため、高エネルギープラズマに関してはACEのデータを見る必要がある。)                             <br> EPAMは太陽風がなんらかの変化を示した時に、CMEかコロナホールによる高速太陽風かどちらが到来したのかを区別する手がかりとなる。                             <br>                              <br> 一般に                             <br> CMEではEPAMの示す値は急激に上がる。                             <br> 高速太陽風ではEPAMの示す値は徐々に上がっていく傾向にある。                             <br>                              <br> しかし、実際にはCMEと高速太陽風が同時に到来するなど、一筋縄ではいかないケースも多い。                             <br> そのためCMEと高速太陽風のどちらが到来しているかについての判断を行う際は、発生源との突き合わせも重要である。                             <br> 発生源がはっきりしない場合、高速太陽風やCMEが到来しているかは保留にせざるを得ないことも多い。                             <br>                              <br> 2桁keVから1桁MeVぐらいのプラズマがCMEによって運ばれてきているとき、(高速太陽風によって運ばれている時ではない。)以下のようなことが言える。                             <br> &nbsp&nbsp;EPAMで観測できるプラズマ、すなわち比較的エネルギーの低いプラズマはCMEの先端にトラップされているだけであり、CMEを抜け出して先行することは少ない。                             <br> &nbsp&nbsp;そのため、EPAMが上がり始めるときはCMEはもう近くまで来ている事が多い。                             <br> &nbsp&nbsp;SISで観測できる、2桁MeVのプラズマはCMEよりだいぶ先行していることもあるが、それはかなり大きいCMEの場合のみ見えることが多い。",
+                "Memo": "ACEのリアルタイムの太陽風観測結果。右側にあるリストから、色々な観測機器のグラフが選べる。                             <br> EPAM(2桁keVから1桁MeVぐらいのプラズマ観測機器)とSIS(2桁MeVのプラズマの観測機器)のデータが特に大事。                             <br> (DSCOVRのほうがACEより新しいが、DSCOVRは高エネルギープラズマの観測機器が上手く行っていない。そのため、高エネルギープラズマに関してはACEのデータを見る必要がある。)                             <br> EPAMは太陽風がなんらかの変化を示した時に、CMEかコロナホールによる高速太陽風かどちらが到来したのかを区別する手がかりとなる。                             <br>                              <br> 一般に                             <br> CMEではEPAMの示す値は急激に上がる。                             <br> 高速太陽風ではEPAMの示す値は徐々に上がっていく傾向にある。                             <br>                              <br> しかし、実際にはCMEと高速太陽風が同時に到来するなど、一筋縄ではいかないケースも多い。                             <br> そのためCMEと高速太陽風のどちらが到来しているかについての判断を行う際は、発生源との突き合わせも重要である。                             <br> 発生源がはっきりしない場合、高速太陽風やCMEが到来しているかは保留にせざるを得ないことも多い。                             <br>                              <br> 2桁keVから1桁MeVぐらいのプラズマがCMEによって運ばれてきているとき、(高速太陽風によって運ばれている時ではない。)以下のようなことが言える。                             <br> &nbsp&nbsp;EPAMで観測できるプラズマ、すなわち比較的エネルギーの低いプラズマはCMEの先端にトラップされているだけであり、CMEを抜け出して先行することは少ない。                             <br> &nbsp&nbsp;そのため、EPAMが上がり始めるときはCMEはもう近くまで来ている事が多い。                             <br> &nbsp&nbsp;SISで観測できる2桁MeVのプラズマは、CMEよりだいぶ先行していることもあるが、それはかなり大きいCMEの場合のみ見えることが多い。",
                 "File_type": "graphs",
                 "Purpose": "Solar wind's high energy plasma"
             }
@@ -194,11 +194,28 @@
             "SOHO LASCO C2 & C3 Diff and mesurement": {
                 "URL": "https://cdaw.gsfc.nasa.gov/movie/make_javamovie.php?&img1=lasc2rdf&img2=lasc3rdf",
                 "External_access": true,
-                "Memo": "LASCOの動画でCMEを確認しようとした際、淡くてわかりにくいことがある。そこで、前の画像との差を表示する差分版を使うと見やすくなる。                             <br> リンクのサイトは、CDAW Data CenterがSOHOのLASCOデータの差分版を見やすく表示している。                             <br> また、このサイトはCMEの速度の簡易的な計算が行えるようになっている。画像の下のmesurementというリンクを押すと計測用のサイトに飛べる。                             <br> measumentサイトでは、動画中の点を選択すると、その点の位置と、押した時刻が表示される。                             <br> 距離が分かりづらいが、H(Rs)が中心からの距離(単位Rsは太陽半径)であることを把握すると、大まかな速度が計算できる。                             <br> CDAWが管理しているデータのアーカイブはReference_URLから確認できる。                             <br>                              <br> CDAWによる差分表示サイトは、主にC3が上手く表示されないことがある。(サイトの問題ではなく、データ欠損のこともある。)                             <br> その場合、公式を参照すると良い。Reference_URL2を参照。サイトの下にあるLASCO C2 COMBOや、C3 COMBOがそれ。                             <br> なお、この公式サイトでは2日間の動画しか確認できない。アーカイブはDailyというところから見れるが、よくサーバーダウンしてる気がする...。また、アーカイブは現在の月より前のものしか見れないので注意。)",
+                "Memo": "LASCOの動画でCMEを確認しようとした際、淡くてわかりにくいことがある。そこで、前の画像との差を表示する差分版を使うと見やすくなる。                             <br> リンクのサイトは、CDAW Data CenterがSOHOのLASCOデータの差分版を見やすく表示しているものである。                             <br> また、このサイトはCMEの速度の簡易的な計算が行えるようになっている。画像の下のmesurementというリンクを押すと計測用のサイトに飛べる。                             <br> measumentサイトでは、動画中の点を選択すると、その点の位置と、押した時刻が表示される。                             <br> 距離が分かりづらいが、H(Rs)が中心からの距離(単位Rsは太陽半径)であることを把握すると、大まかな速度が計算できる。                             <br> CDAWが管理しているデータのアーカイブはReference_URLから確認できる。                             <br>                              <br> CDAWによる差分表示サイトは、主にC3が上手く表示されないことがある。(サイトの問題ではなく、データ欠損のこともある。)                             <br> その場合、公式を参照すると良い。Reference_URL2を参照。サイトの下にあるLASCO C2 COMBOや、C3 COMBOがそれ。                             <br> なお、この公式サイトでは2日間の動画しか確認できない。アーカイブはDailyというところから見れるが、よくサーバーダウンしてる気がする。                             <br> Dailyから見るアーカイブは現在の月より前のものしか見れないので注意。",
                 "File_type": "images",
                 "Purpose": "Confirmation of CME flying",
                 "Reference_URL": "https://cdaw.gsfc.nasa.gov/index.html",
                 "Reference_URL2": "https://soho.nascom.nasa.gov/data/realtime/mpeg/"
+            }
+        },
+        "Solar Wind Simulation": {
+            "SUSANOO": {
+                "URL": "https://cidas.isee.nagoya-u.ac.jp/susanoo/",
+                "External_access": true,
+                "Memo": "太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。 <br> nictのサイトのほうが見やすいかもしれない。(Reference_URL参照)",
+                "File_type": "graphs",
+                "Purpose": "Refer for forecast",
+                "Reference_URL": "https://origin-swc.nict.go.jp/forecast/magnetosphere.html"
+            },
+            "WSA-ENLIL SOLAR WIND PREDICTION": {
+                "URL": "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction",
+                "External_access": true,
+                "Memo": "太陽風シミュレーションモデルWSA-EnlilによるL1地点及びSTEREO衛星での太陽風予報および、太陽系空間での太陽風予報。 <br> 速度と密度しかなく磁場予測がないが、見やすい。",
+                "File_type": "graphs",
+                "Purpose": "Refer for forecast"
             }
         }
     },
@@ -221,25 +238,8 @@
                 "Memo": "ローカルでの地磁気擾乱の大きさを示すK指数のうち、柿岡のものが見れる。日本での地磁気擾乱を考える際に重要。H componentは水平分力、D componentは偏角を表す。                         地磁気活動度(Quiet, Active...)も載っている。地磁気活動度の基準はReference_URL参照。                        <br> 日合計値や各componentの詳細は https://www.kakioka-jma.go.jp/knowledge/glossary.html 参照",
                 "File_type": "graphs",
                 "Purpose": "Magnitude of geomagnetic disturbance at Kakioka",
-                "ExampleValue": "最大K指数:3(一日のうち最も大きいKp)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)  地磁気活動度: 静穏",
+                "ExampleValue": "最大K指数:3(一日のうち最も大きいK)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)  地磁気活動度: 静穏",
                 "Reference_URL": "https://origin-swc.nict.go.jp/knowledge/criteria_icon.html"
-            }
-        },
-        "Simulation": {
-            "SUSANOO": {
-                "URL": "https://cidas.isee.nagoya-u.ac.jp/susanoo/",
-                "External_access": true,
-                "Memo": "太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。 <br> nictのサイトのほうが見やすいかもしれない。(Reference_URL参照)",
-                "File_type": "graphs",
-                "Purpose": "Refer for forecast",
-                "Reference_URL": "https://origin-swc.nict.go.jp/forecast/magnetosphere.html"
-            },
-            "WSA-ENLIL SOLAR WIND PREDICTION": {
-                "URL": "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction",
-                "External_access": true,
-                "Memo": "太陽風シミュレーションモデルWSA-EnlilによるL1地点及びSTEREO衛星での太陽風予報および、太陽系空間での太陽風予報。 <br> 風速と磁場しかなく、密度がないが見やすい。",
-                "File_type": "graphs",
-                "Purpose": "Refer for forecast"
             }
         },
         "Dst index": {
@@ -284,6 +284,13 @@
         },
         "Electron flux": {
             "GOES Electron Flux": {
+                "URL": "https://www.swpc.noaa.gov/products/goes-electron-flux",
+                "External_access": true,
+                "Memo": "GOESが取得した2MeV以上の電子fluxの時間変化。7daysで見るのが良さそう。                                <br> 現在の「GOESがいる経度」の放射線帯の電子fluxがわかる。グラフのNとMはNoonとMidnightの略で、衛星が昼側、夜側にいることを指す。                                <br> なお、GOES-16は西経75.2度、GOES-18は西経136.9度の静止衛星。 <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。",
+                "File_type": "graphs",
+                "Purpose": "Checking the electron flux in the radiation belt"
+            },
+            "HIMAWARI SEDA DATA VIEWER": {
                 "URL": "https://himawari-seda.nict.go.jp/dataplot",
                 "External_access": true,
                 "Memo": "ひまわりが取得したMeV帯の電子fluxの時間変化。                                <br> 現在の「ひまわりがいる経度」の放射線帯の電子fluxがわかる。横軸はUTなので注意。                                <br> 上の設定を色々いじったあと、右上のPlotというボタンを押すとグラフが更新される。ひまわり8号、9号のデータが共に見れる。                                <br> ひまわりの経度は、8号9号ともにおよそ140.7度(0.05度離れているらしい。)。                                <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。",
@@ -353,6 +360,26 @@
                 "File_type": "graphs",
                 "Purpose": "Checking Dellinger effect",
                 "Reference_URL": "https://wdc.nict.go.jp/x-ray/index.html"
+            }
+        }
+    },
+    "Aurora": {
+        "NOAA OVATION model Aurora forecast": {
+            "AURORA - 30 MINUTE FORECAST": {
+                "URL": "https://www.swpc.noaa.gov/products/aurora-30-minute-forecast",
+                "External_access": true,
+                "Memo": "オーロラ予報。30-90分後のオーロラ予報を提供する。                                    <br> OVATION modelというモデルを使っている。L1での観測データと高エネルギープラズマの振りこみの関係から求めているよう。",
+                "File_type": "graphs",
+                "Purpose": "Checking Aurora forecast"
+            }
+        },
+        "NICT Aurora forecast": {
+            "NICT Aurora forecast": {
+                "URL": "https://aurora-alert.nict.go.jp/",
+                "External_access": true,
+                "Memo": "NICTのオーロラ予報。使い所がわからんけど一応...",
+                "File_type": "graphs",
+                "Purpose": "Checking Aurora forecast"
             }
         }
     },

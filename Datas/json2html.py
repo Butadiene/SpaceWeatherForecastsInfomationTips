@@ -126,7 +126,8 @@ def intro_space_weather(filename):
     list_data+\
     f""" 
     <h2> Forecast Process Template </h2>
-    <p style="color: red;">Warning: 宇宙天気予報は様々なデータを俯瞰的に見て、多くの状況に応じて判断しなければならない。ここに載せるのは1テンプレートにすぎない。</p>
+    <p style="color: red;">Warning: 宇宙天気予報は様々なデータを俯瞰的に見て、多くの状況に応じて判断しなければならない。ここに載せるのは1テンプレートにすぎない。\
+        <br> また、作者は宇宙天気予報の素人であり、この手順は宇宙天気予報の学習中に作成したメモであることも明記しておく。</p>
 
     <ol>
         <li>
@@ -214,7 +215,7 @@ def intro_space_weather(filename):
                     <ol>
                         <li>
                         磁場構造の詳細な把握
-                        <p>リストアップした活動領域について磁場構造、フラックスの大きさ、シアなどを確認し、活動領域の活動度についてより踏み込んだ解釈を行う。\
+                        <p>\
                             <br> SOLAR REGION SUMMARYでβ型と書いてあった黒点が実際よく見たらδ型、ということもあったりする。そのため、これまで得た情報を鵜呑みにせず、もう一度活動領域を丁寧に評価する。{get_site_info(data, "SHARP Vector Magnetograms")} {get_site_info(data, "SHARP Data Viewer")}</p>
                         </li>
                         <li>
@@ -272,6 +273,7 @@ def intro_space_weather(filename):
                             <br> 太陽風の速度が高い時間帯が存在するか、存在する場合はその時刻（特に速度が上昇を開始した時刻）を確認。\
                             <br> ACEのEPAMのデータを確認。2桁keVから1桁MeVぐらいのプラズマの変動を確認し、高速太陽風が示すことが多い変動を行っているかを確認。\
                             <br> 高速太陽風が到来している可能性があると判断した場合、3-4日前のコロナホールの画像(SDOのAIA 211画像など)を確認し、高速太陽風のもととなるコロナホールを探す。\
+                            <br> なお、高速太陽風とコロナホールの付き合わせの際は、
                             <br> (ソースとなるコロナホールが見当たらない時、高速太陽風の到来判断は保留したほうが良いことがある。)
                             {get_site_info(data,"SWPC REAL TIME SOLAR WIND")}{get_site_info(data,"ACE REAL TIME SOLAR WIND")}{get_site_info(data,"SDO Images")}</p>
                         </li>
@@ -279,16 +281,16 @@ def intro_space_weather(filename):
                             1太陽周期前の太陽風、コロナホールの確認
                             <p>1太陽周期前(27日前)のSDO衛星211の画像と、太陽風のデータを確認する。\
                              <br> 1太陽風周期前に現在と同じようなコロナホールが存在するか、太陽風の値は1太陽風周期前と同じような変化を示しているかを確認。\
-                             <br> もし、似たようなコロナホールがあり、太陽風が同じような変化を示していた場合、今後太陽風の値は前周期と同じような変化をたどる可能性がある。{get_site_info(data,"SDO Images")}{get_site_info(data,"SWPC REAL TIME SOLAR WIND")}</p>
+                             <br> もし、似たようなコロナホールがあり、太陽風が同じような変化を示していた場合、今後太陽風の値は前周期と同じような変化をたどる可能性がある。{get_site_info(data,"Solar Monitor")}{get_site_info(data,"SDO Images")}{get_site_info(data,"SWPC REAL TIME SOLAR WIND")}</p>
                         </li>
                         <li>
                             シミュレーションの確認
-                            <p>数値シミュレーションにより、コロナホールからどのように地球に太陽風が飛んでくるか、の予測を確認する。参考程度ではある。{get_site_info(data,"Simulation")}</p>
+                            <p>数値シミュレーションにより、コロナホールからどのように地球に太陽風が飛んでくるか、の予測を確認する。参考程度ではある。{get_site_info(data,"Solar Wind Simulation")}</p>
                         </li>
                         <li>
                             高速太陽風とコロナホールに関する現況把握
                             <p> 以上の情報から、現況把握を行う。着目点は以下が代表的。\
-                            <br> 現在高速太陽風は到来しているか、している場合はどのコロナホールからのものか。\
+                            <br> 現在高速太陽風は到来しているか、している場合はどのコロナホールからのものか。(先程判断したが、1太陽周期前のコロナホール画像やシミュレーション結果を見た上でもう一度考える。)\
                             <br> 現在太陽に見えているコロナホールのうち、今後地球に影響を及ぼす可能性があるものはあるか。\
                             <br> 例えば低緯度子午線付近に大きなコロナホールがあった場合、現在太陽風に顕著な変動がなくても、数日後に高速太陽風が到来する可能性があると言える。</p>
                         </li>
@@ -308,7 +310,7 @@ def intro_space_weather(filename):
                             LASCO画像による、宇宙空間への放出を確認
                             <p>SOHO衛星のコロナグラフによる観測機器LASCOのデータを確認し、宇宙空間へのプラズマの放出を確認する。\
                               <br> 淡くて見づらいことも多いので、差分画像も活用すると良い。\
-                              <br> また、フルハローCMEがあるかも確認。{get_site_info(data,"SOHO LASCO C2 & C3")}{get_site_info(data,"SOHO LASCO C2 & C3 Diff")}</p>
+                              <br> また、フルハローCMEがあるかも確認。{get_site_info(data,"SOHO LASCO C2 & C3")} {get_site_info(data,"SOHO LASCO C2 & C3 Diff and mesurement")}</p>
                         </li>
                         <li>
                             CMEのリストアップ
@@ -324,7 +326,7 @@ def intro_space_weather(filename):
                         </li>
                             CMEの速度計算
                             <p> 地球に到来する可能性のあるCMEについて、LASCO等コロナグラフのデータを用いて、CMEの速度を計算する。\
-                            <br> 計算した速度で太陽-地球間の距離を割って、CMEの到達時間を推測する。{get_site_info(data,"SOHO LASCO C2 & C3")}{get_site_info(data,"SOHO LASCO C2 & C3 Diff")}</p>
+                            <br> 計算した速度で太陽-地球間の距離を割って、CMEの到達時間を推測する。{get_site_info(data,"SOHO LASCO C2 & C3")}{get_site_info(data,"SOHO LASCO C2 & C3 Diff and mesurement")}</p>
                         </li>
                         <li>
                             太陽風観測データとCMEの対応の確認
@@ -334,7 +336,7 @@ def intro_space_weather(filename):
                         </li>
                         <li>
                             シミュレーションとの対応の確認
-                            <p>数値シミュレーションにより、CMEの到来が予測されているかを確認し、自分が把握したCMEのリストと比較する。{get_site_info(data,"SUSANOO")}</p>
+                            <p>数値シミュレーションにより、CMEの到来が予測されているかを確認し、自分が把握したCMEのリストと比較する。{get_site_info(data,"Solar Wind Simulation")}</p>
                         </li>
                     </ol>
                 </li>
@@ -342,6 +344,21 @@ def intro_space_weather(filename):
         </li>
         <li>
         地磁気擾乱
+        <p>地磁気擾乱に関する現況を把握し、予報を行う。 <br> なお、地磁気擾乱に関する予報は太陽フレアの予報よりずっと確度が下がることに注意。(太陽風の精度良い予報が現状かなり難しいため)</p>
+            <ol>
+                <li>
+                地磁気活動の現況の把握
+                <p>現在の地磁気活動度を把握する。具体的には、現在のK指数とKp指数を把握する。\
+                 <br> 地磁気活動度は同時刻であっても、地球表面のどこかによって多少の変化がある。\
+                 <br> そのため、地球全体の地磁気活動度であるKp指数(Planetary K-index)に加え、ローカルな指数であるK指数の把握も重要。\
+                 <br> なお指数が3を超える時、地球に到来している太陽風は静穏時と比べて何らかの変化をしていることが疑われる。{get_site_info(data,"SWPC PLANETARY K-INDEX")}{get_site_info(data,"KAKIOKA K-INDEX")}</p>
+                </li>
+                <li>
+                    24時間前から現在までの地磁気活動の把握
+                    <p>24時間前から現在までのK指数とKp指数の変化を把握する。\
+                    <br> 特に、この24時間でのK指数とKp指数の最大値、日合計値を把握する。{get_site_info(data,"SWPC PLANETARY K-INDEX")}{get_site_info(data,"KAKIOKA K-INDEX")}</p>
+                </il>
+            </ol>
         </li>
         <!-- ... -->
     </ol>

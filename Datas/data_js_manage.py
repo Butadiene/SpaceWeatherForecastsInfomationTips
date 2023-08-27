@@ -69,6 +69,10 @@ space_weather_info = {
         "X-ray flux": create_child_object("GOES X-ray Flux", "https://www.swpc.noaa.gov/products/goes-x-ray-flux/", True, \
                     purpose="GOES background X-ray flux",file_type="graphs", exampleVal="B7, 穏やかに上昇中", \
                     memo="GOES衛星が捉えた太陽からのX線の量。太陽活動の重要な指標。 <br> 赤やオレンジのGOES-16 long, GOES-18 longの値を見ると、ちゃんとC4.7みたいな値がわかる。\
+                        <br> 尖っているところがフレアが起きているところで要注目。尖っているところのピークの値がフレアのクラスになる。\
+                        <br> ピーク以外にも尖り方の「形」にも注意する必要がある。X-ray fluxがフレアで急激に上昇すると、その後すみやかに減少する事が多い。 \
+                        <br> しかし、減少速度が緩やか(数時間から長いものだと1日以上)なものがあり、これをLDE(Long Duration Event)と呼ぶ。\
+                        <br> LDEはCMEを伴うことが多いことで知られているため、特に注意すべきフレアイベントである。\
                         <br> フレアが起きていない（≒尖っていないところ）をバックグラウンドと呼んだりする。これも重要で、バックグラウンドが上昇傾向にある場合は、例えば東側から活動的な領域が見え始めていたりすることを意味する可能性がある。"),
 
         "Radio flux": {**create_child_object("DRAO", "https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php", True,\
@@ -260,7 +264,7 @@ space_weather_info = {
                              <br> 2桁keVから1桁MeVぐらいのプラズマがCMEによって運ばれてきているとき、(高速太陽風によって運ばれている時ではない。)以下のようなことが言える。\
                              <br> &nbsp&nbsp;EPAMで観測できるプラズマ、すなわち比較的エネルギーの低いプラズマはCMEの先端にトラップされているだけであり、CMEを抜け出して先行することは少ない。\
                              <br> &nbsp&nbsp;そのため、EPAMが上がり始めるときはCMEはもう近くまで来ている事が多い。\
-                             <br> &nbsp&nbsp;SISで観測できる、2桁MeVのプラズマはCMEよりだいぶ先行していることもあるが、それはかなり大きいCMEの場合のみ見えることが多い。")
+                             <br> &nbsp&nbsp;SISで観測できる2桁MeVのプラズマは、CMEよりだいぶ先行していることもあるが、それはかなり大きいCMEの場合のみ見えることが多い。")
         },
 
         "CME in space": { **create_child_object("SOHO LASCO C2 & C3", "https://soho.nascom.nasa.gov/data/Theater/", True, \
@@ -285,7 +289,7 @@ space_weather_info = {
                           **create_child_object("SOHO LASCO C2 & C3 Diff and mesurement", "https://cdaw.gsfc.nasa.gov/movie/make_javamovie.php?&img1=lasc2rdf&img2=lasc3rdf", True, \
                         purpose="Confirmation of CME flying", file_type="images",\
                         memo="LASCOの動画でCMEを確認しようとした際、淡くてわかりにくいことがある。そこで、前の画像との差を表示する差分版を使うと見やすくなる。\
-                             <br> リンクのサイトは、CDAW Data CenterがSOHOのLASCOデータの差分版を見やすく表示している。\
+                             <br> リンクのサイトは、CDAW Data CenterがSOHOのLASCOデータの差分版を見やすく表示しているものである。\
                              <br> また、このサイトはCMEの速度の簡易的な計算が行えるようになっている。画像の下のmesurementというリンクを押すと計測用のサイトに飛べる。\
                              <br> measumentサイトでは、動画中の点を選択すると、その点の位置と、押した時刻が表示される。\
                              <br> 距離が分かりづらいが、H(Rs)が中心からの距離(単位Rsは太陽半径)であることを把握すると、大まかな速度が計算できる。\
@@ -293,12 +297,23 @@ space_weather_info = {
                              <br> \
                              <br> CDAWによる差分表示サイトは、主にC3が上手く表示されないことがある。(サイトの問題ではなく、データ欠損のこともある。)\
                              <br> その場合、公式を参照すると良い。Reference_URL2を参照。サイトの下にあるLASCO C2 COMBOや、C3 COMBOがそれ。\
-                             <br> なお、この公式サイトでは2日間の動画しか確認できない。アーカイブはDailyというところから見れるが、よくサーバーダウンしてる気がする...。また、アーカイブは現在の月より前のものしか見れないので注意。)",\
-                                refURL="https://cdaw.gsfc.nasa.gov/index.html",
-                                refURL2="https://soho.nascom.nasa.gov/data/realtime/mpeg/")
+                             <br> なお、この公式サイトでは2日間の動画しか確認できない。アーカイブはDailyというところから見れるが、よくサーバーダウンしてる気がする。\
+                             <br> Dailyから見るアーカイブは現在の月より前のものしか見れないので注意。",\
+                                refURL="https://cdaw.gsfc.nasa.gov/index.html",\
+                                refURL2="https://soho.nascom.nasa.gov/data/realtime/mpeg/"),
                          
         },
 
+        "Solar Wind Simulation": {
+                    **create_child_object("SUSANOO", "https://cidas.isee.nagoya-u.ac.jp/susanoo/", True, \
+                    purpose="Refer for forecast", file_type="graphs",\
+                    memo="太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。 <br> nictのサイトのほうが見やすいかもしれない。(Reference_URL参照)",\
+                    refURL="https://origin-swc.nict.go.jp/forecast/magnetosphere.html"),
+
+                    **create_child_object("WSA-ENLIL SOLAR WIND PREDICTION", "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction", True, \
+                    purpose="Refer for forecast", file_type="graphs",\
+                    memo="太陽風シミュレーションモデルWSA-EnlilによるL1地点及びSTEREO衛星での太陽風予報および、太陽系空間での太陽風予報。 <br> 速度と密度しかなく磁場予測がないが、見やすい。"),
+                    },
     },
 
     "Geomagnetic disturbances": {
@@ -309,21 +324,11 @@ space_weather_info = {
                         refURL="https://www.swpc.noaa.gov/noaa-scales-explanation"),
 
         "K index": create_child_object("KAKIOKA K-INDEX", "https://origin-swc.nict.go.jp/trend/geomag.html",True,\
-                    purpose="Magnitude of geomagnetic disturbance at Kakioka",file_type="graphs",exampleVal="最大K指数:3(一日のうち最も大きいKp)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)  地磁気活動度: 静穏",\
+                    purpose="Magnitude of geomagnetic disturbance at Kakioka",file_type="graphs",exampleVal="最大K指数:3(一日のうち最も大きいK)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)  地磁気活動度: 静穏",\
                     memo="ローカルでの地磁気擾乱の大きさを示すK指数のうち、柿岡のものが見れる。日本での地磁気擾乱を考える際に重要。H componentは水平分力、D componentは偏角を表す。 \
                         地磁気活動度(Quiet, Active...)も載っている。地磁気活動度の基準はReference_URL参照。\
                         <br> 日合計値や各componentの詳細は https://www.kakioka-jma.go.jp/knowledge/glossary.html 参照", refURL="https://origin-swc.nict.go.jp/knowledge/criteria_icon.html"),
 
-        "Simulation": {
-                    **create_child_object("SUSANOO", "https://cidas.isee.nagoya-u.ac.jp/susanoo/", True, \
-                    purpose="Refer for forecast", file_type="graphs",\
-                    memo="太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。 <br> nictのサイトのほうが見やすいかもしれない。(Reference_URL参照)",\
-                    refURL="https://origin-swc.nict.go.jp/forecast/magnetosphere.html"),
-
-                    **create_child_object("WSA-ENLIL SOLAR WIND PREDICTION", "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction", True, \
-                    purpose="Refer for forecast", file_type="graphs",\
-                    memo="太陽風シミュレーションモデルWSA-EnlilによるL1地点及びSTEREO衛星での太陽風予報および、太陽系空間での太陽風予報。 <br> 風速と磁場しかなく、密度がないが見やすい。"),
-                    },
 
         "Dst index": create_child_object("DST-INDEX", "https://wdc.kugi.kyoto-u.ac.jp/dstdir/index-j.html",True,\
                     purpose="DST-index",file_type="graphs",\
@@ -354,7 +359,7 @@ space_weather_info = {
                                 <br> 現在の「GOESがいる経度」の放射線帯の電子fluxがわかる。グラフのNとMはNoonとMidnightの略で、衛星が昼側、夜側にいることを指す。\
                                 <br> なお、GOES-16は西経75.2度、GOES-18は西経136.9度の静止衛星。 <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。"),
 
-                            **create_child_object("GOES Electron Flux","https://himawari-seda.nict.go.jp/dataplot",True,\
+                            **create_child_object("HIMAWARI SEDA DATA VIEWER","https://himawari-seda.nict.go.jp/dataplot",True,\
                             purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
                             memo="ひまわりが取得したMeV帯の電子fluxの時間変化。\
                                 <br> 現在の「ひまわりがいる経度」の放射線帯の電子fluxがわかる。横軸はUTなので注意。\
@@ -423,6 +428,18 @@ space_weather_info = {
                                     <br>詳細やアーカイブは、Reference_URLを参照。",\
                                 refURL="https://wdc.nict.go.jp/x-ray/index.html"),
         
+
+    },
+
+    "Aurora": {
+        "NOAA OVATION model Aurora forecast": create_child_object("AURORA - 30 MINUTE FORECAST", "https://www.swpc.noaa.gov/products/aurora-30-minute-forecast", True,\
+                                purpose="Checking Aurora forecast", file_type="graphs",\
+                                memo="オーロラ予報。30-90分後のオーロラ予報を提供する。\
+                                    <br> OVATION modelというモデルを使っている。L1での観測データと高エネルギープラズマの振りこみの関係から求めているよう。"),
+
+        "NICT Aurora forecast": create_child_object("NICT Aurora forecast", "https://aurora-alert.nict.go.jp/", True,\
+                                                    purpose="Checking Aurora forecast", file_type="graphs",\
+                                                        memo="NICTのオーロラ予報。使い所がわからんけど一応..."),
 
     },
 
