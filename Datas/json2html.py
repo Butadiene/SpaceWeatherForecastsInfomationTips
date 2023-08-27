@@ -121,8 +121,8 @@ def intro_space_weather(filename):
     </head>
     """
     body_data = "<body>"+\
-    "<h1>Space Weather Forecast Tips</h1>"+\
-    "  <br> 宇宙天気予報について、ではなく宇宙天気予報を実際に行う際に必要な情報について個人的にまとめたものです。<br> <br> <strong> ここに記載してある一切の情報について、作者は責任を負いません。<br> また、リンク先のデータの利用条件についても十分に注意してください。</strong>\
+    "<h1>Tips for Space Weather Forecasting</h1>"+\
+    "  <br> 宇宙天気予報について、ではなく<u>宇宙天気予報を実際に行う際に必要な情報について</u>個人的にまとめたものです。<br> <br> <strong> ここに記載してある一切の情報について、作者は責任を負いません。<br> また、リンク先のデータの利用条件についても十分に注意してください。</strong>\
       <br> <br> 緑色の文字はクリックすると展開できます。"+\
     "<h2>Information List</h2>"+\
     list_data+\
