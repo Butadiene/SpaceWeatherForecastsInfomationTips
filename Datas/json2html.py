@@ -83,7 +83,7 @@ def lists_only_space_weather_info(filename):
     """
     body_data = "<body>"+\
     "<h1>Space Weather Forecast Infomartion Sites Lists</h1>"+\
-    " <br> 宇宙天気予報について、ではなく宇宙天気予報を実際に行う際に必要な情報について個人的にまとめたものです。<br> <br> <strong> ここに記載してある一切の情報について、作者は責任を負いません。<br> また、リンク先のデータの利用条件についても十分に注意してください。</strong>\
+    " <br> 宇宙天気予報についてではなく<u>宇宙天気予報を実際に行う際に必要な情報について</u>個人的にまとめたものです。<br> <br> <strong> ここに記載してある一切の情報について、作者は責任を負いません。<br> また、リンク先のデータの利用条件についても十分に注意してください。</strong>\
         <br> <br> 緑色の文字はクリックすると展開できます。"+\
     "<h2>Information Lists</h2>"+\
     list_data+"</body></html>"
@@ -124,10 +124,10 @@ def intro_space_weather(filename):
     "<h1>Tips for Space Weather Forecasting</h1>"+\
     "  <br> 宇宙天気予報についてではなく<u>宇宙天気予報を実際に行う際に必要な情報について</u>個人的にまとめたものです。<br> <br> <strong> ここに記載してある一切の情報について、作者は責任を負いません。<br> また、リンク先のデータの利用条件についても十分に注意してください。</strong>\
       <br> <br> 緑色の文字はクリックすると展開できます。"+\
-    "<h2>Information List</h2>"+\
+    "<h2>1. Information List</h2>"+\
     list_data+\
     f""" 
-    <h2> Forecast Process Template </h2>
+    <h2> 2. Forecast Process Template </h2>
     <p style="color: red;"> <strong> 【注意】宇宙天気予報は様々なデータを俯瞰的に見て、多くの状況に応じて判断しなければならない。ここに載せるのは1テンプレートにすぎない。\
         <br> また、作者は宇宙天気予報の素人であり、この手順は宇宙天気予報の学習中に作成したメモであることも明記しておく。\
         <br> もしここの手順を参照して自分自身で情報解析を行う場合、必ず </strong>  </p> {get_site_info(data,"NICT 宇宙天気予報レポーㇳ")}\
