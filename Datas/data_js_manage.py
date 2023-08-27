@@ -42,10 +42,13 @@ def create_child_object(name, url, external_access, purpose=None, exampleVal=Non
 
 space_weather_info = {
 
-    "Space weather forecast for each country": {
+    "Space weather forecast reports": {
         "List of space weather forecast for each country": create_child_object("Present Space Weather Forecast from ISES", "https://swc.nict.go.jp/data/ises/isesforecast.html", True,\
                                                                 purpose="Check space weather forecast for each country",file_type="text",\
-                                                                memo="ISES(The International Space Environment Service)のメンバー国が出している宇宙天気予報を一覧で見られる。")
+                                                                memo="ISES(The International Space Environment Service)のメンバー国が出している宇宙天気予報を一覧で見られる。"),
+        "NICT Space Weather Forecast Report": create_child_object("NICT 宇宙天気予報レポーㇳ", "https://swc.nict.go.jp/report/view.html?ym=202308&ids=d2023239_00&type=daily+weekly+bulletin+topics#js-report-viewer", True,\
+                                                                purpose="Check space weather forecast reports, especially daily report",file_type="text",\
+                                                                memo="NICTが出している宇宙天気予報のレポーㇳ。特に日報はその日の現象がよくまとまっており、参照すべきである。"),
     },
 
     "Solar and geophysical events": {

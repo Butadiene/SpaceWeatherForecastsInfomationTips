@@ -1,5 +1,5 @@
 {
-    "Space weather forecast for each country": {
+    "Space weather forecast reports": {
         "List of space weather forecast for each country": {
             "Present Space Weather Forecast from ISES": {
                 "URL": "https://swc.nict.go.jp/data/ises/isesforecast.html",
@@ -7,6 +7,15 @@
                 "Memo": "ISES(The International Space Environment Service)のメンバー国が出している宇宙天気予報を一覧で見られる。",
                 "File_type": "text",
                 "Purpose": "Check space weather forecast for each country"
+            }
+        },
+        "NICT Space Weather Forecast Report": {
+            "NICT 宇宙天気予報レポーㇳ": {
+                "URL": "https://swc.nict.go.jp/report/view.html?ym=202308&ids=d2023239_00&type=daily+weekly+bulletin+topics#js-report-viewer",
+                "External_access": true,
+                "Memo": "NICTが出している宇宙天気予報のレポーㇳ。特に日報はその日の現象がよくまとまっており、参照すべきである。",
+                "File_type": "text",
+                "Purpose": "Check space weather forecast reports, especially daily report"
             }
         }
     },
