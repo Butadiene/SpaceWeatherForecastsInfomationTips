@@ -237,7 +237,6 @@ def intro_space_weather(filename):
                 <li>
                     フレア予報を考える。
                     <p>これまで得た各活動領域の情報を考慮しながら、太陽フレアの予報を考える。 <br> <strong>Mクラス以上</strong>のフレアを起こす可能性がある活動領域が存在するか、を基準に考えると良い。ここで、Deep Flare Netも助けになる。{get_site_info(data,"Deep Flare Net")} \
-                    <br> \
                     <br> また、SYNOPTIC MAPの予報を参考にしてみても良いかもしれない。{get_site_info(data,"SOLAR SYNOPTIC MAP")}</p>
                 </li>
                 <li>
