@@ -46,7 +46,7 @@ space_weather_info = {
         "List of space weather forecast for each country": create_child_object("Present Space Weather Forecast from ISES", "https://swc.nict.go.jp/data/ises/isesforecast.html", True,\
                                                                 purpose="Check space weather forecast for each country",file_type="text",\
                                                                 memo="ISES(The International Space Environment Service)のメンバー国が出している宇宙天気予報を一覧で見られる。"),
-        "NICT Space Weather Forecast Report": create_child_object("NICT 宇宙天気予報レポーㇳ", "https://swc.nict.go.jp/report/view.html?ym=202308&ids=d2023239_00&type=daily+weekly+bulletin+topics#js-report-viewer", True,\
+        "NICT Space Weather Forecast Report": create_child_object("NICT 宇宙天気予報レポーㇳ", "https://swc.nict.go.jp/report/", True,\
                                                                 purpose="Check space weather forecast reports, especially daily report",file_type="text",\
                                                                 memo="NICTが出している宇宙天気予報のレポーㇳ。特に日報はその日の現象がよくまとまっており、参照すべきである。"),
     },
@@ -78,10 +78,11 @@ space_weather_info = {
                         <br> LDEはCMEを伴うことが多いことで知られているため、特に注意すべきフレアイベントである。\
                         <br> フレアが起きていない（≒尖っていないところ）をバックグラウンドと呼んだりする。これも重要で、バックグラウンドが上昇傾向にある場合は、例えば東側から活動的な領域が見え始めていたりすることを意味する可能性がある。"),
 
-        "Radio flux": {**create_child_object("DRAO", "https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php", True,\
+        "Radio flux": {**create_child_object("Solar radio flux - archive of measurements", "https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php", True,\
                             purpose="F10.7: 10.7cm wavelength radio wave strength", file_type="html", \
                             memo="太陽黒点数と良い相関のある、波長10.7cm(周波数2.8GHz)の電波の強度。 <br> Daily flux valuesのHTML見れば良いけど、\
-                            めちゃ見づらいので注意。値はObserved fluxを使用すると良さそう。 <br> 極大期では月平均でおおよそ200、極小期では70程度(日単位では変動が大きく、300を超えることも。)"),
+                            めちゃ見づらいので注意。値はObserved fluxを使用すると良さそう。 <br> 極大期では月平均でおおよそ200、極小期では70程度(日単位では変動が大きく、300を超えることも。)\
+                                <br> DRAO(Dominion Radio Astrophysical Observatory research facility)による。"),
 
                         **create_child_object("山川 太陽電波望遠鏡","https://origin-swc.nict.go.jp/forecast/magnetosphere.html", True, \
                             purpose= "Solar radio burst", file_type="graphs", \
@@ -159,7 +160,7 @@ space_weather_info = {
                                  <br> AIA 171 (gold)-エネルギー的にはgreenとpurpleの間。一番メジャーらしい。\
                                  <br> \
                                  <br> 094、211、171あたりの波長帯の画像では、CMEが見えることがある。\
-                                 <br> &nbsp&nbsp;このあたりの波長帯で観測できるCMEは、コロナの放出を伴う。そのため、CMEが放出されるとき表面が暗くなる様に見える。\
+                                 <br> &nbsp&nbsp;このあたりの波長帯で観測できるCMEは、コロナの放出を伴う。そのため、CMEが放出されるとき表面が暗くなる様に見える。(Dimmingと呼ばれる)\
                                  <br> &nbsp&nbsp; (リム側だと吹き飛んでいく様子が見えることもある。)\
                                  <br> &nbsp&nbsp;(どの波長帯で一番よく見えるかは、そのときのCMEの温度によって違う。335(blue)が一番良く見えるときもある。よく見える波長帯を探すのも大事。)\
                                  <br> &nbsp&nbsp;ただし、SDOの画像だけでCMEを判断するのは早計。必ずSOHOのLASCOなどによるコロナグラフ画像で、宇宙空間にプラズマが飛んでいく様子を確認すること。\
@@ -304,6 +305,14 @@ space_weather_info = {
                              <br> Dailyから見るアーカイブは現在の月より前のものしか見れないので注意。",\
                                 refURL="https://cdaw.gsfc.nasa.gov/index.html",\
                                 refURL2="https://soho.nascom.nasa.gov/data/realtime/mpeg/"),
+
+                        **create_child_object("STEREO Coronagraph", "https://stereo.gsfc.nasa.gov/beacon/", True, \
+                                              purpose="Confirmation of CME flying", file_type="images",\
+                                                memo="STEREO衛星によるコロナグラフ画像。使い勝手はLASCOよりはあまり良くない。LASCOが不調な場合や見づらい場合の代替としてがメインになりそう。\
+                                                    <br> リンク先サイトの画像一覧の中からコロナグラフの画像を見つけることができる。説明がついていない数字だけのリンクを押すと画像をダウンロードすることができる。\
+                                                    <br> MPEGと書いてあるやつからは、MPEG形式の動画をダウンロードできる。なお、Mp4のことではない。MPEGを再生するのは意外とめんどくさい可能性。Windows11の場合、Microsoft clip champが、デフォルトでついてる機能の中で一番MPEGを見やすい気がする。\
+                                                    <br> リンク先サイトは数日前のものしか見れないため、過去のものを見たい場合はReference_URLから。\
+                                                    <br> ", refURL="https://stereo.gsfc.nasa.gov/beacon/")
                          
         },
 
@@ -329,8 +338,10 @@ space_weather_info = {
         "K index": create_child_object("KAKIOKA K-INDEX", "https://origin-swc.nict.go.jp/trend/geomag.html",True,\
                     purpose="Magnitude of geomagnetic disturbance at Kakioka",file_type="graphs",exampleVal="最大K指数:3(一日のうち最も大きいK)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)  地磁気活動度: 静穏",\
                     memo="ローカルでの地磁気擾乱の大きさを示すK指数のうち、柿岡のものが見れる。日本での地磁気擾乱を考える際に重要。H componentは水平分力、D componentは偏角を表す。 \
-                        地磁気活動度(Quiet, Active...)も載っている。地磁気活動度の基準はReference_URL参照。\
-                        <br> 日合計値や各componentの詳細は https://www.kakioka-jma.go.jp/knowledge/glossary.html 参照", refURL="https://origin-swc.nict.go.jp/knowledge/criteria_icon.html"),
+                        地磁気活動度(Quiet, Active...)も載っている。地磁気活動度の基準はReference_URL参照。 <br> なおこの基準はNICTによるもので、K指数の最大値を元にしたものである。(ISESの基準に合わせているようだが、ISES側での定義がどこで公表さているかは不明。)\
+                        <br> 日合計値や各componentの詳細はReference_URL2参照。リンク先に日最大値を元に定められている地磁気活動度の基準があるが、これは気象庁が設定したものであり、NICTによるものとは別であることに注意。 <br> 一般に、NICTによるものが参照されてることが多いらしい。", \
+                        refURL="https://origin-swc.nict.go.jp/knowledge/criteria_icon.html",\
+                        refURL2="https://www.kakioka-jma.go.jp/knowledge/glossary.html"),
 
 
         "Dst index": create_child_object("DST-INDEX", "https://wdc.kugi.kyoto-u.ac.jp/dstdir/index-j.html",True,\
@@ -344,11 +355,29 @@ space_weather_info = {
     },
 
     "Radiation belts": {
-        "Electron 24-h fluences": create_child_object("GOES Electron Fluences","https://origin-swc.nict.go.jp/trend/electron.html",True,\
-                        purpose="Checking the electron 24-h fluences in the radiation belt", file_type="graphs",\
-                        memo="GOESが取得した2MeV以上の電子fluxを、24時間で積分した値。GOESデータを元にNICTが積分した結果を出している。<br> 静止軌道衛星の観測データ24時間の総和なので、放射線帯全体の状況を表していると言える。\
-                            <br> 放射線帯予報で重視すべきなのは、fluxよりもfluencesである。\
+        "GOES Electron 24-h fluences and flux": {**create_child_object("NICT GOES Electron Fluences and flux","https://origin-swc.nict.go.jp/trend/electron.html",True,\
+                        purpose="Checking the electron 24-h fluences and flux in the radiation belt", file_type="graphs",\
+                        memo="GOESが取得した2MeV以上の電子fluxとfluencesが確認できる。fluencesとは、fluxを24時間で積分した値。GOESデータを元にNICTが積分した結果を出している。<br> 静止軌道衛星の観測データ24時間の総和なので、放射線帯全体の状況を表していると言える。\
+                            <br> 放射線帯予報では、fluxよりもfluencesが重視されることがある。\
                             <br> 放射線帯全体の状況を表せることが主な理由。(Localな経度の情報を把握し発信することに重点を置いていない。)"),
+                        
+                        **create_child_object("NOAA GOES Electron Flux","https://www.swpc.noaa.gov/products/goes-electron-flux",True,\
+                            purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
+                            memo="GOESが取得した2MeV以上の電子fluxの時間変化。7daysで見るのが良さそう。\
+                                <br> 現在の「GOESがいる経度」の放射線帯の電子fluxがわかる。グラフのNとMはNoonとMidnightの略で、衛星が昼側、夜側にいることを指す。\
+                                <br> なお、GOES-16は西経75.2度、GOES-18は西経136.9度の静止衛星。 <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。"),
+                        
+        },
+
+        "Himawari Electron 24-h fluences and flux": create_child_object("HIMAWARI SEDA DATA VIEWER","https://himawari-seda.nict.go.jp/dataplot",True,\
+                            purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
+                            memo="ひまわりが取得したMeV帯の電子fluxの時間変化や24時間電子fluencesが見れる。\
+                                <br> fluxについては、現在の「ひまわりがいる経度」の放射線帯の電子fluxがわかる。横軸はUTなので注意。\
+                                <br> fluencesとはfluxを24時間で積分した値。ひまわりデータを元にNICTが積分した結果を出している。\
+                                <br> 放射線帯予報では、放射線帯全体の状況を表せることからfluxよりもfluencesが重視されることがある。\
+                                <br> サイトの上の方にある、設定を色々いじったあと右上のPlotというボタンを押すとグラフが更新される。ひまわり8号、9号のデータが共に見れる。\
+                                <br> ひまわりの経度は、8号9号ともにおよそ140.7度(0.05度離れているらしい。)。\
+                                <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。"),
 
         "Electron fluences forecast": create_child_object("電子フルエンス予報","https://radi.nict.go.jp/",True, \
                                         purpose="Reference for forecast electron fluences", file_type="text", \
@@ -356,28 +385,13 @@ space_weather_info = {
                                                 <br> 予報の参考になる。静穏等々の基準についてはReference_URL参照",\
                                                     refURL="https://radi.nict.go.jp/about/#level"),
         
-        "Electron flux": { **create_child_object("GOES Electron Flux","https://www.swpc.noaa.gov/products/goes-electron-flux",True,\
-                            purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
-                            memo="GOESが取得した2MeV以上の電子fluxの時間変化。7daysで見るのが良さそう。\
-                                <br> 現在の「GOESがいる経度」の放射線帯の電子fluxがわかる。グラフのNとMはNoonとMidnightの略で、衛星が昼側、夜側にいることを指す。\
-                                <br> なお、GOES-16は西経75.2度、GOES-18は西経136.9度の静止衛星。 <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。"),
-
-                            **create_child_object("HIMAWARI SEDA DATA VIEWER","https://himawari-seda.nict.go.jp/dataplot",True,\
-                            purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
-                            memo="ひまわりが取得したMeV帯の電子fluxの時間変化。\
-                                <br> 現在の「ひまわりがいる経度」の放射線帯の電子fluxがわかる。横軸はUTなので注意。\
-                                <br> 上の設定を色々いじったあと、右上のPlotというボタンを押すとグラフが更新される。ひまわり8号、9号のデータが共に見れる。\
-                                <br> ひまわりの経度は、8号9号ともにおよそ140.7度(0.05度離れているらしい。)。\
-                                <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。")
-
-        },
         
         "Electron flux forecast": create_child_object("静止軌道危険度予測","https://radi.nict.go.jp/satellite/",True,\
                 purpose="Reference for forecast electron flux", file_type="graphs",\
                 memo="シミュレーションや統計モデルによる電子fluxの時間変化の予測。 <br> ひまわり8号、GOES衛星それぞれの軌道における電子fluxの大きさの予報値が示されている。"),
     },
 
-    "ionosphere": {
+    "Ionosphere": {
 
         "Ionosonde": {
             **create_child_object("foF2 and GEONET TEC time change at Japan","https://swc.nict.go.jp/trend/ionosphere.html",True,\
@@ -438,7 +452,7 @@ space_weather_info = {
         "NOAA OVATION model Aurora forecast": create_child_object("AURORA - 30 MINUTE FORECAST", "https://www.swpc.noaa.gov/products/aurora-30-minute-forecast", True,\
                                 purpose="Checking Aurora forecast", file_type="graphs",\
                                 memo="オーロラ予報。30-90分後のオーロラ予報を提供する。\
-                                    <br> OVATION modelというモデルを使っている。L1での観測データと高エネルギープラズマの振りこみの関係から求めているよう。"),
+                                    <br> OVATION modelというモデルを使っている。L1での観測データと高エネルギープラズマの振りこみの関係から求めている模様。"),
 
         "NICT Aurora forecast": create_child_object("NICT Aurora forecast", "https://aurora-alert.nict.go.jp/", True,\
                                                     purpose="Checking Aurora forecast", file_type="graphs",\

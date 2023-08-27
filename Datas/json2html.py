@@ -83,7 +83,8 @@ def lists_only_space_weather_info(filename):
     """
     body_data = "<body>"+\
     "<h1>Space Weather Forecast Infomartion Sites Lists</h1>"+\
-    "ここに記載してある一切の情報について、作者は責任を負いません。 <br> また、リンク先のデータの利用条件についても十分に注意してください。"+\
+    "<strong> ここに記載してある一切の情報について、作者は責任を負いません。<br> また、リンク先のデータの利用条件についても十分に注意してください。</strong>\
+        <br> 緑色の文字はクリックすると展開できます。"+\
     "<h2>Information Lists</h2>"+\
     list_data+"</body></html>"
     
@@ -121,14 +122,16 @@ def intro_space_weather(filename):
     """
     body_data = "<body>"+\
     "<h1>Space Weather Forecast Tips</h1>"+\
-    " <br> ここに記載してある一切の情報について、作者は責任を負いません。<br> また、リンク先のデータの利用条件についても十分に注意してください。"+\
+    " <br> <strong> ここに記載してある一切の情報について、作者は責任を負いません。<br> また、リンク先のデータの利用条件についても十分に注意してください。</strong>\
+     <br> 緑色の文字はクリックすると展開できます。"+\
     "<h2>Information List</h2>"+\
     list_data+\
     f""" 
     <h2> Forecast Process Template </h2>
-    <p style="color: red;">Warning: 宇宙天気予報は様々なデータを俯瞰的に見て、多くの状況に応じて判断しなければならない。ここに載せるのは1テンプレートにすぎない。\
+    <p style="color: red;"> <strong> 【注意】宇宙天気予報は様々なデータを俯瞰的に見て、多くの状況に応じて判断しなければならない。ここに載せるのは1テンプレートにすぎない。\
         <br> また、作者は宇宙天気予報の素人であり、この手順は宇宙天気予報の学習中に作成したメモであることも明記しておく。\
-        <br> もしここの手順を参照して自分自身で情報解析を行う場合、必ず{get_site_info(data,"NICT 宇宙天気予報レポーㇳ")}を参照すること。</p>
+        <br> もしここの手順を参照して自分自身で情報解析を行う場合、必ず </strong>  </p> {get_site_info(data,"NICT 宇宙天気予報レポーㇳ")}\
+            <p style="color: red;"> <strong> を参照すること。 </strong> </p>
 
     <ol>
         <li>
@@ -153,7 +156,7 @@ def intro_space_weather(filename):
                     <ol>
                         <li>
                             F10.7(波長10.7cmの電波)の電波強度
-                            <p>以下参考。値だけでなく、増加傾向か減少傾向かも重要。{get_site_info(data,"DRAO")} </p>
+                            <p>以下参考。値だけでなく、増加傾向か減少傾向かも重要。{get_site_info(data,"Solar radio flux - archive of measurements")} </p>
                         </li>   
                         <li>
                             太陽光球面の見えている黒点の総面積
@@ -173,7 +176,7 @@ def intro_space_weather(filename):
                     太陽活動の概観を動画で確認
                     <p>4日前からの太陽活動の動画を、波長帯ごとにざっと確認する。SDO衛星の動画を見ると良い。ここ4日で活動的な領域の大雑把な把握を、エネルギー帯別に行う。\
                         <br> フレアっぽいもの(高エネルギー帯で見える爆発的な現象)、コロナホールっぽいもの(211で見える黒い穴)、CMEっぽいもの(コロナやフレアが吹き飛んだ形跡)、黒点の量や分布、各黒点の磁場構造を大雑把に把握する。\
-                            <br> Solar Monitorでぱっと静止画の一覧を見たあとにSDO Imagesで気になる波長を見るのがおすすめ。{get_site_info(data,"Solar Monitor")}{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
+                        <br> Solar Monitorでぱっと静止画の一覧を見たあとにSDO Imagesで気になる波長を見るのがおすすめ。{get_site_info(data,"Solar Monitor")}{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
                 </li>
                 <li>
                     活動領域(≒黒点近辺)の詳細を確認
@@ -206,7 +209,7 @@ def intro_space_weather(filename):
                         </li>
                         <li>
                             各活動領域でのフレア予報の確認
-                            <p>各活動領域で今後フレアが発生するかどうかについて、モデルによる予測を確認する。Deep Flare NetのDeFN-Rが良い。{get_site_info(data,"Deep Flare Net")}</p>
+                            <p>各活動領域で今後フレアが発生するかどうかについて、モデルによる予測を確認する。Deep Flare NetのDeFN-Rを参照すると良い。{get_site_info(data,"Deep Flare Net")}</p>
                         </li>
                     </ol>
                 </li>
@@ -231,21 +234,12 @@ def intro_space_weather(filename):
                     <p>これまで得た各活動領域の情報を考慮しながら、太陽フレアの予報を考える。 <br> Mクラス以上のフレアを起こす可能性がある活動領域が存在するか、を基準に考えると良い。ここで、Deep Flare NETも助けになる。{get_site_info(data,"Deep Flare Net")}</[]>
                 </li>
                 <li>
-                    プロトン現象の予報を考える。これについても、Mクラスフレアの発生を目安に考えると良い。プロトンフラックスの現況は以下。{get_site_info(data,"GOES Proton Flux")}
-                <p></p>
-        </li>
-            </ol>
-        </li>
-        <li>
-            デリンジャー現象
-            <ol>
-                <li>
-                    デリンジャー現象の予報を考える。
-                    <p>デリンジャー現象の予報を考える。デリンジャー現象は太陽フレアに伴うX線等の到来によって発生する。 <br> そのため、デリンジャー現象は太陽フレアの活発さとほぼ同じように生じる。よって太陽フレアの予報をもとに考えれば良い。\
-                    <br> デリンジャー現象の現状は以下から把握できるが、イオノグラムから確認するのが割とメジャー。{get_site_info(data,"NICT Site Ionogram Viewer")} {get_site_info(data,"Observed foEs")}{get_site_info(data,"Dellinger phenomenon")}</p>
+                    プロトン現象の予報を考える。
+                    <p>プロトン現象の予報について考える。プロトン現象は太陽フレアの発生に強く依存するため、太陽フレアの予報、特にMクラスフレアの発生を目安に考えると良い。 <br> また、プロトンフラックスの現況も踏まえる必要がある。プロトンフラックスの現況は以下。{get_site_info(data,"GOES Proton Flux")} なおプロトンフラックス予報は、現況の報告に近いものになることが多いらしい。</p>
                 </li>
             </ol>
         </li>
+
         <li>
             太陽風活動
             <p>地磁気擾乱の予報の大前提となる、太陽風活動の把握を行う。</p>
@@ -304,12 +298,12 @@ def intro_space_weather(filename):
                         <li>
                             SDO画像から、CME候補となる現象の確認
                             <p> SDO衛星の画像などから、CMEの候補となる現象を確認する。\
-                                高エネルギー帯の波長で見えるコロナの吹き飛び(一瞬暗くなるように見えたりもする)、AIA 304で見えるフィラメントの吹き飛びが重要。\
+                                高エネルギー帯の波長で見えるコロナの吹き飛び(一瞬暗くなるように見えたりもする。Dimmingと呼ばれる。)、AIA 304で見えるフィラメントの吹き飛びなどに着目。\
                             <br> 太陽表面から来るCMEは、3日程度かけて地球に到来するため、3-4日前から現在までの太陽画像を確認するのが大事。{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
                         </li>
                         <li>
                             LASCO画像による、宇宙空間への放出を確認
-                            <p>SOHO衛星のコロナグラフによる観測機器LASCOのデータを確認し、宇宙空間へのプラズマの放出を確認する。\
+                            <p> SOHO衛星のコロナグラフによる観測機器LASCOのデータを確認し、宇宙空間へのプラズマの放出を確認する。\
                               <br> 淡くて見づらいことも多いので、差分画像も活用すると良い。\
                               <br> また、フルハローCMEがあるかも確認。{get_site_info(data,"SOHO LASCO C2 & C3")} {get_site_info(data,"SOHO LASCO C2 & C3 Diff and mesurement")}</p>
                         </li>
@@ -326,7 +320,7 @@ def intro_space_weather(filename):
                             <br> なお、CMEはフレアを伴う事が多いが伴わないこともあるため、CME候補に対応するフレアイベントがなくても問題はない。(現象のより詳細な把握のために行う。){get_site_info(data,"Solar and geophysical events")}</p>
                         </li>
                             CMEの速度計算
-                            <p> 地球に到来する可能性のあるCMEについて、LASCO等コロナグラフのデータを用いて、CMEの速度を計算する。\
+                            <p> 地球に到来する可能性のあるCME(地球から見えている面で発生したCME)について、LASCO等コロナグラフのデータを用いて、CMEの速度を計算する。\
                             <br> 計算した速度で太陽-地球間の距離を割って、CMEの到達時間を推測する。{get_site_info(data,"SOHO LASCO C2 & C3")}{get_site_info(data,"SOHO LASCO C2 & C3 Diff and mesurement")}</p>
                         </li>
                         <li>
@@ -359,6 +353,92 @@ def intro_space_weather(filename):
                     <p>24時間前から現在までのK指数とKp指数の変化を把握する。\
                     <br> 特に、この24時間でのK指数とKp指数の最大値、日合計値を把握する。{get_site_info(data,"SWPC PLANETARY K-INDEX")}{get_site_info(data,"KAKIOKA K-INDEX")}</p>
                 </il>
+                <li>
+                <li>
+                    (地磁気が大きく荒れている場合) DST指数の確認
+                    <p>DST指数は古くから用いられている指標であり、地磁気が大きく荒れる磁気嵐の規模を知るための一つの指標となる。\
+                     <br> DST指数が-30nT~-50nTを下回ると磁気嵐と呼ばれることが多い。{get_site_info(data,"DST-INDEX")}</p>
+                </li>
+                地磁気擾乱の予報を行う
+                    <p> 現在の地磁気活動度、現在地球に到来している太陽風及び今後到来する太陽風予測の情報を元に、地磁気擾乱の予報を行う。\
+                    <br> 現在の地磁気擾乱の度合い、今後警戒すべきCMEや高速太陽風を特に重視するとよい。 \
+                        <br> 一般にCMEや高速太陽風によって、南向きの強い磁場を含んだ太陽風が到来すると地磁気擾乱が激しくなる傾向にある。\
+                        <br> また、CMEや高速太陽風が到来してすでに磁気擾乱が発生している場合、今後どの程度磁気擾乱が続くかを予測することも重要。\
+                        <br> 非常に大きいCMEや高速太陽風が到来している場合、地磁気の擾乱は数日続くこともある。特に、高速太陽風の影響はCMEに比べて長引くことが多い。\
+                        <br> どのような太陽風が到来するかを正確に予測するのは難しいため、地磁気擾乱の予報も難しいとされる。 \
+                        <br> 現況の把握(現在どの程度の擾乱が起きているか、どのような高速太陽風やCMEが来る可能性があるか)が重要。また、先程計算したCMEの到達時間なども活用すると良い。\
+                </li>
+            </ol>
+        </li>
+        <li>
+            放射線帯
+            <p>放射線帯に関する現況を把握し、予報を行う。</p>
+            <ol>
+                <li>
+                    放射線帯の現況の把握
+                    <p>放射線帯の現況を把握する。なお放射線帯は内帯と外帯がある。\
+                    <br> しかし影響度の大きさや観測網といった観点から外帯の外側の端に位置する、静止軌道近辺のみに着目されることが多い。今回も同様に静止軌道付近のみに着目する。\
+                    <ol>
+                        <li>
+                            静止軌道における、電子の24時間fluenceの把握
+                            <p>電子の24時間fluenceの把握を行う。24時間fluenceの値に着目することで、放射線帯の全体像を把握する助けになる。 
+                             <br> アクセスしやすいところだとひまわりとGOESのデータを見ることができる。{get_site_info(data,"NICT GOES Electron Fluences and flux")}{get_site_info(data,"HIMAWARI SEDA DATA VIEWER")}</p>\
+                        </li>
+                        <li>
+                            静止軌道における、電子のfluxの把握
+                            <p>電子のGOES衛星とひまわりでのfluxの把握を行う。fluxの値は24時間fluenceの値と比べて、より局所的かつ短時間の変動を反映する。{get_site_info(data,"NOAA GOES Electron Flux")}{get_site_info(data,"HIMAWARI SEDA DATA VIEWER")}\
+                            <br> fluenceは放射線帯全体の解釈を行うことができるのに対し、fluxは放射線帯のうちのある狭い領域(具体的には観測した衛星のいる場所)の現況を把握することができる。</p>
+                        </li>
+                        <li>
+                            fluence予報の確認
+                            <p>モデルによる24時間fluence予報の確認を行う。fluenceの予報なので、放射線帯全体の活動度の予報になっていることに注意。{get_site_info(data,"電子フルエンス予報")}</p>
+                        </li>
+                        <li>
+                            flux予報の確認
+                            <p>モデルによるflux予報の確認を行う。flux予報のため、各衛星ごとの電子fluxの予報になっていることに注意。{get_site_info(data,"静止軌道危険度予測")}</p>
+                        </li>
+                    </ol>
+                <li>
+                    放射線帯電子予報を行う
+                    <p>以上の電子fluenceとfluxの現況、予測情報に加え、太陽風の予測、地磁気擾乱の予測を踏まえて放射線帯電子の予報を行う。\
+                    <br>基本的には電子fluenceの現況と予測を基に放射線帯の活動度の予測を考えると良いが、当然地磁気擾乱などの影響も受けることに注意。\
+                    <br>例えば、地磁気擾乱が激しい場合は放射線帯のfluenceやfluxは減る傾向にある。一方で高速太陽風の到来などは、fluxやfluenceの増大を招く可能性がある。\
+                </li>
+            </ol>            
+        </li>
+        <li>
+            電離圏擾乱
+            <p>電離圏擾乱に関する現況を把握し、予報を行う。\
+            <br> 電離圏擾乱についての現状把握や予報は、ローカルなものにするべきであることに注意。 <br> つまり、磁気嵐などが比較的地球全体の現象として語れるのに対し、電離圏擾乱現象はそれが地球上のどの地域で起きている現象であるかをケアする必要がある。\
+            <br> なお、電離圏擾乱予報は現況報告に近いものになることが多い。</p>
+            <ol>
+                <li>
+                    デリンジャー現象の現況を把握する
+                    <p> デリンジャー現象の現状は以下から把握できる。イオノグラムから確認するのが割とメジャー。{get_site_info(data,"NICT Site Ionogram Viewer")} {get_site_info(data,"Observed foEs")}{get_site_info(data,"Dellinger phenomenon")}</p>
+                </li>
+                <li>
+                    デリンジャー現象の予報を考える
+                    <p> デリンジャー現象の予報を考える。デリンジャー現象は太陽フレアに伴うX線等の到来によって発生する。 \
+                    <br> そのため、デリンジャー現象は太陽フレアの活発さとほぼ同じように生じる。よって太陽フレアの予報をもとに考えれば良い。\
+                    <br> Mクラスフレアが発生する可能性が高ければ、デリンジャー現象を警戒する必要がある。
+                    <br> なお、デリンジャー現象はX線の到来によるものであるため、太陽フレア発生時に昼の地域にしか起きない。</p>
+                </li>
+                <li>
+                    スポラティックE層の現況を把握する
+                    <p>スポラティックE層の現況を把握する。イオノグラムから確認すると良い。{get_site_info(data,"NICT Site Ionogram Viewer")} {get_site_info(data,"Observed foEs")}\
+                    なお、スポラティックE層と太陽活動や地磁気活動との関連性が明らかになっていない。そのため、予報よりは現況把握、報告が重要である。</p>
+                </li>
+                <li>
+                    電離圏嵐の現況を把握する
+                    <p> 電離圏嵐の現況を把握する。基本的には電離圏での電子密度を把握するとよい。{get_site_info(data,"foF2 and GEONET TEC time change at Japan")}{get_site_info(data,"GEONET TEC map")} </p>
+                </li>
+                <li>
+                    電離圏嵐の予報考える
+                    <p> 電離圏嵐の予報を考える。電離圏嵐は地磁気擾乱によって生じる以上のことを言うのが難しい。\
+                     <br> そのため、地磁気擾乱が生じる可能性が高い場合は電離圏嵐が生じる可能性が高い、ということができる。\
+                     <br> しかし、そもそもとして地磁気擾乱の予報が難しいため、必然的に電離圏嵐の予報も難しい。\
+                     <br> 今後の地磁気擾乱が起きる可能性と電離圏の現況を踏まえて、電離圏嵐の予報を行っていくことになる。\
+                 </li>    
             </ol>
         </li>
         <!-- ... -->
