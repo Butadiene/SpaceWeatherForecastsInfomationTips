@@ -137,6 +137,7 @@ space_weather_info = {
                             <br> また、1太陽周期前を見るのも大事(特に極小期付近)。\
                             <br> 太陽の表面が1周期前と現在で近い模様をしている場合、1周期前に発生した事象を予報に活用できる(特にコロナホールによる高速太陽風)。\
                              <br> リンク先ページの左側一覧にある、AIA/HMI Browse Dataから画像や動画を探すとわかりやすい。\
+                             <br> なおBrowse Dataから見る場合、解像度は1024より512のほうがおすすめ。(1024は上手く動かないことが多い。)\
                              <br> 主なもの： \
                                  <br> AIA 094 (green)-エネルギーがかなり高い。フレアの発生などがよく見える。また、チカチカ光ることもある(1600の説明参照)。\
                                  <br> &nbsp&nbsp;フレアの発生の際は、黒点領域のどのあたり(黒点の南側か、北側かなど)で発生したかまで意識できると良い。発生領域が細かくわかると、磁場構造の確認の際の助けになる。\
@@ -188,13 +189,23 @@ space_weather_info = {
 
                         **create_child_object("SDO Images Dashboard", "https://sdo.gsfc.nasa.gov/data/dashboard/", True, \
                         purpose="Confirmation of solar surface activity, coronal holes, CMEs and others", file_type="images", \
-                        memo = "SDO衛星による取得画像のダッシュボード版。見たい波長の画像を好きに並べられるので便利。 <br> 左上の歯車から好きな波長の画像を追加できる。 <br> Reference_URLに宇宙天気予報で使用頻度が高いものを並べたDashboardのリンクを添付。",\
+                        memo = "SDO衛星による取得画像のダッシュボード版。見たい波長の画像を好きに並べられるので便利。 <br> 左上の歯車から好きな波長の画像を追加できる。\
+                             <br> ただし、最新の動画が載っていないことがある。Browse Dataから検索して得た動画に比べて数時間から10時間ほど遅かったりもすることもあるので注意。\
+                             <br> Reference_URLに宇宙天気予報で使用頻度が高いものを並べたDashboardのリンクを添付。",\
                             refURL="https://sdo.gsfc.nasa.gov/data/dashboard/?d=0094;0211;0304;HMIBC;0193;1600;HMIIF;HMIB"),
 
                         **create_child_object("STEREO images", "https://stereo-ssc.nascom.nasa.gov/beacon/beacon_secchi.shtml", True, \
                         purpose="Images for Sun from different point", file_type= "images",\
                         memo="STEREO衛星による太陽の画像。SDOと違う場所を飛んでいるので、見えないところが気になる時に。 <br> ページの少し下のSDOの画像の中に混じっているSTEREO Aheadと書いてある画像も参考に使えるかも。\
-                                <br> (Aheadは衛星の名前なので、特に特別な意味はない。《もともとStereoはAheadとBehindの2機構成だった。Behindは壊れた。》)")
+                                <br> (Aheadは衛星の名前なので、特に特別な意味はない。《もともとStereoはAheadとBehindの2機構成だった。Behindは壊れた。》)"),
+                        
+                        **create_child_object("Solar Monitor", "https://www.solarmonitor.org/", True, \
+                                              purpose="Confirmation of solar surface activity, coronal holes, CMEs and others", file_type="images", \
+                                                memo="SDOの画像や活動領域とその番号、コロナホールの位置などをまとめたサイト。 \
+                                                    <br> 一覧性が高く、見やすい。 \
+                                                    <br> 特に、コロナホールの位置を確認するのに便利。(コロナホールの判定をするのは難しいので)\
+                                                    <br> 左側のCoronal Holesから見れる。\
+                                                    <br> また、1太陽周期前の画像がすごく見やすくなっている。(左上のRotationから選択)")
 
         },
 
@@ -267,13 +278,24 @@ space_weather_info = {
                          <br> またLASCOで見て中央から360度プラズマが広がっているように見える場合、これをフルハローCMEと呼ぶ。\
                          <br> フルハローCMEはCMEが地球直撃コースである可能性が極めて高いことを意味する。\
                          <br> \
-                         <br> サイトにアクセスした後、C2かC3を選び日程を設定してGenerate。C2とC3の違いは視野のみ。"),
+                         <br> サイトにアクセスした後、C2かC3を選び日程を設定してGenerate。C2とC3の違いは視野のみ。\
+                         <br> 画像の詳しい説明はReference_URL",\
+                          refURL="https://soho.nascom.nasa.gov/data/realtime/image-description.html"),
 
-                          **create_child_object("SOHO LASCO C2 & C3 Diff", "https://soho.nascom.nasa.gov/data/realtime/mpeg/", True, \
+                          **create_child_object("SOHO LASCO C2 & C3 Diff and mesurement", "https://cdaw.gsfc.nasa.gov/movie/make_javamovie.php?&img1=lasc2rdf&img2=lasc3rdf", True, \
                         purpose="Confirmation of CME flying", file_type="images",\
-                        memo="LASCOの動画でCMEを確認しようとした際、淡くてわかりにくいことがある。そこで、前の画像との差を表示するDiff版を使うと見やすくなる。 <br> サイトの下にあるLASCO C2 COMBOや、C3 COMBOがそれ。\
-                             <br> なお、このサイトでは2日間の動画しか確認できない。数日前などを確認したい場合は、Reference_URLを使うと良い。 <br> ただし、主にC3が上手く表示されないことがある(サイトの問題ではなく、データ欠損のこともある。)\
-                             <br> また、公式サイト(URLの方)のDailyという場所からアーカイブへ飛べる。しかし、現在の月より前のものしか見れないので注意。)")
+                        memo="LASCOの動画でCMEを確認しようとした際、淡くてわかりにくいことがある。そこで、前の画像との差を表示する差分版を使うと見やすくなる。\
+                             <br> リンクのサイトは、CDAW Data CenterがSOHOのLASCOデータの差分版を見やすく表示している。\
+                             <br> また、このサイトはCMEの速度の簡易的な計算が行えるようになっている。画像の下のmesurementというリンクを押すと計測用のサイトに飛べる。\
+                             <br> measumentサイトでは、動画中の点を選択すると、その点の位置と、押した時刻が表示される。\
+                             <br> 距離が分かりづらいが、H(Rs)が中心からの距離(単位Rsは太陽半径)であることを把握すると、大まかな速度が計算できる。\
+                             <br> CDAWが管理しているデータのアーカイブはReference_URLから確認できる。\
+                             <br> \
+                             <br> CDAWによる差分表示サイトは、主にC3が上手く表示されないことがある。(サイトの問題ではなく、データ欠損のこともある。)\
+                             <br> その場合、公式を参照すると良い。Reference_URL2を参照。サイトの下にあるLASCO C2 COMBOや、C3 COMBOがそれ。\
+                             <br> なお、この公式サイトでは2日間の動画しか確認できない。アーカイブはDailyというところから見れるが、よくサーバーダウンしてる気がする...。また、アーカイブは現在の月より前のものしか見れないので注意。)",\
+                                refURL="https://cdaw.gsfc.nasa.gov/index.html",
+                                refURL2="https://soho.nascom.nasa.gov/data/realtime/mpeg/")
                          
         },
 
@@ -292,10 +314,16 @@ space_weather_info = {
                         地磁気活動度(Quiet, Active...)も載っている。地磁気活動度の基準はReference_URL参照。\
                         <br> 日合計値や各componentの詳細は https://www.kakioka-jma.go.jp/knowledge/glossary.html 参照", refURL="https://origin-swc.nict.go.jp/knowledge/criteria_icon.html"),
 
-        "Simulation": create_child_object("SUSANOO", "https://cidas.isee.nagoya-u.ac.jp/susanoo/", True, \
+        "Simulation": {
+                    **create_child_object("SUSANOO", "https://cidas.isee.nagoya-u.ac.jp/susanoo/", True, \
                     purpose="Refer for forecast", file_type="graphs",\
                     memo="太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。 <br> nictのサイトのほうが見やすいかもしれない。(Reference_URL参照)",\
                     refURL="https://origin-swc.nict.go.jp/forecast/magnetosphere.html"),
+
+                    **create_child_object("WSA-ENLIL SOLAR WIND PREDICTION", "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction", True, \
+                    purpose="Refer for forecast", file_type="graphs",\
+                    memo="太陽風シミュレーションモデルWSA-EnlilによるL1地点及びSTEREO衛星での太陽風予報および、太陽系空間での太陽風予報。 <br> 風速と磁場しかなく、密度がないが見やすい。"),
+                    },
 
         "Dst index": create_child_object("DST-INDEX", "https://wdc.kugi.kyoto-u.ac.jp/dstdir/index-j.html",True,\
                     purpose="DST-index",file_type="graphs",\
@@ -414,7 +442,12 @@ space_weather_info = {
                                                            memo="NICTの宇宙天気予報のサイトのリンク集。色々なサイトとか載ってる。"),
 
         "SOHO space weathers": create_child_object("SOHO Space Weather", "https://soho.nascom.nasa.gov/spaceweather/",True,\
-                                                   memo="SOHOのサイトにあるリンク集。オーロラ予報とかシミュレーション予報とか載ってるの嬉しさがある。")
+                                                   memo="SOHOのサイトにあるリンク集。オーロラ予報とかシミュレーション予報とか載ってるの嬉しさがある。"),
+
+        "ISWA" :create_child_object("ISWA Web App","https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",True,\
+                                    memo="NASAのISWAのWebアプリ。色々なデータが見れる。\
+                                        <br> かなり多くのシミュレーションデータや観測データをカバーしている。\
+                                        <br> 詳細はReference_URLを参照。",),
     }
 }
 

@@ -83,7 +83,8 @@ def lists_only_space_weather_info(filename):
     """
     body_data = "<body>"+\
     "<h1>Space Weather Forecast Infomartion Sites Lists</h1>"+\
-    "<h2>Information Lists</h2>"+"ここに記載してある一切の情報について、作者は責任を負いません。"+\
+    "ここに記載してある一切の情報について、作者は責任を負いません。 <br> また、リンク先のデータの利用条件についても十分に注意してください。"+\
+    "<h2>Information Lists</h2>"+\
     list_data+"</body></html>"
     
     
@@ -120,9 +121,10 @@ def intro_space_weather(filename):
     """
     body_data = "<body>"+\
     "<h1>Space Weather Forecast Tips</h1>"+\
+    " <br> ここに記載してある一切の情報について、作者は責任を負いません。<br> また、リンク先のデータの利用条件についても十分に注意してください。"+\
     "<h2>Information List</h2>"+\
     list_data+\
-    f""" ここに記載してある一切の情報について、作者は責任を負いません。
+    f""" 
     <h2> Forecast Process Template </h2>
     <p style="color: red;">Warning: 宇宙天気予報は様々なデータを俯瞰的に見て、多くの状況に応じて判断しなければならない。ここに載せるのは1テンプレートにすぎない。</p>
 
@@ -168,7 +170,8 @@ def intro_space_weather(filename):
                 <li>
                     太陽活動の概観を動画で確認
                     <p>4日前からの太陽活動の動画を、波長帯ごとにざっと確認する。SDO衛星の動画を見ると良い。ここ4日で活動的な領域の大雑把な把握を、エネルギー帯別に行う。\
-                        <br> フレアっぽいもの(高エネルギー帯で見える爆発的な現象)、コロナホールっぽいもの(211で見える黒い穴)、CMEっぽいもの(コロナやフレアが吹き飛んだ形跡)、黒点の量や分布、各黒点の磁場構造を大雑把に把握する。{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
+                        <br> フレアっぽいもの(高エネルギー帯で見える爆発的な現象)、コロナホールっぽいもの(211で見える黒い穴)、CMEっぽいもの(コロナやフレアが吹き飛んだ形跡)、黒点の量や分布、各黒点の磁場構造を大雑把に把握する。\
+                            <br> Solar Monitorでぱっと静止画の一覧を見たあとにSDO Imagesで気になる波長を見るのがおすすめ。{get_site_info(data,"Solar Monitor")}{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
                 </li>
                 <li>
                     活動領域(≒黒点近辺)の詳細を確認
@@ -184,7 +187,7 @@ def intro_space_weather(filename):
                                 </li>
                                 <li>
                                     東端から回り込んでくる活動領域の確認
-                                    <p>SDO画像の094などを見て東端から回り込んできた、あるいは回り込んできそうな位置する、黒点や活動的な領域を確認する。 <br> 未採番のものがあった場合、それについて認識する。{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
+                                    <p>SDO画像の094などを見て東端から回り込んできた、あるいは回り込んできそうな位置する、黒点や活動的な領域を確認する。 <br> 未採番のものがあった場合、それについて認識する。{get_site_info(data,"SDO Images")} </p>
                                 </li>
                                 <li>
                                     各活動領域のデータを確認
@@ -259,7 +262,8 @@ def intro_space_weather(filename):
                     <ol>
                         <li>
                             コロナホールの確認
-                            <p>SDO衛星のAIA 211の画像などから、太陽表面に存在するコロナホールを確認する。 <br> 3-4日前までは確認し、コロナホールが子午線にいるときの時刻などをチェック。{get_site_info(data,"SDO Images")} </p>
+                            <p>SDO衛星のAIA 211の画像などから、太陽表面に存在するコロナホールを確認する。 <br> 3-4日前までは確認し、コロナホールが子午線にいるときの時刻などをチェック。\
+                             <br> なお、コロナホールの判断は難しいので、Solar Monitorを参照すると良い。{get_site_info(data,"SDO Images")}{get_site_info(data,"Solar Monitor")} </p>
                         </li>
                         
                         <li>
@@ -279,7 +283,7 @@ def intro_space_weather(filename):
                         </li>
                         <li>
                             シミュレーションの確認
-                            <p>数値シミュレーションにより、コロナホールからどのように地球に太陽風が飛んでくるか、の予測を確認する。参考程度ではある。{get_site_info(data,"SUSANOO")}</p>
+                            <p>数値シミュレーションにより、コロナホールからどのように地球に太陽風が飛んでくるか、の予測を確認する。参考程度ではある。{get_site_info(data,"Simulation")}</p>
                         </li>
                         <li>
                             高速太陽風とコロナホールに関する現況把握
@@ -330,7 +334,7 @@ def intro_space_weather(filename):
                         </li>
                         <li>
                             シミュレーションとの対応の確認
-                            <p>数値シミュレーションにより、CMEの到来がの予測されているかを確認し、自分が把握したCMEのリストと比較する。{get_site_info(data,"SUSANOO")}</p>
+                            <p>数値シミュレーションにより、CMEの到来が予測されているかを確認し、自分が把握したCMEのリストと比較する。{get_site_info(data,"SUSANOO")}</p>
                         </li>
                     </ol>
                 </li>
