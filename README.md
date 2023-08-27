@@ -7,7 +7,7 @@
 
 なお、サイトリストの情報はjson形式でまとめてあります。: [リスト](Datas/space_weather_info.json)
 
-[Tips](docs/space_weather_info.html)
+[Tips](docs_info_tips/space_weather_info.html)
 上のリストに加え、宇宙天気予報におけるベーシックな手順について記述してあります。
 
 ここに記載してある一切の情報について、作者は責任を負いません。
