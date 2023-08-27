@@ -177,7 +177,7 @@ def intro_space_weather(filename):
                     <p>4日前からの太陽活動の動画を、波長帯ごとにざっと確認する。SDO衛星の動画を見ると良い。ここ4日で活動的な領域の大雑把な把握を、波長帯別に行う。\
                         <br> フレアっぽいもの(高エネルギー帯で見える爆発的な現象)、コロナホールっぽいもの(211で見える黒い穴)、CMEっぽいもの(コロナやフレアが吹き飛んだ形跡)、黒点の量や分布、各黒点の磁場構造を大雑把に把握する。\
                         <br> Solar Monitorでぱっと静止画の一覧を見たあとにSDO Imagesで気になる波長を見るのがおすすめ。\
-                        <br> SDOのAIA 094, 211, 1600, magnetogramは見ておきたいかな...?{get_site_info(data,"Solar Monitor")}{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
+                        <br> SDOのAIA 094, 211, 1600, Magnetogramは見ておきたいかな...?{get_site_info(data,"Solar Monitor")}{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
                 </li>
                 <li>
                     活動領域(≒黒点近辺)の詳細を確認
