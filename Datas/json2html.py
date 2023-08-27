@@ -136,7 +136,7 @@ def intro_space_weather(filename):
     <ol>
         <li>
             <h3>各国の予報状況</h3>
-            <p>各国の予報状況を確認し、現在の太陽活動や地磁気活動がどの程度Activeかをぼんやり把握する。{get_site_info(data,"Present Space Weather Forecast from ISES")}</p>
+            <p>各国の予報状況を確認し、現在の太陽活動や地磁気活動がどの程度Activeかについて大まかに把握する。{get_site_info(data,"Present Space Weather Forecast from ISES")}</p>
         </li>
         <li>
             <h3>太陽活動</h3>
