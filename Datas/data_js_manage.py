@@ -241,8 +241,9 @@ space_weather_info = {
     "Proton flux": {
         "Proton flux": create_child_object("GOES Proton Flux", "https://www.swpc.noaa.gov/products/goes-proton-flux", True, \
                         purpose= "Present condition of solar energetic particles", file_type='graphs',exampleVal="10^0 particles/cm2/sec/sr前後、NOAAスケール S0",\
-                        memo="MeV帯以上のProton Fluxの変動を示す。プロトン現象の把握に使える。Proton Fluxの変動は、Flux値をそのまま使って予報が出る事が多く、現況報告の意味合いが強い。\
-                         <br> NOAAスケールとは、様々なイベントに対するNOAAが策定した指標。Proton fluxに関しては、桁数と一致(例えば、10^2を超えたらScale level S2)。<br> 詳しくはReference_URLのSolar Radiation Stormsタブを参照",\
+                        memo="MeV帯以上のProton Fluxの変動を示す。プロトン現象の把握に使える。\
+                         <br> NOAAスケールとは、様々なイベントに対するNOAAが策定した指標。Proton fluxに関しては、桁数と一致。(例えば、10^2を超えたらScale level S2) <br> 詳しくはReference_URLのSolar Radiation Stormsタブを参照。\
+                         <br> Proton Fluxの予報はFluxの観測値をそのまま使って出す事が多く、現況報告の意味合いが強くなりがちである。",\
                         refURL="https://www.swpc.noaa.gov/noaa-scales-explanation "),
 
     },
@@ -253,19 +254,19 @@ space_weather_info = {
                             purpose="Confirmation of solar wind coming near the earth",file_type="graphs",exampleVal="Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed(620→520), Density(1前後), IMF(5nT前後、時折-6), Sector(概ねToward)",\
                             memo="SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。 \
                              <br> 太陽風が高速であるか(具体的には500km/s以上)、磁場が強くかつ南向きを示しているか、密度上昇があるか、などが重要な確認点。\
-                             <br> 7daysにして見るのがおすすめ。 <br> また、一太陽周期前(27日前)のデータを見るのも良い。速度と磁場に関してはReference_URLの「27日太陽自転周期比較プロット」に27日前との比較プロットがある。\
+                             <br> 7daysにして見るのがおすすめ。 <br> また、一太陽周期前(27日前)のデータを見るのも良い。速度と磁場に関してはReference_URLのリンク先ページの下の方に「27日太陽自転周期比較プロット」に27日前との比較プロットがある。\
                              <br> グラフの下にあるSeriesから、グラフを切り替えられる。特に、データ元衛星の切り替えは頭に入れる必要がある。\
-                             <br> &nbsp&nbsp; Active spacecraft(デフォルト): 基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。\
+                             <br> &nbsp&nbsp; Active spacecraft (デフォルト): 基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。\
                              <br> &nbsp&nbsp; DSCOVR only: DSCOVRのデータのみ\
                              <br> &nbsp&nbsp; Ace only: Aceのデータのみ\
-                             <br> デフォルトやDSCOVR onlyのデータが大きく乱れていたりする時、Ace onlyでも確認してみると良い。",\
+                             <br> Active spacecraftやDSCOVR onlyのデータが大きく乱れていたりする時、Ace onlyでも確認してみると良い。",\
                             refURL="https://origin-swc.nict.go.jp/forecast/magnetosphere.html"),
 
                             **create_child_object("ACE REAL TIME SOLAR WIND", "https://www.swpc.noaa.gov/products/ace-real-time-solar-wind", True, \
                             purpose="Solar wind's high energy plasma",file_type="graphs",\
                             memo="ACEのリアルタイムの太陽風観測結果。右側にあるリストから、色々な観測機器のグラフが選べる。\
                              <br> EPAM(2桁keVから1桁MeVぐらいのプラズマ観測機器)とSIS(2桁MeVのプラズマの観測機器)のデータが特に大事。\
-                             <br> (DSCOVRのほうがACEより新しいが、DSCOVRは高エネルギープラズマの観測機器が上手く行っていない。そのため、高エネルギープラズマに関してはACEのデータを見る必要がある。)\
+                             <br> (DSCOVRのほうがACEより新しいが、DSCOVRは高エネルギープラズマの観測機器が上手く行っていない。そのため、太陽風の高エネルギープラズマに関してはACEのデータを見る必要がある。)\
                              <br> EPAMは太陽風がなんらかの変化を示した時に、CMEかコロナホールによる高速太陽風かどちらが到来したのかを区別する手がかりとなる。\
                              <br> \
                              <br> 一般に\
@@ -273,7 +274,7 @@ space_weather_info = {
                              <br> 高速太陽風ではEPAMの示す値は徐々に上がっていく傾向にある。\
                              <br> \
                              <br> しかし、実際にはCMEと高速太陽風が同時に到来するなど、一筋縄ではいかないケースも多い。\
-                             <br> そのためCMEと高速太陽風のどちらが到来しているかについての判断を行う際は、発生源との突き合わせも重要である。\
+                             <br> そのためCMEと高速太陽風のどちらが到来しているかについての判断を行う際は、発生源(=太陽表面における現象)との突き合わせも重要である。\
                              <br> 発生源がはっきりしない場合、高速太陽風やCMEが到来しているかは保留にせざるを得ないことも多い。\
                              <br> \
                              <br> 2桁keVから1桁MeVぐらいのプラズマがCMEによって運ばれてきているとき、(高速太陽風によって運ばれている時ではない。)以下のようなことが言える。\
@@ -289,6 +290,7 @@ space_weather_info = {
                          <br> \
                          <br> CMEは一般に発生場所から等方的に広がる。そのため太陽面のうち地球から見えるどこかでCMEが発生している場合は、地球に到来する可能性がある。\
                          <br> 一方地球から見て裏側でCMEが発生している場合、到来の可能性はあまりない。\
+                         <br> \
                          <br> LASCOの画像だけでは、CMEが太陽の地球側と反対側のどちらで発生しているか判断するのは困難である。\
                          <br> よって、SDOなどの太陽表面画像と付き合わせてCMEの発生源を特定するのが極めて重要である。\
                          <br> なおCMEの発生において、SDO等で確認できる太陽表面での変動現象から、LASCOでプラズマの放出が確認できるまで1時間程度の遅延が生じる事が多い。\
@@ -305,12 +307,14 @@ space_weather_info = {
                         purpose="Confirmation of CME flying", file_type="images",\
                         memo="LASCOの動画でCMEを確認しようとした際、淡くてわかりにくいことがある。そこで、前の画像との差を表示する差分版を使うと見やすくなる。\
                              <br> リンクのサイトは、CDAW Data CenterがSOHOのLASCOデータの差分版を見やすく表示しているものである。\
-                             <br> また、このサイトはCMEの速度の簡易的な計算が行えるようになっている。画像の下のmesurementというリンクを押すと計測用のサイトに飛べる。\
-                             <br> measumentサイトでは、動画中の点を選択すると、その点の位置と、押した時刻が表示される。\
-                             <br> 距離が分かりづらいが、H(Rs)が中心からの距離(単位Rsは太陽半径)であることを把握すると、大まかな速度が計算できる。\
+                             <br> \
+                             <br> このサイトはCMEの速度の簡易的な計算を補助する機能もある。画像の下のmesurementというリンクを押すと計測用のページに飛べる。\
+                             <br> 計測用のページでは、動画のどこかを選択すると、その点の位置と、押した時刻が表示される。\
+                             <br> これを用いるとCMEの大まかな速度を計算しやすくなる。\
+                             <br> 距離が分かりづらいが、H(Rs)が中心からの距離(単位Rsは太陽半径)である。\
                              <br> CDAWが管理しているデータのアーカイブはReference_URLから確認できる。\
                              <br> \
-                             <br> CDAWによる差分表示サイトは、主にC3が上手く表示されないことがある。(サイトの問題ではなく、データ欠損のこともある。)\
+                             <br> CDAWによる差分表示サイトは、主にC3が上手く表示されないことがある。(サイトの問題ではなく、データ欠損のこともある)\
                              <br> その場合、公式を参照すると良い。Reference_URL2を参照。サイトの下にあるLASCO C2 COMBOや、C3 COMBOがそれ。\
                              <br> なお、この公式サイトでは2日間の動画しか確認できない。アーカイブはDailyというところから見れるが、よくサーバーダウンしてる気がする。\
                              <br> Dailyから見るアーカイブは現在の月より前のものしか見れないので注意。",\
@@ -319,13 +323,13 @@ space_weather_info = {
 
                         **create_child_object("STEREO Coronagraph", "https://stereo.gsfc.nasa.gov/beacon/", True, \
                                               purpose="Confirmation of CME flying", file_type="images",\
-                                                memo="STEREO衛星によるコロナグラフ画像。使い勝手はLASCOよりはあまり良くない。\
+                                                memo="STEREO衛星によるコロナグラフ画像。使い勝手はLASCOと比べるとあまり良くない。\
                                                     <br> SOHOと違う視点からのコロナグラフが見たい際に使えるはずだが、2023年頃はSTEREOはSOHOと同じ場所を飛んでいる。そのため、LASCOが不調な場合や見づらい場合の代替としてがメインになりそう。\
                                                     <br> リンク先サイトの画像一覧の中からSTEREO Aheadと書いてあるコロナグラフの画像を見つけることができる。説明がついていない数字だけのリンクを押すと画像をダウンロードすることができる。\
                                                     <br> (Aheadは衛星の名前なので、特に特別な意味はない。《もともとStereoはAheadとBehindの2機構成だった。Behindは壊れた。》)\
                                                     <br> MPEGと書いてあるやつからは、MPEG形式の動画をダウンロードできる。なお、Mp4のことではない。MPEGを再生するのは意外とめんどくさい可能性。Windows11の場合、Microsoft clip champが、デフォルトでついてる機能の中で一番MPEGを見やすい気がする。\
                                                     <br> リンク先サイトは数日前のものしか見れないため、過去のものを見たい場合はReference_URLから。\
-                                                    <br> ", refURL="https://stereo.gsfc.nasa.gov/beacon/")
+                                                    <br> ", refURL="https://stereo.gsfc.nasa.gov/cgi-bin/images")
                          
         },
 
@@ -345,34 +349,36 @@ space_weather_info = {
         "Kp index": create_child_object("SWPC PLANETARY K-INDEX", "https://www.swpc.noaa.gov/products/planetary-k-index", True,\
                     purpose="Magnitude of geomagnetic disturbances across the globe",file_type="graphs",exampleVal="最大Kp指数:2.67(一日のうち最も大きいKp)  日合計値:13.66(3時間ごとに区切って出されるKpを、その日のもの全て(8つ)足す)  NOAA Scale: G0",\
                     memo="地球全体での地磁気擾乱の大きさを示す、Kp指数が見れる。(Kp index = Planetary K-index) \
+                        <br> Kp指数は、地磁気擾乱の大きさを示すものとして最もメジャー\
                         <br> また、Kp指数をもとにした磁気擾乱に関するNOAAスケールもこのページに載っている。<br>スケールの説明はReference_URLのGeomagnetic Stormsタブに載っている。",\
                         refURL="https://www.swpc.noaa.gov/noaa-scales-explanation"),
 
         "K index": create_child_object("KAKIOKA K-INDEX", "https://origin-swc.nict.go.jp/trend/geomag.html",True,\
                     purpose="Magnitude of geomagnetic disturbance at Kakioka",file_type="graphs",exampleVal="最大K指数:3(一日のうち最も大きいK)  日合計値:13(3時間ごとに区切って出されるKを、その日のもの全て(8つ)足す)  地磁気活動度: 静穏",\
                     memo="ローカルでの地磁気擾乱の大きさを示すK指数のうち、柿岡のものが見れる。日本での地磁気擾乱を考える際に重要。H componentは水平分力、D componentは偏角を表す。 \
-                        地磁気活動度(Quiet, Active...)も載っている。地磁気活動度の基準はReference_URL参照。 <br> なおこの基準はNICTによるもので、K指数の最大値を元にしたものである。(ISESの基準に合わせているようだが、ISES側での定義がどこで公表さているかは不明。)\
-                        <br> 日合計値や各componentの詳細はReference_URL2参照。リンク先に日最大値を元に定められている地磁気活動度の基準があるが、これは気象庁が設定したものであり、NICTによるものとは別であることに注意。 <br> 一般に、NICTによるものが参照されてることが多いらしい。", \
+                        地磁気活動度(Quiet, Active...)も載っている。地磁気活動度の基準はReference_URL参照。 <br> なおこの基準はNICTによるもので、K指数の最大値を元にしたものである。(ISESの基準に合わせているようだが、ISES側での定義がどこで公表されているかは不明)\
+                        <br> 日合計値や各componentの詳細はReference_URL2参照。リンク先に日最大値を元に定められている地磁気活動度の基準がある。これは気象庁が設定したものであり、NICTによるものとは別であることに注意。 <br> 一般に、NICTによるものが参照されていることが多いらしい。", \
                         refURL="https://origin-swc.nict.go.jp/knowledge/criteria_icon.html",\
                         refURL2="https://www.kakioka-jma.go.jp/knowledge/glossary.html"),
 
 
         "Dst index": create_child_object("DST-INDEX", "https://wdc.kugi.kyoto-u.ac.jp/dstdir/index-j.html",True,\
                     purpose="DST-index",file_type="graphs",\
-                    memo="DST指数。予報ではそんなに使わないのかも?"),
+                    memo="DST指数。磁気嵐の判定などに。予報ではそんなに使わないのかも?"),
 
         "AE index": create_child_object("AE-INDEX", "https://wdc.kugi.kyoto-u.ac.jp/aedir/index-j.html",True,\
                     purpose="AE-index",file_type="graphs",exampleVal="None",\
-                    memo="AE指数。予報ではそんなに使わないのかも?"),
+                    memo="AE指数。サブストームの判定などに。予報ではそんなに使わないのかも?"),
 
     },
 
     "Radiation belts": {
         "GOES Electron 24-h fluences and flux": {**create_child_object("NICT GOES Electron Fluences and flux","https://origin-swc.nict.go.jp/trend/electron.html",True,\
                         purpose="Checking the electron 24-h fluences and flux in the radiation belt", file_type="graphs",\
-                        memo="GOESが取得した2MeV以上の電子fluxとfluencesが確認できる。fluencesとは、fluxを24時間で積分した値。GOESデータを元にNICTが積分した結果を出している。<br> 静止軌道衛星の観測データ24時間の総和なので、放射線帯全体の状況を表していると言える。\
+                        memo="GOESが取得した2MeV以上の電子fluxとfluencesが確認できる。fluencesとは、fluxを24時間で積分した値。GOESデータを元にNICTが積分した結果を出している。\
+                            <br> 静止軌道衛星の観測データ24時間の総和なので、地球一周分の総和を取っている。すなわち、地球を囲う放射線帯全体の状況を表していると言える。\
                             <br> 放射線帯予報では、fluxよりもfluencesが重視されることがある。\
-                            <br> 放射線帯全体の状況を表せることが主な理由。(Localな経度の情報を把握し発信することに重点を置いていない。)"),
+                            <br> 放射線帯全体の状況を表せることが主な理由。(Localな経度の情報を把握し発信することに重点を置かないケースがある)"),
                         
                         **create_child_object("NOAA GOES Electron Flux","https://www.swpc.noaa.gov/products/goes-electron-flux",True,\
                             purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
@@ -387,6 +393,7 @@ space_weather_info = {
                             memo="ひまわりが取得したMeV帯の電子fluxの時間変化や24時間電子fluencesが見れる。\
                                 <br> fluxについては、現在の「ひまわりがいる経度」の放射線帯の電子fluxがわかる。横軸はUTなので注意。\
                                 <br> fluencesとはfluxを24時間で積分した値。ひまわりデータを元にNICTが積分した結果を出している。\
+                                 <br> 静止軌道衛星の観測データ24時間の総和なので、地球一周分の総和を取っている。すなわち、地球を囲う放射線帯全体の状況を表していると言える。\
                                 <br> 放射線帯予報では、放射線帯全体の状況を表せることからfluxよりもfluencesが重視されることがある。\
                                 <br> サイトの上の方にある、設定を色々いじったあと右上のPlotというボタンを押すとグラフが更新される。ひまわり8号、9号のデータが共に見れる。\
                                 <br> ひまわりの経度は、8号9号ともにおよそ140.7度(0.05度離れているらしい。)。\
@@ -395,7 +402,7 @@ space_weather_info = {
         "Electron fluences forecast": create_child_object("電子フルエンス予報","https://radi.nict.go.jp/",True, \
                                         purpose="Reference for forecast electron fluences", file_type="text", \
                                         memo="放射線帯における24時間 Electron fluencesの、今後24時間、明日、明後日の予報。シミュレーションや統計モデルなど、複数のをもとに行われている。\
-                                                <br> 予報の参考になる。静穏等々の基準についてはReference_URL参照",\
+                                                <br> 予報の参考になる。静穏等々の基準についてはReference_URL参照。",\
                                                     refURL="https://radi.nict.go.jp/about/#level"),
         
         
@@ -413,7 +420,7 @@ space_weather_info = {
                                          <br>  2時間以上Ip2以上やIn2以上に入っている場合は電離圏嵐とみなす(Ip、InはIスケール)。Iスケールが0と1は静穏。\
                                          <br> なお電離圏嵐が発生した際は、fOF2、TECともにグラフ上に電離圏嵐が発生した旨が表示される。\
                                          <br> Iスケールの意味合いはReference_URL参照。\
-                                         <br> foF2、GEONET TEC2つの違いはあまり注意しなくてよく、クロスチェックの意味合いが強い。",
+                                         <br> 電離圏嵐の判定に関して言えばfoF2、GEONET TEC2つの違いはあまり注意しなくてよく、クロスチェックの意味合いが強い。",
                                          refURL="https://swc.nict.go.jp/knowledge/i-scale.html"),
 
             **create_child_object("GEONET TEC map","https://aer-nc-web.nict.go.jp/GPS/QR_GEONET/",True,\
@@ -430,23 +437,23 @@ space_weather_info = {
         },
 
         "Ionogram": { 
-
-                              **create_child_object("NICT Site Ionogram Viewer","https://swc.nict.go.jp/forecast/ionosphere.html",True,\
+                             **create_child_object("NICT Site Ionogram Viewer","https://swc.nict.go.jp/forecast/ionosphere.html",True,\
                                                 purpose="Checking Sporadic E layer", file_type="graphs",\
                                                 memo="ページを少しスクロールして出てくる、「国内イオノゾンデ定常観測」の場所を参照。\
                                                      <br> ぱっと現況確認したいときはこれが見やすい。なお、色はエコー強度を意味する。\
                                                      <br> スポラティックE層とデリンジャー現象の発生を確認したい場合は、これを使うと良い。\
-                                                     <br> スポラティックE層: 高度100km前後(E層)で8MHz以上でエコーがあれば、スポラティックE層とみなしても良い。\
-                                                     <br> &nbsp&nbsp;縦軸で100km前後のところかつ横軸が8MHz以上の場所にエコーがあるかを確認するとよい。\
+                                                     <br>\
+                                                     <br> スポラティックE層: 高度100km前後(E層)にて8MHz以上でエコーがあれば、スポラティックE層とみなしても良い。\
+                                                     <br> &nbsp&nbsp&nbsp&nbsp;縦軸で100km前後のところかつ横軸が8MHz以上の場所にエコーがあるかを確認する。\
                                                      <br> デリンジャー現象: D層が電波を吸収した結果、E層(高度100km前後)より上のエコーが消えるのがデリンジャー現象。\
-                                                     <br> &nbsp&nbsp;強いデリンジャー現象の時は、イオノグラムがブラックアウト(一面真っ黒)する。一切のエコーが帰ってこない。\
-                                                     <br> &nbsp&nbsp;ある程度の規模のデリンジャー現象では、高度100kmの前後のエコーが消える。"),
+                                                     <br> &nbsp&nbsp&nbsp&nbsp;強いデリンジャー現象の時は、イオノグラムがブラックアウト(一面真っ黒)する。一切のエコーが帰ってこない。\
+                                                     <br> &nbsp&nbsp&nbsp&nbsp;ある程度の規模のデリンジャー現象では、高度100kmの前後のエコーが消える。"),
 
                               **create_child_object("Color Ionogram Viewer details","https://wdc.nict.go.jp/ionog/js_viewer/js_01.html",True,\
                                                 purpose="Checking Sporadic E layer", file_type="graphs",\
-                                                memo="イオノグラムのカラープロットの詳細版。過去のデータなども見れる。\
-                                                      <br> 操作方法はReference_URLを参照\
-                                                      <br> 詳細、Reference_URL2を参照。",\
+                                                memo="イオノグラムのカラープロットの詳細版。過去のデータなども見れる。左側で設定してDisplayを押すと描画される。\
+                                                      <br> 操作方法はReference_URLを参照。\
+                                                      <br> 詳細はReference_URL2を参照。",\
                                                     refURL="https://wdc.nict.go.jp/IONO/HP2009/ISDJ/exp-ionogram_viewer_color.html",\
                                                     refURL2="https://wdc.nict.go.jp/IONO/HP2009/ISDJ/index.html")
 
@@ -478,7 +485,7 @@ space_weather_info = {
                                                                  memo="NICTの宇宙天気のユーザーガイド。指標などの参考に。"),
 
         "NICT space weather forecast Trend": create_child_object("NICT Space Weather Forecast Trend Site","https://origin-swc.nict.go.jp/trend/",True,\
-                                                           memo="各領域、各現象をクリックしたら関連グラフや数値と元データのリンクがすぐに出てくる。正直これで良い感ある。"),
+                                                           memo="各領域、各現象をクリックしたら関連グラフや数値と元データのリンクがすぐに出てくる。"),
 
     },
 
@@ -492,9 +499,9 @@ space_weather_info = {
                                                    memo="SOHOのサイトにあるリンク集。オーロラ予報とかシミュレーション予報とか載ってるの嬉しさがある。"),
 
         "ISWA" :create_child_object("ISWA Web App","https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",True,\
-                                    memo="NASAのISWAのWebアプリ。色々なデータが見れる。\
+                                    memo="NASAのISWAのWebアプリ。色々なデータが見れる。なんかたまにサーバーが落ちてたりする気がする。\
                                         <br> かなり多くのシミュレーションデータや観測データをカバーしている。\
-                                        <br> 詳細はReference_URLを参照。",),
+                                        <br> 詳細はReference_URLを参照。",refURL="https://ccmc.gsfc.nasa.gov/tools/iSWA/"),
     }
 }
 
