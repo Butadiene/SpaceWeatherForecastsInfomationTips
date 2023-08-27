@@ -172,23 +172,22 @@ space_weather_info = {
                                  <br> AIA 094、211、171あたりの波長帯の画像では、CMEが見えることがある。\
                                  <br> &nbsp&nbsp;このあたりの波長帯で観測できるCMEは、コロナの放出を伴う。そのため、CMEが放出されるとき表面が暗くなる様に見える。(Dimmingと呼ばれる)\
                                  <br> &nbsp&nbsp; (リム側だと吹き飛んでいく様子が見えることもある。)\
-                                 <br> &nbsp&nbsp;(どの波長帯で一番よく見えるかは、そのときのCMEの温度によって違う。335(blue)が一番良く見えるときもある。よく見える波長帯を探すのも大事。)\
+                                 <br> &nbsp&nbsp;(CMEが どの波長帯で一番よく見えるかは、そのときのCMEの温度によって違う。335(blue)が一番良く見えるときもある。よく見える波長帯を探すのも大事。)\
                                  <br> &nbsp&nbsp;ただし、SDOの画像だけでCMEを判断するのは早計。必ずSOHOのLASCOなどによるコロナグラフ画像で、宇宙空間にプラズマが飛んでいく様子を確認すること。\
                                  <br> &nbsp&nbsp;また、CMEは地球に到来するまで数日かかる。そのため、CMEに関する判断をする際は、4日前までのSDO画像をちゃんと確認する。\
                                  <br> \
                                  <br> AIA 304 (red)-彩層がよく見える波長。フィラメントが太陽表面から飛んでいく様子が綺麗に見えるので、CMEが発生したかを確認するのに使える。(フィラメントが飛んでいたら、CMEが伴っている。) \
                                  <br> &nbsp&nbsp;CMEは常にコロナの放出とフィラメントの放出の両方を伴うわけではなく、片方のみのこともある。\
-                                 <br> &nbsp&nbsp;またフレアが出ていてもCMEを伴っていないこともあれば、フレアが出ていなくてもCMEが起きていることもある。\
                                  <br> &nbsp&nbsp;そのためCMEを確認したい場合は、上で述べたエネルギーが高い波長帯によるコロナの吹き飛びの確認と、AIA 304によるフィラメントの吹き飛びの確認の両方が大事。\
-                                 <br> &nbsp&nbsp;また、フレアイベントと関係なく確認するべき。\
+                                 <br> &nbsp&nbsp;またフレアが出ていてもCMEを伴っていないこともあれば、フレアが出ていなくてもCMEが起きていることもある。よって、フレアイベントと関係なく確認するべき。\
                                  <br> &nbsp&nbsp;もちろん、SOHOのLASCOなどによるコロナグラフデータの確認は必須。\
                                  <br> \
                                  <br> AIA 1600 (yellow/green)-エネルギーが低め。彩層底部(光球上部)と遷移層が見える。たまに、チカチカすることがある。このチカチカは AIA 094などでも見える。\
                                  <br> &nbsp&nbsp;チカチカはフレアによって起きるもの(遷移層の光を見ている)と、黒点の下から磁場が浮上して起きるもの(彩層底部(光球上部)の光を見ている)がある。(もちろん例外もある。)\
                                  <br> &nbsp&nbsp;浮上磁場について: 黒点の下から浮上してきた磁場と、もともとの黒点が保持していた磁場がリコネクションを起こしてエネルギー開放を起こしている。\
-                                 <br> &nbsp&nbsp;比較的小さいエネルギー解放なので、フレアと呼ばれるほどではないが、磁場の浮上がフレアのトリガーになることがある。\
-                                 <br> &nbsp&nbsp;特にもともと大きい黒点に対して磁場が浮上してくると大きいフレアが生じることがあるため、磁場の浮上の確認は重要(=チカチカの確認は重要)。\
-                                 <br> &nbsp&nbsp;具体的には、「磁場浮上が頻繁に起きていて、それに伴い黒点の磁場構造も変化するなど活発な活動が見える。」といった検討が行える。\
+                                 <br> &nbsp&nbsp;&nbsp&nbsp;比較的小さいエネルギー解放なので、フレアと呼ばれるほどではないが、磁場の浮上がフレアのトリガーになることがある。\
+                                 <br> &nbsp&nbsp;&nbsp&nbsp;特にもともと大きい黒点に対して磁場が浮上してくると大きいフレアが生じることがあるため、磁場の浮上の確認は重要(=チカチカの確認は重要)。\
+                                 <br> &nbsp&nbsp;&nbsp&nbsp;具体的には、「磁場浮上が頻繁に起きていて、それに伴い黒点の磁場構造も変化するなど活発な活動が見える。」といった検討が行える。\
                                  <br> &nbsp&nbsp;ただしチカチカはフレアによって生じていることもあるので、チカチカの確認を行う際はフレアイベントとの突き合わせの際も同時に行う必要あり。\
                                  <br> \
                                  <br> HMI Intensitygram-光球が見える。黒点がわかりやすい。 \
@@ -201,7 +200,7 @@ space_weather_info = {
                                  <br> 必ずしもどの波長かに拘る必要はなくて、現象が見やすいものを使うとよい。\
                                  <br> 波長ごとの画像のより詳しい説明はReference_URL参照 \
                                  <br> \
-                                 <br> なお、The Sun Nowから見れる画像にはPFSSというバージョンがある。これは、Potential field source surfaceの略で、表面の磁場構造から太陽の磁場構造を推定したもの。\
+                                 <br> なおリンク先サイトの左側一覧にあるThe Sun Nowから見れる画像には、PFSSというバージョンがある。これは、Potential field source surfaceの略で、表面の磁場構造から太陽の磁場構造を推定したもの。\
                                  <br> PFSSから何かを言うのはかなりの知識が必要なようで、予報ではあまり使われない模様。また、Potentialから計算しているので、重要なはずの自由エネルギーが無視されていることにも注意。",\
                         refURL="https://sdo.gsfc.nasa.gov/data/channels.php"),
 
@@ -214,7 +213,7 @@ space_weather_info = {
 
                         **create_child_object("STEREO images", "https://stereo-ssc.nascom.nasa.gov/beacon/beacon_secchi.shtml", True, \
                         purpose="Images for Sun from different point", file_type= "images",\
-                        memo="STEREO衛星による太陽の画像。SDOと違う場所を飛んでいるので、見えないところが気になる時に。 <br> ページの少し下のSDOの画像の中に混じっているSTEREO Aheadと書いてある画像も参考に使えるかも。\
+                        memo="STEREO衛星による太陽の画像。SDOと違う場所を飛んでいるので、見えないところが気になる時に。(ただし、2023年はSOHOと同じ場所を飛んでいる...。) <br> ページ内で表示されている360度画像や、STEREO Aheadと書いてある画像がそれ。\
                                 <br> (Aheadは衛星の名前なので、特に特別な意味はない。《もともとStereoはAheadとBehindの2機構成だった。Behindは壊れた。》)"),
                         
                         **create_child_object("Solar Monitor", "https://www.solarmonitor.org/", True, \
@@ -227,20 +226,22 @@ space_weather_info = {
 
         },
 
-        "Flare forecast by Deep Learning": create_child_object("Deep Flare Net", "https://defn.nict.go.jp/index131_eng.html", True, \
+        "Flare forecast by Deep Learning": create_child_object("Deep Flare Net", "https://defn.nict.go.jp/index131_rel_eng.html", True, \
                                             purpose= "Forecast solar flare", file_type="text", \
                                             memo="深層学習を使って太陽フレアの発生率を予報しているサイト。フレアの「予報」の際の参考になる。\
+                                             <br> \
                                              <br> DeFN - 平均的な発生頻度を50%とする。すなわち、50%を超えていたら、発生確率が「平均的な発生頻度より高い」とみなせる。つまり、50%を超えていても、「普段よりは起きやすい」だけ。\
                                              <br> DeFN-R - 実際のリアルな発生確率を予測している。すなわち、表示される確率と実際の発生頻度が等しい(20%だったら5回に1回ぐらい起きる)。確率予報には基本これ。\
                                              <br> DeFN-Q - XとMとCとNo-Flareの和が100%になるようにして表示している。(DeFN、DeFN-RはMクラス以上が起こる確率を示している。) \
                                              <br> \
+                                             <br> リンク先はDeFN-Rのものにしてある。上のメニューから切り替えできる。\
                                              <br> DeFN-Rが確率予報として適切なので、DeFN-Rを使うべき。DeFNは空振りが多い。かわりに見逃しが少ない。DeFN-Qはまだα版のようなもので、リアルな発生確率を表していない。"),
     },
     
     "Proton flux": {
         "Proton flux": create_child_object("GOES Proton Flux", "https://www.swpc.noaa.gov/products/goes-proton-flux", True, \
                         purpose= "Present condition of solar energetic particles", file_type='graphs',exampleVal="10^0 particles/cm2/sec/sr前後、NOAAスケール S0",\
-                        memo="Proton Fluxの変動を示す。Proton Fluxの変動は、Flux値をそのまま使って予報が出る事が多く、現況報告の意味合いが強い。\
+                        memo="MeV帯以上のProton Fluxの変動を示す。プロトン現象の把握に使える。Proton Fluxの変動は、Flux値をそのまま使って予報が出る事が多く、現況報告の意味合いが強い。\
                          <br> NOAAスケールとは、様々なイベントに対するNOAAが策定した指標。Proton fluxに関しては、桁数と一致(例えば、10^2を超えたらScale level S2)。<br> 詳しくはReference_URLのSolar Radiation Stormsタブを参照",\
                         refURL="https://www.swpc.noaa.gov/noaa-scales-explanation "),
 
@@ -318,8 +319,10 @@ space_weather_info = {
 
                         **create_child_object("STEREO Coronagraph", "https://stereo.gsfc.nasa.gov/beacon/", True, \
                                               purpose="Confirmation of CME flying", file_type="images",\
-                                                memo="STEREO衛星によるコロナグラフ画像。使い勝手はLASCOよりはあまり良くない。LASCOが不調な場合や見づらい場合の代替としてがメインになりそう。\
-                                                    <br> リンク先サイトの画像一覧の中からコロナグラフの画像を見つけることができる。説明がついていない数字だけのリンクを押すと画像をダウンロードすることができる。\
+                                                memo="STEREO衛星によるコロナグラフ画像。使い勝手はLASCOよりはあまり良くない。\
+                                                    <br> SOHOと違う視点からのコロナグラフが見たい際に使えるはずだが、2023年頃はSTEREOはSOHOと同じ場所を飛んでいる。そのため、LASCOが不調な場合や見づらい場合の代替としてがメインになりそう。\
+                                                    <br> リンク先サイトの画像一覧の中からSTEREO Aheadと書いてあるコロナグラフの画像を見つけることができる。説明がついていない数字だけのリンクを押すと画像をダウンロードすることができる。\
+                                                    <br> (Aheadは衛星の名前なので、特に特別な意味はない。《もともとStereoはAheadとBehindの2機構成だった。Behindは壊れた。》)\
                                                     <br> MPEGと書いてあるやつからは、MPEG形式の動画をダウンロードできる。なお、Mp4のことではない。MPEGを再生するのは意外とめんどくさい可能性。Windows11の場合、Microsoft clip champが、デフォルトでついてる機能の中で一番MPEGを見やすい気がする。\
                                                     <br> リンク先サイトは数日前のものしか見れないため、過去のものを見たい場合はReference_URLから。\
                                                     <br> ", refURL="https://stereo.gsfc.nasa.gov/beacon/")
