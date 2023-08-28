@@ -93,7 +93,8 @@ space_weather_info = {
                         **create_child_object("NICT Solar Observation Database","https://solarobs.nict.go.jp/", True, \
                             purpose= "Solar radio burst", file_type="graphs", \
                             memo="NICTが行っている太陽の観測データが見れる。\
-                                 <br> 使う可能性が大きいのは山川での太陽電波観測結果。太陽電波バーストなどを見るのに良い。\
+                                 <br> 使う可能性が大きいのは山川での太陽電波観測結果(Real-time dynamic spectrum of YAMAGAWA solar radio spectrograph)。\
+                                 <br> 太陽電波バーストなどを見るのに良い。\
                                  <br> 太陽電波バーストは太陽活動を示すイベントとして重要だが、山川の観測データからイベントを識別するのは難しく、初心者向けではない。")
 
         },
