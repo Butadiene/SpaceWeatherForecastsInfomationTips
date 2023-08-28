@@ -90,9 +90,9 @@ space_weather_info = {
                             めちゃ見づらいので注意。値はObserved fluxを使用すると良さそう。 <br> 極大期では月平均でおおよそ200、極小期では70程度(日単位では変動が大きく、300を超えることも。)\
                                 <br> DRAO(Dominion Radio Astrophysical Observatory research facility)による。"),
 
-                        **create_child_object("山川 太陽電波望遠鏡","https://origin-swc.nict.go.jp/forecast/magnetosphere.html", True, \
+                        **create_child_object("山川 太陽電波望遠鏡","https://solarobs.nict.go.jp/", True, \
                             purpose= "Solar radio burst", file_type="graphs", \
-                            memo="山川での太陽電波観測結果。リンク先サイトの右やや下の方にある「太陽電波観測」から見れる。太陽電波バーストを見るのに良い。\
+                            memo="山川での太陽電波観測結果。太陽電波バーストなどを見るのに良い。\
                                  <br> 太陽電波バーストは太陽活動を示すイベントとして重要だが、山川の観測データからイベントを識別するのは難しく、初心者向けではない。")
 
         },
