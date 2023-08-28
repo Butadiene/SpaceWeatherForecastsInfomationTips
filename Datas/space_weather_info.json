@@ -59,10 +59,10 @@
                 "File_type": "html",
                 "Purpose": "F10.7: 10.7cm wavelength radio wave strength"
             },
-            "山川 太陽電波望遠鏡": {
+            "NICT Solar Observation Database": {
                 "URL": "https://solarobs.nict.go.jp/",
                 "External_access": true,
-                "Memo": "山川での太陽電波観測結果。太陽電波バーストなどを見るのに良い。                                 <br> 太陽電波バーストは太陽活動を示すイベントとして重要だが、山川の観測データからイベントを識別するのは難しく、初心者向けではない。",
+                "Memo": "NICTが行っている太陽の観測データが見れる。                                 <br> 使う可能性が大きいのは山川での太陽電波観測結果。太陽電波バーストなどを見るのに良い。                                 <br> 太陽電波バーストは太陽活動を示すイベントとして重要だが、山川の観測データからイベントを識別するのは難しく、初心者向けではない。",
                 "File_type": "graphs",
                 "Purpose": "Solar radio burst"
             }
