@@ -373,6 +373,12 @@ space_weather_info = {
                     **create_child_object("WSA-ENLIL SOLAR WIND PREDICTION", "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction", True, \
                     purpose="Refer for forecast", file_type="graphs",\
                     memo="太陽風シミュレーションモデルWSA-EnlilによるL1地点及びSTEREO衛星での太陽風予報および、太陽系空間での太陽風予報。 <br> SUSANOOと異なり、太陽風の磁場情報が入っていない。そのため、シミュレーション結果にも速度と密度しかなく磁場予測がないが、見やすい。"),
+
+                    **create_child_object("ENLIL Nowcast and Forecasts", "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/iSWACygnetStreamer?timestamp=2038-01-23%2000:00:00&window=-1&cygnetId=261", True, 
+                                            purpose="Refer for forecast", file_type="graphs",\
+                                            memo="ENLILのシミュレーション。ENLILのはずなのに、なんかIMFの極性とか見えてる。使いどころかはわからない。色々な日やパラメーター(動径速度、動圧、密度)、を見たいときは、Reference_URLのHeliosphereのENLIL Background",\
+                                            refURL="https://iswa.gsfc.nasa.gov/IswaSystemWebApp/")
+                                          
                     },
     },
 
