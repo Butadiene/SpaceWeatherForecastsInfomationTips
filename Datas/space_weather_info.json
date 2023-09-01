@@ -232,7 +232,7 @@
             "SUSANOO": {
                 "URL": "https://cidas.isee.nagoya-u.ac.jp/susanoo/",
                 "External_access": true,
-                "Memo": "太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。 <br> nictのサイトのほうが見やすいかもしれない。(Reference_URL参照)",
+                "Memo": "太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。                     <br> 磁場のグラフの、白色は全磁場、赤色は南北成分っぽい。 <br> nictのサイトのほうが見やすいかもしれない。(Reference_URL参照)",
                 "File_type": "graphs",
                 "Purpose": "Refer for forecast",
                 "Reference_URL": "https://origin-swc.nict.go.jp/forecast/magnetosphere.html"

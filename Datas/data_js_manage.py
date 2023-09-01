@@ -366,7 +366,8 @@ space_weather_info = {
         "Solar Wind Simulation": {
                     **create_child_object("SUSANOO", "https://cidas.isee.nagoya-u.ac.jp/susanoo/", True, \
                     purpose="Refer for forecast", file_type="graphs",\
-                    memo="太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。 <br> nictのサイトのほうが見やすいかもしれない。(Reference_URL参照)",\
+                    memo="太陽風シミュレーションモデルSUSANOOによるL1地点での太陽風予報および、太陽系空間での太陽風予報。 <br> MHDシミュレーションらしい。 \
+                    <br> 磁場のグラフの、白色は全磁場、赤色は南北成分っぽい。 <br> nictのサイトのほうが見やすいかもしれない。(Reference_URL参照)",\
                     refURL="https://origin-swc.nict.go.jp/forecast/magnetosphere.html"),
 
                     **create_child_object("WSA-ENLIL SOLAR WIND PREDICTION", "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction", True, \
