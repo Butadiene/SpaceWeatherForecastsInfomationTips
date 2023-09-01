@@ -148,9 +148,7 @@ def intro_space_weather(filename):
                 </li>
                 <li>
                     プロトンフラックスの確認
-                    <p>GOESのプロトンフラックスについての、直近数日の変動を確認する。太陽活動の活動度を把握する助けになる。{get_site_info(data,"GOES Proton Flux")}\
-                    <br> もし、強いフレアが起きている時にGOESが夜側にあるのであれば、ひまわりのデータを確認しても良いかもしれない(あくまでもGOESが優先)。{get_site_info(data,"HIMAWARI SEDA DATA VIEWER")}</p>
-                    </p>
+                    <p>GOESのプロトンフラックスについての、直近数日の変動を確認する。太陽活動の活動度を把握する助けになる。{get_site_info(data,"GOES Proton Flux")}</p>
                 </li>
                 <li>
                     黒点全体の活動度の確認

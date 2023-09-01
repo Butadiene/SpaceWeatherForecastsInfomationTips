@@ -271,8 +271,7 @@ space_weather_info = {
                         purpose= "Present condition of solar energetic particles", file_type='graphs',exampleVal="10^0 particles/cm2/sec/sr前後、NOAAスケール S0",\
                         memo="MeV帯以上のProton Fluxの変動を示す。プロトン現象の把握に使える。\
                          <br> NOAAスケールとは、様々なイベントに対するNOAAが策定した指標。Proton fluxに関しては、桁数と一致。(例えば、10^2を超えたらScale level S2) <br> 詳しくはReference_URLのSolar Radiation Stormsタブを参照。\
-                         <br> Proton Fluxの予報はFluxの観測値をそのまま使って出す事が多く、現況報告の意味合いが強くなりがちである。\
-                            <br> なお、強いフレアが起きている時にGOESが夜側にあるのであれば、ひまわりのデータ(radiation beltデータのところに載ってるひまわりのSEDA)を確認しても良いかもしれない(あくまでもGOESが優先)。",\
+                         <br> Proton Fluxの予報はFluxの観測値をそのまま使って出す事が多く、現況報告の意味合いが強くなりがちである。",\
                         refURL="https://www.swpc.noaa.gov/noaa-scales-explanation "),
 
     },
@@ -419,11 +418,10 @@ space_weather_info = {
                         
         },
 
-        "Himawari 24-h fluences and flux": create_child_object("HIMAWARI SEDA DATA VIEWER","https://himawari-seda.nict.go.jp/dataplot",True,\
+        "Himawari Electron 24-h fluences and flux": create_child_object("HIMAWARI SEDA DATA VIEWER","https://himawari-seda.nict.go.jp/dataplot",True,\
                             purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
-                            memo="ひまわりが取得したMeV帯の電子fluxの時間変化や24時間電子fluences、プロトンフラックスが見れる。\
+                            memo="ひまわりが取得したMeV帯の電子fluxの時間変化や24時間電子fluencesが見れる。\
                                 <br> fluxについては、現在の「ひまわりがいる経度」の放射線帯の電子fluxがわかる。横軸はUTなので注意。\
-                                <br> また、プロトンフラックスも見ることができる。GOESが夜側にいるときに、プロトンイベントが起きているかどうかを確認するのに使える。\
                                 <br> fluencesとはfluxを24時間で積分した値。ひまわりデータを元にNICTが積分した結果を出している。\
                                  <br> 静止軌道衛星の観測データ24時間の総和なので、地球一周分の総和を取っている。すなわち、地球を囲う放射線帯全体の状況を表していると言える。\
                                 <br> 放射線帯予報では、放射線帯全体の状況を表せることからfluxよりもfluencesが重視されることがある。\
