@@ -271,7 +271,8 @@ space_weather_info = {
                         purpose= "Present condition of solar energetic particles", file_type='graphs',exampleVal="10^0 particles/cm2/sec/sr前後、NOAAスケール S0",\
                         memo="MeV帯以上のProton Fluxの変動を示す。プロトン現象の把握に使える。\
                          <br> NOAAスケールとは、様々なイベントに対するNOAAが策定した指標。Proton fluxに関しては、桁数と一致。(例えば、10^2を超えたらScale level S2) <br> 詳しくはReference_URLのSolar Radiation Stormsタブを参照。\
-                         <br> Proton Fluxの予報はFluxの観測値をそのまま使って出す事が多く、現況報告の意味合いが強くなりがちである。",\
+                         <br> Proton Fluxの予報はFluxの観測値をそのまま使って出す事が多く、現況報告の意味合いが強くなりがちである。\
+                            <br> なお、強いフレアが起きている時にGOESが夜側にあるのであれば、ひまわりのデータ(radiation beltデータのところに載ってるひまわりのSEDA)を確認しても良いかもしれない(あくまでもGOESが優先)。",\
                         refURL="https://www.swpc.noaa.gov/noaa-scales-explanation "),
 
     },
