@@ -376,7 +376,7 @@ space_weather_info = {
 
                     **create_child_object("ENLIL Nowcast and Forecasts", "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/iSWACygnetStreamer?timestamp=2038-01-23%2000:00:00&window=-1&cygnetId=261", True, 
                                             purpose="Refer for forecast", file_type="graphs",\
-                                            memo="ENLILのシミュレーション。ENLILのはずなのに、なんかIMFの極性とか見えてる。使いどころかはわからない。色々な日やパラメーター(動径速度、動圧、密度)、を見たいときは、Reference_URLのHeliosphereのENLIL Background",\
+                                            memo="ENLILのシミュレーション。なんかIMFの極性とかまで見せてくれる(極性とは？)。使いどころかはわからない。色々な日やパラメーター(動径速度、動圧、密度)、を見たいときは、Reference_URLのHeliosphereのENLIL Background",\
                                             refURL="https://iswa.gsfc.nasa.gov/IswaSystemWebApp/")
                                           
                     },
