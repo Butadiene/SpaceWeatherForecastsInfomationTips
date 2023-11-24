@@ -110,6 +110,8 @@ def intro_space_weather(filename):
         data = json.load(f)
     list_data = convert_json_file_to_list('./Datas/space_weather_info.json')
 
+    # 手順をベタ書き
+
     head_data = """
     <!DOCTYPE html>
     <html lang="en">
@@ -313,7 +315,8 @@ def intro_space_weather(filename):
                             SDO画像から、CME候補となる現象の確認
                             <p> SDO衛星の画像などから、CMEの候補となる現象を確認する。\
                                 高エネルギー帯の波長で見えるコロナの吹き飛び(一瞬暗くなるように見えたりもする。Dimmingと呼ばれる)、AIA 304で見えるフィラメントの吹き飛びなどに着目。\
-                            <br> 太陽表面から来るCMEは、3日程度かけて地球に到来するため、3-4日前から現在までの太陽画像を確認するのが大事。{get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}</p>
+                                <br> 太陽表面から来るCMEは、3日程度かけて地球に到来するため、3-4日前から現在までの太陽画像を確認するのが大事。\
+                                <br>(フィラメントの吹き出しは見づらいこともあるので、Heliophysics Events Knowledgebaseを参考にしてもいいかもしれない。){get_site_info(data,"SDO Images")} {get_site_info(data,"SDO Images Dashboard")}{get_site_info(data,"A Heliophysics Events Knowledgebase")}</p>
                         </li>
                         <li>
                             LASCO画像による、宇宙空間への放出を確認
@@ -331,7 +334,8 @@ def intro_space_weather(filename):
                             <br> CMEは発生した場所から等方的に広がることが一般的である。\
                             <br> そのため、CMEの発生箇所が低緯度か高緯度か、リム寄りか子午線寄りかに関係なく、地球から見える面で発生していれば飛来する可能性があることに注意。\
                             <br> また、リストアップされたCMEに対応する太陽フレアイベントがあるかを確認する。\
-                            <br> なお、CMEはフレアを伴う事が多いが伴わないこともあるため、CME候補に対応するフレアイベントがなくても問題はない。(現象のより詳細な把握のために行う){get_site_info(data,"Solar and geophysical events")}</p>
+                            <br> なお、CMEはフレアを伴う事が多いが伴わないこともあるため、CME候補に対応するフレアイベントがなくても問題はない。(現象のより詳細な把握のために行う)\
+                            <br> あくまで補助ではあるが、Heliophysics Events KnowledgebaseのCMEリストを参考にしてみても良いかもしれない。{get_site_info(data,"Solar and geophysical events")}</p>
                         </li>
                             CMEの速度計算
                             <p> 地球に到来する可能性のあるCME(地球から見えている面で発生したCME)について、LASCO等コロナグラフのデータを用いて、CMEの速度を計算する。\

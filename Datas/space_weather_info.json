@@ -38,6 +38,17 @@
                 "File_type": "text",
                 "Purpose": "Check events list"
             }
+        },
+        "A Heliophysics Events Knowledgebase": {
+            "A Heliophysics Events Knowledgebase to facilitate scientific discover": {
+                "URL": "https://www.lmsal.com/isolsearch",
+                "External_access": true,
+                "Memo": "フレア、CME、コロナホール、フィラメント、コロナホール、黒点、紫外線イベントなどのほぼ全てのイベントを網羅し、マッピングしているサイト。全イベントの詳細も載っている。。                                            <br> 特にすごいのはCMEやフィラメント、フィラメント噴出イベントのリストがある他、フレアについてはGOES Xray-fluxで補足できていないものもSDOの画像から推定している。                                            <br> アルゴリズムで検出してるだけであるっぽいのでそこは注意。左側の選択バーで現象と時期選んでsearchをクリック。またAPIも充実している。                                            <br> 主な扱ってる現象リストはreference_URL参照。api情報や検出ソフトについてはrefURL2参照。",
+                "File_type": "images",
+                "Purpose": "Check events list",
+                "Reference_URL": "https://www.lmsal.com/hek/VOEvent_Spec.html",
+                "Reference_URL2": "https://www.lmsal.com/hek/api.html"
+            }
         }
     },
     "Solar flares": {

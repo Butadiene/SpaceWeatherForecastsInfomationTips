@@ -1,5 +1,7 @@
 import json
 
+# 情報リストのベタ書き
+
 def create_child_object(name, url, external_access, purpose=None, exampleVal=None, file_type=None, memo=None, refURL = None, refURL2 = None):
     """
     Creates a child object based on the provided attributes.
@@ -69,6 +71,14 @@ space_weather_info = {
         "Last flare event reports (LMSAL)": create_child_object("LMSAL last event reports","https://www.lmsal.com/solarsoft/last_events/",True,\
                                 purpose="Check events list",file_type="text",\
                                     memo="フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20イベントだけだが、NOAAのものと違ってリストで示されていたり、図もついていたりと見やすい。 <br> イベント時刻はピークタイムを使う事が多い。"),
+        
+        "A Heliophysics Events Knowledgebase": create_child_object("A Heliophysics Events Knowledgebase to facilitate scientific discover","https://www.lmsal.com/isolsearch",True,\
+                                    purpose="Check events list",file_type="images",\
+                                        memo="フレア、CME、コロナホール、フィラメント、コロナホール、黒点、紫外線イベントなどのほぼ全てのイベントを網羅し、マッピングしているサイト。全イベントの詳細も載っている。。\
+                                            <br> 特にすごいのはCMEやフィラメント、フィラメント噴出イベントのリストがある他、フレアについてはGOES Xray-fluxで補足できていないものもSDOの画像から推定している。\
+                                            <br> アルゴリズムで検出してるだけであるっぽいのでそこは注意。左側の選択バーで現象と時期選んでsearchをクリック。またAPIも充実している。\
+                                            <br> 主な扱ってる現象リストはreference_URL参照。api情報や検出ソフトについてはrefURL2参照。", refURL="https://www.lmsal.com/hek/VOEvent_Spec.html", refURL2="https://www.lmsal.com/hek/api.html"),
+    
     },
 
     "Solar flares": {
