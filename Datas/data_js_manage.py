@@ -70,7 +70,8 @@ space_weather_info = {
 
         "Last flare event reports (LMSAL)": create_child_object("LMSAL last event reports","https://www.lmsal.com/solarsoft/last_events/",True,\
                                 purpose="Check events list",file_type="text",\
-                                    memo="フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20イベントだけだが、NOAAのものと違ってリストで示されていたり、図もついていたりと見やすい。 <br> イベント時刻はピークタイムを使う事が多い。"),
+                                    memo="フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20イベントだけだが、NOAAのものと違ってリストで示されていたり、図もついていたりと見やすい。 <br> イベント時刻はピークタイムを使う事が多い。\
+                                        <br> なお、20件より前のイベントはrefURLから辿れる模様。結構なところまで遡れるっぽい。", refURL="https://www.lmsal.com/solarsoft/latest_events_archive.html"),
         
         "A Heliophysics Events Knowledgebase": create_child_object("A Heliophysics Events Knowledgebase to facilitate scientific discover","https://www.lmsal.com/isolsearch",True,\
                                     purpose="Check events list",file_type="images",\

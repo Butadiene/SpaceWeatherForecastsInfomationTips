@@ -34,9 +34,10 @@
             "LMSAL last event reports": {
                 "URL": "https://www.lmsal.com/solarsoft/last_events/",
                 "External_access": true,
-                "Memo": "フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20イベントだけだが、NOAAのものと違ってリストで示されていたり、図もついていたりと見やすい。 <br> イベント時刻はピークタイムを使う事が多い。",
+                "Memo": "フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20イベントだけだが、NOAAのものと違ってリストで示されていたり、図もついていたりと見やすい。 <br> イベント時刻はピークタイムを使う事が多い。                                        <br> なお、20件より前のイベントはrefURLから辿れる模様。結構なところまで遡れるっぽい。",
                 "File_type": "text",
-                "Purpose": "Check events list"
+                "Purpose": "Check events list",
+                "Reference_URL": "https://www.lmsal.com/solarsoft/latest_events_archive.html"
             }
         },
         "A Heliophysics Events Knowledgebase": {
