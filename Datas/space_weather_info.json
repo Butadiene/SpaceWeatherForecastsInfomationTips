@@ -267,6 +267,15 @@
         }
     },
     "Geomagnetic disturbances": {
+        "Near real time Geomagnetic data": {
+            "NICT Geomag-interface": {
+                "URL": "https://kogma.nict.go.jp/cgi-bin/geomag-interface-j/",
+                "External_access": true,
+                "Memo": "世界各所の地磁気データの速報値が見れる。結構早い＋使いやすいので、今世界のどの場所でどれぐらい地磁気が乱れているか見るのに良い。                                                                    <br> 「リアルタイム表示」を選択することで、１０分毎に自動的に新しいデータを表示することもできる。",
+                "File_type": "graphs",
+                "Purpose": "Confirmation of geomagnetic disturbances"
+            }
+        },
         "Kp index": {
             "SWPC PLANETARY K-INDEX": {
                 "URL": "https://www.swpc.noaa.gov/products/planetary-k-index",

@@ -84,7 +84,7 @@ def lists_only_space_weather_info(filename):
     body_data = "<body>"+\
     "<h1>Space Weather Forecast Infomartion Sites Lists</h1>"+\
     " <br> 宇宙天気予報についてではなく<u>宇宙天気予報を実際に行う際に必要な情報について</u>個人的にまとめたものです。<br> <br> <strong> ここに記載してある一切の情報について、作者は責任を負いません。<br> また、リンク先のデータの利用条件についても十分に注意してください。</strong>\
-        <br> <br> 緑色の文字はクリックすると展開できます。"+\
+        <br> <br> ここに載っていない有用な宇宙天気予報関連のサイトの紹介や、手順へのアドバイス、本サイトへの意見等ありましたらこちらのIssueまでお願いしてます。<a href='https://github.com/Butadiene/SpaceWeatherForecastsInfomationTips' target='_blank'>https://github.com/Butadiene/SpaceWeatherForecastsInfomationTips</a> <br> <br> <strong> 緑色の文字はクリックすると展開できます。</strong>"+\
     "<h2>Information Lists</h2>"+\
     list_data+"</body></html>"
     
@@ -125,7 +125,7 @@ def intro_space_weather(filename):
     body_data = "<body>"+\
     "<h1>Tips for Space Weather Forecasting</h1>"+\
     "  <br> 宇宙天気予報についてではなく<u>宇宙天気予報を実際に行う際に必要な情報について</u>個人的にまとめたものです。<br> <br> <strong> ここに記載してある一切の情報について、作者は責任を負いません。<br> また、リンク先のデータの利用条件についても十分に注意してください。</strong>\
-      <br> <br> 緑色の文字はクリックすると展開できます。"+\
+        <br> <br> ここに載っていない有用な宇宙天気予報関連のサイトの紹介や、手順へのアドバイス、本サイトへの意見等ありましたらこちらのIssueまでお願いしてます。<a href='https://github.com/Butadiene/SpaceWeatherForecastsInfomationTips' target='_blank'>https://github.com/Butadiene/SpaceWeatherForecastsInfomationTips</a> <br> <br> <strong> 緑色の文字はクリックすると展開できます。</strong>"+\
     "<h2>1. Information List</h2>"+\
     list_data+\
     f""" 
