@@ -417,6 +417,11 @@ space_weather_info = {
         "AE index": create_child_object("AE-INDEX", "https://wdc.kugi.kyoto-u.ac.jp/aedir/index-j.html",True,\
                     purpose="AE-index",file_type="graphs",exampleVal="None",\
                     memo="AE指数。サブストームの判定などに。予報ではそんなに使わないのかも?"),
+        
+        "GOES MAGNETOMETER": create_child_object("GOES MAGNETOMETER", "https://www.swpc.noaa.gov/products/goes-magnetometer",True,\
+                    purpose="Magnetic field at L1",file_type="graphs",exampleVal="None",\
+                    memo="GOES衛星の観測した、静止軌道での磁場の変動を示す。急激な変化により、太陽風による磁気圏の急激な圧縮を読み取ることができる。\
+                        <br> GOES衛星は静止軌道にいるために一日で昼側と夜側と通過する。これに伴う定期的な磁場の変動があることに注意。"),
 
     },
 
