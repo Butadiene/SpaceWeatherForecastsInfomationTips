@@ -444,6 +444,15 @@
                 "Purpose": "Checking Dellinger effect",
                 "Reference_URL": "https://wdc.nict.go.jp/x-ray/index.html"
             }
+        },
+        "CTIPE TOTAL ELECTRON CONTENT FORECAST": {
+            "CTIPE TOTAL ELECTRON CONTENT FORECAST": {
+                "URL": "https://www.swpc.noaa.gov/products/ctipe-total-electron-content-forecast",
+                "External_access": true,
+                "Memo": "CTIPEモデルによる、全電子密度(垂直に足し合わせた密度、TEC)の現況。Forecastとあるがモデルを用いた現況の意味合いが強そう。                                        <br> 全世界のマップが見れるのが一応特徴ではある。ただ、TECに関係するイベントはローカルで見たほうが良いため、あまり使わないかもしれない。",
+                "File_type": "graphs",
+                "Purpose": "Checking Total Electron Content"
+            }
         }
     },
     "Aurora": {

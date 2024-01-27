@@ -537,6 +537,11 @@ space_weather_info = {
                                     <br>詳細やアーカイブは、Reference_URLを参照。",\
                                 refURL="https://wdc.nict.go.jp/x-ray/index.html"),
         
+        "CTIPE TOTAL ELECTRON CONTENT FORECAST": create_child_object("CTIPE TOTAL ELECTRON CONTENT FORECAST", "https://www.swpc.noaa.gov/products/ctipe-total-electron-content-forecast", True,\
+                                purpose="Checking Total Electron Content", file_type="graphs",\
+                                    memo="CTIPEモデルによる、全電子密度(垂直に足し合わせた密度、TEC)の現況。Forecastとあるがモデルを用いた現況の意味合いが強そう。\
+                                        <br> 全世界のマップが見れるのが一応特徴ではある。ただ、TECに関係するイベントはローカルで見たほうが良いため、あまり使わないかもしれない。"),
+        
 
     },
 

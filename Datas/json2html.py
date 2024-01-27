@@ -365,7 +365,8 @@ def intro_space_weather(filename):
                 <p>現在の地磁気活動度を把握する。具体的には、現在のK指数とKp指数を把握する。\
                  <br> 地磁気活動度は同時刻であっても、地球表面のどこかによって多少の変化がある。\
                  <br> そのため、地球全体の地磁気活動度であるKp指数(Planetary K-index)に加え、ローカルな指数であるK指数の把握も重要。\
-                 <br> なお指数が3を超える時、地球に到来している太陽風は静穏時と比べて何らかの変化をしていることが疑われる。{get_site_info(data,"SWPC PLANETARY K-INDEX")}{get_site_info(data,"KAKIOKA K-INDEX")}</p>
+                 <br> なお指数が3を超える時、地球に到来している太陽風は静穏時と比べて何らかの変化をしていることが疑われる。{get_site_info(data,"SWPC PLANETARY K-INDEX")}{get_site_info(data,"KAKIOKA K-INDEX")}
+                 <br> また、GOES MAGNETOMETERの値を見ることで、磁気圏が圧縮されているかについて推測することができる場合もある。ただし、昼夜による変動がデフォルトで存在することに注意。{get_site_info(data,"GOES MAGNETOMETER")}</p>
                 </li>
                 <li>
                     24時間前から現在までの地磁気活動の把握
