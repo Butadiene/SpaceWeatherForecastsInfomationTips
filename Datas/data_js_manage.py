@@ -465,11 +465,17 @@ space_weather_info = {
                                 <br> ひまわりの経度は、8号9号ともにおよそ140.7度(0.05度離れているらしい。)。\
                                 <br> 静止軌道は、平均的な放射線帯外帯の外端にあたる。"),
 
-        "Electron fluences forecast": create_child_object("電子フルエンス予報","https://radi.nict.go.jp/",True, \
+        "Electron fluences forecast": {**create_child_object("電子フルエンス予報","https://radi.nict.go.jp/",True,\
                                         purpose="Reference for forecast electron fluences", file_type="text", \
-                                        memo="放射線帯における24時間 Electron fluencesの、今後24時間、明日、明後日の予報。シミュレーションや統計モデルなど、複数のをもとに行われている。\
+                                        memo="NICTによる放射線帯における24時間 Electron fluencesの、今後24時間、明日、明後日の予報。シミュレーションや統計モデルなど、複数のをもとに行われている。\
                                                 <br> 予報の参考になる。静穏等々の基準についてはReference_URL参照。",\
                                                     refURL="https://radi.nict.go.jp/about/#level"),
+                                        
+                                        **create_child_object("RELATIVISTIC ELECTRON FORECAST MODEL", "https://www.swpc.noaa.gov/products/relativistic-electron-forecast-model",True,\
+                                                            purpose="Reference for forecast electron fluences", file_type="graphs",\
+                                                            memo="NOAAによる放射線帯における24時間 Electron fluencesの、今後24時間、明日、明後日の予報。\
+                                                            2MeV以上の電子の24時間フルエンスの予報になっている。"),
+            },
         
         
         "Electron flux forecast": create_child_object("静止軌道危険度予測","https://radi.nict.go.jp/satellite/",True,\

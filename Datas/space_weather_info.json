@@ -368,10 +368,17 @@
             "電子フルエンス予報": {
                 "URL": "https://radi.nict.go.jp/",
                 "External_access": true,
-                "Memo": "放射線帯における24時間 Electron fluencesの、今後24時間、明日、明後日の予報。シミュレーションや統計モデルなど、複数のをもとに行われている。                                                <br> 予報の参考になる。静穏等々の基準についてはReference_URL参照。",
+                "Memo": "NICTによる放射線帯における24時間 Electron fluencesの、今後24時間、明日、明後日の予報。シミュレーションや統計モデルなど、複数のをもとに行われている。                                                <br> 予報の参考になる。静穏等々の基準についてはReference_URL参照。",
                 "File_type": "text",
                 "Purpose": "Reference for forecast electron fluences",
                 "Reference_URL": "https://radi.nict.go.jp/about/#level"
+            },
+            "RELATIVISTIC ELECTRON FORECAST MODEL": {
+                "URL": "https://www.swpc.noaa.gov/products/relativistic-electron-forecast-model",
+                "External_access": true,
+                "Memo": "NOAAによる放射線帯における24時間 Electron fluencesの、今後24時間、明日、明後日の予報。                                                            2MeV以上の電子の24時間フルエンスの予報になっている。",
+                "File_type": "graphs",
+                "Purpose": "Reference for forecast electron fluences"
             }
         },
         "Electron flux forecast": {

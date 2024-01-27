@@ -425,7 +425,7 @@ def intro_space_weather(filename):
                         </li>
                         <li>
                             fluence予報の確認
-                            <p>モデルによる24時間fluence予報の確認を行う。fluenceの予報なので、放射線帯全体の活動度の予報になっていることに注意。{get_site_info(data,"電子フルエンス予報")}</p>
+                            <p>モデルによる24時間fluence予報の確認を行う。fluenceの予報なので、放射線帯全体の活動度の予報になっていることに注意。{get_site_info(data,"Electron fluences forecast")}</p>
                         </li>
                         <li>
                             flux予報の確認
