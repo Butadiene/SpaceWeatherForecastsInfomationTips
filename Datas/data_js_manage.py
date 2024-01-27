@@ -361,6 +361,12 @@ space_weather_info = {
                              <br> Dailyから見るアーカイブは現在の月より前のものしか見れないので注意。",\
                                 refURL="https://cdaw.gsfc.nasa.gov/index.html",\
                                 refURL2="https://soho.nascom.nasa.gov/data/realtime/mpeg/"),
+                        **create_child_object("CACTUS Auto-CME-catalog", "https://www.sidc.be/cactus/", True, \
+                        purpose="Confirmation of CME flying", file_type="graphs",\
+                        memo="ESAによる、LASCOのデータを持ちいたCMEのカタログ。CMEを自動で検出し、速度分布などを計算しグラフにして掲載している。\
+                                <br> フルハローか否かや、速度の分布を表示しているのが便利。CMEの性質の簡易的な確認に使える。自動検出及び計算であることに注意。\
+                                <br> Latest CME detectionsをクリックすると最近のイベント一覧に飛べる。その中で興味のあるページを見れば良い。なお、refURLにもLatest CME detectionsのページURLを記載してある。\
+                                <br> ", refURL="https://www.sidc.be/cactus/out/latestCMEs.html"),
 
                         **create_child_object("STEREO Coronagraph", "https://stereo.gsfc.nasa.gov/beacon/", True, \
                                               purpose="Confirmation of CME flying", file_type="images",\
