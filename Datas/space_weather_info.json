@@ -257,21 +257,22 @@
                 "Purpose": "Refer for forecast",
                 "Reference_URL": "https://origin-swc.nict.go.jp/forecast/magnetosphere.html"
             },
-            "WSA-ENLIL SOLAR WIND PREDICTION": {
-                "URL": "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction",
+            "WSA-ENLIL-CONE Nowcast and Forecasts": {
+                "URL": "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/index.jsp?i_1=179&l_1=105&t_1=1146&w_1=640&h_1=410&s_1=0_0_10_3&i_2=183&l_2=752&t_2=1150&w_2=640&h_2=410&s_2=0_0_10_3&i_3=261&l_3=60&t_3=290&w_3=645&h_3=436.987&s_3=0_0_10_3&i_4=171&l_4=1402&t_4=1144&w_4=640&h_4=410&s_4=0_0_10_3&i_5=267&l_5=710&t_5=289&w_5=650.987&h_5=435.987&s_5=0_0_10_3&i_6=700&l_6=1367&t_6=279&w_6=650&h_6=450&s_6=2&i_7=699&l_7=335&t_7=728&w_7=748&h_7=375&s_7=1_0&i_8=699&l_8=1088&t_8=725&w_8=696&h_8=390&s_8=0_0",
                 "External_access": true,
-                "Memo": "太陽風シミュレーションモデルWSA-EnlilによるL1地点及びSTEREO衛星での太陽風予報および、太陽系空間での太陽風予報。 <br> SUSANOOと異なり、太陽風の磁場情報が入っていない。そのため、シミュレーション結果にも速度と密度しかなく磁場予測がないが、見やすい。",
-                "File_type": "graphs",
-                "Purpose": "Refer for forecast"
-            },
-            "ENLIL Nowcast and Forecasts": {
-                "URL": "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/iSWACygnetStreamer?timestamp=2038-01-23%2000:00:00&window=-1&cygnetId=261",
-                "External_access": true,
-                "Memo": "ENLILのシミュレーション。なんかIMFの極性とかまで見せてくれる(極性とは？)。使いどころかはわからない。色々な日やパラメーター(動径速度、動圧、密度)、を見たいときは、Reference_URLのHeliosphereのENLIL Background",
+                "Memo": "WSA_Enlil-CONEモデルによるシミュレーション。CONEモデルを用いることにより、HaloCMEの角度とかをちゃんと推定しているっぽい? WSA-ENLIL使うよりこっちのほうが良さそうかも                                            表示UI自体はIswaSystem(refURL参照)を使っている。ここでは好きな画像やグラフを好きな位置にレイアウトしてURLを生成できる。                                            WSA、ENLIL、CONEの3つのモデルについての詳細はrefURL2など参照。",
                 "File_type": "graphs",
                 "Purpose": "Refer for forecast",
-                "Reference_URL": "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/"
+                "Reference_URL": "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",
+                "Reference_URL2": "https://www.diva-portal.org/smash/get/diva2:1778148/FULLTEXT01.pdf"
             }
+        },
+        "WSA-ENLIL SOLAR WIND PREDICTION": {
+            "URL": "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction",
+            "External_access": true,
+            "Memo": "太陽風シミュレーションモデルWSA-EnlilによるL1地点及びSTEREO衛星での太陽風予報および、太陽系空間での太陽風予報。 <br> SUSANOOと異なり、太陽風の磁場情報が入っていない。そのため、シミュレーション結果にも速度と密度しかなく磁場予測がないが、見やすい。",
+            "File_type": "graphs",
+            "Purpose": "Refer for forecast"
         }
     },
     "Geomagnetic disturbances": {
