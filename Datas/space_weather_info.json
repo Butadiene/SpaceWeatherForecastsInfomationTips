@@ -265,14 +265,14 @@
                 "Purpose": "Refer for forecast",
                 "Reference_URL": "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",
                 "Reference_URL2": "https://www.diva-portal.org/smash/get/diva2:1778148/FULLTEXT01.pdf"
+            },
+            "WSA-ENLIL SOLAR WIND PREDICTION": {
+                "URL": "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction",
+                "External_access": true,
+                "Memo": "太陽風シミュレーションモデルWSA-EnlilによるL1地点及びSTEREO衛星での太陽風予報および、太陽系空間での太陽風予報。 <br> SUSANOOと異なり、太陽風の磁場情報が入っていない。そのため、シミュレーション結果にも速度と密度しかなく磁場予測がないが、見やすい。",
+                "File_type": "graphs",
+                "Purpose": "Refer for forecast"
             }
-        },
-        "WSA-ENLIL SOLAR WIND PREDICTION": {
-            "URL": "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction",
-            "External_access": true,
-            "Memo": "太陽風シミュレーションモデルWSA-EnlilによるL1地点及びSTEREO衛星での太陽風予報および、太陽系空間での太陽風予報。 <br> SUSANOOと異なり、太陽風の磁場情報が入っていない。そのため、シミュレーション結果にも速度と密度しかなく磁場予測がないが、見やすい。",
-            "File_type": "graphs",
-            "Purpose": "Refer for forecast"
         }
     },
     "Geomagnetic disturbances": {

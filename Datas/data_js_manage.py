@@ -392,13 +392,12 @@ space_weather_info = {
                                             memo="WSA_Enlil-CONEモデルによるシミュレーション。CONEモデルを用いることにより、HaloCMEの角度とかをちゃんと推定しているっぽい? WSA-ENLIL使うよりこっちのほうが良さそうかも\
                                             表示UI自体はIswaSystem(refURL参照)を使っている。ここでは好きな画像やグラフを好きな位置にレイアウトしてURLを生成できる。\
                                             WSA、ENLIL、CONEの3つのモデルについての詳細はrefURL2など参照。",
-                                            refURL="https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",refURL2="https://www.diva-portal.org/smash/get/diva2:1778148/FULLTEXT01.pdf")
-                                          
-                    },
-
+                                            refURL="https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",refURL2="https://www.diva-portal.org/smash/get/diva2:1778148/FULLTEXT01.pdf"),
+                                        
                     **create_child_object("WSA-ENLIL SOLAR WIND PREDICTION", "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction", True, \
                     purpose="Refer for forecast", file_type="graphs",\
                     memo="太陽風シミュレーションモデルWSA-EnlilによるL1地点及びSTEREO衛星での太陽風予報および、太陽系空間での太陽風予報。 <br> SUSANOOと異なり、太陽風の磁場情報が入っていない。そのため、シミュレーション結果にも速度と密度しかなく磁場予測がないが、見やすい。")
+        },
     },
 
     "Geomagnetic disturbances": {
