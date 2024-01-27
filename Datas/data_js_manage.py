@@ -546,6 +546,18 @@ space_weather_info = {
     },
 
     "Aurora": {
+
+        "AuroraMax Live Feed": create_child_object("AuroraMax Live Feed", "https://auroramax.com/live", True,\
+                                purpose="Checking Aurora", file_type="images",\
+                                memo="カナダ、イエローナイフにおけるオーロラのライブカメラ。オーロラが発生しているか確認するときに使える。"),
+
+        "昭和基地カメラ": create_child_object("昭和基地カメラ", "https://polaris.nipr.ac.jp/~acaurora/syowa_CDC_QL/", True,\
+                                       purpose="Checking Aurora", file_type="images",\
+                                        memo="昭和基地におけるオーロラのライブカメラ。オーロラが発生しているか確認するときに使える。\
+                                            <br>上に示したURLはCDC(カラー画像)だが、Electronオーロラ(EAI)、Protonオーロラ(PAI)のカメラもある。1、2はフィルターに対応する波長帯が違う。\
+                                            <br> カメラの選択はページの上の方からできる。また、カメラの仕様についてはReference_URL参照。"),
+                                
+
         "NOAA OVATION model Aurora forecast": create_child_object("AURORA - 30 MINUTE FORECAST", "https://www.swpc.noaa.gov/products/aurora-30-minute-forecast", True,\
                                 purpose="Checking Aurora forecast", file_type="graphs",\
                                 memo="オーロラ予報。30-90分後のオーロラ予報を提供する。\
@@ -579,6 +591,10 @@ space_weather_info = {
                                     memo="NASAのISWAのWebアプリ。色々なデータが見れる。なんかたまにサーバーが落ちてたりする気がする。\
                                         <br> かなり多くのシミュレーションデータや観測データをカバーしている。\
                                         <br> 詳細はReference_URLを参照。",refURL="https://ccmc.gsfc.nasa.gov/tools/iSWA/"),
+
+        "宇宙天気ニュース" :create_child_object("宇宙天気ニュース","https://swnews.jp/",True,\
+                                    memo="宇宙天気ニュースのサイト。宇宙天気に関するニュースやリンクサイトが日本語でまとめて掲載されている。\
+                                        <br> 鹿児島工業高等専門学校の篠原 学先生により運営されている模様。"),
     }
 }
 
