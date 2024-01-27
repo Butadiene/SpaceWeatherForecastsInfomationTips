@@ -234,7 +234,7 @@
             "CACTUS Auto-CME-catalog": {
                 "URL": "https://www.sidc.be/cactus/",
                 "External_access": true,
-                "Memo": "ESAによる、LASCOのデータを持ちいたCMEのカタログ。CMEを自動で検出し、速度分布などを計算しグラフにして掲載している。                                <br> フルハローか否かや、速度の分布を表示しているのが便利。CMEの性質の簡易的な確認に使える。自動検出及び計算であることに注意。                                <br> Latest CME detectionsをクリックすると最近のイベント一覧に飛べる。その中で興味のあるページを見れば良い。なお、refURLにもLatest CME detectionsのページURLを記載してある。                                <br> ",
+                "Memo": "ESAによる、LASCOのデータを持ちいたCMEのカタログ。CMEを自動で検出し、速度分布などを計算しグラフにして掲載している。                                <br> フルハローか否かや、速度の分布を表示しているのが便利。CMEの性質の簡易的な確認に使える。自動検出及び計算であることに注意。                                <br> Latest CME detectionsをクリックすると最近のイベント一覧に飛べる。その中で興味のあるページを見れば良い。なお、refURLにもLatest CME detectionsのページURLを記載してある。                                ",
                 "File_type": "graphs",
                 "Purpose": "Confirmation of CME flying",
                 "Reference_URL": "https://www.sidc.be/cactus/out/latestCMEs.html"
@@ -242,7 +242,7 @@
             "STEREO Coronagraph": {
                 "URL": "https://stereo.gsfc.nasa.gov/beacon/",
                 "External_access": true,
-                "Memo": "STEREO衛星によるコロナグラフ画像。使い勝手はLASCOと比べるとあまり良くない。                                                    <br> SOHOと違う視点からのコロナグラフが見たい際に使えるはずだが、2023年頃はSTEREOはSOHOと同じ場所を飛んでいる。そのため、LASCOが不調な場合や見づらい場合の代替としてがメインになりそう。                                                    <br> リンク先サイトの画像一覧の中からSTEREO Aheadと書いてあるコロナグラフの画像を見つけることができる。説明がついていない数字だけのリンクを押すと画像をダウンロードすることができる。                                                    <br> (Aheadは衛星の名前なので、特に特別な意味はない。《もともとStereoはAheadとBehindの2機構成だった。Behindは壊れた。》)                                                    <br> MPEGと書いてあるやつからは、MPEG形式の動画をダウンロードできる。なお、Mp4のことではない。MPEGを再生するのは意外とめんどくさい可能性。Windows11の場合、Microsoft clip champが、デフォルトでついてる機能の中で一番MPEGを見やすい気がする。                                                    <br> リンク先サイトは数日前のものしか見れないため、過去のものを見たい場合はReference_URLから。                                                    <br> ",
+                "Memo": "STEREO衛星によるコロナグラフ画像。使い勝手はLASCOと比べるとあまり良くない。                                                    <br> SOHOと違う視点からのコロナグラフが見たい際に使えるはずだが、2023年頃はSTEREOはSOHOと同じ場所を飛んでいる。そのため、LASCOが不調な場合や見づらい場合の代替としてがメインになりそう。                                                    <br> リンク先サイトの画像一覧の中からSTEREO Aheadと書いてあるコロナグラフの画像を見つけることができる。説明がついていない数字だけのリンクを押すと画像をダウンロードすることができる。                                                    <br> (Aheadは衛星の名前なので、特に特別な意味はない。《もともとStereoはAheadとBehindの2機構成だった。Behindは壊れた。》)                                                    <br> MPEGと書いてあるやつからは、MPEG形式の動画をダウンロードできる。なお、Mp4のことではない。MPEGを再生するのは意外とめんどくさい可能性。Windows11の場合、Microsoft clip champが、デフォルトでついてる機能の中で一番MPEGを見やすい気がする。                                                    <br> リンク先サイトは数日前のものしか見れないため、過去のものを見たい場合はReference_URLから。                                                    ",
                 "File_type": "images",
                 "Purpose": "Confirmation of CME flying",
                 "Reference_URL": "https://stereo.gsfc.nasa.gov/cgi-bin/images"

@@ -322,7 +322,8 @@ def intro_space_weather(filename):
                             LASCO画像による、宇宙空間への放出を確認
                             <p> SOHO衛星のコロナグラフによる観測機器LASCOのデータを確認し、宇宙空間へのプラズマの放出を確認する。\
                               <br> 淡くて見づらいことも多いので、差分画像も活用すると良い。\
-                              <br> また、フルハローCMEがあるかも確認。{get_site_info(data,"SOHO LASCO C2 & C3")} {get_site_info(data,"SOHO LASCO C2 & C3 Diff and mesurement")}</p>
+                              <br> また、フルハローCMEがあるかも確認。{get_site_info(data,"SOHO LASCO C2 & C3")} {get_site_info(data,"SOHO LASCO C2 & C3 Diff and mesurement")}\
+                                <br> CACTUSの自動検出カタログも、簡易的な確認をする場合には参考になる。{get_site_info(data,"CACTUS Auto-CME-catalog")}</p>
                         </li>
                         <li>
                             CMEのリストアップ
