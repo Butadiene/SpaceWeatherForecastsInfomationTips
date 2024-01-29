@@ -353,11 +353,15 @@ space_weather_info = {
                              <br> 計測用のページでは、動画のどこかを選択すると、その点の位置と、押した時刻が表示される。\
                              <br> これを用いるとCMEの大まかな速度を計算しやすくなる。\
                              <br> 距離が分かりづらいが、H(Rs)が中心からの距離(単位Rsは太陽半径)である。\
-                             <br> CDAWが管理しているデータのアーカイブはReference_URLから確認できる。\
+                             <br> \
+                             <br> 過去のデータが見たい場合、下のPrev DayやNext Day使うことができる。\
+                             <br> 数十日以上遡りたい場合、\
+                             <br> https://cdaw.gsfc.nasa.gov/movie/make_javamovie.php?img1=lasc2rdf&img2=lasc3rdf&date=20240127\
+                             <br> のように、URLの後ろに&date=YYYYMMDD を入れると見ることができる。\
                              <br> \
                              <br> CDAWによる差分表示サイトは、主にC3が上手く表示されないことがある。(サイトの問題ではなく、データ欠損のこともある)\
                              <br> その場合、公式を参照すると良い。Reference_URL2を参照。サイトの下にあるLASCO C2 COMBOや、C3 COMBOがそれ。\
-                             <br> なお、この公式サイトでは2日間の動画しか確認できない。アーカイブはDailyというところから見れるが、よくサーバーダウンしてる気がする。\
+                             <br> アーカイブはReferrence_URLのDailyという名前がついたページから見れるが、よくサーバーダウンしてる気がする。\
                              <br> Dailyから見るアーカイブは現在の月より前のものしか見れないので注意。",\
                                 refURL="https://cdaw.gsfc.nasa.gov/index.html",\
                                 refURL2="https://soho.nascom.nasa.gov/data/realtime/mpeg/"),
