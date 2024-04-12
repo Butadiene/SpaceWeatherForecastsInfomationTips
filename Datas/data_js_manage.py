@@ -341,8 +341,10 @@ space_weather_info = {
                          <br> フルハローCMEはCMEが地球直撃コースである可能性が極めて高いことを意味する。\
                          <br> \
                          <br> サイトにアクセスした後、C2かC3を選び日程を設定してGenerate。C2とC3の違いは視野のみ。\
-                         <br> 画像の詳しい説明はReference_URL",\
-                          refURL="https://soho.nascom.nasa.gov/data/realtime/image-description.html"),
+                         <br> 画像の詳しい説明はReference_URL,\
+                         <br> LASCOの仕様に関する論文はreference_URL2に記載。",
+                          refURL="https://soho.nascom.nasa.gov/data/realtime/image-description.html",
+                          refURL2="https://link.springer.com/article/10.1007/BF00733434"),
 
                           **create_child_object("SOHO LASCO C2 & C3 Diff and mesurement", "https://cdaw.gsfc.nasa.gov/movie/make_javamovie.php?&img1=lasc2rdf&img2=lasc3rdf", True, \
                         purpose="Confirmation of CME flying", file_type="images",\
