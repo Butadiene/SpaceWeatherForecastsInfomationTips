@@ -502,9 +502,9 @@
         },
         "昭和基地カメラ": {
             "昭和基地カメラ": {
-                "URL": "https://polaris.nipr.ac.jp/~acaurora/syowa_CDC_QL/",
+                "URL": "https://polaris.nipr.ac.jp/~acaurora/syoCDC/index.html",
                 "External_access": true,
-                "Memo": "昭和基地におけるオーロラのライブカメラ。オーロラが発生しているか確認するときに使える。                                            <br>上に示したURLはCDC(カラー画像)だが、Electronオーロラ(EAI)、Protonオーロラ(PAI)のカメラもある。1、2はフィルターに対応する波長帯が違う。                                            <br> カメラの選択はページの上の方からできる。また、カメラの仕様についてはReference_URL参照。",
+                "Memo": "昭和基地におけるオーロラのライブカメラ。オーロラが発生しているか確認するときに使える。                                            <br>右上のAnimationを選ぶことで、過去ログやこの数日の動きを見ることができる。",
                 "File_type": "images",
                 "Purpose": "Checking Aurora"
             }

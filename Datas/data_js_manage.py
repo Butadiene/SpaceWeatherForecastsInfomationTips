@@ -589,11 +589,10 @@ space_weather_info = {
                                 purpose="Checking Aurora", file_type="images",\
                                 memo="カナダ、イエローナイフにおけるオーロラのライブカメラ。オーロラが発生しているか確認するときに使える。"),
 
-        "昭和基地カメラ": create_child_object("昭和基地カメラ", "https://polaris.nipr.ac.jp/~acaurora/syowa_CDC_QL/", True,\
+        "昭和基地カメラ": create_child_object("昭和基地カメラ", "https://polaris.nipr.ac.jp/~acaurora/syoCDC/index.html", True,\
                                        purpose="Checking Aurora", file_type="images",\
                                         memo="昭和基地におけるオーロラのライブカメラ。オーロラが発生しているか確認するときに使える。\
-                                            <br>上に示したURLはCDC(カラー画像)だが、Electronオーロラ(EAI)、Protonオーロラ(PAI)のカメラもある。1、2はフィルターに対応する波長帯が違う。\
-                                            <br> カメラの選択はページの上の方からできる。また、カメラの仕様についてはReference_URL参照。"),
+                                            <br>右上のAnimationを選ぶことで、過去ログやこの数日の動きを見ることができる。"),
                                 
 
         "NOAA OVATION model Aurora forecast": create_child_object("AURORA - 30 MINUTE FORECAST", "https://www.swpc.noaa.gov/products/aurora-30-minute-forecast", True,\
