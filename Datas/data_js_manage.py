@@ -425,10 +425,13 @@ space_weather_info = {
 
     "Geomagnetic disturbances": {
 
-        "Near real time Geomagnetic data": create_child_object("NICT Geomag-interface", "https://kogma.nict.go.jp/cgi-bin/geomag-interface-j/", True, \
+        "Near real time Geomagnetic data": create_child_object("地磁気世界資料センター京都 地磁気速報値", "https://wdc.kugi.kyoto-u.ac.jp/plot_realtime/quick/index-j.html", True, \
                                                                purpose="Confirmation of geomagnetic disturbances", file_type="graphs",\
                                                                 memo="世界各所の地磁気データの速報値が見れる。結構早い＋使いやすいので、今世界のどの場所でどれぐらい地磁気が乱れているか見るのに良い。\
-                                                                    <br> 「リアルタイム表示」を選択することで、１０分毎に自動的に新しいデータを表示することもできる。"),
+                                                                    <br> 「今日」を押すことで今の状態を表示できる。データ内容に関しては、Reference_URLから色々確認できる。(Geomagnetic dataのrefURLのReal-time(Quicklook)Geomagnetic dataから、リアルタイムデータに飛べる。)\
+                                                                    <br> 場所の記号に関しては、Reference_URL2の27P、Station List by Abbreviation (ABB) Codeに記載されている。",\
+                                                                        refURL="https://wdc.kugi.kyoto-u.ac.jp/wdc/Sec3.html",\
+                                                                        refURL2="https://wdc.kugi.kyoto-u.ac.jp//wdc/pdf/Catalogue/Catalogue.pdf"),
 
         "Kp index": create_child_object("SWPC PLANETARY K-INDEX", "https://www.swpc.noaa.gov/products/planetary-k-index", True,\
                     purpose="Magnitude of geomagnetic disturbances across the globe",file_type="graphs",exampleVal="最大Kp指数:2.67(一日のうち最も大きいKp)  日合計値:13.66(3時間ごとに区切って出されるKpを、その日のもの全て(8つ)足す)  NOAA Scale: G0",\
