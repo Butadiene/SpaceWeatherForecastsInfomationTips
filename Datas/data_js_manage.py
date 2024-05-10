@@ -575,6 +575,10 @@ space_weather_info = {
                                 purpose="Checking Total Electron Content", file_type="graphs",\
                                     memo="CTIPEモデルによる、全電子密度(垂直に足し合わせた密度、TEC)の現況。Forecastとあるがモデルを用いた現況の意味合いが強そう。\
                                         <br> 全世界のマップが見れるのが一応特徴ではある。ただ、TECに関係するイベントはローカルで見たほうが良いため、あまり使わないかもしれない。"),
+        "D-Region Absorption Prediction": create_child_object("D-Region Absorption Prediction", "https://www.swpc.noaa.gov/products/d-region-absorption-predictions-draps", True,\
+                                purpose="Checking D-Region Absorption Prediction", file_type="Images",\
+                                    memo="D層吸収の予想。D層吸収は、太陽フレアやCMEによるX線、紫外線の増加により、D層が電波を吸収する現象。\
+                                    極冠吸収やデリンジャーの際に確認すると良いかも。X線や高エネルギープロトンによって発生。"),
         
 
     },
