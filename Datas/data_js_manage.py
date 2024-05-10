@@ -398,6 +398,7 @@ space_weather_info = {
                                             memo="WSA_Enlil-CONEモデルによるシミュレーション。CONEモデルを用いることにより、HaloCMEの角度とかをちゃんと推定しているっぽい? WSA-ENLIL使うよりこっちのほうが良さそうかも\
                                             表示UI自体はIswaSystem(refURL参照)を使っている。ここでは好きな画像やグラフを好きな位置にレイアウトしてURLを生成できる。\
                                             <br>うまく動かない場合は、日付を現在の日付に指定してapply(日付設定箇所が少し未来の日付になっていると動かない。)\
+                                            <br>シミュレーション開始時の日付?によって大きく結果が変化することあり。\
                                             <br>WSA、ENLIL、CONEの3つのモデルについての詳細はrefURL2など参照。",
                                             refURL="https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",refURL2="https://www.diva-portal.org/smash/get/diva2:1778148/FULLTEXT01.pdf"),
                                         
