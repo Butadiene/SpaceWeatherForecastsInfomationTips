@@ -213,6 +213,16 @@
                 "Purpose": "Solar wind's high energy plasma"
             }
         },
+        "STEREO Solar wind": {
+            "STEREO Solar wind": {
+                "URL": "https://www.swpc.noaa.gov/products/solar-terrestrial-relations-observatory-stereo",
+                "External_access": true,
+                "Memo": "STEREO衛星による太陽風の観測データ。CME到来に関して複数点からチェックしたいときに見ると良いかも。                                                <br>STEREO衛星の位置は例えばReference_URLなど",
+                "File_type": "graphs",
+                "Purpose": "Solar wind from different point",
+                "Reference_URL": "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/index.jsp?i_1=261&l_1=218&t_1=355&w_1=645&h_1=436.969&s_1=0_0_10_3&i_2=267&l_2=876&t_2=354&w_2=650.969&h_2=435.969&s_2=0_0_10_3"
+            }
+        },
         "CME in space": {
             "SOHO LASCO C2 & C3": {
                 "URL": "https://soho.nascom.nasa.gov/data/Theater/",

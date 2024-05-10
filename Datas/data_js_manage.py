@@ -324,6 +324,12 @@ space_weather_info = {
                              <br> &nbsp&nbsp;SISで観測できる2桁MeVのプラズマは、CMEよりだいぶ先行していることもあるが、それはかなり大きいCMEの場合のみ見えることが多い。")
         },
 
+        "STEREO Solar wind": create_child_object("STEREO Solar wind", "https://www.swpc.noaa.gov/products/solar-terrestrial-relations-observatory-stereo", True, \
+                                                purpose="Solar wind from different point", file_type="graphs",\
+                                                memo="STEREO衛星による太陽風の観測データ。CME到来に関して複数点からチェックしたいときに見ると良いかも。\
+                                                <br>STEREO衛星の位置は例えばReference_URLなど",
+                                                refURL="https://iswa.gsfc.nasa.gov/IswaSystemWebApp/index.jsp?i_1=261&l_1=218&t_1=355&w_1=645&h_1=436.969&s_1=0_0_10_3&i_2=267&l_2=876&t_2=354&w_2=650.969&h_2=435.969&s_2=0_0_10_3"),
+
         "CME in space": { **create_child_object("SOHO LASCO C2 & C3", "https://soho.nascom.nasa.gov/data/Theater/", True, \
                         purpose="Confirmation of CME flying", file_type="images",\
                         memo="SOHOのコロナグラフを用いた観測機器LASCOによる動画。これにより、CMEがどのように宇宙空間に広がっていったかがわかる。 \
