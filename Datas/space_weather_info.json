@@ -261,7 +261,7 @@
             "WSA-ENLIL-CONE Nowcast and Forecasts": {
                 "URL": "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/index.jsp?i_1=179&l_1=105&t_1=1146&w_1=640&h_1=410&s_1=0_0_10_3&i_2=183&l_2=752&t_2=1150&w_2=640&h_2=410&s_2=0_0_10_3&i_3=261&l_3=9&t_3=329&w_3=645&h_3=436.975&s_3=0_0_10_3&i_4=699&l_4=1089&t_4=748&w_4=696&h_4=390&s_4=0_0&i_5=267&l_5=658&t_5=327&w_5=650.975&h_5=435.975&s_5=0_0_10_3&i_6=699&l_6=328&t_6=749&w_6=748&h_6=375&s_6=1_0&i_7=698&l_7=1313&t_7=312&w_7=650&h_7=450&s_7=2_0_0&i_8=683&l_8=1401&t_8=1111&w_8=650&h_8=450&s_8=2_0_0",
                 "External_access": true,
-                "Memo": "WSA_Enlil-CONEモデルによるシミュレーション。CONEモデルを用いることにより、HaloCMEの角度とかをちゃんと推定しているっぽい? WSA-ENLIL使うよりこっちのほうが良さそうかも                                            表示UI自体はIswaSystem(refURL参照)を使っている。ここでは好きな画像やグラフを好きな位置にレイアウトしてURLを生成できる。                                            WSA、ENLIL、CONEの3つのモデルについての詳細はrefURL2など参照。",
+                "Memo": "WSA_Enlil-CONEモデルによるシミュレーション。CONEモデルを用いることにより、HaloCMEの角度とかをちゃんと推定しているっぽい? WSA-ENLIL使うよりこっちのほうが良さそうかも                                            表示UI自体はIswaSystem(refURL参照)を使っている。ここでは好きな画像やグラフを好きな位置にレイアウトしてURLを生成できる。                                            <br>うまく動かない場合は、日付を現在の日付に指定してapply(日付設定箇所が少し未来の日付になっていると動かない。)                                            <br>WSA、ENLIL、CONEの3つのモデルについての詳細はrefURL2など参照。",
                 "File_type": "graphs",
                 "Purpose": "Refer for forecast",
                 "Reference_URL": "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",
