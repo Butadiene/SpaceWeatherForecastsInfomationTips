@@ -179,7 +179,14 @@ space_weather_info = {
                              <br> 右上のsettingsから表示項目が設定できる。以下の2つをよく使う。\
                              <br> &nbsp&nbsp;mean shear angle (measured using Btotal)-シア角。値が大きいと、自由エネルギーの大きさが大きい。\
                              <br> &nbsp&nbsp;total unsigned flux-合計のフラックス。活動領域の大きさに近い。フラックスが増えているということは、磁力線が浮上し面積が増大しているということ。\
-                             <br> 確認すべきは値より傾向。増えている傾向があると注意。")
+                             <br> 確認すべきは値より傾向。増えている傾向があると注意。"),
+                    
+                    **create_child_object("Far side sunspot images", "https://farside.nso.edu/", True, \
+                                          purpose="Check far side sunspot images", file_type="images", \
+                                            memo="太陽の裏側の黒点の推定画像。GONGという太陽の観測ネットワークから提供された、太陽での振動の表面速度の計測値を用いて推定しているらしい(全然わからない)。\
+                                                <br> 黒点の回り込みに関する議論をしたいときに参考程度に。\
+                                                    <br> ReferenceURLは推定方法に関して",\
+                                                        refURL="https://farside.nso.edu/more_info.html")
 
         },
 
