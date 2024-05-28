@@ -95,20 +95,7 @@ space_weather_info = {
                         <br> フレアが起きていない（≒尖っていないところ）の値をバックグラウンドと呼んだりする。\
                         <br> これも重要で、バックグラウンドが上昇傾向にある場合は、例えば東側から活動的な領域が見え始めていたりすることを意味する可能性がある。"),
 
-        "Radio flux": {**create_child_object("Solar radio flux - archive of measurements", "https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php", True,\
-                            purpose="F10.7: 10.7cm wavelength radio wave strength", file_type="html", \
-                            memo="太陽黒点数と良い相関のある、波長10.7cm(周波数2.8GHz)の電波の強度。 <br> Daily flux valuesのHTML見れば良いけど、\
-                            めちゃ見づらいので注意。値はObserved fluxを使用すると良さそう。 <br> 極大期では月平均でおおよそ200、極小期では70程度(日単位では変動が大きく、300を超えることも。)\
-                                <br> DRAO(Dominion Radio Astrophysical Observatory research facility)による。"),
 
-                        **create_child_object("NICT Solar Observation Database","https://solarobs.nict.go.jp/", True, \
-                            purpose= "Solar radio burst", file_type="graphs", \
-                            memo="NICTが行っている太陽の観測データが見れる。\
-                                 <br> 使う可能性が大きいのは山川での太陽電波観測結果(Real-time dynamic spectrum of YAMAGAWA solar radio spectrograph)。\
-                                 <br> 太陽電波バーストなどを見るのに良い。\
-                                 <br> 太陽電波バーストは太陽活動を示すイベントとして重要だが、山川の観測データからイベントを識別するのは難しく、初心者向けではない。")
-
-        },
 
         "Synoptic analysis": create_child_object("SOLAR SYNOPTIC MAP","https://www.swpc.noaa.gov/products/solar-synoptic-map", True, \
                                                   purpose="Assessing the conditions on the sun", file_type="images", 
@@ -287,6 +274,40 @@ space_weather_info = {
 
     },
 
+    "Radio flux (Solar radio burst)": {
+        
+                        "Radio flux":{
+                            **create_child_object("Solar radio flux - archive of measurements", "https://www.spaceweather.gc.ca/forecast-prevision/solar-solaire/solarflux/sx-5-en.php", True,\
+                            purpose="F10.7: 10.7cm wavelength radio wave strength", file_type="html", \
+                            memo="太陽黒点数と良い相関のある、波長10.7cm(周波数2.8GHz)の電波の強度。 <br> Daily flux valuesのHTML見れば良いけど、\
+                            めちゃ見づらいので注意。値はObserved fluxを使用すると良さそう。 <br> 極大期では月平均でおおよそ200、極小期では70程度(日単位では変動が大きく、300を超えることも。)\
+                                <br> DRAO(Dominion Radio Astrophysical Observatory research facility)による。"),
+                        },
+
+                        "Solar radio burst":{
+
+                            **create_child_object("NICT Solar Observation Database","https://solarobs.nict.go.jp/", True, \
+                            purpose= "Solar radio burst", file_type="graphs", \
+                            memo="NICTが行っている太陽の観測データが見れる。\
+                                 <br> 使う可能性が大きいのは山川での太陽電波観測結果(Real-time dynamic spectrum of YAMAGAWA solar radio spectrograph)。\
+                                 <br> 太陽電波バーストなどを見るのに良い。\
+                                 <br> 太陽電波バーストは太陽活動を示すイベントとして重要だが、山川の観測データからイベントを識別するのは難しく、初心者向けではない。"),
+
+                         **create_child_object("e-callisto", "http://soleil.i4ds.ch/solarradio/callistoQuicklooks/", True, \
+                            purpose="Confirmation of solar radio burst", file_type="images",\
+                                memo="太陽電波バーストの観測データ。世界各地（地表）で観測された、様々な周波数帯での観測結果が見れる。<br> \
+                                太陽活動に伴って様々な型のバーストが発生していることを確認することができる。特に太陽フレアやCMEについて検討する際の指標になる。<br> \
+                                日付を指定して、見たい観測点と時間帯のデータのImageとある文字にマウスカーソルを重ねると、スペクトルデータが表示される。<br>\
+                                Imageをクリックすると拡大画像が表示される。Fitsをクリックするとzipファイルがダウンロードされる。<br>\
+                                Reference_URLより、各観測点と、その観測点で観測できる周波数帯のデータが確認できる。<br>\
+                                Reference_URL2には、e-callistoのトップページを記載。<br>\
+                                各月のバースト検出数の総計が見たい場合は、<br>\
+                                https://www.e-callisto.org/Data/BurstCountsYYYYMM.png のYYYYMMを編集してアクセスすると良い。",
+                                refURL="https://soleil.i4ds.ch/solarradio/data/readme.txt", refURL2="https://www.e-callisto.org/")
+                        },
+
+        },
+
     "Solar wind": {
 
         "L1 Solar wind": { **create_child_object("SWPC REAL TIME SOLAR WIND","https://www.swpc.noaa.gov/products/real-time-solar-wind", True, \
@@ -405,24 +426,7 @@ space_weather_info = {
                     memo="太陽風シミュレーションモデルWSA-EnlilによるL1地点及びSTEREO衛星での太陽風予報および、太陽系空間での太陽風予報。 <br> SUSANOOと異なり、太陽風の磁場情報が入っていない。そのため、シミュレーション結果にも速度と密度しかなく磁場予測がないが、見やすい。")
         },
     },
-
-    "Solar Radio Burst": {
-
-        "Global ground observation of bursts": create_child_object("e-callisto", "http://soleil.i4ds.ch/solarradio/callistoQuicklooks/", True, \
-                                          purpose="Confirmation of solar radio burst", file_type="images",\
-                                            memo="太陽電波バーストの観測データ。世界各地（地表）で観測された、様々な周波数帯での観測結果が見れる。<br> \
-                                            太陽活動に伴って様々な型のバーストが発生していることを確認することができる。特に太陽フレアやCMEについて検討する際の指標になる。<br> \
-                                            日付を指定して、見たい観測点と時間帯のデータのImageとある文字にマウスカーソルを重ねると、スペクトルデータが表示される。<br>\
-                                            Imageをクリックすると拡大画像が表示される。Fitsをクリックするとzipファイルがダウンロードされる。<br>\
-                                            Reference_URLより、各観測点と、その観測点で観測できる周波数帯のデータが確認できる。<br>\
-                                            Reference_URL2には、e-callistoのトップページを記載。<br>\
-                                            各月のバースト検出数の総計が見たい場合は、<br>\
-                                            https://www.e-callisto.org/Data/BurstCountsYYYYMM.png のYYYYMMを編集してアクセスすると良い。",
-                                            refURL="https://soleil.i4ds.ch/solarradio/data/readme.txt", refURL2="https://www.e-callisto.org/"),
-        
-
-    },
-
+    
     "Geomagnetic disturbances": {
 
         "Near real time Geomagnetic data": create_child_object("NICT Geomag-interface", "https://kogma.nict.go.jp/cgi-bin/geomag-interface-j/", True, \
