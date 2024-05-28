@@ -166,7 +166,14 @@ space_weather_info = {
                              <br> 右上のsettingsから表示項目が設定できる。以下の2つをよく使う。\
                              <br> &nbsp&nbsp;mean shear angle (measured using Btotal)-シア角。値が大きいと、自由エネルギーの大きさが大きい。\
                              <br> &nbsp&nbsp;total unsigned flux-合計のフラックス。活動領域の大きさに近い。フラックスが増えているということは、磁力線が浮上し面積が増大しているということ。\
-                             <br> 確認すべきは値より傾向。増えている傾向があると注意。")
+                             <br> 確認すべきは値より傾向。増えている傾向があると注意。"),
+                    
+                    **create_child_object("Far side sunspot images", "https://farside.nso.edu/", True, \
+                                          purpose="Check far side sunspot images", file_type="images", \
+                                            memo="太陽の裏側の黒点の推定画像。GONGという太陽の観測ネットワークから提供された、太陽での振動の表面速度の計測値を用いて推定しているらしい(全然わからない)。\
+                                                <br> 黒点の回り込みに関する議論をしたいときに参考程度に。\
+                                                    <br> ReferenceURLは推定方法に関して",\
+                                                        refURL="https://farside.nso.edu/more_info.html")
 
         },
 
@@ -345,6 +352,12 @@ space_weather_info = {
                              <br> &nbsp&nbsp;SISで観測できる2桁MeVのプラズマは、CMEよりだいぶ先行していることもあるが、それはかなり大きいCMEの場合のみ見えることが多い。")
         },
 
+        "STEREO Solar wind": create_child_object("STEREO Solar wind", "https://www.swpc.noaa.gov/products/solar-terrestrial-relations-observatory-stereo", True, \
+                                                purpose="Solar wind from different point", file_type="graphs",\
+                                                memo="STEREO衛星による太陽風の観測データ。CME到来に関して複数点からチェックしたいときに見ると良いかも。\
+                                                <br>STEREO衛星の位置は例えばReference_URLなど",
+                                                refURL="https://iswa.gsfc.nasa.gov/IswaSystemWebApp/index.jsp?i_1=261&l_1=218&t_1=355&w_1=645&h_1=436.969&s_1=0_0_10_3&i_2=267&l_2=876&t_2=354&w_2=650.969&h_2=435.969&s_2=0_0_10_3"),
+
         "CME in space": { **create_child_object("SOHO LASCO C2 & C3", "https://soho.nascom.nasa.gov/data/Theater/", True, \
                         purpose="Confirmation of CME flying", file_type="images",\
                         memo="SOHOのコロナグラフを用いた観測機器LASCOによる動画。これにより、CMEがどのように宇宙空間に広がっていったかがわかる。 \
@@ -418,7 +431,9 @@ space_weather_info = {
                                             purpose="Refer for forecast", file_type="graphs",\
                                             memo="WSA_Enlil-CONEモデルによるシミュレーション。CONEモデルを用いることにより、HaloCMEの角度とかをちゃんと推定しているっぽい? WSA-ENLIL使うよりこっちのほうが良さそうかも\
                                             表示UI自体はIswaSystem(refURL参照)を使っている。ここでは好きな画像やグラフを好きな位置にレイアウトしてURLを生成できる。\
-                                            WSA、ENLIL、CONEの3つのモデルについての詳細はrefURL2など参照。",
+                                            <br>うまく動かない場合は、日付を現在の日付に指定してapply(日付設定箇所が少し未来の日付になっていると動かない。)\
+                                            <br>シミュレーション開始時の日付?によって大きく結果が変化することあり。\
+                                            <br>WSA、ENLIL、CONEの3つのモデルについての詳細はrefURL2など参照。",
                                             refURL="https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",refURL2="https://www.diva-portal.org/smash/get/diva2:1778148/FULLTEXT01.pdf"),
                                         
                     **create_child_object("WSA-ENLIL SOLAR WIND PREDICTION", "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction", True, \
@@ -429,10 +444,13 @@ space_weather_info = {
     
     "Geomagnetic disturbances": {
 
-        "Near real time Geomagnetic data": create_child_object("NICT Geomag-interface", "https://kogma.nict.go.jp/cgi-bin/geomag-interface-j/", True, \
+        "Near real time Geomagnetic data": create_child_object("地磁気世界資料センター京都 地磁気速報値", "https://wdc.kugi.kyoto-u.ac.jp/plot_realtime/quick/index-j.html", True, \
                                                                purpose="Confirmation of geomagnetic disturbances", file_type="graphs",\
                                                                 memo="世界各所の地磁気データの速報値が見れる。結構早い＋使いやすいので、今世界のどの場所でどれぐらい地磁気が乱れているか見るのに良い。\
-                                                                    <br> 「リアルタイム表示」を選択することで、１０分毎に自動的に新しいデータを表示することもできる。"),
+                                                                    <br> 「今日」を押すことで今の状態を表示できる。データ内容に関しては、Reference_URLから色々確認できる。(Geomagnetic dataのrefURLのReal-time(Quicklook)Geomagnetic dataから、リアルタイムデータに飛べる。)\
+                                                                    <br> 場所の記号に関しては、Reference_URL2の27P、Station List by Abbreviation (ABB) Codeに記載されている。",\
+                                                                        refURL="https://wdc.kugi.kyoto-u.ac.jp/wdc/Sec3.html",\
+                                                                        refURL2="https://wdc.kugi.kyoto-u.ac.jp//wdc/pdf/Catalogue/Catalogue.pdf"),
 
         "Kp index": create_child_object("SWPC PLANETARY K-INDEX", "https://www.swpc.noaa.gov/products/planetary-k-index", True,\
                     purpose="Magnitude of geomagnetic disturbances across the globe",file_type="graphs",exampleVal="最大Kp指数:2.67(一日のうち最も大きいKp)  日合計値:13.66(3時間ごとに区切って出されるKpを、その日のもの全て(8つ)足す)  NOAA Scale: G0",\
@@ -568,6 +586,10 @@ space_weather_info = {
                                 purpose="Checking Total Electron Content", file_type="graphs",\
                                     memo="CTIPEモデルによる、全電子密度(垂直に足し合わせた密度、TEC)の現況。Forecastとあるがモデルを用いた現況の意味合いが強そう。\
                                         <br> 全世界のマップが見れるのが一応特徴ではある。ただ、TECに関係するイベントはローカルで見たほうが良いため、あまり使わないかもしれない。"),
+        "D-Region Absorption Prediction": create_child_object("D-Region Absorption Prediction", "https://www.swpc.noaa.gov/products/d-region-absorption-predictions-draps", True,\
+                                purpose="Checking D-Region Absorption Prediction", file_type="Images",\
+                                    memo="D層吸収の予想。D層吸収は、太陽フレアやCMEによるX線、紫外線の増加により、D層が電波を吸収する現象。\
+                                    極冠吸収やデリンジャーの際に確認すると良いかも。X線や高エネルギープロトンによって発生。"),
         
 
     },
@@ -578,11 +600,10 @@ space_weather_info = {
                                 purpose="Checking Aurora", file_type="images",\
                                 memo="カナダ、イエローナイフにおけるオーロラのライブカメラ。オーロラが発生しているか確認するときに使える。"),
 
-        "昭和基地カメラ": create_child_object("昭和基地カメラ", "https://polaris.nipr.ac.jp/~acaurora/syowa_CDC_QL/", True,\
+        "昭和基地カメラ": create_child_object("昭和基地カメラ", "https://polaris.nipr.ac.jp/~acaurora/syoCDC/index.html", True,\
                                        purpose="Checking Aurora", file_type="images",\
                                         memo="昭和基地におけるオーロラのライブカメラ。オーロラが発生しているか確認するときに使える。\
-                                            <br>上に示したURLはCDC(カラー画像)だが、Electronオーロラ(EAI)、Protonオーロラ(PAI)のカメラもある。1、2はフィルターに対応する波長帯が違う。\
-                                            <br> カメラの選択はページの上の方からできる。また、カメラの仕様についてはReference_URL参照。"),
+                                            <br>右上のAnimationを選ぶことで、過去ログやこの数日の動きを見ることができる。"),
                                 
 
         "NOAA OVATION model Aurora forecast": create_child_object("AURORA - 30 MINUTE FORECAST", "https://www.swpc.noaa.gov/products/aurora-30-minute-forecast", True,\
