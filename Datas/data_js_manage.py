@@ -476,6 +476,13 @@ space_weather_info = {
                     purpose="Magnetic field at L1",file_type="graphs",exampleVal="None",\
                     memo="GOES衛星の観測した、静止軌道での磁場の変動を示す。急激な変化により、太陽風による磁気圏の急激な圧縮を読み取ることができる。\
                         <br> GOES衛星は静止軌道にいるために一日で昼側と夜側と通過する。これに伴う定期的な磁場の変動があることに注意。"),
+                        
+        "Geomagnetic storm overview": create_child_object("磁気嵐 月別概況", "https://www.kakioka-jma.go.jp/obsdata/mstorm/mstorm_index.php",True,\
+                                                          purpose="Geomagnetic storm overview",file_type="texts",exampleVal="None",\
+                                                            memo="柿岡/女満別/鹿屋観測所による、磁気嵐の月別概況。磁気嵐の発生状況を月別にまとめている。\
+                                                                <br> 1990年から見ることができ、かなり視認性が良い。→ここ数十年の間の磁気嵐をサーチする際に最適。\
+                                                                    <br> Reference_URLには、英語版を記載してある。"\
+                                                                        ,refURL="https://www.kakioka-jma.go.jp/en/obsdata/mstorm/mstorm_index_en.php"),
 
     },
 

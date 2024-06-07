@@ -370,6 +370,17 @@
                 "Purpose": "Magnetic field at L1",
                 "ExampleValue": "None"
             }
+        },
+        "Geomagnetic storm overview": {
+            "磁気嵐 月別概況": {
+                "URL": "https://www.kakioka-jma.go.jp/obsdata/mstorm/mstorm_index.php",
+                "External_access": true,
+                "Memo": "柿岡/女満別/鹿屋観測所による、磁気嵐の月別概況。磁気嵐の発生状況を月別にまとめている。                                                                <br> 1990年から見ることができ、かなり視認性が良い。→ここ数十年の間の磁気嵐をサーチする際に最適。                                                                    <br> Reference_URLには、英語版を記載してある。",
+                "File_type": "texts",
+                "Purpose": "Geomagnetic storm overview",
+                "ExampleValue": "None",
+                "Reference_URL": "https://www.kakioka-jma.go.jp/en/obsdata/mstorm/mstorm_index_en.php"
+            }
         }
     },
     "Radiation belts": {
