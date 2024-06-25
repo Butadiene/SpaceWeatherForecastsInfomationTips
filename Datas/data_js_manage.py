@@ -82,6 +82,16 @@ space_weather_info = {
     
     },
 
+    "All graphs": {
+        "All graphs of spaceweather": create_child_object("Space weather portal", "https://lasp.colorado.edu/space-weather-portal/", True,\
+                                        purpose="Check all graphs of spaceweather", file_type="graphs", \
+                                        memo="宇宙天気に関するグラフがまとめられているサイト。太陽風のグラフや地磁気の乱れのグラフなどを、任意の期間まとめてプロットすることが可能。\
+                                            <br> さらに、データをアウトプットすることも可能。\
+                                            <br> 使い方は、Dataタブを開いた後、期間を指定。その後、プロットしたいデータを選択してDisplay。\
+                                            <br> なお、複数のグラフを一つの図の中にプロットしたい場合はグラフの左側にあるギザギザのアイコン「Edit datasets and variables」から設定可能。\
+                                            <br> データのアウトプットはDownloadタブから行うことが可能。"),
+    },
+
     "Solar flares": {
         "X-ray flux": create_child_object("GOES X-ray Flux", "https://www.swpc.noaa.gov/products/goes-x-ray-flux/", True, \
                     purpose="GOES background X-ray flux",file_type="graphs", exampleVal="B7, 穏やかに上昇中", \
@@ -338,6 +348,8 @@ space_weather_info = {
                              <br> Phi GSMは磁場が地球方向に向いているか、太陽方向に向いているかについての角度。地球方向に向いている場合はAway(+)、太陽方向を向いている場合はTowards(-)と呼んだりする。\
                              <br> 7daysにして見るのがおすすめ。 <br> また、一太陽周期前(27日前)のデータを見るのも良い。速度と磁場に関してはReference_URLのリンク先ページの下の方に「27日太陽自転周期比較プロット」に27日前との比較プロットがある。\
                              <br> グラフの下にあるSeriesから、グラフを切り替えられる。特に、データ元衛星の切り替えは頭に入れる必要がある。\
+                             <br> 過去データを見たい場合は、期間を1yearやAllなどにして見たい期間を表示した後に、SeriesタブのZoon機能を使うと良い。\
+                             <br> なお、グラフをマウスでドラッグすることによるズームインアウトも可能。\
                              <br> &nbsp&nbsp; Active spacecraft (デフォルト): 基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。\
                              <br> &nbsp&nbsp; DSCOVR only: DSCOVRのデータのみ\
                              <br> &nbsp&nbsp; Ace only: Aceのデータのみ\

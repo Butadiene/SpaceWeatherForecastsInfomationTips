@@ -52,6 +52,17 @@
             }
         }
     },
+    "All graphs": {
+        "All graphs of spaceweather": {
+            "Space weather portal": {
+                "URL": "https://lasp.colorado.edu/space-weather-portal/",
+                "External_access": true,
+                "Memo": "宇宙天気に関するグラフがまとめられているサイト。太陽風のグラフや地磁気の乱れのグラフなどを、任意の期間まとめてプロットすることが可能。                                            <br> さらに、データをアウトプットすることも可能。                                            <br> 使い方は、Dataタブを開いた後、期間を指定。その後、プロットしたいデータを選択してDisplay。                                            <br> なお、複数のグラフを一つの図の中にプロットしたい場合はグラフの左側にあるギザギザのアイコン「Edit datasets and variables」から設定可能。                                            <br> データのアウトプットはDownloadタブから行うことが可能。",
+                "File_type": "graphs",
+                "Purpose": "Check all graphs of spaceweather"
+            }
+        }
+    },
     "Solar flares": {
         "X-ray flux": {
             "GOES X-ray Flux": {
@@ -236,7 +247,7 @@
             "SWPC REAL TIME SOLAR WIND": {
                 "URL": "https://www.swpc.noaa.gov/products/real-time-solar-wind",
                 "External_access": true,
-                "Memo": "SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。                              <br> 太陽風が高速であるか(具体的には500km/s以上)、磁場が強くかつ南向きを示しているか、密度上昇があるか、などが重要な確認点。                             <br> デフォルトでは磁場データの左側に<s>Bx</s>の様なラベルが見えると思うが、クリックするとBxのグラフも表示されるようになる。(Byも同様)                             <br> Phi GSMは磁場が地球方向に向いているか、太陽方向に向いているかについての角度。地球方向に向いている場合はAway(+)、太陽方向を向いている場合はTowards(-)と呼んだりする。                             <br> 7daysにして見るのがおすすめ。 <br> また、一太陽周期前(27日前)のデータを見るのも良い。速度と磁場に関してはReference_URLのリンク先ページの下の方に「27日太陽自転周期比較プロット」に27日前との比較プロットがある。                             <br> グラフの下にあるSeriesから、グラフを切り替えられる。特に、データ元衛星の切り替えは頭に入れる必要がある。                             <br> &nbsp&nbsp; Active spacecraft (デフォルト): 基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。                             <br> &nbsp&nbsp; DSCOVR only: DSCOVRのデータのみ                             <br> &nbsp&nbsp; Ace only: Aceのデータのみ                             <br> Active spacecraftやDSCOVR onlyのデータが大きく乱れていたりする時、Ace onlyでも確認してみると良い。",
+                "Memo": "SWPCが出している、DSCOVRとACEの観測データによるL1地点での太陽風データの時系列グラフ。                              <br> 太陽風が高速であるか(具体的には500km/s以上)、磁場が強くかつ南向きを示しているか、密度上昇があるか、などが重要な確認点。                             <br> デフォルトでは磁場データの左側に<s>Bx</s>の様なラベルが見えると思うが、クリックするとBxのグラフも表示されるようになる。(Byも同様)                             <br> Phi GSMは磁場が地球方向に向いているか、太陽方向に向いているかについての角度。地球方向に向いている場合はAway(+)、太陽方向を向いている場合はTowards(-)と呼んだりする。                             <br> 7daysにして見るのがおすすめ。 <br> また、一太陽周期前(27日前)のデータを見るのも良い。速度と磁場に関してはReference_URLのリンク先ページの下の方に「27日太陽自転周期比較プロット」に27日前との比較プロットがある。                             <br> グラフの下にあるSeriesから、グラフを切り替えられる。特に、データ元衛星の切り替えは頭に入れる必要がある。                             <br> 過去データを見たい場合は、期間を1yearやAllなどにして見たい期間を表示した後に、SeriesタブのZoon機能を使うと良い。                             <br> なお、グラフをマウスでドラッグすることによるズームインアウトも可能。                             <br> &nbsp&nbsp; Active spacecraft (デフォルト): 基本的にはDSCOVRのデータで、抜けているデータをACEで補完している。                             <br> &nbsp&nbsp; DSCOVR only: DSCOVRのデータのみ                             <br> &nbsp&nbsp; Ace only: Aceのデータのみ                             <br> Active spacecraftやDSCOVR onlyのデータが大きく乱れていたりする時、Ace onlyでも確認してみると良い。",
                 "File_type": "graphs",
                 "Purpose": "Confirmation of solar wind coming near the earth",
                 "ExampleValue": "Check these parameters at present condition and Previous rot (27days ago) : Solar source, Characteristics,Speed(620→520), Density(1前後), IMF(5nT前後、時折-6), Sector(概ねToward)",
