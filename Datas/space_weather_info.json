@@ -57,7 +57,7 @@
             "Space weather portal": {
                 "URL": "https://lasp.colorado.edu/space-weather-portal/",
                 "External_access": true,
-                "Memo": "宇宙天気に関するグラフがまとめられているサイト。太陽風のグラフや地磁気の乱れのグラフなどを、任意の期間まとめてプロットすることが可能。                                            <br> さらに、データをアウトプットすることも可能。                                            <br> 使い方は、Dataタブを開いた後、期間を指定。その後、プロットしたいデータを選択してDisplay。                                            <br> なお、複数のグラフを一つの図の中にプロットしたい場合はグラフの左側にあるギザギザのアイコン「Edit datasets and variables」から設定可能。                                            <br> データのアウトプットはDownloadタブから行うことが可能。",
+                "Memo": "宇宙天気に関するグラフがまとめられているサイト。太陽風のグラフや地磁気の乱れのグラフなどを、任意の期間まとめてプロットすることが可能。                                            <br> さらに、データをアウトプットすることも可能。                                            <br> 使い方は、Dataタブを開いた後、期間を指定。その後、プロットしたいデータを選択してDisplay。                                            <br> なお複数のグラフを一つの図の中にプロットしたい場合は、プロットしたグラフの左側にあるギザギザのアイコン「Edit datasets and variables」から設定可能。                                            <br> データのアウトプットはDownloadタブから行うことが可能。",
                 "File_type": "graphs",
                 "Purpose": "Check all graphs of spaceweather"
             }
