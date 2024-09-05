@@ -452,14 +452,23 @@ space_weather_info = {
                     <br> 磁場のグラフの、白色は全磁場、赤色は南北成分っぽい。 <br> nictのサイトのほうが見やすいかもしれない。(Reference_URL参照)",\
                     refURL="https://origin-swc.nict.go.jp/forecast/magnetosphere.html"),
 
-                    **create_child_object("WSA-ENLIL-CONE Nowcast and Forecasts", "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/index.jsp?i_1=179&l_1=105&t_1=1146&w_1=640&h_1=410&s_1=0_0_10_3&i_2=183&l_2=752&t_2=1150&w_2=640&h_2=410&s_2=0_0_10_3&i_3=261&l_3=9&t_3=329&w_3=645&h_3=436.975&s_3=0_0_10_3&i_4=699&l_4=1089&t_4=748&w_4=696&h_4=390&s_4=0_0&i_5=267&l_5=658&t_5=327&w_5=650.975&h_5=435.975&s_5=0_0_10_3&i_6=699&l_6=328&t_6=749&w_6=748&h_6=375&s_6=1_0&i_7=698&l_7=1313&t_7=312&w_7=650&h_7=450&s_7=2_0_0&i_8=683&l_8=1401&t_8=1111&w_8=650&h_8=450&s_8=2_0_0", True, 
+                    **create_child_object("WSA-ENLIL-CONE Nowcast and Forecasts", "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/", True, 
                                             purpose="Refer for forecast", file_type="graphs",\
                                             memo="WSA_Enlil-CONEモデルによるシミュレーション。CONEモデルを用いることにより、HaloCMEの角度とかをちゃんと推定しているっぽい? WSA-ENLIL使うよりこっちのほうが良さそうかも\
-                                            表示UI自体はIswaSystem(refURL参照)を使っている。ここでは好きな画像やグラフを好きな位置にレイアウトしてURLを生成できる。\
-                                            <br>うまく動かない場合は、日付を現在の日付に指定してapply(日付設定箇所が少し未来の日付になっていると動かない。)\
+                                            <br>リンク先自体はISWAのアプリサイト。ここでは好きな画像やグラフを好きな位置にレイアウトすることができる。\
+                                            <br>WSA-ENLIL-CONEの結果は、左上のBrowse/WSA-ENLIL Cone Model CME Evolution for Eventsと、Browse/SA-ENLIL Cone Model Timelines for Eventsから見ることができる。\
+                                            <br>各ウィンドウを出したあとは、左上のDensityとかVelocityなどを選ぶと、ウィンドウの内容を変更できる。\
+                                            <br>各ウィンドウ、左下からauto update modeとtime range modeを切り替えることができる。)\
+                                            <br>なお、レイアウトはjson形式で保存できる。\
+                                            <br>\
+                                            <br>WSA-ENLIL-CONEを確認するうえでのおすすめのレイアウトjsonをReference_URLに記載してある。\
+                                            <br>ダウンロードした上で、ISWAのサイトにある上のメニューのLoad Layoutから読み込むことができる。\
+                                            <br>(手順1. 本サイトのReference_URLにあるISWALayout.jsonを右クリックして、名前をつけてリンク先を保存、でダウンロード。)\
+                                            <br>(手順2. ISWAのアプリサイトの上のメニューにあるLoad Layoutを選択、先程ダウンロードしたファイルを読み込む。)\
+                                            <br>\
                                             <br>シミュレーション開始時の日付?によって大きく結果が変化することあり。\
                                             <br>WSA、ENLIL、CONEの3つのモデルについての詳細はrefURL2など参照。",
-                                            refURL="https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",refURL2="https://www.diva-portal.org/smash/get/diva2:1778148/FULLTEXT01.pdf"),
+                                            refURL= '<a href="ISWALayout.json">ISWALayout.json</a>' ,refURL2="https://www.diva-portal.org/smash/get/diva2:1778148/FULLTEXT01.pdf"),
                                         
                     **create_child_object("WSA-ENLIL SOLAR WIND PREDICTION", "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction", True, \
                     purpose="Refer for forecast", file_type="graphs",\
@@ -636,7 +645,7 @@ space_weather_info = {
                                 purpose="Checking Total Electron Content", file_type="graphs",\
                                     memo="CTIPEモデルによる、全電子密度(垂直に足し合わせた密度、TEC)の現況。Forecastとあるがモデルを用いた現況の意味合いが強そう。\
                                         <br> 全世界のマップが見れるのが一応特徴ではある。ただ、TECに関係するイベントはローカルで見たほうが良いため、あまり使わないかもしれない。"),
-        "D-Region Absorption Prediction": create_child_object("D-Region Absorption Prediction", "https://www.swpc.noaa.gov/products/d-region-absorption-predictions-draps", True,\
+        "D-Region Absorption Prediction": create_child_object("D-Region Absorption Prediction", "https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap", True,\
                                 purpose="Checking D-Region Absorption Prediction", file_type="Images",\
                                     memo="D層吸収の予想。D層吸収は、太陽フレアやCMEによるX線、紫外線の増加により、D層が電波を吸収する現象。\
                                     極冠吸収やデリンジャーの際に確認すると良いかも。X線や高エネルギープロトンによって発生。"),

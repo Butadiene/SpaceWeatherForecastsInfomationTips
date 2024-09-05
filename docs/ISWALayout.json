@@ -1,0 +1,112 @@
+{
+  "layout_version": "2.0",
+  "layout_creation_date": "2024-09-05T00:41:15Z",
+  "cygnets": [
+    {
+      "isSyncOn": true,
+      "cygnetID": 699,
+      "frame": {
+        "l": 1005,
+        "t": 505,
+        "w": 695,
+        "h": 395
+      },
+      "settings": {
+        "mode": 2,
+        "dataID": 539,
+        "dropdown0": "0",
+        "dropdown1": "0",
+        "autoOptionValue": 0,
+        "speed": 2,
+        "isPlaying": false,
+        "interval": 1800000
+      }
+    },
+    {
+      "isSyncOn": true,
+      "cygnetID": 698,
+      "frame": {
+        "l": 655,
+        "t": 5,
+        "w": 645,
+        "h": 445
+      },
+      "settings": {
+        "mode": 2,
+        "dataID": 349,
+        "dropdown0": "1",
+        "dropdown1": "0",
+        "dropdown2": "0",
+        "autoOptionValue": 0,
+        "speed": 2,
+        "isPlaying": false,
+        "interval": 1800000
+      }
+    },
+    {
+      "isSyncOn": true,
+      "cygnetID": 698,
+      "frame": {
+        "l": 1305,
+        "t": 5,
+        "w": 645,
+        "h": 445
+      },
+      "settings": {
+        "mode": 2,
+        "dataID": 347,
+        "dropdown0": "2",
+        "dropdown1": "0",
+        "dropdown2": "0",
+        "autoOptionValue": 0,
+        "speed": 2,
+        "isPlaying": false,
+        "interval": 1800000
+      }
+    },
+    {
+      "isSyncOn": true,
+      "cygnetID": 699,
+      "frame": {
+        "l": 255,
+        "t": 505,
+        "w": 645,
+        "h": 395
+      },
+      "settings": {
+        "mode": 2,
+        "dataID": 381,
+        "dropdown0": "1",
+        "dropdown1": "0",
+        "autoOptionValue": 0,
+        "speed": 2,
+        "isPlaying": false,
+        "interval": 1800000
+      }
+    },
+    {
+      "isSyncOn": true,
+      "cygnetID": 698,
+      "frame": {
+        "l": 5,
+        "t": 5,
+        "w": 645,
+        "h": 445
+      },
+      "settings": {
+        "mode": 2,
+        "dataID": 345,
+        "dropdown0": "0",
+        "dropdown1": "0",
+        "dropdown2": "0",
+        "autoOptionValue": 0,
+        "speed": 2,
+        "isPlaying": false,
+        "interval": 1800000
+      }
+    }
+  ],
+  "sync": {
+    "isActive": false
+  }
+}

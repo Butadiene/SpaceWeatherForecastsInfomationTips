@@ -317,12 +317,12 @@
                 "Reference_URL": "https://origin-swc.nict.go.jp/forecast/magnetosphere.html"
             },
             "WSA-ENLIL-CONE Nowcast and Forecasts": {
-                "URL": "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/index.jsp?i_1=179&l_1=105&t_1=1146&w_1=640&h_1=410&s_1=0_0_10_3&i_2=183&l_2=752&t_2=1150&w_2=640&h_2=410&s_2=0_0_10_3&i_3=261&l_3=9&t_3=329&w_3=645&h_3=436.975&s_3=0_0_10_3&i_4=699&l_4=1089&t_4=748&w_4=696&h_4=390&s_4=0_0&i_5=267&l_5=658&t_5=327&w_5=650.975&h_5=435.975&s_5=0_0_10_3&i_6=699&l_6=328&t_6=749&w_6=748&h_6=375&s_6=1_0&i_7=698&l_7=1313&t_7=312&w_7=650&h_7=450&s_7=2_0_0&i_8=683&l_8=1401&t_8=1111&w_8=650&h_8=450&s_8=2_0_0",
+                "URL": "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",
                 "External_access": true,
-                "Memo": "WSA_Enlil-CONEモデルによるシミュレーション。CONEモデルを用いることにより、HaloCMEの角度とかをちゃんと推定しているっぽい? WSA-ENLIL使うよりこっちのほうが良さそうかも                                            表示UI自体はIswaSystem(refURL参照)を使っている。ここでは好きな画像やグラフを好きな位置にレイアウトしてURLを生成できる。                                            <br>うまく動かない場合は、日付を現在の日付に指定してapply(日付設定箇所が少し未来の日付になっていると動かない。)                                            <br>シミュレーション開始時の日付?によって大きく結果が変化することあり。                                            <br>WSA、ENLIL、CONEの3つのモデルについての詳細はrefURL2など参照。",
+                "Memo": "WSA_Enlil-CONEモデルによるシミュレーション。CONEモデルを用いることにより、HaloCMEの角度とかをちゃんと推定しているっぽい? WSA-ENLIL使うよりこっちのほうが良さそうかも                                            <br>リンク先自体はISWAのアプリサイト。ここでは好きな画像やグラフを好きな位置にレイアウトすることができる。                                            <br>WSA-ENLIL-CONEの結果は、左上のBrowse/WSA-ENLIL Cone Model CME Evolution for Eventsと、Browse/SA-ENLIL Cone Model Timelines for Eventsから見ることができる。                                            <br>各ウィンドウを出したあとは、左上のDensityとかVelocityなどを選ぶと、ウィンドウの内容を変更できる。                                            <br>各ウィンドウ、左下からauto update modeとtime range modeを切り替えることができる。)                                            <br>なお、レイアウトはjson形式で保存できる。                                            <br>                                            <br>WSA-ENLIL-CONEを確認するうえでのおすすめのレイアウトjsonをReference_URLに記載してある。                                            <br>ダウンロードした上で、ISWAのサイトにある上のメニューのLoad Layoutから読み込むことができる。                                            <br>(手順1. 本サイトのReference_URLにあるISWALayout.jsonを右クリックして、名前をつけてリンク先を保存、でダウンロード。)                                            <br>(手順2. ISWAのアプリサイトの上のメニューにあるLoad Layoutを選択、先程ダウンロードしたファイルを読み込む。)                                            <br>                                            <br>シミュレーション開始時の日付?によって大きく結果が変化することあり。                                            <br>WSA、ENLIL、CONEの3つのモデルについての詳細はrefURL2など参照。",
                 "File_type": "graphs",
                 "Purpose": "Refer for forecast",
-                "Reference_URL": "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",
+                "Reference_URL": "<a href=\"ISWALayout.json\">ISWALayout.json</a>",
                 "Reference_URL2": "https://www.diva-portal.org/smash/get/diva2:1778148/FULLTEXT01.pdf"
             },
             "WSA-ENLIL SOLAR WIND PREDICTION": {
@@ -541,7 +541,7 @@
         },
         "D-Region Absorption Prediction": {
             "D-Region Absorption Prediction": {
-                "URL": "https://www.swpc.noaa.gov/products/d-region-absorption-predictions-draps",
+                "URL": "https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap",
                 "External_access": true,
                 "Memo": "D層吸収の予想。D層吸収は、太陽フレアやCMEによるX線、紫外線の増加により、D層が電波を吸収する現象。                                    極冠吸収やデリンジャーの際に確認すると良いかも。X線や高エネルギープロトンによって発生。",
                 "File_type": "Images",
