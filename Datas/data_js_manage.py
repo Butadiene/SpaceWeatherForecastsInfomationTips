@@ -294,7 +294,7 @@ space_weather_info = {
                                              <br> DeFN-Rが確率予報として適切なので、DeFN-Rを使うべき。DeFNは空振りが多い。かわりに見逃しが少ない。DeFN-Qはまだα版のようなもので、リアルな発生確率を表していない。"),
     },
 
-    "All Solars":{
+    "All Solar datas":{
         "Virtual Solar Observatory": create_child_object("Virtual Solar Observatory", "https://sdac.virtualsolar.org/cgi/search", True, \
                                                          purpose="All Solar Observatories", file_type="images",\
                                                             memo="いろんな太陽衛星観測のデータをまとめたサイト\
