@@ -293,6 +293,21 @@ space_weather_info = {
                                              <br> リンク先はDeFN-Rのものにしてある。上のメニューから切り替えできる。\
                                              <br> DeFN-Rが確率予報として適切なので、DeFN-Rを使うべき。DeFNは空振りが多い。かわりに見逃しが少ない。DeFN-Qはまだα版のようなもので、リアルな発生確率を表していない。"),
     },
+
+    "All Solars":{
+        "Virtual Solar Observatory": create_child_object("Virtual Solar Observatory", "https://sdac.virtualsolar.org/cgi/search", True, \
+                                                         purpose="All Solar Observatories", file_type="images",\
+                                                            memo="いろんな太陽衛星観測のデータをまとめたサイト\
+                                                                <br>1. Please select which values you wish to use to search for data productsで機器が観測可能か,\
+                                                                <br>, Instrument/Provider, Spectral Range (電波長, UVなど), Nicknames がある. どれかを選択し, Generate VSO Search Form を押せばそれに合った観測機器・データが示される．\
+                                                                <br>2. 衛星やその機器を選ぶ. Date Rangeに注意. \
+                                                                <br>3. 右上にStartとEndがプルダウンで表示されるので, ほしいデータの時間帯を選択し, Searchを押す\
+                                                                <br>4. データがない場合はエラーが出る．取得したいデータの時間帯を選択．\
+                                                                <br>5. Image linkを押せば写真を取得できる. 生データを取得したい場合は左のRequest Dataを押す. \
+                                                                <br>6. URL-TAR, URL-FILE, URL-FILE_Riceなどがある. 無難にURL-FILEでいいと思う.\
+                                                                <br>7. URLが出てくるので押せばダウンロードが始まる. \
+                                                                "),
+    },
     
     "Proton flux": {
         "Proton flux": create_child_object("GOES Proton Flux", "https://www.swpc.noaa.gov/products/goes-proton-flux", True, \
