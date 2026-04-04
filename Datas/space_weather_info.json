@@ -40,6 +40,15 @@
                 "Reference_URL": "https://www.lmsal.com/solarsoft/latest_events_archive.html"
             }
         },
+        "CME Scoreboard": {
+            "CCMC CME Scoreboard": {
+                "URL": "https://kauai.ccmc.gsfc.nasa.gov/CMEscoreboard/",
+                "External_access": true,
+                "Memo": "直近のCMEのカタログと簡単なレポート、到達予想時刻が載ってる。",
+                "File_type": "text",
+                "Purpose": "Confirmation of CME flying"
+            }
+        },
         "A Heliophysics Events Knowledgebase": {
             "A Heliophysics Events Knowledgebase to facilitate scientific discover": {
                 "URL": "https://www.lmsal.com/isolsearch",
@@ -60,6 +69,12 @@
                 "Memo": "宇宙天気に関するグラフがまとめられているサイト。太陽風のグラフや地磁気の乱れのグラフなどを、任意の期間まとめてプロットすることが可能。                                            <br> さらに、データをアウトプットすることも可能。                                            <br> 使い方は、Dataタブを開いた後、期間を指定。その後、プロットしたいデータを選択してDisplay。                                            <br> なお複数のグラフを一つの図の中にプロットしたい場合は、プロットしたグラフの左側にあるギザギザのアイコン「Edit datasets and variables」から設定可能。                                            <br> データのアウトプットはDownloadタブから行うことが可能。",
                 "File_type": "graphs",
                 "Purpose": "Check all graphs of spaceweather"
+            },
+            "ISWA Web App": {
+                "URL": "https://iswa.ccmc.gsfc.nasa.gov/app/",
+                "External_access": true,
+                "Memo": "NASAのISWAのWebアプリ。様々なデータを取り出して、並べてみることができる。Browseから見たいデータを選ぶ。                                        <br> Layoutsの中にあるLayoutのテンプレートがかなり使いやすく、その中から好きなものを選ぶとわかりやすいかもしれない。                                        <br> かなり多くのシミュレーションデータや観測データをカバーしている。                                        <br> 詳細はReference_URLを参照。",
+                "Reference_URL": "https://ccmc.gsfc.nasa.gov/tools/ISWA/"
             }
         }
     },
@@ -190,6 +205,16 @@
                 "Purpose": "Confirmation of solar surface activity, coronal holes, CMEs and others"
             }
         },
+        "Solar Dimming Detection": {
+            "Solar Demon Dimming Detection": {
+                "URL": "https://www.sidc.be/solardemon/dimmings.php",
+                "External_access": true,
+                "Memo": "コロナのDimming（減光領域）を推定してカタログに自動でまとめているサイト。一般に、コロナが減光するということはその領域のコロナが吹き飛ばさている、すなわちCMEを意味する可能性が高いとされる。                                             <br> Solar Demon自体が、フレアの推定などもやっている良いサイト。Solar Demon自体のリンクはReference_URLに記載。",
+                "File_type": "text",
+                "Purpose": "Confirmation of coronal dimming",
+                "Reference_URL": "https://www.sidc.be/solardemon/"
+            }
+        },
         "Flare forecast by Deep Learning": {
             "Deep Flare Net": {
                 "URL": "https://defn.nict.go.jp/index131_rel_eng.html",
@@ -270,6 +295,13 @@
                 "Memo": "ACEのリアルタイムの太陽風観測結果。右側にあるリストから、色々な観測機器のグラフが選べる。                             <br> EPAM(2桁keVから1桁MeVぐらいのプラズマ観測機器)とSIS(2桁MeVのプラズマの観測機器)のデータが特に大事。                             <br> (DSCOVRのほうがACEより新しいが、DSCOVRは高エネルギープラズマの観測機器が上手く行っていない。そのため、太陽風の高エネルギープラズマに関してはACEのデータを見る必要がある。)                             <br> EPAMは太陽風がなんらかの変化を示した時に、CMEかコロナホールによる高速太陽風かどちらが到来したのかを区別する手がかりとなる。                             <br>                              <br> 一般に                             <br> CMEではEPAMの示す値は急激に上がる。                             <br> 高速太陽風ではEPAMの示す値は徐々に上がっていく傾向にある。                             <br>                              <br> しかし、実際にはCMEと高速太陽風が同時に到来するなど、一筋縄ではいかないケースも多い。                             <br> そのためCMEと高速太陽風のどちらが到来しているかについての判断を行う際は、ソース(=太陽表面における現象)との突き合わせも重要である。                             <br> 発生源がはっきりしない場合、高速太陽風やCMEが到来しているかは保留にせざるを得ないことも多い。                             <br>                              <br> 2桁keVから1桁MeVぐらいのプラズマがCMEによって運ばれてきているとき、(高速太陽風によって運ばれている時ではない。)以下のようなことが言える。                             <br> &nbsp&nbsp;EPAMで観測できるプラズマ、すなわち比較的エネルギーの低いプラズマはCMEの先端にトラップされているだけであり、CMEを抜け出して先行することは少ない。                             <br> &nbsp&nbsp;そのため、EPAMが上がり始めるときはCMEはもう近くまで来ている事が多い。                             <br> &nbsp&nbsp;SISで観測できる2桁MeVのプラズマは、CMEよりだいぶ先行していることもあるが、それはかなり大きいCMEの場合のみ見えることが多い。",
                 "File_type": "graphs",
                 "Purpose": "Solar wind's high energy plasma"
+            },
+            "IMAP REAL TIME SOLAR WIND": {
+                "URL": "https://imap-mission.com/ialirt/space-weather",
+                "External_access": true,
+                "Memo": "IMAPのリアルタイムの太陽風観測結果。2025年か2026年から稼働開始？                             <br> 太陽風データと粒子データが見えるっぽい。",
+                "File_type": "graphs",
+                "Purpose": "Solar wind's high energy plasma"
             }
         },
         "STEREO Solar wind": {
@@ -279,7 +311,7 @@
                 "Memo": "STEREO衛星による太陽風の観測データ。CME到来に関して複数点からチェックしたいときに見ると良いかも。                                                <br>STEREO衛星の位置は例えばReference_URLなど",
                 "File_type": "graphs",
                 "Purpose": "Solar wind from different point",
-                "Reference_URL": "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/index.jsp?i_1=261&l_1=218&t_1=355&w_1=645&h_1=436.969&s_1=0_0_10_3&i_2=267&l_2=876&t_2=354&w_2=650.969&h_2=435.969&s_2=0_0_10_3"
+                "Reference_URL": "https://iswa.ccmc.gsfc.nasa.gov/app/?layout=helio"
             }
         },
         "CME in space": {
@@ -328,13 +360,12 @@
                 "Reference_URL": "https://origin-swc.nict.go.jp/forecast/magnetosphere.html"
             },
             "WSA-ENLIL-CONE Nowcast and Forecasts": {
-                "URL": "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",
+                "URL": "https://iswa.ccmc.gsfc.nasa.gov/app/?layout=helio",
                 "External_access": true,
-                "Memo": "WSA_Enlil-CONEモデルによるシミュレーション。CONEモデルを用いることにより、HaloCMEの角度とかをちゃんと推定しているっぽい? WSA-ENLIL使うよりこっちのほうが良さそうかも                                            <br>リンク先自体はISWAのアプリサイト。ここでは好きな画像やグラフを好きな位置にレイアウトすることができる。                                            <br>WSA-ENLIL-CONEの結果は、左上のBrowse/WSA-ENLIL Cone Model CME Evolution for Eventsと、Browse/SA-ENLIL Cone Model Timelines for Eventsから見ることができる。                                            <br>各ウィンドウを出したあとは、左上のDensityとかVelocityなどを選ぶと、ウィンドウの内容を変更できる。                                            <br>各ウィンドウ、左下からauto update modeとtime range modeを切り替えることができる。)                                            <br>なお、レイアウトはjson形式で保存できる。                                            <br>                                            <br>WSA-ENLIL-CONEを確認するうえでのおすすめのレイアウトjsonをReference_URLに記載してある。                                            <br>ダウンロードした上で、ISWAのサイトにある上のメニューのLoad Layoutから読み込むことができる。                                            <br>(手順1. 本サイトのReference_URLにあるISWALayout.jsonを右クリックして、名前をつけてリンク先を保存、でダウンロード。)                                            <br>(手順2. ISWAのアプリサイトの上のメニューにあるLoad Layoutを選択、先程ダウンロードしたファイルを読み込む。)                                            <br>                                            <br>シミュレーション開始時の日付?によって大きく結果が変化することあり。                                            <br>WSA、ENLIL、CONEの3つのモデルについての詳細はrefURL2など参照。",
+                "Memo": "WSA_Enlil-CONEモデルによるシミュレーション。CONEモデルを用いることにより、HaloCMEの角度とかをちゃんと推定しているっぽい? WSA-ENLIL使うよりこっちのほうが良さそうかも                                            <br>リンク先自体はISWAのアプリサイトの太陽風に焦点を当てたレイアウト。ここでは好きな画像やグラフを好きな位置にレイアウトすることができる。                                            <br>他のテンプレートレイアウトは、右上のLayoutsから選べる。                                            <br>シミュレーション開始時の日付?によって大きく結果が変化することあり。                                            <br>WSA、ENLIL、CONEの3つのモデルについての詳細はrefURLなど参照。",
                 "File_type": "graphs",
                 "Purpose": "Refer for forecast",
-                "Reference_URL": "<a href=\"ISWALayout.json\">ISWALayout.json</a>",
-                "Reference_URL2": "https://www.diva-portal.org/smash/get/diva2:1778148/FULLTEXT01.pdf"
+                "Reference_URL": "https://www.diva-portal.org/smash/get/diva2:1778148/FULLTEXT01.pdf"
             },
             "WSA-ENLIL SOLAR WIND PREDICTION": {
                 "URL": "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction",
@@ -424,13 +455,13 @@
         },
         "Geomagnetic storm overview": {
             "磁気嵐 月別概況": {
-                "URL": "https://www.kakioka-jma.go.jp/obsdata/mstorm/mstorm_index.php",
+                "URL": "https://www.kakioka-jma.go.jp/obsdata/mstorm/",
                 "External_access": true,
-                "Memo": "柿岡/女満別/鹿屋観測所による、磁気嵐の月別概況。磁気嵐の発生状況を月別にまとめている。                                                                <br> 1990年から見ることができ、かなり視認性が良い。→ここ数十年の間の磁気嵐をサーチする際に最適。                                                                    <br> Reference_URLには、英語版を記載してある。",
+                "Memo": "柿岡/女満別/鹿屋観測所による、磁気嵐の月別概況。磁気嵐の発生状況を月別にまとめている。                                                                <br> 1990年代から見ることができ、かなり視認性が良い。→ここ数十年の間の磁気嵐をサーチする際に最適。                                                                    <br> Reference_URLには、英語版を記載してある。",
                 "File_type": "texts",
                 "Purpose": "Geomagnetic storm overview",
                 "ExampleValue": "None",
-                "Reference_URL": "https://www.kakioka-jma.go.jp/en/obsdata/mstorm/mstorm_index_en.php"
+                "Reference_URL": "https://www.kakioka-jma.go.jp/obsdata/overview/overview_index_en"
             }
         }
     },
@@ -507,10 +538,9 @@
             "Observed foEs": {
                 "URL": "https://swc.nict.go.jp/trend/es.html",
                 "External_access": true,
-                "Memo": " スポラティックE層の発生の時間プロットを見る際に使える。(スポラティックE層の発生だけみたいのであればイオノグラムの方が良い。)                                                 <br> 8MHzを超えた時間はスポラティックE層が発生していた可能性がある。                                                 <br> 詳細やアーカイブは、Reference_URLの「電離圏パラメータプロット」を参照。",
+                "Memo": " スポラティックE層の発生の時間プロットを見る際に使える。(スポラティックE層の発生だけみたいのであればイオノグラムの方が良い。)                                                 <br> 8MHzを超えた時間はスポラティックE層が発生していた可能性がある。",
                 "File_type": "graphs",
-                "Purpose": "Checking Sporadic E layer",
-                "Reference_URL": "https://wdc.nict.go.jp/IONO/HP2009/ISDJ/index.html"
+                "Purpose": "Checking Sporadic E layer"
             }
         },
         "Ionogram": {
@@ -524,11 +554,9 @@
             "Color Ionogram Viewer details": {
                 "URL": "https://wdc.nict.go.jp/ionog/js_viewer/js_01.html",
                 "External_access": true,
-                "Memo": "イオノグラムのカラープロットの詳細版。過去のデータなども見れる。左側で設定してDisplayを押すと描画される。                                                      <br> 操作方法はReference_URLを参照。                                                      <br> 詳細はReference_URL2を参照。",
+                "Memo": "イオノグラムのカラープロットの詳細版。過去のデータなども見れる。左側で設定してDisplayを押すと描画される。                                                         ",
                 "File_type": "graphs",
-                "Purpose": "Checking Sporadic E layer",
-                "Reference_URL": "https://wdc.nict.go.jp/IONO/HP2009/ISDJ/exp-ionogram_viewer_color.html",
-                "Reference_URL2": "https://wdc.nict.go.jp/IONO/HP2009/ISDJ/index.html"
+                "Purpose": "Checking Sporadic E layer"
             }
         },
         "GOES Dellinger effect": {
@@ -541,11 +569,11 @@
                 "Reference_URL": "https://wdc.nict.go.jp/x-ray/index.html"
             }
         },
-        "CTIPE TOTAL ELECTRON CONTENT FORECAST": {
-            "CTIPE TOTAL ELECTRON CONTENT FORECAST": {
-                "URL": "https://www.swpc.noaa.gov/products/ctipe-total-electron-content-forecast",
+        "GLOBAL TOTAL ELECTRON CONTENT": {
+            "GloTEC": {
+                "URL": "https://www.swpc.noaa.gov/products/glotec",
                 "External_access": true,
-                "Memo": "CTIPEモデルによる、全電子密度(垂直に足し合わせた密度、TEC)の現況。Forecastとあるがモデルを用いた現況の意味合いが強そう。                                        <br> 全世界のマップが見れるのが一応特徴ではある。ただ、TECに関係するイベントはローカルで見たほうが良いため、あまり使わないかもしれない。",
+                "Memo": "全電子密度(垂直に足し合わせた密度、TEC)の現況。                                        <br> 全世界のマップが見れるのが一応特徴ではある。ただ、TECに関係するイベントはローカルで見たほうが良いため、あまり使わないかもしれない。",
                 "File_type": "graphs",
                 "Purpose": "Checking Total Electron Content"
             }
@@ -612,6 +640,13 @@
                 "External_access": true,
                 "Memo": "各領域、各現象をクリックしたら関連グラフや数値と元データのリンクがすぐに出てくる。"
             }
+        },
+        "SolarHam": {
+            "SolarHam": {
+                "URL": "https://www.solarham.com/",
+                "External_access": true,
+                "Memo": "amateur (HAM) radio station Kevin VE3ENによる宇宙天気予報まとめサイト。見やすい。"
+            }
         }
     },
     "Link collection site": {
@@ -629,17 +664,9 @@
                 "Memo": "SOHOのサイトにあるリンク集。オーロラ予報とかシミュレーション予報とか載ってるの嬉しさがある。"
             }
         },
-        "ISWA": {
-            "ISWA Web App": {
-                "URL": "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",
-                "External_access": true,
-                "Memo": "NASAのISWAのWebアプリ。色々なデータが見れる。なんかたまにサーバーが落ちてたりする気がする。                                        <br> かなり多くのシミュレーションデータや観測データをカバーしている。                                        <br> 詳細はReference_URLを参照。",
-                "Reference_URL": "https://ccmc.gsfc.nasa.gov/tools/iSWA/"
-            }
-        },
         "宇宙天気ニュース": {
             "宇宙天気ニュース": {
-                "URL": "https://swnews.jp/",
+                "URL": "http://swnews.jp/",
                 "External_access": true,
                 "Memo": "宇宙天気ニュースのサイト。宇宙天気に関するニュースやリンクサイトが日本語でまとめて掲載されている。                                        <br> 鹿児島工業高等専門学校の篠原 学先生により運営されている模様。"
             }

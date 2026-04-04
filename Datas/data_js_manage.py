@@ -73,6 +73,10 @@ space_weather_info = {
                                     memo="フレアのイベントのリスト。直近20イベントのリストになっている。 <br> 直近20イベントだけだが、NOAAのものと違ってリストで示されていたり、図もついていたりと見やすい。 <br> イベント時刻はピークタイムを使う事が多い。\
                                         <br> なお、20件より前のイベントはrefURLから辿れる模様。結構なところまで遡れるっぽい。", refURL="https://www.lmsal.com/solarsoft/latest_events_archive.html"),
         
+        "CME Scoreboard": create_child_object("CCMC CME Scoreboard", "https://kauai.ccmc.gsfc.nasa.gov/CMEscoreboard/", True, \
+                        purpose="Confirmation of CME flying", file_type="text",\
+                        memo="直近のCMEのカタログと簡単なレポート、到達予想時刻が載ってる。"),
+
         "A Heliophysics Events Knowledgebase": create_child_object("A Heliophysics Events Knowledgebase to facilitate scientific discover","https://www.lmsal.com/isolsearch",True,\
                                     purpose="Check events list",file_type="images",\
                                         memo="フレア、CME、コロナホール、フィラメント、コロナホール、黒点、紫外線イベントなどのほぼ全てのイベントを網羅し、マッピングしているサイト。全イベントの詳細も載っている。。\
@@ -83,13 +87,20 @@ space_weather_info = {
     },
 
     "All graphs": {
-        "All graphs of spaceweather": create_child_object("Space weather portal", "https://lasp.colorado.edu/space-weather-portal/", True,\
+        "All graphs of spaceweather": {**create_child_object("Space weather portal", "https://lasp.colorado.edu/space-weather-portal/", True,\
                                         purpose="Check all graphs of spaceweather", file_type="graphs", \
                                         memo="宇宙天気に関するグラフがまとめられているサイト。太陽風のグラフや地磁気の乱れのグラフなどを、任意の期間まとめてプロットすることが可能。\
                                             <br> さらに、データをアウトプットすることも可能。\
                                             <br> 使い方は、Dataタブを開いた後、期間を指定。その後、プロットしたいデータを選択してDisplay。\
                                             <br> なお複数のグラフを一つの図の中にプロットしたい場合は、プロットしたグラフの左側にあるギザギザのアイコン「Edit datasets and variables」から設定可能。\
                                             <br> データのアウトプットはDownloadタブから行うことが可能。"),
+                                        
+                                        **create_child_object("ISWA Web App","https://iswa.ccmc.gsfc.nasa.gov/app/",True,\
+                                    memo="NASAのISWAのWebアプリ。様々なデータを取り出して、並べてみることができる。Browseから見たいデータを選ぶ。\
+                                        <br> Layoutsの中にあるLayoutのテンプレートがかなり使いやすく、その中から好きなものを選ぶとわかりやすいかもしれない。\
+                                        <br> かなり多くのシミュレーションデータや観測データをカバーしている。\
+                                        <br> 詳細はReference_URLを参照。",refURL="https://ccmc.gsfc.nasa.gov/tools/ISWA/"),
+        }
     },
 
     "Solar flares": {
@@ -282,6 +293,12 @@ space_weather_info = {
 
         },
 
+        "Solar Dimming Detection": create_child_object("Solar Demon Dimming Detection", "https://www.sidc.be/solardemon/dimmings.php", True, \
+                                            purpose= "Confirmation of coronal dimming", file_type="text", \
+                                            memo="コロナのDimming（減光領域）を推定してカタログに自動でまとめているサイト。一般に、コロナが減光するということはその領域のコロナが吹き飛ばさている、すなわちCMEを意味する可能性が高いとされる。\
+                                             <br> Solar Demon自体が、フレアの推定などもやっている良いサイト。Solar Demon自体のリンクはReference_URLに記載。",\
+                                            refURL="https://www.sidc.be/solardemon/"),
+                                             
         "Flare forecast by Deep Learning": create_child_object("Deep Flare Net", "https://defn.nict.go.jp/index131_rel_eng.html", True, \
                                             purpose= "Forecast solar flare", file_type="text", \
                                             memo="深層学習を使って太陽フレアの発生率を予報しているサイト。フレアの「予報」の際の参考になる。\
@@ -389,14 +406,20 @@ space_weather_info = {
                              <br> 2桁keVから1桁MeVぐらいのプラズマがCMEによって運ばれてきているとき、(高速太陽風によって運ばれている時ではない。)以下のようなことが言える。\
                              <br> &nbsp&nbsp;EPAMで観測できるプラズマ、すなわち比較的エネルギーの低いプラズマはCMEの先端にトラップされているだけであり、CMEを抜け出して先行することは少ない。\
                              <br> &nbsp&nbsp;そのため、EPAMが上がり始めるときはCMEはもう近くまで来ている事が多い。\
-                             <br> &nbsp&nbsp;SISで観測できる2桁MeVのプラズマは、CMEよりだいぶ先行していることもあるが、それはかなり大きいCMEの場合のみ見えることが多い。")
+                             <br> &nbsp&nbsp;SISで観測できる2桁MeVのプラズマは、CMEよりだいぶ先行していることもあるが、それはかなり大きいCMEの場合のみ見えることが多い。"),
+
+                             **create_child_object("IMAP REAL TIME SOLAR WIND", "https://imap-mission.com/ialirt/space-weather", True, \
+                            purpose="Solar wind's high energy plasma",file_type="graphs",\
+                            memo="IMAPのリアルタイムの太陽風観測結果。2025年か2026年から稼働開始？\
+                             <br> 太陽風データと粒子データが見えるっぽい。")
+                             
         },
 
         "STEREO Solar wind": create_child_object("STEREO Solar wind", "https://www.swpc.noaa.gov/products/solar-terrestrial-relations-observatory-stereo", True, \
                                                 purpose="Solar wind from different point", file_type="graphs",\
                                                 memo="STEREO衛星による太陽風の観測データ。CME到来に関して複数点からチェックしたいときに見ると良いかも。\
                                                 <br>STEREO衛星の位置は例えばReference_URLなど",
-                                                refURL="https://iswa.gsfc.nasa.gov/IswaSystemWebApp/index.jsp?i_1=261&l_1=218&t_1=355&w_1=645&h_1=436.969&s_1=0_0_10_3&i_2=267&l_2=876&t_2=354&w_2=650.969&h_2=435.969&s_2=0_0_10_3"),
+                                                refURL="https://iswa.ccmc.gsfc.nasa.gov/app/?layout=helio"),
 
         "CME in space": { **create_child_object("SOHO LASCO C2 & C3", "https://soho.nascom.nasa.gov/data/Theater/", True, \
                         purpose="Confirmation of CME flying", file_type="images",\
@@ -447,7 +470,7 @@ space_weather_info = {
                                 <br> フルハローか否かや、速度の分布を表示しているのが便利。CMEの性質の簡易的な確認に使える。自動検出及び計算であることに注意。\
                                 <br> Latest CME detectionsをクリックすると最近のイベント一覧に飛べる。その中で興味のあるページを見れば良い。なお、refURLにもLatest CME detectionsのページURLを記載してある。\
                                 ", refURL="https://www.sidc.be/cactus/out/latestCMEs.html"),
-
+                                                
                         **create_child_object("STEREO Coronagraph", "https://stereo.gsfc.nasa.gov/beacon/", True, \
                                               purpose="Confirmation of CME flying", file_type="images",\
                                                 memo="STEREO衛星によるコロナグラフ画像。使い勝手はLASCOと比べるとあまり良くない。\
@@ -467,23 +490,14 @@ space_weather_info = {
                     <br> 磁場のグラフの、白色は全磁場、赤色は南北成分っぽい。 <br> nictのサイトのほうが見やすいかもしれない。(Reference_URL参照)",\
                     refURL="https://origin-swc.nict.go.jp/forecast/magnetosphere.html"),
 
-                    **create_child_object("WSA-ENLIL-CONE Nowcast and Forecasts", "https://iswa.gsfc.nasa.gov/IswaSystemWebApp/", True, 
+                    **create_child_object("WSA-ENLIL-CONE Nowcast and Forecasts", "https://iswa.ccmc.gsfc.nasa.gov/app/?layout=helio", True, 
                                             purpose="Refer for forecast", file_type="graphs",\
                                             memo="WSA_Enlil-CONEモデルによるシミュレーション。CONEモデルを用いることにより、HaloCMEの角度とかをちゃんと推定しているっぽい? WSA-ENLIL使うよりこっちのほうが良さそうかも\
-                                            <br>リンク先自体はISWAのアプリサイト。ここでは好きな画像やグラフを好きな位置にレイアウトすることができる。\
-                                            <br>WSA-ENLIL-CONEの結果は、左上のBrowse/WSA-ENLIL Cone Model CME Evolution for Eventsと、Browse/SA-ENLIL Cone Model Timelines for Eventsから見ることができる。\
-                                            <br>各ウィンドウを出したあとは、左上のDensityとかVelocityなどを選ぶと、ウィンドウの内容を変更できる。\
-                                            <br>各ウィンドウ、左下からauto update modeとtime range modeを切り替えることができる。)\
-                                            <br>なお、レイアウトはjson形式で保存できる。\
-                                            <br>\
-                                            <br>WSA-ENLIL-CONEを確認するうえでのおすすめのレイアウトjsonをReference_URLに記載してある。\
-                                            <br>ダウンロードした上で、ISWAのサイトにある上のメニューのLoad Layoutから読み込むことができる。\
-                                            <br>(手順1. 本サイトのReference_URLにあるISWALayout.jsonを右クリックして、名前をつけてリンク先を保存、でダウンロード。)\
-                                            <br>(手順2. ISWAのアプリサイトの上のメニューにあるLoad Layoutを選択、先程ダウンロードしたファイルを読み込む。)\
-                                            <br>\
+                                            <br>リンク先自体はISWAのアプリサイトの太陽風に焦点を当てたレイアウト。ここでは好きな画像やグラフを好きな位置にレイアウトすることができる。\
+                                            <br>他のテンプレートレイアウトは、右上のLayoutsから選べる。\
                                             <br>シミュレーション開始時の日付?によって大きく結果が変化することあり。\
-                                            <br>WSA、ENLIL、CONEの3つのモデルについての詳細はrefURL2など参照。",
-                                            refURL= '<a href="ISWALayout.json">ISWALayout.json</a>' ,refURL2="https://www.diva-portal.org/smash/get/diva2:1778148/FULLTEXT01.pdf"),
+                                            <br>WSA、ENLIL、CONEの3つのモデルについての詳細はrefURLなど参照。",
+                                            refURL="https://www.diva-portal.org/smash/get/diva2:1778148/FULLTEXT01.pdf"),
                                         
                     **create_child_object("WSA-ENLIL SOLAR WIND PREDICTION", "https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction", True, \
                     purpose="Refer for forecast", file_type="graphs",\
@@ -548,12 +562,12 @@ space_weather_info = {
                     memo="GOES衛星の観測した、静止軌道での磁場の変動を示す。急激な変化により、太陽風による磁気圏の急激な圧縮を読み取ることができる。\
                         <br> GOES衛星は静止軌道にいるために一日で昼側と夜側と通過する。これに伴う定期的な磁場の変動があることに注意。"),
 
-        "Geomagnetic storm overview": create_child_object("磁気嵐 月別概況", "https://www.kakioka-jma.go.jp/obsdata/mstorm/mstorm_index.php",True,\
+        "Geomagnetic storm overview": create_child_object("磁気嵐 月別概況", "https://www.kakioka-jma.go.jp/obsdata/mstorm/",True,\
                                                           purpose="Geomagnetic storm overview",file_type="texts",exampleVal="None",\
                                                             memo="柿岡/女満別/鹿屋観測所による、磁気嵐の月別概況。磁気嵐の発生状況を月別にまとめている。\
-                                                                <br> 1990年から見ることができ、かなり視認性が良い。→ここ数十年の間の磁気嵐をサーチする際に最適。\
+                                                                <br> 1990年代から見ることができ、かなり視認性が良い。→ここ数十年の間の磁気嵐をサーチする際に最適。\
                                                                     <br> Reference_URLには、英語版を記載してある。"\
-                                                                        ,refURL="https://www.kakioka-jma.go.jp/en/obsdata/mstorm/mstorm_index_en.php"),
+                                                                        ,refURL="https://www.kakioka-jma.go.jp/obsdata/overview/overview_index_en"),
 
     },
 
@@ -622,9 +636,7 @@ space_weather_info = {
             **create_child_object("Observed foEs","https://swc.nict.go.jp/trend/es.html",True,\
                                                 purpose="Checking Sporadic E layer", file_type="graphs",\
                                                 memo=" スポラティックE層の発生の時間プロットを見る際に使える。(スポラティックE層の発生だけみたいのであればイオノグラムの方が良い。)\
-                                                 <br> 8MHzを超えた時間はスポラティックE層が発生していた可能性がある。\
-                                                 <br> 詳細やアーカイブは、Reference_URLの「電離圏パラメータプロット」を参照。",\
-                                                    refURL="https://wdc.nict.go.jp/IONO/HP2009/ISDJ/index.html"),
+                                                 <br> 8MHzを超えた時間はスポラティックE層が発生していた可能性がある。"),
         },
 
         "Ionogram": { 
@@ -642,11 +654,7 @@ space_weather_info = {
 
                               **create_child_object("Color Ionogram Viewer details","https://wdc.nict.go.jp/ionog/js_viewer/js_01.html",True,\
                                                 purpose="Checking Sporadic E layer", file_type="graphs",\
-                                                memo="イオノグラムのカラープロットの詳細版。過去のデータなども見れる。左側で設定してDisplayを押すと描画される。\
-                                                      <br> 操作方法はReference_URLを参照。\
-                                                      <br> 詳細はReference_URL2を参照。",\
-                                                    refURL="https://wdc.nict.go.jp/IONO/HP2009/ISDJ/exp-ionogram_viewer_color.html",\
-                                                    refURL2="https://wdc.nict.go.jp/IONO/HP2009/ISDJ/index.html")
+                                                memo="イオノグラムのカラープロットの詳細版。過去のデータなども見れる。左側で設定してDisplayを押すと描画される。                                                         ")
 
         },
 
@@ -656,9 +664,9 @@ space_weather_info = {
                                     <br>詳細やアーカイブは、Reference_URLを参照。",\
                                 refURL="https://wdc.nict.go.jp/x-ray/index.html"),
         
-        "CTIPE TOTAL ELECTRON CONTENT FORECAST": create_child_object("CTIPE TOTAL ELECTRON CONTENT FORECAST", "https://www.swpc.noaa.gov/products/ctipe-total-electron-content-forecast", True,\
+        "GLOBAL TOTAL ELECTRON CONTENT": create_child_object("GloTEC", "https://www.swpc.noaa.gov/products/glotec", True,\
                                 purpose="Checking Total Electron Content", file_type="graphs",\
-                                    memo="CTIPEモデルによる、全電子密度(垂直に足し合わせた密度、TEC)の現況。Forecastとあるがモデルを用いた現況の意味合いが強そう。\
+                                    memo="全電子密度(垂直に足し合わせた密度、TEC)の現況。\
                                         <br> 全世界のマップが見れるのが一応特徴ではある。ただ、TECに関係するイベントはローカルで見たほうが良いため、あまり使わないかもしれない。"),
         "D-Region Absorption Prediction": create_child_object("D-Region Absorption Prediction", "https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap", True,\
                                 purpose="Checking D-Region Absorption Prediction", file_type="Images",\
@@ -697,6 +705,8 @@ space_weather_info = {
 
         "NICT space weather forecast Trend": create_child_object("NICT Space Weather Forecast Trend Site","https://origin-swc.nict.go.jp/trend/",True,\
                                                            memo="各領域、各現象をクリックしたら関連グラフや数値と元データのリンクがすぐに出てくる。"),
+        "SolarHam": create_child_object("SolarHam","https://www.solarham.com/",True,\
+                                        memo="amateur (HAM) radio station Kevin VE3ENによる宇宙天気予報まとめサイト。見やすい。"),
 
     },
 
@@ -709,12 +719,7 @@ space_weather_info = {
         "SOHO space weathers": create_child_object("SOHO Space Weather", "https://soho.nascom.nasa.gov/spaceweather/",True,\
                                                    memo="SOHOのサイトにあるリンク集。オーロラ予報とかシミュレーション予報とか載ってるの嬉しさがある。"),
 
-        "ISWA" :create_child_object("ISWA Web App","https://iswa.gsfc.nasa.gov/IswaSystemWebApp/",True,\
-                                    memo="NASAのISWAのWebアプリ。色々なデータが見れる。なんかたまにサーバーが落ちてたりする気がする。\
-                                        <br> かなり多くのシミュレーションデータや観測データをカバーしている。\
-                                        <br> 詳細はReference_URLを参照。",refURL="https://ccmc.gsfc.nasa.gov/tools/iSWA/"),
-
-        "宇宙天気ニュース" :create_child_object("宇宙天気ニュース","https://swnews.jp/",True,\
+        "宇宙天気ニュース" :create_child_object("宇宙天気ニュース","http://swnews.jp/",True,\
                                     memo="宇宙天気ニュースのサイト。宇宙天気に関するニュースやリンクサイトが日本語でまとめて掲載されている。\
                                         <br> 鹿児島工業高等専門学校の篠原 学先生により運営されている模様。"),
     }
