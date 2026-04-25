@@ -197,6 +197,13 @@
                 "File_type": "images",
                 "Purpose": "Images for Sun from different point"
             },
+            "GOES images": {
+                "URL": "https://www.swpc.noaa.gov/products/goes-solar-ultraviolet-imager-suvi",
+                "External_access": true,
+                "Memo": "GOESによる太陽表面画像。SDOが使えないときなどに。",
+                "File_type": "images",
+                "Purpose": "Images for Sun from different point"
+            },
             "Solar Monitor": {
                 "URL": "https://www.solarmonitor.org/",
                 "External_access": true,

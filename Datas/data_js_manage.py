@@ -279,6 +279,10 @@ space_weather_info = {
                         purpose="Images for Sun from different point", file_type= "images",\
                         memo="STEREO衛星による太陽の画像。SDOと違う場所を飛んでいるので、見えないところが気になる時に。(ただし、2023年はSOHOと同じ場所を飛んでいる...。) <br> ページ内で表示されている360度画像や、STEREO Aheadと書いてある画像がそれ。\
                                 <br> (Aheadは衛星の名前なので、特に特別な意味はない。《もともとStereoはAheadとBehindの2機構成だった。Behindは壊れた。》)"),
+
+                        **create_child_object("GOES images", "https://www.swpc.noaa.gov/products/goes-solar-ultraviolet-imager-suvi", True, \
+                        purpose="Images for Sun from different point", file_type= "images",\
+                        memo="GOESによる太陽表面画像。SDOが使えないときなどに。"),
                         
                         **create_child_object("Solar Monitor", "https://www.solarmonitor.org/", True, \
                                               purpose="Confirmation of solar surface activity, coronal holes, CMEs and others", file_type="images", \
