@@ -519,6 +519,7 @@ space_weather_info = {
                                             Imageをクリックすると拡大画像が表示される。Fitsをクリックするとzipファイルがダウンロードされる。<br>\
                                             Reference_URLより、各観測点と、その観測点で観測できる周波数帯のデータが確認できる。<br>\
                                             Reference_URL2には、e-callistoのトップページを記載。<br>\
+                                            予報用メモ: Humain（ベルギー）の観測データは信頼できて参考になるらしい。これと山川(NICT Solar Observation Databaseから見れる)の観測データがあればおおよそ全部の時間をカバーできる。<br>\
                                             各月のバースト検出数の総計が見たい場合は、<br>\
                                             https://www.e-callisto.org/Data/BurstCountsYYYYMM.png のYYYYMMを編集してアクセスすると良い。",
                                             refURL="https://soleil.i4ds.ch/solarradio/data/readme.txt", refURL2="https://www.e-callisto.org/"),
