@@ -483,8 +483,11 @@ space_weather_info = {
                                                     <br> (Aheadは衛星の名前なので、特に特別な意味はない。《もともとStereoはAheadとBehindの2機構成だった。Behindは壊れた。》)\
                                                     <br> MPEGと書いてあるやつからは、MPEG形式の動画をダウンロードできる。なお、Mp4のことではない。MPEGを再生するのは意外とめんどくさい可能性。Windows11の場合、Microsoft clip champが、デフォルトでついてる機能の中で一番MPEGを見やすい気がする。\
                                                     <br> リンク先サイトは数日前のものしか見れないため、過去のものを見たい場合はReference_URLから。\
-                                                    ", refURL="https://stereo.gsfc.nasa.gov/cgi-bin/images")
-                         
+                                                    ", refURL="https://stereo.gsfc.nasa.gov/cgi-bin/images"),
+                        **create_child_object("GOES CCOR (CORONAGRAPH)", "https://www.swpc.noaa.gov/products/coronagraph/", True, \
+                                              purpose="Confirmation of CME flying", file_type="images",\
+                                                memo="GOES CCOR-1によるコロナグラフ画像。LASCOなどが見れないときにおすすめ。\
+                                                    <br>また、上のタブを切り替えるとGOES CCORのDiffが見れる。CMEなどがより見やすい。")
         },
 
         "Solar Wind Simulation": {
@@ -619,11 +622,17 @@ space_weather_info = {
         "Electron flux forecast": create_child_object("静止軌道危険度予測","https://radi.nict.go.jp/satellite/",True,\
                 purpose="Reference for forecast electron flux", file_type="graphs",\
                 memo="シミュレーションや統計モデルによる電子fluxの時間変化の予測。 <br> ひまわり8号、GOES衛星それぞれの軌道における電子fluxの大きさの予報値が示されている。"),
+                
+        "Arase Electron flux": create_child_object("ARASE/XEP宇宙気象データおよびNICT予測", "https://radi.nict.go.jp/arase-spaceweather/forecast.html", True, \
+                purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
+                memo="あらせ衛星による、放射線帯内の電子fluxの観測データと、そのデータをもとにした予測モデルの出力が表示されている。\
+                    <br> 横軸が時間で縦軸がL値（あらせは楕円軌道であり、様々なL値の場所を飛んでいるため。）\
+                    <br> 時間分解能が一日であり、フルエンスに近い概念になっていることに注意。")
     },
 
     "Ionosphere": {
 
-        "Ionosonde": {
+        "Ionosphere time plot": {
             **create_child_object("foF2 and GEONET TEC time change at Japan","https://swc.nict.go.jp/trend/ionosphere.html",True,\
                                   purpose="Checking ionospheric positive and negative storm", file_type="graphs",\
                                     memo="F層付近での電子密度(foF2)、上空の全電子密度(GEONET TEC)の変化を表す。 <br> どちらのデータも正相電離圏嵐、負相電離圏嵐の確認に使える。\
@@ -633,15 +642,22 @@ space_weather_info = {
                                          <br> 電離圏嵐の判定に関して言えばfoF2、GEONET TEC2つの違いはあまり注意しなくてよく、クロスチェックの意味合いが強い。",
                                          refURL="https://swc.nict.go.jp/knowledge/i-scale.html"),
 
-            **create_child_object("GEONET TEC map","https://aer-nc-web.nict.go.jp/GPS/QR_GEONET/",True,\
-                                  purpose="Checking ionoshpheric storm",file_type="images",
-                                  memo="日本上空の電子密度の空間分布を示したもの。ここでいう電子密度とは、上空までの全電子密度。\
-                                       <br> 日本のどの領域で電離圏嵐が発達しているかがわかる。"),
-
             **create_child_object("Observed foEs","https://swc.nict.go.jp/trend/es.html",True,\
                                                 purpose="Checking Sporadic E layer", file_type="graphs",\
                                                 memo=" スポラティックE層の発生の時間プロットを見る際に使える。(スポラティックE層の発生だけみたいのであればイオノグラムの方が良い。)\
                                                  <br> 8MHzを超えた時間はスポラティックE層が発生していた可能性がある。"),
+
+        },
+
+        "Ionosphere spartial plot": {
+                    **create_child_object("GEONET TEC map","https://aer-nc-web.nict.go.jp/GPS/QR_GEONET/",True,\
+                                  purpose="Checking ionoshpheric storm",file_type="images",
+                                  memo="日本上空の電子密度の空間分布を示したもの。ここでいう電子密度とは、上空までの全電子密度。\
+                                       <br> 日本のどの領域で電離圏嵐が発達しているかがわかる。"),
+                    **create_child_object("GLOBAL TOTAL ELECTRON CONTENT (GLOTEC)", "https://www.swpc.noaa.gov/products/glotec", True,\
+                                purpose="Checking Total Electron Content", file_type="graphs",\
+                                    memo="全電子密度(垂直に足し合わせた密度、TEC)の現況。\
+                                        <br> 全世界のマップが見れるのが一応特徴ではある。ただ、TECに関係するイベントはローカルで見たほうが良いため、あまり使わないかもしれない。"),
         },
 
         "Ionogram": { 
@@ -659,7 +675,7 @@ space_weather_info = {
 
                               **create_child_object("Color Ionogram Viewer details","https://wdc.nict.go.jp/ionog/js_viewer/js_01.html",True,\
                                                 purpose="Checking Sporadic E layer", file_type="graphs",\
-                                                memo="イオノグラムのカラープロットの詳細版。過去のデータなども見れる。左側で設定してDisplayを押すと描画される。                                                         ")
+                                                memo="イオノグラムのカラープロットの詳細版。過去のデータなども見れる。左側で設定してDisplayを押すと描画される。")
 
         },
 
@@ -669,11 +685,7 @@ space_weather_info = {
                                     <br>詳細やアーカイブは、Reference_URLを参照。",\
                                 refURL="https://wdc.nict.go.jp/x-ray/index.html"),
         
-        "GLOBAL TOTAL ELECTRON CONTENT": create_child_object("GloTEC", "https://www.swpc.noaa.gov/products/glotec", True,\
-                                purpose="Checking Total Electron Content", file_type="graphs",\
-                                    memo="全電子密度(垂直に足し合わせた密度、TEC)の現況。\
-                                        <br> 全世界のマップが見れるのが一応特徴ではある。ただ、TECに関係するイベントはローカルで見たほうが良いため、あまり使わないかもしれない。"),
-        "D-Region Absorption Prediction": create_child_object("D-Region Absorption Prediction", "https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap", True,\
+                "D-Region Absorption Prediction": create_child_object("D-Region Absorption Prediction", "https://www.swpc.noaa.gov/products/d-region-absorption-predictions-d-rap", True,\
                                 purpose="Checking D-Region Absorption Prediction", file_type="Images",\
                                     memo="D層吸収の予想。D層吸収は、太陽フレアやCMEによるX線、紫外線の増加により、D層が電波を吸収する現象。\
                                     極冠吸収やデリンジャーの際に確認すると良いかも。X線や高エネルギープロトンによって発生。"),
@@ -693,10 +705,16 @@ space_weather_info = {
                                             <br>右上のAnimationを選ぶことで、過去ログやこの数日の動きを見ることができる。"),
                                 
 
-        "NOAA OVATION model Aurora forecast": create_child_object("AURORA - 30 MINUTE FORECAST", "https://www.swpc.noaa.gov/products/aurora-30-minute-forecast", True,\
-                                purpose="Checking Aurora forecast", file_type="graphs",\
+        "NOAA OVATION model Aurora forecast": { **create_child_object("AURORA - 30 MINUTE FORECAST", "https://www.swpc.noaa.gov/products/aurora-30-minute-forecast", True,\
+                                purpose="Checking Aurora forecast", file_type="images",\
                                 memo="オーロラ予報。30-90分後のオーロラ予報を提供する。\
                                     <br> OVATION modelというモデルを使っている。L1での観測データと高エネルギープラズマの振りこみの関係から求めている模様。"),
+
+                                                **create_child_object("Aurora for Tonight and Tomorrow Night (Experimental)", "https://www.swpc.noaa.gov/products/aurora-viewline-tonight-and-tomorrow-night-experimental", True,\
+                                purpose="Checking Aurora forecast", file_type="images",\
+                                memo="オーロラ予報。アメリカ中部標準時でいうところの今夜と明日の夜のオーロラ予測を提供する。左側が今夜で、右側が明日の夜。\
+                                    <br> OVATION modelというモデルを使っている。L1での観測データと高エネルギープラズマの振りこみの関係から求めている模様。")
+                                },
 
         "NICT Aurora forecast": create_child_object("NICT Aurora forecast", "https://aurora-alert.nict.go.jp/", True,\
                                                     purpose="Checking Aurora forecast", file_type="graphs",\

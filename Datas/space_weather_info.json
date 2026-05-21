@@ -355,6 +355,13 @@
                 "File_type": "images",
                 "Purpose": "Confirmation of CME flying",
                 "Reference_URL": "https://stereo.gsfc.nasa.gov/cgi-bin/images"
+            },
+            "GOES CCOR (CORONAGRAPH)": {
+                "URL": "https://www.swpc.noaa.gov/products/coronagraph/",
+                "External_access": true,
+                "Memo": "GOES CCOR-1によるコロナグラフ画像。LASCOなどが見れないときにおすすめ。                                                    <br>また、上のタブを切り替えるとGOES CCORのDiffが見れる。CMEなどがより見やすい。",
+                "File_type": "images",
+                "Purpose": "Confirmation of CME flying"
             }
         },
         "Solar Wind Simulation": {
@@ -523,10 +530,19 @@
                 "File_type": "graphs",
                 "Purpose": "Reference for forecast electron flux"
             }
+        },
+        "Arase Electron flux": {
+            "ARASE/XEP宇宙気象データおよびNICT予測": {
+                "URL": "https://radi.nict.go.jp/arase-spaceweather/forecast.html",
+                "External_access": true,
+                "Memo": "あらせ衛星による、放射線帯内の電子fluxの観測データと、そのデータをもとにした予測モデルの出力が表示されている。                    <br> 横軸が時間で縦軸がL値（あらせは楕円軌道であり、様々なL値の場所を飛んでいるため。）                    <br> 時間分解能が一日であり、フルエンスに近い概念になっていることに注意。",
+                "File_type": "graphs",
+                "Purpose": "Checking the electron flux in the radiation belt"
+            }
         }
     },
     "Ionosphere": {
-        "Ionosonde": {
+        "Ionosphere time plot": {
             "foF2 and GEONET TEC time change at Japan": {
                 "URL": "https://swc.nict.go.jp/trend/ionosphere.html",
                 "External_access": true,
@@ -535,6 +551,15 @@
                 "Purpose": "Checking ionospheric positive and negative storm",
                 "Reference_URL": "https://swc.nict.go.jp/knowledge/i-scale.html"
             },
+            "Observed foEs": {
+                "URL": "https://swc.nict.go.jp/trend/es.html",
+                "External_access": true,
+                "Memo": " スポラティックE層の発生の時間プロットを見る際に使える。(スポラティックE層の発生だけみたいのであればイオノグラムの方が良い。)                                                 <br> 8MHzを超えた時間はスポラティックE層が発生していた可能性がある。",
+                "File_type": "graphs",
+                "Purpose": "Checking Sporadic E layer"
+            }
+        },
+        "Ionosphere spartial plot": {
             "GEONET TEC map": {
                 "URL": "https://aer-nc-web.nict.go.jp/GPS/QR_GEONET/",
                 "External_access": true,
@@ -542,12 +567,12 @@
                 "File_type": "images",
                 "Purpose": "Checking ionoshpheric storm"
             },
-            "Observed foEs": {
-                "URL": "https://swc.nict.go.jp/trend/es.html",
+            "GLOBAL TOTAL ELECTRON CONTENT (GLOTEC)": {
+                "URL": "https://www.swpc.noaa.gov/products/glotec",
                 "External_access": true,
-                "Memo": " スポラティックE層の発生の時間プロットを見る際に使える。(スポラティックE層の発生だけみたいのであればイオノグラムの方が良い。)                                                 <br> 8MHzを超えた時間はスポラティックE層が発生していた可能性がある。",
+                "Memo": "全電子密度(垂直に足し合わせた密度、TEC)の現況。                                        <br> 全世界のマップが見れるのが一応特徴ではある。ただ、TECに関係するイベントはローカルで見たほうが良いため、あまり使わないかもしれない。",
                 "File_type": "graphs",
-                "Purpose": "Checking Sporadic E layer"
+                "Purpose": "Checking Total Electron Content"
             }
         },
         "Ionogram": {
@@ -561,7 +586,7 @@
             "Color Ionogram Viewer details": {
                 "URL": "https://wdc.nict.go.jp/ionog/js_viewer/js_01.html",
                 "External_access": true,
-                "Memo": "イオノグラムのカラープロットの詳細版。過去のデータなども見れる。左側で設定してDisplayを押すと描画される。                                                         ",
+                "Memo": "イオノグラムのカラープロットの詳細版。過去のデータなども見れる。左側で設定してDisplayを押すと描画される。",
                 "File_type": "graphs",
                 "Purpose": "Checking Sporadic E layer"
             }
@@ -574,15 +599,6 @@
                 "File_type": "graphs",
                 "Purpose": "Checking Dellinger effect",
                 "Reference_URL": "https://wdc.nict.go.jp/x-ray/index.html"
-            }
-        },
-        "GLOBAL TOTAL ELECTRON CONTENT": {
-            "GloTEC": {
-                "URL": "https://www.swpc.noaa.gov/products/glotec",
-                "External_access": true,
-                "Memo": "全電子密度(垂直に足し合わせた密度、TEC)の現況。                                        <br> 全世界のマップが見れるのが一応特徴ではある。ただ、TECに関係するイベントはローカルで見たほうが良いため、あまり使わないかもしれない。",
-                "File_type": "graphs",
-                "Purpose": "Checking Total Electron Content"
             }
         },
         "D-Region Absorption Prediction": {
@@ -619,7 +635,14 @@
                 "URL": "https://www.swpc.noaa.gov/products/aurora-30-minute-forecast",
                 "External_access": true,
                 "Memo": "オーロラ予報。30-90分後のオーロラ予報を提供する。                                    <br> OVATION modelというモデルを使っている。L1での観測データと高エネルギープラズマの振りこみの関係から求めている模様。",
-                "File_type": "graphs",
+                "File_type": "images",
+                "Purpose": "Checking Aurora forecast"
+            },
+            "Aurora for Tonight and Tomorrow Night (Experimental)": {
+                "URL": "https://www.swpc.noaa.gov/products/aurora-viewline-tonight-and-tomorrow-night-experimental",
+                "External_access": true,
+                "Memo": "オーロラ予報。アメリカ中部標準時でいうところの今夜と明日の夜のオーロラ予測を提供する。左側が今夜で、右側が明日の夜。                                    <br> OVATION modelというモデルを使っている。L1での観測データと高エネルギープラズマの振りこみの関係から求めている模様。",
+                "File_type": "images",
                 "Purpose": "Checking Aurora forecast"
             }
         },
