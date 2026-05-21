@@ -623,7 +623,7 @@ space_weather_info = {
                 purpose="Reference for forecast electron flux", file_type="graphs",\
                 memo="シミュレーションや統計モデルによる電子fluxの時間変化の予測。 <br> ひまわり8号、GOES衛星それぞれの軌道における電子fluxの大きさの予報値が示されている。"),
                 
-        "Arase Electron flux": create_child_object("ARASE/XEP宇宙気象データおよびNICT予測", "https://radi.nict.go.jp/arase-spaceweather/forecast.html", True, \
+        "Arase Electron flux": create_child_object("ARASE/XEPデータおよびNICT予測", "https://radi.nict.go.jp/arase-spaceweather/forecast.html", True, \
                 purpose="Checking the electron flux in the radiation belt", file_type="graphs",\
                 memo="あらせ衛星による、放射線帯内の電子fluxの観測データと、そのデータをもとにした予測モデルの出力が表示されている。\
                     <br> 横軸が時間で縦軸がL値（あらせは楕円軌道であり、様々なL値の場所を飛んでいるため。）\

@@ -532,7 +532,7 @@
             }
         },
         "Arase Electron flux": {
-            "ARASE/XEP宇宙気象データおよびNICT予測": {
+            "ARASE/XEPデータおよびNICT予測": {
                 "URL": "https://radi.nict.go.jp/arase-spaceweather/forecast.html",
                 "External_access": true,
                 "Memo": "あらせ衛星による、放射線帯内の電子fluxの観測データと、そのデータをもとにした予測モデルの出力が表示されている。                    <br> 横軸が時間で縦軸がL値（あらせは楕円軌道であり、様々なL値の場所を飛んでいるため。）                    <br> 時間分解能が一日であり、フルエンスに近い概念になっていることに注意。",
