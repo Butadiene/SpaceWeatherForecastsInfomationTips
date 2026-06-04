@@ -647,6 +647,10 @@ space_weather_info = {
                                                 memo=" スポラティックE層の発生の時間プロットを見る際に使える。(スポラティックE層の発生だけみたいのであればイオノグラムの方が良い。)\
                                                  <br> 8MHzを超えた時間はスポラティックE層が発生していた可能性がある。"),
 
+            **create_child_object("Ionogram summary viewer","https://wdc.nict.go.jp/Ionosphere/archive/summary_viewer/",True,\
+                                  purpose="CHecking E and F layer", file_type="graphs",\
+                                    memo="イオノグラムの時間経過プロット。地点を指定したり、時間間隔を変えたり、観測期間を指定したりと非常に見やすい。\
+                                        <br> まずは、All freqを見るとわかりやすい気がする。"),
         },
 
         "Ionosphere spartial plot": {

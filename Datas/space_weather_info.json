@@ -557,6 +557,13 @@
                 "Memo": " スポラティックE層の発生の時間プロットを見る際に使える。(スポラティックE層の発生だけみたいのであればイオノグラムの方が良い。)                                                 <br> 8MHzを超えた時間はスポラティックE層が発生していた可能性がある。",
                 "File_type": "graphs",
                 "Purpose": "Checking Sporadic E layer"
+            },
+            "Ionogram summary viewer": {
+                "URL": "https://wdc.nict.go.jp/Ionosphere/archive/summary_viewer/",
+                "External_access": true,
+                "Memo": "イオノグラムの時間経過プロット。地点を指定したり、時間間隔を変えたり、観測期間を指定したりと非常に見やすい。                                        <br> まずは、All freqを見るとわかりやすい気がする。",
+                "File_type": "graphs",
+                "Purpose": "CHecking E and F layer"
             }
         },
         "Ionosphere spartial plot": {
