@@ -438,6 +438,17 @@
                 "Reference_URL2": "https://www.kakioka-jma.go.jp/knowledge/glossary.html"
             }
         },
+        "Hp30 & Hp60": {
+            "Hp30 & Hp60": {
+                "URL": "https://kp.gfz.de/en/hp30-hp60",
+                "External_access": true,
+                "Memo": "Kp指数と似たような指数だが、時間解像度が30分（Hp30）と1時間（Hp60）となっている。Kp指数は3時間ごとに区切って出されるが、Hp30やHp60はより短い時間解像度で地磁気擾乱の大きさを示すことができる。                        <br> 10days plot(Reference_URL)とDaily plot(Reference_URL2)の両方にHp30とHp60のグラフがある。10days plotは、過去10日間のデータが見れる。Daily plotは、当日を含む過去のデータを日付指定で見れる。                        ",
+                "File_type": "values",
+                "Purpose": "Magnitude of geomagnetic disturbance with a time resolution of half an hour and one hour",
+                "Reference_URL": "https://kp.gfz.de/en/hp30-hp60/10-days-plot",
+                "Reference_URL2": "https://kp.gfz.de/en/hp30-hp60/daily-plots"
+            }
+        },
         "Dst index": {
             "DST-INDEX": {
                 "URL": "https://wdc.kugi.kyoto-u.ac.jp/dstdir/index-j.html",

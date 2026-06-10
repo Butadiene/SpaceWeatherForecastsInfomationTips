@@ -556,6 +556,12 @@ space_weather_info = {
                         refURL="https://origin-swc.nict.go.jp/knowledge/criteria_icon.html",\
                         refURL2="https://www.kakioka-jma.go.jp/knowledge/glossary.html"),
 
+        "Hp30 & Hp60": create_child_object("Hp30 & Hp60", "https://kp.gfz.de/en/hp30-hp60",True,\
+                    purpose="Magnitude of geomagnetic disturbance with a time resolution of half an hour and one hour",file_type="values",\
+                    memo="Kp指数と似たような指数だが、時間解像度が30分（Hp30）と1時間（Hp60）となっている。Kp指数は3時間ごとに区切って出されるが、Hp30やHp60はより短い時間解像度で地磁気擾乱の大きさを示すことができる。\
+                        <br> 10days plot(Reference_URL)とDaily plot(Reference_URL2)の両方にHp30とHp60のグラフがある。10days plotは、過去10日間のデータが見れる。Daily plotは、当日を含む過去のデータを日付指定で見れる。\
+                        ",refURL="https://kp.gfz.de/en/hp30-hp60/10-days-plot", refURL2="https://kp.gfz.de/en/hp30-hp60/daily-plots"),
+
 
         "Dst index": create_child_object("DST-INDEX", "https://wdc.kugi.kyoto-u.ac.jp/dstdir/index-j.html",True,\
                     purpose="DST-index",file_type="graphs",\
