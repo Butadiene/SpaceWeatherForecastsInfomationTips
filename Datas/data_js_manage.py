@@ -513,24 +513,6 @@ space_weather_info = {
         },
     },
     
-    "Solar Radio Burst": {
-
-        "Global ground observation of bursts": create_child_object("e-callisto", "http://soleil.i4ds.ch/solarradio/callistoQuicklooks/", True, \
-                                          purpose="Confirmation of solar radio burst", file_type="images",\
-                                            memo="太陽電波バーストの観測データ。世界各地（地表）で観測された、様々な周波数帯での観測結果が見れる。<br> \
-                                            太陽活動に伴って様々な型のバーストが発生していることを確認することができる。特に太陽フレアやCMEについて検討する際の指標になる。<br> \
-                                            日付を指定して、見たい観測点と時間帯のデータのImageとある文字にマウスカーソルを重ねると、スペクトルデータが表示される。<br>\
-                                            Imageをクリックすると拡大画像が表示される。Fitsをクリックするとzipファイルがダウンロードされる。<br>\
-                                            Reference_URLより、各観測点と、その観測点で観測できる周波数帯のデータが確認できる。<br>\
-                                            Reference_URL2には、e-callistoのトップページを記載。<br>\
-                                            予報用メモ: Humain（ベルギー）の観測データは信頼できて参考になるらしい。これと山川(NICT Solar Observation Databaseから見れる)の観測データがあればおおよそ全部の時間をカバーできる。<br>\
-                                            各月のバースト検出数の総計が見たい場合は、<br>\
-                                            https://www.e-callisto.org/Data/BurstCountsYYYYMM.png のYYYYMMを編集してアクセスすると良い。",
-                                            refURL="https://soleil.i4ds.ch/solarradio/data/readme.txt", refURL2="https://www.e-callisto.org/"),
-        
-
-    },
-
     
     "Geomagnetic disturbances": {
 
