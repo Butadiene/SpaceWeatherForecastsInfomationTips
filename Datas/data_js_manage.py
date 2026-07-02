@@ -265,7 +265,8 @@ space_weather_info = {
                                  <br> 波長ごとの画像のより詳しい説明はReference_URL参照 \
                                  <br> \
                                  <br> なおリンク先サイトの左側一覧にあるThe Sun Nowから見れる画像には、PFSSというバージョンがある。これは、Potential field source surfaceの略で、表面の磁場構造から太陽の磁場構造を推定したもの。\
-                                 <br> PFSSから何かを言うのはかなりの知識が必要なようで、予報ではあまり使われない模様。また、Potentialから計算しているので、重要なはずの自由エネルギーが無視されていることにも注意。",\
+                                 <br> PFSSから何かを言うのはかなりの知識が必要なようで、予報ではあまり使われない模様。また、Potentialから計算しているので、重要なはずの自由エネルギーが無視されていることにも注意。\
+                                    <br> PFSS追記: PFSSは背景太陽風を読むときに参考になる。一方で、自由エネルギーが重要になるCMEを考えるためにはあまり使えない。",\
                         refURL="https://sdo.gsfc.nasa.gov/data/channels.php"),
 
                         **create_child_object("SDO Images Dashboard", "https://sdo.gsfc.nasa.gov/data/dashboard/", True, \
